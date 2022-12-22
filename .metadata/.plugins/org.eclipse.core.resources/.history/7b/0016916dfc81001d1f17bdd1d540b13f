@@ -366,7 +366,7 @@ static int colorHandleCalibrationValues(h_color_sensor_t * h_color_sensor, uint3
 			break;
 		case CALIB_ROUGE_CANETTE:
 			h_calib_buffer_struct->calib_value_rouge_canette=(uint16_t)(res/CALIBRATION_NB_VALUES);
-			h_color_sensor->red_transformation.red_min_freq=h_calib_buffer_struct->calib_value_rouge_canette;
+			h_color_sensor->red_transformation.red_min_freq=h_calib_buffer_struct->calib_value_red_canette;
 			printf("Struct calib : champ rouge_canette remplie\r\n");
 			printf("Calib_value_rouge_canette : %u\r\n\n",h_calib_buffer_struct->calib_value_rouge_canette);
 			break;

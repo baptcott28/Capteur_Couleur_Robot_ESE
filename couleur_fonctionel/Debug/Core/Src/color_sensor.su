@@ -8,8 +8,8 @@
 ../Core/Src/color_sensor.c:217:10:colorHandleCalibrationSensor	24	static
 ../Core/Src/color_sensor.c:310:6:colorSensorHandleInputCapture_IT	24	static
 ../Core/Src/color_sensor.c:345:12:colorHandleCalibrationValues	32	static
-../Core/Src/color_sensor.c:386:12:colorHandleRawValues	48	static
-../Core/Src/color_sensor.c:482:13:colorAnalyse	24	static
-../Core/Src/color_sensor.c:496:13:colorDoMeasureAgain	16	static
-../Core/Src/color_sensor.c:520:6:timer_handle	8	static
-../Core/Src/color_sensor.c:579:6:GPIO_write	16	static
+../Core/Src/color_sensor.c:388:12:colorHandleRawValues	48	static
+../Core/Src/color_sensor.c:484:13:colorAnalyse	24	static
+../Core/Src/color_sensor.c:498:13:colorDoMeasureAgain	16	static
+../Core/Src/color_sensor.c:522:6:timer_handle	8	static
+../Core/Src/color_sensor.c:581:6:GPIO_write	16	static
