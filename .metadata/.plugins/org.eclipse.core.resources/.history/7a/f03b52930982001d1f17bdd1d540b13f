@@ -142,8 +142,6 @@ int main(void)
   	colorHandleCalibrationSensor(&color_sensor1,&color_sensor1_buffer_calibration);
   	printf("waiting for button press to measure : \r\n");
 
-
-  	vTaskStartScheduler();
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */

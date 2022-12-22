@@ -1031,3 +1031,24 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 !MESSAGE OK
 !SUBENTRY 1 org.eclipse.core.resources 4 77 2022-12-22 15:32:41.582
 !MESSAGE C:\Users\bapti\Documents\GitHub\couleur_fonctionnel\couleur_fonctionel overlaps the location of another project: 'couleur_fonctionel'
+
+!ENTRY org.eclipse.core.resources 4 77 2022-12-22 15:53:17.350
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2022-12-22 15:53:17.350
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2022-12-22 15:53:17.350
+!MESSAGE C:\Users\bapti\Documents\GitHub\couleur_fonctionnel\couleur_fonctionel overlaps the location of another project: 'couleur_fonctionel'
+
+!ENTRY org.eclipse.core.resources 4 77 2022-12-22 15:54:04.236
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2022-12-22 15:54:04.236
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2022-12-22 15:54:04.236
+!MESSAGE C:\Users\bapti\Documents\GitHub\couleur_fonctionnel\couleur_fonctionel overlaps the location of another project: 'couleur_fonctionel'
+
+!ENTRY org.eclipse.core.resources 4 77 2022-12-22 15:54:20.538
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2022-12-22 15:54:20.538
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2022-12-22 15:54:20.538
+!MESSAGE C:\Users\bapti\Documents\GitHub\couleur_fonctionnel\couleur_fonctionel overlaps the location of another project: 'couleur_fonctionel'
