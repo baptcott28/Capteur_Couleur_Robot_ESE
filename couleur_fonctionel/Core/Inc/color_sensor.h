@@ -189,7 +189,15 @@ void colorSensorHandleInputCapture_IT(h_color_sensor_t * h_color_sensor, TIM_Typ
  */
 uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor,h_calib_buffer_structure_t * h_calib_struct);
 
-
+/**
+ * @fn int colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor)
+ * @brief Set the photoreceptor of the sensor. Each sensor can detect color only one by one.
+ * User have to set different types of filters to detect the roght color
+ *
+ * @param h_color_sensor : color_sensor structure
+ * @return 0 if failed else 1
+ */
+void colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color_t color);
 
 
 /*  liste des Pins

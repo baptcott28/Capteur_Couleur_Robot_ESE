@@ -1,4 +1,4 @@
-13:49:46 **** Incremental Build of configuration Debug for project couleur_fonctionel ****
+14:06:34 **** Incremental Build of configuration Debug for project couleur_fonctionel ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/color_sensor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/color_sensor.d" -MT"Core/Src/color_sensor.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/color_sensor.o"
 arm-none-eabi-gcc -o "couleur_fonctionel.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\bapti\Documents\GitHub\couleur_fonctionnel\couleur_fonctionel\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="couleur_fonctionel.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
@@ -7,11 +7,11 @@ Finished building target: couleur_fonctionel.elf
 arm-none-eabi-size   couleur_fonctionel.elf 
 arm-none-eabi-objdump -h -S  couleur_fonctionel.elf  > "couleur_fonctionel.list"
    text	   data	    bss	    dec	    hex	filename
-  40788	    484	   2196	  43468	   a9cc	couleur_fonctionel.elf
+  40772	    484	   2196	  43452	   a9bc	couleur_fonctionel.elf
 Finished building: default.size.stdout
  
 Finished building: couleur_fonctionel.list
  
 
-13:49:49 Build Finished. 0 errors, 0 warnings. (took 2s.475ms)
+14:06:37 Build Finished. 0 errors, 0 warnings. (took 2s.641ms)
 

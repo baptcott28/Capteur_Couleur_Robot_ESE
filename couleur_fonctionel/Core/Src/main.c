@@ -68,7 +68,6 @@ static void MX_USART1_UART_Init(void);
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	if(GPIO_Pin==button_Pin){
 		printf("----- appui bouton -----\r\n");
-		colorSensorInit(&color_sensor1, GREEN,CENT_POUR_CENT,SENSOR_ENABLE);
 		colorEnable(&color_sensor1);
 	}
 }
@@ -110,7 +109,7 @@ int main(void)
   setvbuf(stdin, NULL, _IONBF, 0);
 
 	printf("---- color sensor ----\r\n");
-	printf("waiting for button press to measure : \r\n");
+
 
 	// vrai code
   	//color_disable(&color_sensor1);
@@ -142,6 +141,7 @@ int main(void)
   	printf("--- calibration lancée ---\r\n");
   	colorSensorInit(&color_sensor1, GREEN,CENT_POUR_CENT,SENSOR_DISABLE);
   	colorHandleCalibrationSensor(&color_sensor1,&color_sensor1_buffer_calibration);
+  	printf("waiting for button press to measure : \r\n");
 
   /* USER CODE END 2 */
 

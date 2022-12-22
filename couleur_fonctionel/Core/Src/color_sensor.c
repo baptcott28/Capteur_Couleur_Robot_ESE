@@ -70,16 +70,6 @@ int u=0;
 static void colorSetOutputFreqScaling(h_color_sensor_t * h_color_sensor);
 
 /**
- * @fn int colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor)
- * @brief Set the photoreceptor of the sensor. Each sensor can detect color only one by one.
- * User have to set different types of filters to detect the roght color
- *
- * @param h_color_sensor : color_sensor structure
- * @return 0 if failed else 1
- */
-static void colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color_t color);
-
-/**
  * @fn void colorAnalyse(void)
  * @brief This function compares the results in color_tab. It occurs after the two mesurements are done.
  *
@@ -147,7 +137,7 @@ static void colorSetOutputFreqScaling(h_color_sensor_t * h_color_sensor){
 	}
 }
 
-static void colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color_t color){
+void colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color_t color){
 	h_color_sensor->color=color;
 	switch(color){
 	case GREEN:
