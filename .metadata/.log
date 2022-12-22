@@ -935,3 +935,34 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2022-12-20 14:09:56.272
 !MESSAGE Existing sessions are:
+!SESSION 2022-12-22 12:54:59.744 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-12-22 12:55:16.712
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-12-22 12:55:24.440
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-12-22 12:55:24.706
+!MESSAGE Log4j initialized with config file C:\Users\bapti\Documents\GitHub\couleur_fonctionnel\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-12-22 12:55:42.153
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-12-22 12:56:12.805
+!MESSAGE Indexed 'couleur_fonctionel' (25 sources, 118 headers) in 8,06 sec: 13 143 declarations; 76 438 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0,16 %)
+
+!ENTRY org.eclipse.core.resources 4 77 2022-12-22 12:56:17.903
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2022-12-22 12:56:17.903
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2022-12-22 12:56:17.903
+!MESSAGE C:\Users\bapti\Documents\GitHub\couleur_fonctionnel\couleur_fonctionel overlaps the location of another project: 'couleur_fonctionel'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2022-12-22 12:56:17.903
+!MESSAGE Project is null
