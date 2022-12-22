@@ -192,8 +192,8 @@ void colorSensorInit(h_color_sensor_t *h_color_sensor, color_sensor_color_t colo
 	h_color_sensor->red_transformation.red_max_freq=0;
 	h_color_sensor->red_transformation.red_ord_origin=0;
 	h_color_sensor->calib_state=WAINTING_FOR_CALIB;
-	colorSetOutputFreqScaling(h_color_sensor);
-	colorSetPhotodiodeType(h_color_sensor,color);
+	color_setOutputFreqScaling(h_color_sensor);
+	color_setPhotodiodeType(h_color_sensor,color);
 }
 
 
@@ -348,7 +348,7 @@ void colorSensorHandleInputCapture_IT(h_color_sensor_t * h_color_sensor,TIM_Type
 	}
 	else if ((calibration_flag==0)&&(freq<FREQ_MAX_ACCEPTABLE)){
 		// Analyse des valeur pour prise de decision sur la couleur
-		colorHandleRawValues(h_color_sensor, freq);
+		color_handle_raw_values(h_color_sensor, freq);
 	}
 }
 
@@ -356,7 +356,7 @@ static int colorHandleCalibrationValues(h_color_sensor_t * h_color_sensor, uint3
 	calib_tab[u]=freq;
 	u++;
 	if(u==CALIBRATION_NB_VALUES){
-		colorDisable(h_color_sensor);
+		color_disable(h_color_sensor);
 		uint32_t res=0;
 		for(int i=0;i<30;i++){
 			res=res+calib_tab[i];
@@ -418,9 +418,9 @@ static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t freq
 		raw_values_compteur++;
 
 		// color change
-		colorDisable(h_color_sensor);
-		colorSetPhotodiodeType(h_color_sensor,RED);
-		colorEnable(h_color_sensor);
+		color_disable(h_color_sensor);
+		color_setPhotodiodeType(h_color_sensor,RED);
+		color_enable(h_color_sensor);
 	}
 
 	else if((raw_values_compteur>((NB_MEASURE_WANTED/2)-1))&&(raw_values_compteur<NB_MEASURE_WANTED)){
@@ -438,7 +438,7 @@ static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t freq
 	else if(raw_values_compteur==NB_MEASURE_WANTED){
 		//printf("raw_value_compteur==NB_measure_wanted\r\n");
 		// Pret a faire la moyenne du tableau pour plus de fiabilité
-		colorDisable(h_color_sensor);
+		color_disable(h_color_sensor);
 		uint32_t green_mean=0;
 		uint32_t red_mean=0;
 
@@ -479,7 +479,7 @@ static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t freq
 		for(int i=0;i<NB_MEASURE_WANTED;i++){
 			printf("color_raw_values[%d] : %ld\t->\t color_scaled_value[%d] : %ld\r\n",i,color_raw_values[i],i,color_scaled_values[i]);
 		}
-		colorAnalyse(h_color_sensor,green_color_value,red_color_value);
+		color_analyse(h_color_sensor,green_color_value,red_color_value);
 		printf("waiting for button press : \r\n");
 	}
 
@@ -496,7 +496,7 @@ static void colorAnalyse(h_color_sensor_t * h_color_sensor, color_t green, color
 		printf("c'est vert\r\n");
 	}
 	else if(green==red){
-		colorDoMeasureAgain(h_color_sensor);
+		color_do_measure_again(h_color_sensor);
 	}
 	else {
 		printf("c'est rouge\r\n");
@@ -504,7 +504,7 @@ static void colorAnalyse(h_color_sensor_t * h_color_sensor, color_t green, color
 }
 
 static void colorDoMeasureAgain(h_color_sensor_t * h_color_sensor){
-	colorEnable(h_color_sensor);
+	color_enable(h_color_sensor);
 }
 
 

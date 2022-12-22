@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := capteur_couleur
+BUILD_ARTIFACT_NAME := couleur_fonctionel
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-capteur_couleur.elf \
+couleur_fonctionel.elf \
 
 MAP_FILES += \
-capteur_couleur.map \
+couleur_fonctionel.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-capteur_couleur.list \
+couleur_fonctionel.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: capteur_couleur.elf secondary-outputs
+main-build: couleur_fonctionel.elf secondary-outputs
 
 # Tool invocations
-capteur_couleur.elf capteur_couleur.map: $(OBJS) $(USER_OBJS) C:\Users\bapti\Documents\GitHub\capteur_couleur\capteur_couleur\STM32F746NGHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "capteur_couleur.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\bapti\Documents\GitHub\capteur_couleur\capteur_couleur\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="capteur_couleur.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+couleur_fonctionel.elf couleur_fonctionel.map: $(OBJS) $(USER_OBJS) C:\Users\bapti\Documents\GitHub\couleur_fonctionnel\couleur_fonctionel\STM32F746NGHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "couleur_fonctionel.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\bapti\Documents\GitHub\couleur_fonctionnel\couleur_fonctionel\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="couleur_fonctionel.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,14 +70,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-capteur_couleur.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "capteur_couleur.list"
+couleur_fonctionel.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "couleur_fonctionel.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) capteur_couleur.elf capteur_couleur.list capteur_couleur.map default.size.stdout
+	-$(RM) couleur_fonctionel.elf couleur_fonctionel.list couleur_fonctionel.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

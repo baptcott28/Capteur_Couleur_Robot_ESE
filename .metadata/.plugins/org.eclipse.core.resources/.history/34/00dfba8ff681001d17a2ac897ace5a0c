@@ -130,46 +130,46 @@ typedef struct h_color_sensor_t{
 
 
 // ----- Color sensor functions -----
-void colorSensorInit(h_color_sensor_t * h_color_sensor, color_sensor_color_t color, color_sensor_output_scale_t output_scale, color_sensor_state_t state);
+void color_sensor_init(h_color_sensor_t * h_color_sensor, color_sensor_color_t color, color_sensor_output_scale_t output_scale, color_sensor_state_t state);
 
 /**
- * @fn int colorEnable(h_color_sensor_t * h_color_sensor)
+ * @fn int color_Enable(h_color_sensor_t * h_color_sensor)
  * @brief Enable the sensor by setting to 0 the ENABLE pin
  *
  * @param h_color_sensor : color_sensor structure
  * @return 0 if failed else 1
  */
-void colorEnable(h_color_sensor_t * h_color_sensor);
+void color_enable(h_color_sensor_t * h_color_sensor);
 
 /**
- * @fn int colorDisable(h_color_sensor_t * h_color_sensor)
+ * @fn int color_Disable(h_color_sensor_t * h_color_sensor)
  * @brief disable the sensor by setting to 1 the ENABLE pin
  *
  * @param h_color_sensor : color_sensor structure
  * @return 0 if failed else 1
  */
-void colorDisable(h_color_sensor_t * h_color_sensor);
+void color_disable(h_color_sensor_t * h_color_sensor);
 
 /**
- * @fn uint32_t colorGetGreenValue(h_color_sensor_t * h_color_sensor)
+ * @fn uint32_t color_getGreenValue(h_color_sensor_t * h_color_sensor)
  * @brief Fast acces to the green value captured by the sensor h_color_sensor
  *
  * @param h_color_sensor : color_sensor structure
  * @return 0 if failed else 1
  */
-uint32_t colorGetGreenValue(h_color_sensor_t * h_color_sensor);
+uint32_t color_getGreenValue(h_color_sensor_t * h_color_sensor);
 
 /**
- * @fn uint32_t colorGetRedValue(h_color_sensor_t * h_color_sensor)
+ * @fn uint32_t color_getRedValue(h_color_sensor_t * h_color_sensor)
  * @brief Fast acces to the red value captured by the sensor h_color_sensor
  *
  * @param h_color_sensor : color_sensor structure
  * @return 0 if failed else 1
  */
-uint32_t colorGetRedValue(h_color_sensor_t * h_color_sensor);
+uint32_t color_getRedValue(h_color_sensor_t * h_color_sensor);
 
 /**
- * @fn void colorSensorHandleInputCapture_IT(h_color_sensor_t * h_color_sensor, TIM_TypeDef* TIM,h_calib_buffer_structure_t * h_calib_buffer_struct);
+ * @fn void color_sensor_handle_input_capture_IT(h_color_sensor_t * h_color_sensor, TIM_TypeDef* TIM,h_calib_buffer_structure_t * h_calib_buffer_struct);
  * @brief handle the input capture interruption. Manage if the sensor is being operated of calibrated
  *
  * @param h_color_sensor : color_sensor structure
@@ -177,17 +177,17 @@ uint32_t colorGetRedValue(h_color_sensor_t * h_color_sensor);
  * @param h_calib_buffer_struct : buffer calibration structure used in case of the sensor being calibrated
  * @return 0 if failed else 1
  */
-void colorSensorHandleInputCapture_IT(h_color_sensor_t * h_color_sensor, TIM_TypeDef* TIM,h_calib_buffer_structure_t * h_calib_buffer_struct);
+void color_sensor_handle_input_capture_IT(h_color_sensor_t * h_color_sensor, TIM_TypeDef* TIM,h_calib_buffer_structure_t * h_calib_buffer_struct);
 
 /**
- * @fn uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor,h_calib_buffer_structure_t * h_calib_struct);
+ * @fn uint32_t color_handle_calibration_sensor(h_color_sensor_t * h_color_sensor,h_calib_buffer_structure_t * h_calib_struct);
  * @brief handle the input capture interruption. Manage if the sensor is being operated of calibrated
  *
  * @param h_color_sensor : color_sensor structure
  * @param h_calib_buffer_struct : buffer calibration structure used in case of the sensor being calibrated
  * @return 0 if failed else 1
  */
-uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor,h_calib_buffer_structure_t * h_calib_struct);
+uint32_t color_handle_calibration_sensor(h_color_sensor_t * h_color_sensor,h_calib_buffer_structure_t * h_calib_struct);
 
 
 

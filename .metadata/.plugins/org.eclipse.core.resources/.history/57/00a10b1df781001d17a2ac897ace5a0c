@@ -504,7 +504,7 @@ static void colorAnalyse(h_color_sensor_t * h_color_sensor, color_t green, color
 }
 
 static void colorDoMeasureAgain(h_color_sensor_t * h_color_sensor){
-	colorEnable(h_color_sensor);
+	color_enable(h_color_sensor);
 }
 
 

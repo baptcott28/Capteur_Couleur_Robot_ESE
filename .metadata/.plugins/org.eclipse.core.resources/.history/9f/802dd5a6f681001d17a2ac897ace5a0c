@@ -207,7 +207,7 @@ void SysTick_Handler(void)
 void TIM2_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM2_IRQn 0 */
-	colorSensorHandleInputCapture_IT(&color_sensor1, TIM2,&color_sensor1_buffer_calibration);
+	color_sensor_handle_input_capture_IT(&color_sensor1, TIM2,&color_sensor1_buffer_calibration);
   /* USER CODE END TIM2_IRQn 0 */
   HAL_TIM_IRQHandler(&htim2);
   /* USER CODE BEGIN TIM2_IRQn 1 */

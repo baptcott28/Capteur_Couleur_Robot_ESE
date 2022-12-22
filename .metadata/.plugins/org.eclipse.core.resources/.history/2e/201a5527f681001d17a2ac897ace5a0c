@@ -61,68 +61,68 @@ int u=0;
 
 // static function prototype
 /**
- * @fn int colorSetOutputFreq_scaling(h_color_sensor_t * h_color_sensor)
+ * @fn int color_set_output_freq_scaling(h_color_sensor_t * h_color_sensor)
  * @brief Set the scale of the output signal
  *
  * @param h_color_sensor : color_sensor structure
  * @return 0 if failed else 1
  */
-static void colorSetOutputFreqScaling(h_color_sensor_t * h_color_sensor);
+static void color_setOutputFreqScaling(h_color_sensor_t * h_color_sensor);
 
 /**
- * @fn int colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor)
+ * @fn int color_set_photodiode_type(h_color_sensor_t * h_color_sensor)
  * @brief Set the photoreceptor of the sensor. Each sensor can detect color only one by one.
  * User have to set different types of filters to detect the roght color
  *
  * @param h_color_sensor : color_sensor structure
  * @return 0 if failed else 1
  */
-static void colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color_t color);
+static void color_setPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color_t color);
 
 /**
- * @fn void colorAnalyse(void)
+ * @fn void color_analyse(void)
  * @brief This function compares the results in color_tab. It occurs after the two mesurements are done.
  *
  * @param h_color_sensor : color_sensor structure
  * @return : Printf the color of the can
  */
-static void colorAnalyse(h_color_sensor_t * h_color_sensor, color_t green, color_t red);
+static void color_analyse(h_color_sensor_t * h_color_sensor, color_t green, color_t red);
 
 /**
- * @fn void colorDoMeasureAgain(h_color_sensor_t * h_color_sensor)
+ * @fn void color_do_measure_again(h_color_sensor_t * h_color_sensor)
  * @brief This function is called to do a measure again after a inoperable result
  *
  * @param h_color_sensor : color_sensor structure
  * @return : Printf the color of the can
  */
-static void colorDoMeasureAgain(h_color_sensor_t * h_color_sensor);
+static void color_do_measure_again(h_color_sensor_t * h_color_sensor);
 
 /**
- * @fn int colorHandleCalibrationValues(h_color_sensor_t * h_color_sensor, uint32_t frequence,h_calib_buffer_structure_t * h_calib_struct)
+ * @fn int color_handle_calibration_values(h_color_sensor_t * h_color_sensor, uint32_t frequence,h_calib_buffer_structure_t * h_calib_struct)
  * @brief This function fills the field of the calibration_buffer_structure
  *
  * @param h_color_sensor : color_sensor structure
  * @param h_calib_buffer_structure : calibration structure to fill
  * @return : 1 if calibration is processing, 0 if finished
  */
-static int colorHandleCalibrationValues(h_color_sensor_t * h_color_sensor, uint32_t frequence,h_calib_buffer_structure_t * h_calib_struct);
+static int color_handle_calibration_values(h_color_sensor_t * h_color_sensor, uint32_t frequence,h_calib_buffer_structure_t * h_calib_struct);
 
 /**
- * @fn int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t frequence)
+ * @fn int color_handle_raw_values(h_color_sensor_t * h_color_sensor, uint32_t frequence)
  * @brief This function compute the scaling of frequence and out it in a tab waiting for mean computation
  *
  * @param h_color_sensor : color_sensor structure
  * @param uint32_t frequence : raw output value of the sensor
  * @return : 1 if calibration is processing, 0 if finished
  */
-static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t frequence);
+static int color_handle_raw_values(h_color_sensor_t * h_color_sensor, uint32_t frequence);
 
 // ----- Global Fonctions -----
 
 
 // --- fonctions de gestion du hardware ---
 
-static void colorSetOutputFreqScaling(h_color_sensor_t * h_color_sensor){
+static void color_setOutputFreqScaling(h_color_sensor_t * h_color_sensor){
 	switch(h_color_sensor->ouput_scale){
 	case 4:
 		// 100%
@@ -147,7 +147,7 @@ static void colorSetOutputFreqScaling(h_color_sensor_t * h_color_sensor){
 	}
 }
 
-static void colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color_t color){
+static void color_setPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color_t color){
 	h_color_sensor->color=color;
 	switch(color){
 	case GREEN:
@@ -177,7 +177,7 @@ static void colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor,color_senso
 	}
 }
 
-void colorSensorInit(h_color_sensor_t *h_color_sensor, color_sensor_color_t color, color_sensor_output_scale_t output_scale, color_sensor_state_t state){
+void color_sensor_init(h_color_sensor_t *h_color_sensor, color_sensor_color_t color, color_sensor_output_scale_t output_scale, color_sensor_state_t state){
 	h_color_sensor->color=color;
 	h_color_sensor->ouput_scale=output_scale;
 	h_color_sensor->sensor_state=state;
@@ -192,30 +192,30 @@ void colorSensorInit(h_color_sensor_t *h_color_sensor, color_sensor_color_t colo
 	h_color_sensor->red_transformation.red_max_freq=0;
 	h_color_sensor->red_transformation.red_ord_origin=0;
 	h_color_sensor->calib_state=WAINTING_FOR_CALIB;
-	colorSetOutputFreqScaling(h_color_sensor);
-	colorSetPhotodiodeType(h_color_sensor,color);
+	color_setOutputFreqScaling(h_color_sensor);
+	color_setPhotodiodeType(h_color_sensor,color);
 }
 
 
 // --- fonctions d'action ---
 
-uint32_t colorGetRedValue(h_color_sensor_t * h_color_sensor){
+uint32_t color_getRedValue(h_color_sensor_t * h_color_sensor){
 	printf("sensor_value : %ld\r\n",h_color_sensor->frequence);
 	return h_color_sensor->red_color;
 }
 
-uint32_t colorGetGreenValue(h_color_sensor_t * h_color_sensor){
+uint32_t color_getGreenValue(h_color_sensor_t * h_color_sensor){
 	printf("sensor_value : %ld\r\n",h_color_sensor->frequence);
 	return h_color_sensor->green_color;
 }
 
-void colorDisable(h_color_sensor_t * h_color_sensor){
+void color_disable(h_color_sensor_t * h_color_sensor){
 	GPIO_write(color_enable_GPIO_Port,color_enable_Pin, 1);
 	h_color_sensor->sensor_state=SENSOR_DISABLE;
 	timer_handle(htim2,INPUT_CAPTURE_IT,STOP,TIM_CHANNEL_1);
 }
 
-void colorEnable(h_color_sensor_t * h_color_sensor){
+void color_enable(h_color_sensor_t * h_color_sensor){
 	GPIO_write(color_enable_GPIO_Port,color_enable_Pin, 0);
 	h_color_sensor->sensor_state=SENSOR_ENABLE;
 	timer_handle(htim2,INPUT_CAPTURE_IT,START,TIM_CHANNEL_1);
@@ -224,7 +224,7 @@ void colorEnable(h_color_sensor_t * h_color_sensor){
 
 // --- fonctions de calibration ---
 
-uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor,h_calib_buffer_structure_t * h_calib_buffer_struct){
+uint32_t color_handle_calibration_sensor(h_color_sensor_t * h_color_sensor,h_calib_buffer_structure_t * h_calib_buffer_struct){
 	calibration_flag=1;
 	printf("calibration flag : %d\r\n",calibration_flag);
 	char entree[2];
@@ -233,13 +233,13 @@ uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor,h_calib_
 		//printf("entré dans while\r\n");
 		switch(h_color_sensor->calib_state){
 		case CALIB_VERT_CANETTE:
-			colorSetPhotodiodeType(h_color_sensor,GREEN);
+			color_setPhotodiodeType(h_color_sensor,GREEN);
 
 			// -- waiting for operator to put a green can in front of the sensor
 			printf("press enter when a green can is captured\r\n");
 			scanf( "%s",entree);
 			h_calib_buffer_struct->calib_value_vert_canette=0;
-			colorEnable(h_color_sensor);
+			color_enable(h_color_sensor);
 			while(h_calib_buffer_struct->calib_value_vert_canette==0){
 				//Wait for calib completed
 			}
@@ -248,12 +248,12 @@ uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor,h_calib_
 
 		case CALIB_VERT_VIDE:
 			printf("calib_vert_vide\r\n");
-			colorSetPhotodiodeType(h_color_sensor,GREEN);
+			color_setPhotodiodeType(h_color_sensor,GREEN);
 			// -- waiting for operator to put a green can in front of the sensor
 			printf("press enter when the green can is removed\r\n");
 			scanf("%s",entree);
 			h_calib_buffer_struct->calib_value_vert_vide=0;
-			colorEnable(h_color_sensor);
+			color_enable(h_color_sensor);
 			while(h_calib_buffer_struct->calib_value_vert_vide==0){
 				//Wait for calib completed...
 			}
@@ -262,13 +262,13 @@ uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor,h_calib_
 
 		case CALIB_ROUGE_CANETTE:
 			printf("calib_rouge_canette\r\n");
-			colorSetPhotodiodeType(h_color_sensor,RED);
+			color_setPhotodiodeType(h_color_sensor,RED);
 
 			// -- waiting for operator to put a green can in front of the sensor
 			printf("press enter when a red can is captured\r\n");
 			scanf("%s",entree);
 			h_calib_buffer_struct->calib_value_rouge_canette=0;
-			colorEnable(h_color_sensor);
+			color_enable(h_color_sensor);
 			while(h_calib_buffer_struct->calib_value_rouge_canette==0){
 				//Wait for calib completed...
 			}
@@ -277,13 +277,13 @@ uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor,h_calib_
 
 		case CALIB_ROUGE_VIDE:
 			printf("calib_rouge_vide\r\n");
-			colorSetPhotodiodeType(h_color_sensor,RED);
+			color_setPhotodiodeType(h_color_sensor,RED);
 
 			// -- waiting for operator to put a green can in front of the sensor
 			printf("press enter when a green can is captured\r\n");
 			scanf("%s",entree);
 			h_calib_buffer_struct->calib_value_rouge_vide=0;
-			colorEnable(h_color_sensor);
+			color_enable(h_color_sensor);
 			while(h_calib_buffer_struct->calib_value_rouge_vide==0){
 				//Wait for calib completed...
 			}
@@ -317,7 +317,7 @@ uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor,h_calib_
 
 // --- fonction de gestion du retour capteur ---
 
-void colorSensorHandleInputCapture_IT(h_color_sensor_t * h_color_sensor,TIM_TypeDef *TIM,h_calib_buffer_structure_t * h_calib_buffer_struct){
+void color_sensor_handle_input_capture_IT(h_color_sensor_t * h_color_sensor,TIM_TypeDef *TIM,h_calib_buffer_structure_t * h_calib_buffer_struct){
 	//printf("entré dans tim2 IT\r\n");
 	if(tour==0){
 		temps1=TIM->CNT;
@@ -344,19 +344,19 @@ void colorSensorHandleInputCapture_IT(h_color_sensor_t * h_color_sensor,TIM_Type
 	}*/
 
 	if((calibration_flag==1)&&(freq<FREQ_MAX_ACCEPTABLE)){
-		colorHandleCalibrationValues(h_color_sensor,freq,h_calib_buffer_struct);
+		color_handle_calibration_values(h_color_sensor,freq,h_calib_buffer_struct);
 	}
 	else if ((calibration_flag==0)&&(freq<FREQ_MAX_ACCEPTABLE)){
 		// Analyse des valeur pour prise de decision sur la couleur
-		colorHandleRawValues(h_color_sensor, freq);
+		color_handle_raw_values(h_color_sensor, freq);
 	}
 }
 
-static int colorHandleCalibrationValues(h_color_sensor_t * h_color_sensor, uint32_t frequence,h_calib_buffer_structure_t * h_calib_buffer_struct){
+static int color_handle_calibration_values(h_color_sensor_t * h_color_sensor, uint32_t frequence,h_calib_buffer_structure_t * h_calib_buffer_struct){
 	calib_tab[u]=freq;
 	u++;
 	if(u==CALIBRATION_NB_VALUES){
-		colorDisable(h_color_sensor);
+		color_disable(h_color_sensor);
 		uint32_t res=0;
 		for(int i=0;i<30;i++){
 			res=res+calib_tab[i];
@@ -393,7 +393,7 @@ static int colorHandleCalibrationValues(h_color_sensor_t * h_color_sensor, uint3
 	return 0;
 }
 
-static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t frequence){
+static int color_handle_raw_values(h_color_sensor_t * h_color_sensor, uint32_t frequence){
 	//printf("entre dans color_handle\r\n");
 	if(raw_values_compteur<((NB_MEASURE_WANTED/2)-1)){
 		//printf("raw_values_compteur<(NB_MEASURE_WANTED/2)-1\r\n");
@@ -418,9 +418,9 @@ static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t freq
 		raw_values_compteur++;
 
 		// color change
-		colorDisable(h_color_sensor);
-		colorSetPhotodiodeType(h_color_sensor,RED);
-		colorEnable(h_color_sensor);
+		color_disable(h_color_sensor);
+		color_setPhotodiodeType(h_color_sensor,RED);
+		color_enable(h_color_sensor);
 	}
 
 	else if((raw_values_compteur>((NB_MEASURE_WANTED/2)-1))&&(raw_values_compteur<NB_MEASURE_WANTED)){
@@ -438,7 +438,7 @@ static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t freq
 	else if(raw_values_compteur==NB_MEASURE_WANTED){
 		//printf("raw_value_compteur==NB_measure_wanted\r\n");
 		// Pret a faire la moyenne du tableau pour plus de fiabilité
-		colorDisable(h_color_sensor);
+		color_disable(h_color_sensor);
 		uint32_t green_mean=0;
 		uint32_t red_mean=0;
 
@@ -479,7 +479,7 @@ static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t freq
 		for(int i=0;i<NB_MEASURE_WANTED;i++){
 			printf("color_raw_values[%d] : %ld\t->\t color_scaled_value[%d] : %ld\r\n",i,color_raw_values[i],i,color_scaled_values[i]);
 		}
-		colorAnalyse(h_color_sensor,green_color_value,red_color_value);
+		color_analyse(h_color_sensor,green_color_value,red_color_value);
 		printf("waiting for button press : \r\n");
 	}
 
@@ -489,22 +489,22 @@ static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t freq
 
 // --- fonction d'analyse et de prise de décision ---
 
-static void colorAnalyse(h_color_sensor_t * h_color_sensor, color_t green, color_t red){
+static void color_analyse(h_color_sensor_t * h_color_sensor, color_t green, color_t red){
 	printf("green : %ld \r\n",green);
 	printf("red : %ld \r\n",red);
 	if(green<red){
 		printf("c'est vert\r\n");
 	}
 	else if(green==red){
-		colorDoMeasureAgain(h_color_sensor);
+		color_do_measure_again(h_color_sensor);
 	}
 	else {
 		printf("c'est rouge\r\n");
 	}
 }
 
-static void colorDoMeasureAgain(h_color_sensor_t * h_color_sensor){
-	colorEnable(h_color_sensor);
+static void color_do_measure_again(h_color_sensor_t * h_color_sensor){
+	color_enable(h_color_sensor);
 }
 
 
