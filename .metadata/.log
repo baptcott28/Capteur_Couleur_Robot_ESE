@@ -996,3 +996,38 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-12-22 13:58:36.154
 !MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.resources 4 77 2022-12-22 15:08:23.095
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2022-12-22 15:08:23.095
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2022-12-22 15:08:23.095
+!MESSAGE C:\Users\bapti\Documents\GitHub\couleur_fonctionnel\couleur_fonctionel overlaps the location of another project: 'couleur_fonctionel'
+
+!ENTRY org.eclipse.core.resources 4 77 2022-12-22 15:10:53.931
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2022-12-22 15:10:53.931
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2022-12-22 15:10:53.931
+!MESSAGE C:\Users\bapti\Documents\GitHub\couleur_fonctionnel\couleur_fonctionel overlaps the location of another project: 'couleur_fonctionel'
+
+!ENTRY org.eclipse.core.resources 4 77 2022-12-22 15:11:26.305
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2022-12-22 15:11:26.305
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2022-12-22 15:11:26.305
+!MESSAGE C:\Users\bapti\Documents\GitHub\couleur_fonctionnel\couleur_fonctionel overlaps the location of another project: 'couleur_fonctionel'
+
+!ENTRY org.eclipse.core.resources 4 77 2022-12-22 15:27:39.450
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2022-12-22 15:27:39.450
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2022-12-22 15:27:39.450
+!MESSAGE C:\Users\bapti\Documents\GitHub\couleur_fonctionnel\couleur_fonctionel overlaps the location of another project: 'couleur_fonctionel'
+
+!ENTRY org.eclipse.core.resources 4 77 2022-12-22 15:32:41.582
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2022-12-22 15:32:41.582
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2022-12-22 15:32:41.582
+!MESSAGE C:\Users\bapti\Documents\GitHub\couleur_fonctionnel\couleur_fonctionel overlaps the location of another project: 'couleur_fonctionel'
