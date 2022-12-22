@@ -95,7 +95,7 @@ static void colorDoMeasureAgain(h_color_sensor_t * h_color_sensor);
  * @param h_calib_buffer_structure : calibration structure to fill
  * @return : 1 if calibration is processing, 0 if finished
  */
-static int colorHandleCalibrationValues(h_color_sensor_t * h_color_sensor, uint32_t frequence);
+static int colorHandleCalibrationValues(h_color_sensor_t * h_color_sensor, uint32_t frequence,h_calib_buffer_structure_t * h_calib_struct);
 
 /**
  * @fn int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t frequence)
@@ -175,20 +175,13 @@ void colorSensorInit(h_color_sensor_t *h_color_sensor, color_sensor_color_t colo
 	h_color_sensor->blue_color=0;
 	h_color_sensor->green_color=0;
 	h_color_sensor->red_color=0;
-
 	h_color_sensor->green_transformation.green_coef_dir=1;
 	h_color_sensor->green_transformation.green_min_freq=1;
 	h_color_sensor->green_transformation.green_ord_origin=1;
-
 	h_color_sensor->red_transformation.red_coef_dir=1;
 	h_color_sensor->red_transformation.red_min_freq=1;
 	h_color_sensor->red_transformation.red_ord_origin=1;
-
 	h_color_sensor->calib_state=WAINTING_FOR_CALIB;
-	h_color_sensor->calib_struct.calib_value_rouge_canette=1;
-	h_color_sensor->calib_struct.calib_value_rouge_vide=1;
-	h_color_sensor->calib_struct.calib_value_vert_canette=1;
-	h_color_sensor->calib_struct.calib_value_vert_vide=1;
 	colorSetOutputFreqScaling(h_color_sensor);
 	colorSetPhotodiodeType(h_color_sensor,color);
 }
@@ -221,7 +214,7 @@ void colorEnable(h_color_sensor_t * h_color_sensor){
 
 // --- fonctions de calibration ---
 
-uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor){
+uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor,h_calib_buffer_structure_t * h_calib_buffer_struct){
 	calibration_flag=1;
 	printf("calibration flag : %d\r\n",calibration_flag);
 	char entree[2];
@@ -235,9 +228,9 @@ uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor){
 			// -- waiting for operator to put a green can in front of the sensor
 			printf("press enter when a green can is captured\r\n");
 			scanf( "%s",entree);
-			h_color_sensor->calib_struct.calib_value_vert_canette=0;
+			h_calib_buffer_struct->calib_value_vert_canette=0;
 			colorEnable(h_color_sensor);
-			while(h_color_sensor->calib_struct.calib_value_vert_canette==0){
+			while(h_calib_buffer_struct->calib_value_vert_canette==0){
 				//Wait for calib completed
 			}
 			h_color_sensor->calib_state=CALIB_VERT_VIDE;
@@ -249,9 +242,9 @@ uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor){
 			// -- waiting for operator to put a green can in front of the sensor
 			printf("press enter when the green can is removed\r\n");
 			scanf("%s",entree);
-			h_color_sensor->calib_struct.calib_value_vert_vide=0;
+			h_calib_buffer_struct->calib_value_vert_vide=0;
 			colorEnable(h_color_sensor);
-			while(h_color_sensor->calib_struct.calib_value_vert_vide==0){
+			while(h_calib_buffer_struct->calib_value_vert_vide==0){
 				//Wait for calib completed...
 			}
 			h_color_sensor->calib_state=CALIB_ROUGE_CANETTE;
@@ -264,9 +257,9 @@ uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor){
 			// -- waiting for operator to put a green can in front of the sensor
 			printf("press enter when a red can is captured\r\n");
 			scanf("%s",entree);
-			h_color_sensor->calib_struct.calib_value_rouge_canette=0;
+			h_calib_buffer_struct->calib_value_rouge_canette=0;
 			colorEnable(h_color_sensor);
-			while(h_color_sensor->calib_struct.calib_value_rouge_canette==0){
+			while(h_calib_buffer_struct->calib_value_rouge_canette==0){
 				//Wait for calib completed...
 			}
 			h_color_sensor->calib_state=CALIB_ROUGE_VIDE;
@@ -279,9 +272,9 @@ uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor){
 			// -- waiting for operator to put a green can in front of the sensor
 			printf("press enter when a green can is captured\r\n");
 			scanf("%s",entree);
-			h_color_sensor->calib_struct.calib_value_rouge_vide=0;
+			h_calib_buffer_struct->calib_value_rouge_vide=0;
 			colorEnable(h_color_sensor);
-			while(h_color_sensor->calib_struct.calib_value_rouge_vide==0){
+			while(h_calib_buffer_struct->calib_value_rouge_vide==0){
 				//Wait for calib completed...
 			}
 			h_color_sensor->calib_state=CALIB_DONE;
@@ -291,18 +284,18 @@ uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor){
 			break;
 		}
 	}
-	printf("calib_verte_canette : %u\r\n",h_color_sensor->calib_struct.calib_value_vert_canette);
-	printf("calib_verte_vide : %u\r\n\n",h_color_sensor->calib_struct.calib_value_vert_vide);
-	printf("calib_rouge_canette : %u\r\n",h_color_sensor->calib_struct.calib_value_rouge_canette);
-	printf("calib_rouge_vide : %u\r\n\n",h_color_sensor->calib_struct.calib_value_rouge_vide);
+	printf("calib_verte_canette : %u\r\n",h_calib_buffer_struct->calib_value_vert_canette);
+	printf("calib_verte_vide : %u\r\n\n",h_calib_buffer_struct->calib_value_vert_vide);
+	printf("calib_rouge_canette : %u\r\n",h_calib_buffer_struct->calib_value_rouge_canette);
+	printf("calib_rouge_vide : %u\r\n\n",h_calib_buffer_struct->calib_value_rouge_vide);
 
 	//computation of the transformation coefficient
-	h_color_sensor->green_transformation.green_coef_dir=(uint16_t)((ECHELLE_VAL_HAUTE-ECHELLE_VAL_BASSE)/((h_color_sensor->calib_struct.calib_value_vert_vide)-(h_color_sensor->calib_struct.calib_value_vert_canette)));
-	h_color_sensor->green_transformation.green_ord_origin=(uint16_t)(ECHELLE_VAL_HAUTE-((h_color_sensor->green_transformation.green_coef_dir)*(h_color_sensor->calib_struct.calib_value_vert_vide)));
+	h_color_sensor->green_transformation.green_coef_dir=(uint16_t)((ECHELLE_VAL_HAUTE-ECHELLE_VAL_BASSE)/((h_calib_buffer_struct->calib_value_vert_vide)-(h_calib_buffer_struct->calib_value_vert_canette)));
+	h_color_sensor->green_transformation.green_ord_origin=(uint16_t)(ECHELLE_VAL_HAUTE-((h_color_sensor->green_transformation.green_coef_dir)*(h_calib_buffer_struct->calib_value_vert_vide)));
 	printf("coef dir vert : %u\r\nord origin vert : %u\r\nmin freq vert : %u\r\n\n",h_color_sensor->green_transformation.green_coef_dir,h_color_sensor->green_transformation.green_ord_origin,h_color_sensor->green_transformation.green_min_freq);
 
-	h_color_sensor->red_transformation.red_coef_dir=(uint16_t)((ECHELLE_VAL_HAUTE-ECHELLE_VAL_BASSE)/((h_color_sensor->calib_struct.calib_value_rouge_vide)-(h_color_sensor->calib_struct.calib_value_rouge_canette)));
-	h_color_sensor->red_transformation.red_ord_origin=(uint16_t)(ECHELLE_VAL_HAUTE-((h_color_sensor->red_transformation.red_coef_dir)*(h_color_sensor->calib_struct.calib_value_rouge_vide)));
+	h_color_sensor->red_transformation.red_coef_dir=(uint16_t)((ECHELLE_VAL_HAUTE-ECHELLE_VAL_BASSE)/((h_calib_buffer_struct->calib_value_rouge_vide)-(h_calib_buffer_struct->calib_value_rouge_canette)));
+	h_color_sensor->red_transformation.red_ord_origin=(uint16_t)(ECHELLE_VAL_HAUTE-((h_color_sensor->red_transformation.red_coef_dir)*(h_calib_buffer_struct->calib_value_rouge_vide)));
 	printf("coef dir rouge : %u\r\nord origin rouge : %u\r\nmin freq rouge : %u\r\n\n",h_color_sensor->red_transformation.red_coef_dir,h_color_sensor->red_transformation.red_ord_origin,h_color_sensor->red_transformation.red_min_freq);
 
 
@@ -314,7 +307,7 @@ uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor){
 
 // --- fonction de gestion du retour capteur ---
 
-void colorSensorHandleInputCapture_IT(h_color_sensor_t * h_color_sensor,TIM_TypeDef *TIM){
+void colorSensorHandleInputCapture_IT(h_color_sensor_t * h_color_sensor,TIM_TypeDef *TIM,h_calib_buffer_structure_t * h_calib_buffer_struct){
 	//printf("entré dans tim2 IT\r\n");
 	if(tour==0){
 		temps1=TIM->CNT;
@@ -341,7 +334,7 @@ void colorSensorHandleInputCapture_IT(h_color_sensor_t * h_color_sensor,TIM_Type
 	}*/
 
 	if((calibration_flag==1)&&(freq<FREQ_MAX_ACCEPTABLE)){
-		colorHandleCalibrationValues(h_color_sensor,freq);
+		colorHandleCalibrationValues(h_color_sensor,freq,h_calib_buffer_struct);
 	}
 	else if ((calibration_flag==0)&&(freq<FREQ_MAX_ACCEPTABLE)){
 		// Analyse des valeur pour prise de decision sur la couleur
@@ -349,7 +342,7 @@ void colorSensorHandleInputCapture_IT(h_color_sensor_t * h_color_sensor,TIM_Type
 	}
 }
 
-static int colorHandleCalibrationValues(h_color_sensor_t * h_color_sensor, uint32_t frequence){
+static int colorHandleCalibrationValues(h_color_sensor_t * h_color_sensor, uint32_t frequence,h_calib_buffer_structure_t * h_calib_buffer_struct){
 	calib_tab[u]=freq;
 	u++;
 	if(u==CALIBRATION_NB_VALUES){
@@ -361,26 +354,26 @@ static int colorHandleCalibrationValues(h_color_sensor_t * h_color_sensor, uint3
 		}
 		switch(h_color_sensor->calib_state){
 		case CALIB_VERT_CANETTE:
-			h_color_sensor->calib_struct.calib_value_vert_canette=(uint16_t)(res/CALIBRATION_NB_VALUES);
-			h_color_sensor->green_transformation.green_min_freq=h_color_sensor->calib_struct.calib_value_vert_canette;
+			h_calib_buffer_struct->calib_value_vert_canette=(uint16_t)(res/CALIBRATION_NB_VALUES);
+			h_color_sensor->green_transformation.green_min_freq=h_calib_buffer_struct->calib_value_vert_canette;
 			printf("Struct calib : champ vert_canette remplie\r\n");
-			printf("Calib_value_vert_canette : %u\r\n\n",h_color_sensor->calib_struct.calib_value_vert_canette);
+			printf("Calib_value_vert_canette : %u\r\n\n",h_calib_buffer_struct->calib_value_vert_canette);
 			break;
 		case CALIB_VERT_VIDE:
-			h_color_sensor->calib_struct.calib_value_vert_vide=(uint16_t)(res/CALIBRATION_NB_VALUES);
+			h_calib_buffer_struct->calib_value_vert_vide=(uint16_t)(res/CALIBRATION_NB_VALUES);
 			printf("Struct calib : champ vert_vide remplie\r\n");
-			printf("Calib_value_vert_vide : %u\r\n\n",h_color_sensor->calib_struct.calib_value_vert_vide);
+			printf("Calib_value_vert_vide : %u\r\n\n",h_calib_buffer_struct->calib_value_vert_vide);
 			break;
 		case CALIB_ROUGE_CANETTE:
-			h_color_sensor->calib_struct.calib_value_rouge_canette=(uint16_t)(res/CALIBRATION_NB_VALUES);
-			h_color_sensor->red_transformation.red_min_freq=h_color_sensor->calib_struct.calib_value_rouge_canette;
+			h_calib_buffer_struct->calib_value_rouge_canette=(uint16_t)(res/CALIBRATION_NB_VALUES);
+			h_color_sensor->red_transformation.red_min_freq=h_calib_buffer_struct->calib_value_rouge_canette;
 			printf("Struct calib : champ rouge_canette remplie\r\n");
-			printf("Calib_value_rouge_canette : %u\r\n\n",h_color_sensor->calib_struct.calib_value_rouge_canette);
+			printf("Calib_value_rouge_canette : %u\r\n\n",h_calib_buffer_struct->calib_value_rouge_canette);
 			break;
 		case CALIB_ROUGE_VIDE:
-			h_color_sensor->calib_struct.calib_value_rouge_vide=(uint16_t)(res/CALIBRATION_NB_VALUES);
+			h_calib_buffer_struct->calib_value_rouge_vide=(uint16_t)(res/CALIBRATION_NB_VALUES);
 			printf("Struct calib : champ rouge_vide remplie\r\n");
-			printf("Calib_value_vert_canette : %u\r\n",h_color_sensor->calib_struct.calib_value_rouge_vide);
+			printf("Calib_value_vert_canette : %u\r\n",h_calib_buffer_struct->calib_value_rouge_vide);
 			break;
 		default:
 			printf("bug dans la calibration\r\n\n");
@@ -508,7 +501,6 @@ static void colorDoMeasureAgain(h_color_sensor_t * h_color_sensor){
 
 
 // --- FreeRTOS ---
-
 
 
 

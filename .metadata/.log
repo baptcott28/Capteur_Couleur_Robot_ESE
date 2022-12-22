@@ -1052,3 +1052,15 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 !MESSAGE OK
 !SUBENTRY 1 org.eclipse.core.resources 4 77 2022-12-22 15:54:20.538
 !MESSAGE C:\Users\bapti\Documents\GitHub\couleur_fonctionnel\couleur_fonctionel overlaps the location of another project: 'couleur_fonctionel'
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2022-12-22 16:30:05.184
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 9 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2022-12-22 16:30:05.184
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2022-12-22 16:30:05.184
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 9 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2022-12-22 16:30:05.184
+!MESSAGE Existing sessions are:

@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  000201e0  2**0
                   CONTENTS, READONLY
- 12 .debug_info   000199fb  00000000  00000000  00020210  2**0
+ 12 .debug_info   000199b9  00000000  00000000  00020210  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00003777  00000000  00000000  00039c0b  2**0
+ 13 .debug_abbrev 00003777  00000000  00000000  00039bc9  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00001330  00000000  00000000  0003d388  2**3
+ 14 .debug_aranges 00001330  00000000  00000000  0003d340  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 000011b8  00000000  00000000  0003e6b8  2**3
+ 15 .debug_ranges 000011b8  00000000  00000000  0003e670  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  0002961d  00000000  00000000  0003f870  2**0
+ 16 .debug_macro  0002961d  00000000  00000000  0003f828  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00017877  00000000  00000000  00068e8d  2**0
+ 17 .debug_line   00017883  00000000  00000000  00068e45  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000faf57  00000000  00000000  00080704  2**0
+ 18 .debug_str    000faf2d  00000000  00000000  000806c8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  0017b65b  2**0
+ 19 .comment      00000050  00000000  00000000  0017b5f5  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00006300  00000000  00000000  0017b6ac  2**2
+ 20 .debug_frame  00006300  00000000  00000000  0017b648  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1258,12 +1258,12 @@ static void colorSetOutputFreqScaling(h_color_sensor_t * h_color_sensor){
  8000f54:	2201      	movs	r2, #1
  8000f56:	2140      	movs	r1, #64	; 0x40
  8000f58:	4816      	ldr	r0, [pc, #88]	; (8000fb4 <colorSetOutputFreqScaling+0x88>)
- 8000f5a:	f000 fd42 	bl	80019e2 <GPIO_write>
+ 8000f5a:	f000 fd48 	bl	80019ee <GPIO_write>
 		GPIO_write(color_S1_GPIO_Port,color_S1_Pin,1);
  8000f5e:	2201      	movs	r2, #1
  8000f60:	2140      	movs	r1, #64	; 0x40
  8000f62:	4815      	ldr	r0, [pc, #84]	; (8000fb8 <colorSetOutputFreqScaling+0x8c>)
- 8000f64:	f000 fd3d 	bl	80019e2 <GPIO_write>
+ 8000f64:	f000 fd43 	bl	80019ee <GPIO_write>
 		break;
  8000f68:	e020      	b.n	8000fac <colorSetOutputFreqScaling+0x80>
 	case 3:
@@ -1272,12 +1272,12 @@ static void colorSetOutputFreqScaling(h_color_sensor_t * h_color_sensor){
  8000f6a:	2201      	movs	r2, #1
  8000f6c:	2140      	movs	r1, #64	; 0x40
  8000f6e:	4811      	ldr	r0, [pc, #68]	; (8000fb4 <colorSetOutputFreqScaling+0x88>)
- 8000f70:	f000 fd37 	bl	80019e2 <GPIO_write>
+ 8000f70:	f000 fd3d 	bl	80019ee <GPIO_write>
 		GPIO_write(color_S1_GPIO_Port,color_S1_Pin,0);
  8000f74:	2200      	movs	r2, #0
  8000f76:	2140      	movs	r1, #64	; 0x40
  8000f78:	480f      	ldr	r0, [pc, #60]	; (8000fb8 <colorSetOutputFreqScaling+0x8c>)
- 8000f7a:	f000 fd32 	bl	80019e2 <GPIO_write>
+ 8000f7a:	f000 fd38 	bl	80019ee <GPIO_write>
 		break;
  8000f7e:	e015      	b.n	8000fac <colorSetOutputFreqScaling+0x80>
 	case 2:
@@ -1286,12 +1286,12 @@ static void colorSetOutputFreqScaling(h_color_sensor_t * h_color_sensor){
  8000f80:	2200      	movs	r2, #0
  8000f82:	2140      	movs	r1, #64	; 0x40
  8000f84:	480b      	ldr	r0, [pc, #44]	; (8000fb4 <colorSetOutputFreqScaling+0x88>)
- 8000f86:	f000 fd2c 	bl	80019e2 <GPIO_write>
+ 8000f86:	f000 fd32 	bl	80019ee <GPIO_write>
 		GPIO_write(color_S1_GPIO_Port,color_S1_Pin,1);
  8000f8a:	2201      	movs	r2, #1
  8000f8c:	2140      	movs	r1, #64	; 0x40
  8000f8e:	480a      	ldr	r0, [pc, #40]	; (8000fb8 <colorSetOutputFreqScaling+0x8c>)
- 8000f90:	f000 fd27 	bl	80019e2 <GPIO_write>
+ 8000f90:	f000 fd2d 	bl	80019ee <GPIO_write>
 		break;
  8000f94:	e00a      	b.n	8000fac <colorSetOutputFreqScaling+0x80>
 	case 1:
@@ -1300,12 +1300,12 @@ static void colorSetOutputFreqScaling(h_color_sensor_t * h_color_sensor){
  8000f96:	2200      	movs	r2, #0
  8000f98:	2140      	movs	r1, #64	; 0x40
  8000f9a:	4806      	ldr	r0, [pc, #24]	; (8000fb4 <colorSetOutputFreqScaling+0x88>)
- 8000f9c:	f000 fd21 	bl	80019e2 <GPIO_write>
+ 8000f9c:	f000 fd27 	bl	80019ee <GPIO_write>
 		GPIO_write(color_S1_GPIO_Port,color_S1_Pin,0);
  8000fa0:	2200      	movs	r2, #0
  8000fa2:	2140      	movs	r1, #64	; 0x40
  8000fa4:	4804      	ldr	r0, [pc, #16]	; (8000fb8 <colorSetOutputFreqScaling+0x8c>)
- 8000fa6:	f000 fd1c 	bl	80019e2 <GPIO_write>
+ 8000fa6:	f000 fd22 	bl	80019ee <GPIO_write>
 		break;
  8000faa:	bf00      	nop
 	}
@@ -1347,12 +1347,12 @@ void colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color
  8000fec:	2201      	movs	r2, #1
  8000fee:	2110      	movs	r1, #16
  8000ff0:	481c      	ldr	r0, [pc, #112]	; (8001064 <colorSetPhotodiodeType+0xa8>)
- 8000ff2:	f000 fcf6 	bl	80019e2 <GPIO_write>
+ 8000ff2:	f000 fcfc 	bl	80019ee <GPIO_write>
 		GPIO_write(color_S3_GPIO_Port,color_S3_Pin,1);
  8000ff6:	2201      	movs	r2, #1
  8000ff8:	2180      	movs	r1, #128	; 0x80
  8000ffa:	481b      	ldr	r0, [pc, #108]	; (8001068 <colorSetPhotodiodeType+0xac>)
- 8000ffc:	f000 fcf1 	bl	80019e2 <GPIO_write>
+ 8000ffc:	f000 fcf7 	bl	80019ee <GPIO_write>
 		printf("\n--- photosensor set vert ---\r\n\n");
  8001000:	481a      	ldr	r0, [pc, #104]	; (800106c <colorSetPhotodiodeType+0xb0>)
  8001002:	f007 f841 	bl	8008088 <puts>
@@ -1364,12 +1364,12 @@ void colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color
  8001008:	2201      	movs	r2, #1
  800100a:	2110      	movs	r1, #16
  800100c:	4815      	ldr	r0, [pc, #84]	; (8001064 <colorSetPhotodiodeType+0xa8>)
- 800100e:	f000 fce8 	bl	80019e2 <GPIO_write>
+ 800100e:	f000 fcee 	bl	80019ee <GPIO_write>
 		GPIO_write(color_S3_GPIO_Port,color_S3_Pin,0);
  8001012:	2200      	movs	r2, #0
  8001014:	2180      	movs	r1, #128	; 0x80
  8001016:	4814      	ldr	r0, [pc, #80]	; (8001068 <colorSetPhotodiodeType+0xac>)
- 8001018:	f000 fce3 	bl	80019e2 <GPIO_write>
+ 8001018:	f000 fce9 	bl	80019ee <GPIO_write>
 		printf("\n--- photosensor set clear ---\r\n\n");
  800101c:	4814      	ldr	r0, [pc, #80]	; (8001070 <colorSetPhotodiodeType+0xb4>)
  800101e:	f007 f833 	bl	8008088 <puts>
@@ -1381,12 +1381,12 @@ void colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color
  8001024:	2200      	movs	r2, #0
  8001026:	2110      	movs	r1, #16
  8001028:	480e      	ldr	r0, [pc, #56]	; (8001064 <colorSetPhotodiodeType+0xa8>)
- 800102a:	f000 fcda 	bl	80019e2 <GPIO_write>
+ 800102a:	f000 fce0 	bl	80019ee <GPIO_write>
 		GPIO_write(color_S3_GPIO_Port,color_S3_Pin,1);
  800102e:	2201      	movs	r2, #1
  8001030:	2180      	movs	r1, #128	; 0x80
  8001032:	480d      	ldr	r0, [pc, #52]	; (8001068 <colorSetPhotodiodeType+0xac>)
- 8001034:	f000 fcd5 	bl	80019e2 <GPIO_write>
+ 8001034:	f000 fcdb 	bl	80019ee <GPIO_write>
 		printf("\n--- photosensor set blue ---\r\n\n");
  8001038:	480e      	ldr	r0, [pc, #56]	; (8001074 <colorSetPhotodiodeType+0xb8>)
  800103a:	f007 f825 	bl	8008088 <puts>
@@ -1398,12 +1398,12 @@ void colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color
  8001040:	2200      	movs	r2, #0
  8001042:	2110      	movs	r1, #16
  8001044:	4807      	ldr	r0, [pc, #28]	; (8001064 <colorSetPhotodiodeType+0xa8>)
- 8001046:	f000 fccc 	bl	80019e2 <GPIO_write>
+ 8001046:	f000 fcd2 	bl	80019ee <GPIO_write>
 		GPIO_write(color_S3_GPIO_Port,color_S3_Pin,0);
  800104a:	2200      	movs	r2, #0
  800104c:	2180      	movs	r1, #128	; 0x80
  800104e:	4806      	ldr	r0, [pc, #24]	; (8001068 <colorSetPhotodiodeType+0xac>)
- 8001050:	f000 fcc7 	bl	80019e2 <GPIO_write>
+ 8001050:	f000 fccd 	bl	80019ee <GPIO_write>
 		printf("\n--- photosensor set rouge ---\r\n\n");
  8001054:	4808      	ldr	r0, [pc, #32]	; (8001078 <colorSetPhotodiodeType+0xbc>)
  8001056:	f007 f817 	bl	8008088 <puts>
@@ -1466,6 +1466,7 @@ void colorSensorInit(h_color_sensor_t *h_color_sensor, color_sensor_color_t colo
  80010ba:	687b      	ldr	r3, [r7, #4]
  80010bc:	2200      	movs	r2, #0
  80010be:	60da      	str	r2, [r3, #12]
+
 	h_color_sensor->green_transformation.green_coef_dir=1;
  80010c0:	687b      	ldr	r3, [r7, #4]
  80010c2:	2201      	movs	r2, #1
@@ -1478,6 +1479,7 @@ void colorSensorInit(h_color_sensor_t *h_color_sensor, color_sensor_color_t colo
  80010cc:	687b      	ldr	r3, [r7, #4]
  80010ce:	2201      	movs	r2, #1
  80010d0:	831a      	strh	r2, [r3, #24]
+
 	h_color_sensor->red_transformation.red_coef_dir=1;
  80010d2:	687b      	ldr	r3, [r7, #4]
  80010d4:	2201      	movs	r2, #1
@@ -1490,2431 +1492,2438 @@ void colorSensorInit(h_color_sensor_t *h_color_sensor, color_sensor_color_t colo
  80010de:	687b      	ldr	r3, [r7, #4]
  80010e0:	2201      	movs	r2, #1
  80010e2:	83da      	strh	r2, [r3, #30]
+
 	h_color_sensor->calib_state=WAINTING_FOR_CALIB;
  80010e4:	687b      	ldr	r3, [r7, #4]
  80010e6:	2200      	movs	r2, #0
  80010e8:	751a      	strb	r2, [r3, #20]
+	h_color_sensor->calib_struct.calib_value_rouge_canette=1;
+ 80010ea:	687b      	ldr	r3, [r7, #4]
+ 80010ec:	2201      	movs	r2, #1
+ 80010ee:	84da      	strh	r2, [r3, #38]	; 0x26
+	h_color_sensor->calib_struct.calib_value_rouge_vide=1;
+ 80010f0:	687b      	ldr	r3, [r7, #4]
+ 80010f2:	2201      	movs	r2, #1
+ 80010f4:	851a      	strh	r2, [r3, #40]	; 0x28
+	h_color_sensor->calib_struct.calib_value_vert_canette=1;
+ 80010f6:	687b      	ldr	r3, [r7, #4]
+ 80010f8:	2201      	movs	r2, #1
+ 80010fa:	845a      	strh	r2, [r3, #34]	; 0x22
+	h_color_sensor->calib_struct.calib_value_vert_vide=1;
+ 80010fc:	687b      	ldr	r3, [r7, #4]
+ 80010fe:	2201      	movs	r2, #1
+ 8001100:	849a      	strh	r2, [r3, #36]	; 0x24
 	colorSetOutputFreqScaling(h_color_sensor);
- 80010ea:	6878      	ldr	r0, [r7, #4]
- 80010ec:	f7ff ff1e 	bl	8000f2c <colorSetOutputFreqScaling>
+ 8001102:	6878      	ldr	r0, [r7, #4]
+ 8001104:	f7ff ff12 	bl	8000f2c <colorSetOutputFreqScaling>
 	colorSetPhotodiodeType(h_color_sensor,color);
- 80010f0:	78fb      	ldrb	r3, [r7, #3]
- 80010f2:	4619      	mov	r1, r3
- 80010f4:	6878      	ldr	r0, [r7, #4]
- 80010f6:	f7ff ff61 	bl	8000fbc <colorSetPhotodiodeType>
+ 8001108:	78fb      	ldrb	r3, [r7, #3]
+ 800110a:	4619      	mov	r1, r3
+ 800110c:	6878      	ldr	r0, [r7, #4]
+ 800110e:	f7ff ff55 	bl	8000fbc <colorSetPhotodiodeType>
 }
- 80010fa:	bf00      	nop
- 80010fc:	3708      	adds	r7, #8
- 80010fe:	46bd      	mov	sp, r7
- 8001100:	bd80      	pop	{r7, pc}
+ 8001112:	bf00      	nop
+ 8001114:	3708      	adds	r7, #8
+ 8001116:	46bd      	mov	sp, r7
+ 8001118:	bd80      	pop	{r7, pc}
 	...
 
-08001104 <colorDisable>:
+0800111c <colorDisable>:
 uint32_t colorGetGreenValue(h_color_sensor_t * h_color_sensor){
 	printf("sensor_value : %ld\r\n",h_color_sensor->frequence);
 	return h_color_sensor->green_color;
 }
 
 void colorDisable(h_color_sensor_t * h_color_sensor){
- 8001104:	b5f0      	push	{r4, r5, r6, r7, lr}
- 8001106:	b095      	sub	sp, #84	; 0x54
- 8001108:	af12      	add	r7, sp, #72	; 0x48
- 800110a:	6078      	str	r0, [r7, #4]
+ 800111c:	b5f0      	push	{r4, r5, r6, r7, lr}
+ 800111e:	b095      	sub	sp, #84	; 0x54
+ 8001120:	af12      	add	r7, sp, #72	; 0x48
+ 8001122:	6078      	str	r0, [r7, #4]
 	GPIO_write(color_enable_GPIO_Port,color_enable_Pin, 1);
- 800110c:	2201      	movs	r2, #1
- 800110e:	2180      	movs	r1, #128	; 0x80
- 8001110:	4810      	ldr	r0, [pc, #64]	; (8001154 <colorDisable+0x50>)
- 8001112:	f000 fc66 	bl	80019e2 <GPIO_write>
+ 8001124:	2201      	movs	r2, #1
+ 8001126:	2180      	movs	r1, #128	; 0x80
+ 8001128:	4810      	ldr	r0, [pc, #64]	; (800116c <colorDisable+0x50>)
+ 800112a:	f000 fc60 	bl	80019ee <GPIO_write>
 	h_color_sensor->sensor_state=SENSOR_DISABLE;
- 8001116:	687b      	ldr	r3, [r7, #4]
- 8001118:	2200      	movs	r2, #0
- 800111a:	709a      	strb	r2, [r3, #2]
+ 800112e:	687b      	ldr	r3, [r7, #4]
+ 8001130:	2200      	movs	r2, #0
+ 8001132:	709a      	strb	r2, [r3, #2]
 	timer_handle(htim2,INPUT_CAPTURE_IT,STOP,TIM_CHANNEL_1);
- 800111c:	4e0e      	ldr	r6, [pc, #56]	; (8001158 <colorDisable+0x54>)
- 800111e:	2300      	movs	r3, #0
- 8001120:	9311      	str	r3, [sp, #68]	; 0x44
- 8001122:	2300      	movs	r3, #0
- 8001124:	9310      	str	r3, [sp, #64]	; 0x40
- 8001126:	2301      	movs	r3, #1
- 8001128:	930f      	str	r3, [sp, #60]	; 0x3c
- 800112a:	466d      	mov	r5, sp
- 800112c:	f106 0410 	add.w	r4, r6, #16
- 8001130:	cc0f      	ldmia	r4!, {r0, r1, r2, r3}
- 8001132:	c50f      	stmia	r5!, {r0, r1, r2, r3}
- 8001134:	cc0f      	ldmia	r4!, {r0, r1, r2, r3}
- 8001136:	c50f      	stmia	r5!, {r0, r1, r2, r3}
- 8001138:	cc0f      	ldmia	r4!, {r0, r1, r2, r3}
- 800113a:	c50f      	stmia	r5!, {r0, r1, r2, r3}
- 800113c:	e894 0007 	ldmia.w	r4, {r0, r1, r2}
- 8001140:	e885 0007 	stmia.w	r5, {r0, r1, r2}
- 8001144:	e896 000f 	ldmia.w	r6, {r0, r1, r2, r3}
- 8001148:	f000 fbd9 	bl	80018fe <timer_handle>
+ 8001134:	4e0e      	ldr	r6, [pc, #56]	; (8001170 <colorDisable+0x54>)
+ 8001136:	2300      	movs	r3, #0
+ 8001138:	9311      	str	r3, [sp, #68]	; 0x44
+ 800113a:	2300      	movs	r3, #0
+ 800113c:	9310      	str	r3, [sp, #64]	; 0x40
+ 800113e:	2301      	movs	r3, #1
+ 8001140:	930f      	str	r3, [sp, #60]	; 0x3c
+ 8001142:	466d      	mov	r5, sp
+ 8001144:	f106 0410 	add.w	r4, r6, #16
+ 8001148:	cc0f      	ldmia	r4!, {r0, r1, r2, r3}
+ 800114a:	c50f      	stmia	r5!, {r0, r1, r2, r3}
+ 800114c:	cc0f      	ldmia	r4!, {r0, r1, r2, r3}
+ 800114e:	c50f      	stmia	r5!, {r0, r1, r2, r3}
+ 8001150:	cc0f      	ldmia	r4!, {r0, r1, r2, r3}
+ 8001152:	c50f      	stmia	r5!, {r0, r1, r2, r3}
+ 8001154:	e894 0007 	ldmia.w	r4, {r0, r1, r2}
+ 8001158:	e885 0007 	stmia.w	r5, {r0, r1, r2}
+ 800115c:	e896 000f 	ldmia.w	r6, {r0, r1, r2, r3}
+ 8001160:	f000 fbd3 	bl	800190a <timer_handle>
 }
- 800114c:	bf00      	nop
- 800114e:	370c      	adds	r7, #12
- 8001150:	46bd      	mov	sp, r7
- 8001152:	bdf0      	pop	{r4, r5, r6, r7, pc}
- 8001154:	40020800 	.word	0x40020800
- 8001158:	2000068c 	.word	0x2000068c
+ 8001164:	bf00      	nop
+ 8001166:	370c      	adds	r7, #12
+ 8001168:	46bd      	mov	sp, r7
+ 800116a:	bdf0      	pop	{r4, r5, r6, r7, pc}
+ 800116c:	40020800 	.word	0x40020800
+ 8001170:	2000068c 	.word	0x2000068c
 
-0800115c <colorEnable>:
+08001174 <colorEnable>:
 
 void colorEnable(h_color_sensor_t * h_color_sensor){
- 800115c:	b5f0      	push	{r4, r5, r6, r7, lr}
- 800115e:	b095      	sub	sp, #84	; 0x54
- 8001160:	af12      	add	r7, sp, #72	; 0x48
- 8001162:	6078      	str	r0, [r7, #4]
+ 8001174:	b5f0      	push	{r4, r5, r6, r7, lr}
+ 8001176:	b095      	sub	sp, #84	; 0x54
+ 8001178:	af12      	add	r7, sp, #72	; 0x48
+ 800117a:	6078      	str	r0, [r7, #4]
 	GPIO_write(color_enable_GPIO_Port,color_enable_Pin, 0);
- 8001164:	2200      	movs	r2, #0
- 8001166:	2180      	movs	r1, #128	; 0x80
- 8001168:	4810      	ldr	r0, [pc, #64]	; (80011ac <colorEnable+0x50>)
- 800116a:	f000 fc3a 	bl	80019e2 <GPIO_write>
+ 800117c:	2200      	movs	r2, #0
+ 800117e:	2180      	movs	r1, #128	; 0x80
+ 8001180:	4810      	ldr	r0, [pc, #64]	; (80011c4 <colorEnable+0x50>)
+ 8001182:	f000 fc34 	bl	80019ee <GPIO_write>
 	h_color_sensor->sensor_state=SENSOR_ENABLE;
- 800116e:	687b      	ldr	r3, [r7, #4]
- 8001170:	2201      	movs	r2, #1
- 8001172:	709a      	strb	r2, [r3, #2]
+ 8001186:	687b      	ldr	r3, [r7, #4]
+ 8001188:	2201      	movs	r2, #1
+ 800118a:	709a      	strb	r2, [r3, #2]
 	timer_handle(htim2,INPUT_CAPTURE_IT,START,TIM_CHANNEL_1);
- 8001174:	4e0e      	ldr	r6, [pc, #56]	; (80011b0 <colorEnable+0x54>)
- 8001176:	2300      	movs	r3, #0
- 8001178:	9311      	str	r3, [sp, #68]	; 0x44
- 800117a:	2301      	movs	r3, #1
- 800117c:	9310      	str	r3, [sp, #64]	; 0x40
- 800117e:	2301      	movs	r3, #1
- 8001180:	930f      	str	r3, [sp, #60]	; 0x3c
- 8001182:	466d      	mov	r5, sp
- 8001184:	f106 0410 	add.w	r4, r6, #16
- 8001188:	cc0f      	ldmia	r4!, {r0, r1, r2, r3}
- 800118a:	c50f      	stmia	r5!, {r0, r1, r2, r3}
- 800118c:	cc0f      	ldmia	r4!, {r0, r1, r2, r3}
- 800118e:	c50f      	stmia	r5!, {r0, r1, r2, r3}
- 8001190:	cc0f      	ldmia	r4!, {r0, r1, r2, r3}
- 8001192:	c50f      	stmia	r5!, {r0, r1, r2, r3}
- 8001194:	e894 0007 	ldmia.w	r4, {r0, r1, r2}
- 8001198:	e885 0007 	stmia.w	r5, {r0, r1, r2}
- 800119c:	e896 000f 	ldmia.w	r6, {r0, r1, r2, r3}
- 80011a0:	f000 fbad 	bl	80018fe <timer_handle>
+ 800118c:	4e0e      	ldr	r6, [pc, #56]	; (80011c8 <colorEnable+0x54>)
+ 800118e:	2300      	movs	r3, #0
+ 8001190:	9311      	str	r3, [sp, #68]	; 0x44
+ 8001192:	2301      	movs	r3, #1
+ 8001194:	9310      	str	r3, [sp, #64]	; 0x40
+ 8001196:	2301      	movs	r3, #1
+ 8001198:	930f      	str	r3, [sp, #60]	; 0x3c
+ 800119a:	466d      	mov	r5, sp
+ 800119c:	f106 0410 	add.w	r4, r6, #16
+ 80011a0:	cc0f      	ldmia	r4!, {r0, r1, r2, r3}
+ 80011a2:	c50f      	stmia	r5!, {r0, r1, r2, r3}
+ 80011a4:	cc0f      	ldmia	r4!, {r0, r1, r2, r3}
+ 80011a6:	c50f      	stmia	r5!, {r0, r1, r2, r3}
+ 80011a8:	cc0f      	ldmia	r4!, {r0, r1, r2, r3}
+ 80011aa:	c50f      	stmia	r5!, {r0, r1, r2, r3}
+ 80011ac:	e894 0007 	ldmia.w	r4, {r0, r1, r2}
+ 80011b0:	e885 0007 	stmia.w	r5, {r0, r1, r2}
+ 80011b4:	e896 000f 	ldmia.w	r6, {r0, r1, r2, r3}
+ 80011b8:	f000 fba7 	bl	800190a <timer_handle>
 }
- 80011a4:	bf00      	nop
- 80011a6:	370c      	adds	r7, #12
- 80011a8:	46bd      	mov	sp, r7
- 80011aa:	bdf0      	pop	{r4, r5, r6, r7, pc}
- 80011ac:	40020800 	.word	0x40020800
- 80011b0:	2000068c 	.word	0x2000068c
+ 80011bc:	bf00      	nop
+ 80011be:	370c      	adds	r7, #12
+ 80011c0:	46bd      	mov	sp, r7
+ 80011c2:	bdf0      	pop	{r4, r5, r6, r7, pc}
+ 80011c4:	40020800 	.word	0x40020800
+ 80011c8:	2000068c 	.word	0x2000068c
 
-080011b4 <colorHandleCalibrationSensor>:
+080011cc <colorHandleCalibrationSensor>:
 
 
 // --- fonctions de calibration ---
 
-uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor,h_calib_buffer_structure_t * h_calib_buffer_struct){
- 80011b4:	b580      	push	{r7, lr}
- 80011b6:	b084      	sub	sp, #16
- 80011b8:	af00      	add	r7, sp, #0
- 80011ba:	6078      	str	r0, [r7, #4]
- 80011bc:	6039      	str	r1, [r7, #0]
+uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor){
+ 80011cc:	b580      	push	{r7, lr}
+ 80011ce:	b084      	sub	sp, #16
+ 80011d0:	af00      	add	r7, sp, #0
+ 80011d2:	6078      	str	r0, [r7, #4]
 	calibration_flag=1;
- 80011be:	4b84      	ldr	r3, [pc, #528]	; (80013d0 <colorHandleCalibrationSensor+0x21c>)
- 80011c0:	2201      	movs	r2, #1
- 80011c2:	701a      	strb	r2, [r3, #0]
+ 80011d4:	4b83      	ldr	r3, [pc, #524]	; (80013e4 <colorHandleCalibrationSensor+0x218>)
+ 80011d6:	2201      	movs	r2, #1
+ 80011d8:	701a      	strb	r2, [r3, #0]
 	printf("calibration flag : %d\r\n",calibration_flag);
- 80011c4:	4b82      	ldr	r3, [pc, #520]	; (80013d0 <colorHandleCalibrationSensor+0x21c>)
- 80011c6:	781b      	ldrb	r3, [r3, #0]
- 80011c8:	4619      	mov	r1, r3
- 80011ca:	4882      	ldr	r0, [pc, #520]	; (80013d4 <colorHandleCalibrationSensor+0x220>)
- 80011cc:	f006 fed6 	bl	8007f7c <iprintf>
+ 80011da:	4b82      	ldr	r3, [pc, #520]	; (80013e4 <colorHandleCalibrationSensor+0x218>)
+ 80011dc:	781b      	ldrb	r3, [r3, #0]
+ 80011de:	4619      	mov	r1, r3
+ 80011e0:	4881      	ldr	r0, [pc, #516]	; (80013e8 <colorHandleCalibrationSensor+0x21c>)
+ 80011e2:	f006 fecb 	bl	8007f7c <iprintf>
 	char entree[2];
 	h_color_sensor->calib_state=CALIB_VERT_CANETTE;
- 80011d0:	687b      	ldr	r3, [r7, #4]
- 80011d2:	2201      	movs	r2, #1
- 80011d4:	751a      	strb	r2, [r3, #20]
+ 80011e6:	687b      	ldr	r3, [r7, #4]
+ 80011e8:	2201      	movs	r2, #1
+ 80011ea:	751a      	strb	r2, [r3, #20]
 	while(h_color_sensor->calib_state!=CALIB_DONE){
- 80011d6:	e08b      	b.n	80012f0 <colorHandleCalibrationSensor+0x13c>
+ 80011ec:	e08a      	b.n	8001304 <colorHandleCalibrationSensor+0x138>
 		//printf("entré dans while\r\n");
 		switch(h_color_sensor->calib_state){
- 80011d8:	687b      	ldr	r3, [r7, #4]
- 80011da:	7d1b      	ldrb	r3, [r3, #20]
- 80011dc:	3b01      	subs	r3, #1
- 80011de:	2b03      	cmp	r3, #3
- 80011e0:	f200 8085 	bhi.w	80012ee <colorHandleCalibrationSensor+0x13a>
- 80011e4:	a201      	add	r2, pc, #4	; (adr r2, 80011ec <colorHandleCalibrationSensor+0x38>)
- 80011e6:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
- 80011ea:	bf00      	nop
- 80011ec:	080011fd 	.word	0x080011fd
- 80011f0:	08001235 	.word	0x08001235
- 80011f4:	08001273 	.word	0x08001273
- 80011f8:	080012b1 	.word	0x080012b1
+ 80011ee:	687b      	ldr	r3, [r7, #4]
+ 80011f0:	7d1b      	ldrb	r3, [r3, #20]
+ 80011f2:	3b01      	subs	r3, #1
+ 80011f4:	2b03      	cmp	r3, #3
+ 80011f6:	f200 8084 	bhi.w	8001302 <colorHandleCalibrationSensor+0x136>
+ 80011fa:	a201      	add	r2, pc, #4	; (adr r2, 8001200 <colorHandleCalibrationSensor+0x34>)
+ 80011fc:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
+ 8001200:	08001211 	.word	0x08001211
+ 8001204:	08001249 	.word	0x08001249
+ 8001208:	08001287 	.word	0x08001287
+ 800120c:	080012c5 	.word	0x080012c5
 		case CALIB_VERT_CANETTE:
 			colorSetPhotodiodeType(h_color_sensor,GREEN);
- 80011fc:	2104      	movs	r1, #4
- 80011fe:	6878      	ldr	r0, [r7, #4]
- 8001200:	f7ff fedc 	bl	8000fbc <colorSetPhotodiodeType>
+ 8001210:	2104      	movs	r1, #4
+ 8001212:	6878      	ldr	r0, [r7, #4]
+ 8001214:	f7ff fed2 	bl	8000fbc <colorSetPhotodiodeType>
 
 			// -- waiting for operator to put a green can in front of the sensor
 			printf("press enter when a green can is captured\r\n");
- 8001204:	4874      	ldr	r0, [pc, #464]	; (80013d8 <colorHandleCalibrationSensor+0x224>)
- 8001206:	f006 ff3f 	bl	8008088 <puts>
+ 8001218:	4874      	ldr	r0, [pc, #464]	; (80013ec <colorHandleCalibrationSensor+0x220>)
+ 800121a:	f006 ff35 	bl	8008088 <puts>
 			scanf( "%s",entree);
- 800120a:	f107 030c 	add.w	r3, r7, #12
- 800120e:	4619      	mov	r1, r3
- 8001210:	4872      	ldr	r0, [pc, #456]	; (80013dc <colorHandleCalibrationSensor+0x228>)
- 8001212:	f006 ffbb 	bl	800818c <iscanf>
-			h_calib_buffer_struct->calib_value_vert_canette=0;
- 8001216:	683b      	ldr	r3, [r7, #0]
- 8001218:	2200      	movs	r2, #0
- 800121a:	801a      	strh	r2, [r3, #0]
+ 800121e:	f107 030c 	add.w	r3, r7, #12
+ 8001222:	4619      	mov	r1, r3
+ 8001224:	4872      	ldr	r0, [pc, #456]	; (80013f0 <colorHandleCalibrationSensor+0x224>)
+ 8001226:	f006 ffb1 	bl	800818c <iscanf>
+			h_color_sensor->calib_struct.calib_value_vert_canette=0;
+ 800122a:	687b      	ldr	r3, [r7, #4]
+ 800122c:	2200      	movs	r2, #0
+ 800122e:	845a      	strh	r2, [r3, #34]	; 0x22
 			colorEnable(h_color_sensor);
- 800121c:	6878      	ldr	r0, [r7, #4]
- 800121e:	f7ff ff9d 	bl	800115c <colorEnable>
-			while(h_calib_buffer_struct->calib_value_vert_canette==0){
- 8001222:	bf00      	nop
- 8001224:	683b      	ldr	r3, [r7, #0]
- 8001226:	881b      	ldrh	r3, [r3, #0]
- 8001228:	2b00      	cmp	r3, #0
- 800122a:	d0fb      	beq.n	8001224 <colorHandleCalibrationSensor+0x70>
+ 8001230:	6878      	ldr	r0, [r7, #4]
+ 8001232:	f7ff ff9f 	bl	8001174 <colorEnable>
+			while(h_color_sensor->calib_struct.calib_value_vert_canette==0){
+ 8001236:	bf00      	nop
+ 8001238:	687b      	ldr	r3, [r7, #4]
+ 800123a:	8c5b      	ldrh	r3, [r3, #34]	; 0x22
+ 800123c:	2b00      	cmp	r3, #0
+ 800123e:	d0fb      	beq.n	8001238 <colorHandleCalibrationSensor+0x6c>
 				//Wait for calib completed
 			}
 			h_color_sensor->calib_state=CALIB_VERT_VIDE;
- 800122c:	687b      	ldr	r3, [r7, #4]
- 800122e:	2202      	movs	r2, #2
- 8001230:	751a      	strb	r2, [r3, #20]
+ 8001240:	687b      	ldr	r3, [r7, #4]
+ 8001242:	2202      	movs	r2, #2
+ 8001244:	751a      	strb	r2, [r3, #20]
 			break;
- 8001232:	e05d      	b.n	80012f0 <colorHandleCalibrationSensor+0x13c>
+ 8001246:	e05d      	b.n	8001304 <colorHandleCalibrationSensor+0x138>
 
 		case CALIB_VERT_VIDE:
 			printf("calib_vert_vide\r\n");
- 8001234:	486a      	ldr	r0, [pc, #424]	; (80013e0 <colorHandleCalibrationSensor+0x22c>)
- 8001236:	f006 ff27 	bl	8008088 <puts>
+ 8001248:	486a      	ldr	r0, [pc, #424]	; (80013f4 <colorHandleCalibrationSensor+0x228>)
+ 800124a:	f006 ff1d 	bl	8008088 <puts>
 			colorSetPhotodiodeType(h_color_sensor,GREEN);
- 800123a:	2104      	movs	r1, #4
- 800123c:	6878      	ldr	r0, [r7, #4]
- 800123e:	f7ff febd 	bl	8000fbc <colorSetPhotodiodeType>
+ 800124e:	2104      	movs	r1, #4
+ 8001250:	6878      	ldr	r0, [r7, #4]
+ 8001252:	f7ff feb3 	bl	8000fbc <colorSetPhotodiodeType>
 			// -- waiting for operator to put a green can in front of the sensor
 			printf("press enter when the green can is removed\r\n");
- 8001242:	4868      	ldr	r0, [pc, #416]	; (80013e4 <colorHandleCalibrationSensor+0x230>)
- 8001244:	f006 ff20 	bl	8008088 <puts>
+ 8001256:	4868      	ldr	r0, [pc, #416]	; (80013f8 <colorHandleCalibrationSensor+0x22c>)
+ 8001258:	f006 ff16 	bl	8008088 <puts>
 			scanf("%s",entree);
- 8001248:	f107 030c 	add.w	r3, r7, #12
- 800124c:	4619      	mov	r1, r3
- 800124e:	4863      	ldr	r0, [pc, #396]	; (80013dc <colorHandleCalibrationSensor+0x228>)
- 8001250:	f006 ff9c 	bl	800818c <iscanf>
-			h_calib_buffer_struct->calib_value_vert_vide=0;
- 8001254:	683b      	ldr	r3, [r7, #0]
- 8001256:	2200      	movs	r2, #0
- 8001258:	805a      	strh	r2, [r3, #2]
+ 800125c:	f107 030c 	add.w	r3, r7, #12
+ 8001260:	4619      	mov	r1, r3
+ 8001262:	4863      	ldr	r0, [pc, #396]	; (80013f0 <colorHandleCalibrationSensor+0x224>)
+ 8001264:	f006 ff92 	bl	800818c <iscanf>
+			h_color_sensor->calib_struct.calib_value_vert_vide=0;
+ 8001268:	687b      	ldr	r3, [r7, #4]
+ 800126a:	2200      	movs	r2, #0
+ 800126c:	849a      	strh	r2, [r3, #36]	; 0x24
 			colorEnable(h_color_sensor);
- 800125a:	6878      	ldr	r0, [r7, #4]
- 800125c:	f7ff ff7e 	bl	800115c <colorEnable>
-			while(h_calib_buffer_struct->calib_value_vert_vide==0){
- 8001260:	bf00      	nop
- 8001262:	683b      	ldr	r3, [r7, #0]
- 8001264:	885b      	ldrh	r3, [r3, #2]
- 8001266:	2b00      	cmp	r3, #0
- 8001268:	d0fb      	beq.n	8001262 <colorHandleCalibrationSensor+0xae>
+ 800126e:	6878      	ldr	r0, [r7, #4]
+ 8001270:	f7ff ff80 	bl	8001174 <colorEnable>
+			while(h_color_sensor->calib_struct.calib_value_vert_vide==0){
+ 8001274:	bf00      	nop
+ 8001276:	687b      	ldr	r3, [r7, #4]
+ 8001278:	8c9b      	ldrh	r3, [r3, #36]	; 0x24
+ 800127a:	2b00      	cmp	r3, #0
+ 800127c:	d0fb      	beq.n	8001276 <colorHandleCalibrationSensor+0xaa>
 				//Wait for calib completed...
 			}
 			h_color_sensor->calib_state=CALIB_ROUGE_CANETTE;
- 800126a:	687b      	ldr	r3, [r7, #4]
- 800126c:	2203      	movs	r2, #3
- 800126e:	751a      	strb	r2, [r3, #20]
+ 800127e:	687b      	ldr	r3, [r7, #4]
+ 8001280:	2203      	movs	r2, #3
+ 8001282:	751a      	strb	r2, [r3, #20]
 			break;
- 8001270:	e03e      	b.n	80012f0 <colorHandleCalibrationSensor+0x13c>
+ 8001284:	e03e      	b.n	8001304 <colorHandleCalibrationSensor+0x138>
 
 		case CALIB_ROUGE_CANETTE:
 			printf("calib_rouge_canette\r\n");
- 8001272:	485d      	ldr	r0, [pc, #372]	; (80013e8 <colorHandleCalibrationSensor+0x234>)
- 8001274:	f006 ff08 	bl	8008088 <puts>
+ 8001286:	485d      	ldr	r0, [pc, #372]	; (80013fc <colorHandleCalibrationSensor+0x230>)
+ 8001288:	f006 fefe 	bl	8008088 <puts>
 			colorSetPhotodiodeType(h_color_sensor,RED);
- 8001278:	2101      	movs	r1, #1
- 800127a:	6878      	ldr	r0, [r7, #4]
- 800127c:	f7ff fe9e 	bl	8000fbc <colorSetPhotodiodeType>
+ 800128c:	2101      	movs	r1, #1
+ 800128e:	6878      	ldr	r0, [r7, #4]
+ 8001290:	f7ff fe94 	bl	8000fbc <colorSetPhotodiodeType>
 
 			// -- waiting for operator to put a green can in front of the sensor
 			printf("press enter when a red can is captured\r\n");
- 8001280:	485a      	ldr	r0, [pc, #360]	; (80013ec <colorHandleCalibrationSensor+0x238>)
- 8001282:	f006 ff01 	bl	8008088 <puts>
+ 8001294:	485a      	ldr	r0, [pc, #360]	; (8001400 <colorHandleCalibrationSensor+0x234>)
+ 8001296:	f006 fef7 	bl	8008088 <puts>
 			scanf("%s",entree);
- 8001286:	f107 030c 	add.w	r3, r7, #12
- 800128a:	4619      	mov	r1, r3
- 800128c:	4853      	ldr	r0, [pc, #332]	; (80013dc <colorHandleCalibrationSensor+0x228>)
- 800128e:	f006 ff7d 	bl	800818c <iscanf>
-			h_calib_buffer_struct->calib_value_rouge_canette=0;
- 8001292:	683b      	ldr	r3, [r7, #0]
- 8001294:	2200      	movs	r2, #0
- 8001296:	809a      	strh	r2, [r3, #4]
+ 800129a:	f107 030c 	add.w	r3, r7, #12
+ 800129e:	4619      	mov	r1, r3
+ 80012a0:	4853      	ldr	r0, [pc, #332]	; (80013f0 <colorHandleCalibrationSensor+0x224>)
+ 80012a2:	f006 ff73 	bl	800818c <iscanf>
+			h_color_sensor->calib_struct.calib_value_rouge_canette=0;
+ 80012a6:	687b      	ldr	r3, [r7, #4]
+ 80012a8:	2200      	movs	r2, #0
+ 80012aa:	84da      	strh	r2, [r3, #38]	; 0x26
 			colorEnable(h_color_sensor);
- 8001298:	6878      	ldr	r0, [r7, #4]
- 800129a:	f7ff ff5f 	bl	800115c <colorEnable>
-			while(h_calib_buffer_struct->calib_value_rouge_canette==0){
- 800129e:	bf00      	nop
- 80012a0:	683b      	ldr	r3, [r7, #0]
- 80012a2:	889b      	ldrh	r3, [r3, #4]
- 80012a4:	2b00      	cmp	r3, #0
- 80012a6:	d0fb      	beq.n	80012a0 <colorHandleCalibrationSensor+0xec>
+ 80012ac:	6878      	ldr	r0, [r7, #4]
+ 80012ae:	f7ff ff61 	bl	8001174 <colorEnable>
+			while(h_color_sensor->calib_struct.calib_value_rouge_canette==0){
+ 80012b2:	bf00      	nop
+ 80012b4:	687b      	ldr	r3, [r7, #4]
+ 80012b6:	8cdb      	ldrh	r3, [r3, #38]	; 0x26
+ 80012b8:	2b00      	cmp	r3, #0
+ 80012ba:	d0fb      	beq.n	80012b4 <colorHandleCalibrationSensor+0xe8>
 				//Wait for calib completed...
 			}
 			h_color_sensor->calib_state=CALIB_ROUGE_VIDE;
- 80012a8:	687b      	ldr	r3, [r7, #4]
- 80012aa:	2204      	movs	r2, #4
- 80012ac:	751a      	strb	r2, [r3, #20]
+ 80012bc:	687b      	ldr	r3, [r7, #4]
+ 80012be:	2204      	movs	r2, #4
+ 80012c0:	751a      	strb	r2, [r3, #20]
 			break;
- 80012ae:	e01f      	b.n	80012f0 <colorHandleCalibrationSensor+0x13c>
+ 80012c2:	e01f      	b.n	8001304 <colorHandleCalibrationSensor+0x138>
 
 		case CALIB_ROUGE_VIDE:
 			printf("calib_rouge_vide\r\n");
- 80012b0:	484f      	ldr	r0, [pc, #316]	; (80013f0 <colorHandleCalibrationSensor+0x23c>)
- 80012b2:	f006 fee9 	bl	8008088 <puts>
+ 80012c4:	484f      	ldr	r0, [pc, #316]	; (8001404 <colorHandleCalibrationSensor+0x238>)
+ 80012c6:	f006 fedf 	bl	8008088 <puts>
 			colorSetPhotodiodeType(h_color_sensor,RED);
- 80012b6:	2101      	movs	r1, #1
- 80012b8:	6878      	ldr	r0, [r7, #4]
- 80012ba:	f7ff fe7f 	bl	8000fbc <colorSetPhotodiodeType>
+ 80012ca:	2101      	movs	r1, #1
+ 80012cc:	6878      	ldr	r0, [r7, #4]
+ 80012ce:	f7ff fe75 	bl	8000fbc <colorSetPhotodiodeType>
 
 			// -- waiting for operator to put a green can in front of the sensor
 			printf("press enter when a green can is captured\r\n");
- 80012be:	4846      	ldr	r0, [pc, #280]	; (80013d8 <colorHandleCalibrationSensor+0x224>)
- 80012c0:	f006 fee2 	bl	8008088 <puts>
+ 80012d2:	4846      	ldr	r0, [pc, #280]	; (80013ec <colorHandleCalibrationSensor+0x220>)
+ 80012d4:	f006 fed8 	bl	8008088 <puts>
 			scanf("%s",entree);
- 80012c4:	f107 030c 	add.w	r3, r7, #12
- 80012c8:	4619      	mov	r1, r3
- 80012ca:	4844      	ldr	r0, [pc, #272]	; (80013dc <colorHandleCalibrationSensor+0x228>)
- 80012cc:	f006 ff5e 	bl	800818c <iscanf>
-			h_calib_buffer_struct->calib_value_rouge_vide=0;
- 80012d0:	683b      	ldr	r3, [r7, #0]
- 80012d2:	2200      	movs	r2, #0
- 80012d4:	80da      	strh	r2, [r3, #6]
+ 80012d8:	f107 030c 	add.w	r3, r7, #12
+ 80012dc:	4619      	mov	r1, r3
+ 80012de:	4844      	ldr	r0, [pc, #272]	; (80013f0 <colorHandleCalibrationSensor+0x224>)
+ 80012e0:	f006 ff54 	bl	800818c <iscanf>
+			h_color_sensor->calib_struct.calib_value_rouge_vide=0;
+ 80012e4:	687b      	ldr	r3, [r7, #4]
+ 80012e6:	2200      	movs	r2, #0
+ 80012e8:	851a      	strh	r2, [r3, #40]	; 0x28
 			colorEnable(h_color_sensor);
- 80012d6:	6878      	ldr	r0, [r7, #4]
- 80012d8:	f7ff ff40 	bl	800115c <colorEnable>
-			while(h_calib_buffer_struct->calib_value_rouge_vide==0){
- 80012dc:	bf00      	nop
- 80012de:	683b      	ldr	r3, [r7, #0]
- 80012e0:	88db      	ldrh	r3, [r3, #6]
- 80012e2:	2b00      	cmp	r3, #0
- 80012e4:	d0fb      	beq.n	80012de <colorHandleCalibrationSensor+0x12a>
+ 80012ea:	6878      	ldr	r0, [r7, #4]
+ 80012ec:	f7ff ff42 	bl	8001174 <colorEnable>
+			while(h_color_sensor->calib_struct.calib_value_rouge_vide==0){
+ 80012f0:	bf00      	nop
+ 80012f2:	687b      	ldr	r3, [r7, #4]
+ 80012f4:	8d1b      	ldrh	r3, [r3, #40]	; 0x28
+ 80012f6:	2b00      	cmp	r3, #0
+ 80012f8:	d0fb      	beq.n	80012f2 <colorHandleCalibrationSensor+0x126>
 				//Wait for calib completed...
 			}
 			h_color_sensor->calib_state=CALIB_DONE;
- 80012e6:	687b      	ldr	r3, [r7, #4]
- 80012e8:	2205      	movs	r2, #5
- 80012ea:	751a      	strb	r2, [r3, #20]
+ 80012fa:	687b      	ldr	r3, [r7, #4]
+ 80012fc:	2205      	movs	r2, #5
+ 80012fe:	751a      	strb	r2, [r3, #20]
 			break;
- 80012ec:	e000      	b.n	80012f0 <colorHandleCalibrationSensor+0x13c>
+ 8001300:	e000      	b.n	8001304 <colorHandleCalibrationSensor+0x138>
 
 		default:
 			break;
- 80012ee:	bf00      	nop
+ 8001302:	bf00      	nop
 	while(h_color_sensor->calib_state!=CALIB_DONE){
- 80012f0:	687b      	ldr	r3, [r7, #4]
- 80012f2:	7d1b      	ldrb	r3, [r3, #20]
- 80012f4:	2b05      	cmp	r3, #5
- 80012f6:	f47f af6f 	bne.w	80011d8 <colorHandleCalibrationSensor+0x24>
+ 8001304:	687b      	ldr	r3, [r7, #4]
+ 8001306:	7d1b      	ldrb	r3, [r3, #20]
+ 8001308:	2b05      	cmp	r3, #5
+ 800130a:	f47f af70 	bne.w	80011ee <colorHandleCalibrationSensor+0x22>
 		}
 	}
-	printf("calib_verte_canette : %u\r\n",h_calib_buffer_struct->calib_value_vert_canette);
- 80012fa:	683b      	ldr	r3, [r7, #0]
- 80012fc:	881b      	ldrh	r3, [r3, #0]
- 80012fe:	4619      	mov	r1, r3
- 8001300:	483c      	ldr	r0, [pc, #240]	; (80013f4 <colorHandleCalibrationSensor+0x240>)
- 8001302:	f006 fe3b 	bl	8007f7c <iprintf>
-	printf("calib_verte_vide : %u\r\n\n",h_calib_buffer_struct->calib_value_vert_vide);
- 8001306:	683b      	ldr	r3, [r7, #0]
- 8001308:	885b      	ldrh	r3, [r3, #2]
- 800130a:	4619      	mov	r1, r3
- 800130c:	483a      	ldr	r0, [pc, #232]	; (80013f8 <colorHandleCalibrationSensor+0x244>)
- 800130e:	f006 fe35 	bl	8007f7c <iprintf>
-	printf("calib_rouge_canette : %u\r\n",h_calib_buffer_struct->calib_value_rouge_canette);
- 8001312:	683b      	ldr	r3, [r7, #0]
- 8001314:	889b      	ldrh	r3, [r3, #4]
- 8001316:	4619      	mov	r1, r3
- 8001318:	4838      	ldr	r0, [pc, #224]	; (80013fc <colorHandleCalibrationSensor+0x248>)
- 800131a:	f006 fe2f 	bl	8007f7c <iprintf>
-	printf("calib_rouge_vide : %u\r\n\n",h_calib_buffer_struct->calib_value_rouge_vide);
- 800131e:	683b      	ldr	r3, [r7, #0]
- 8001320:	88db      	ldrh	r3, [r3, #6]
- 8001322:	4619      	mov	r1, r3
- 8001324:	4836      	ldr	r0, [pc, #216]	; (8001400 <colorHandleCalibrationSensor+0x24c>)
- 8001326:	f006 fe29 	bl	8007f7c <iprintf>
+	printf("calib_verte_canette : %u\r\n",h_color_sensor->calib_struct.calib_value_vert_canette);
+ 800130e:	687b      	ldr	r3, [r7, #4]
+ 8001310:	8c5b      	ldrh	r3, [r3, #34]	; 0x22
+ 8001312:	4619      	mov	r1, r3
+ 8001314:	483c      	ldr	r0, [pc, #240]	; (8001408 <colorHandleCalibrationSensor+0x23c>)
+ 8001316:	f006 fe31 	bl	8007f7c <iprintf>
+	printf("calib_verte_vide : %u\r\n\n",h_color_sensor->calib_struct.calib_value_vert_vide);
+ 800131a:	687b      	ldr	r3, [r7, #4]
+ 800131c:	8c9b      	ldrh	r3, [r3, #36]	; 0x24
+ 800131e:	4619      	mov	r1, r3
+ 8001320:	483a      	ldr	r0, [pc, #232]	; (800140c <colorHandleCalibrationSensor+0x240>)
+ 8001322:	f006 fe2b 	bl	8007f7c <iprintf>
+	printf("calib_rouge_canette : %u\r\n",h_color_sensor->calib_struct.calib_value_rouge_canette);
+ 8001326:	687b      	ldr	r3, [r7, #4]
+ 8001328:	8cdb      	ldrh	r3, [r3, #38]	; 0x26
+ 800132a:	4619      	mov	r1, r3
+ 800132c:	4838      	ldr	r0, [pc, #224]	; (8001410 <colorHandleCalibrationSensor+0x244>)
+ 800132e:	f006 fe25 	bl	8007f7c <iprintf>
+	printf("calib_rouge_vide : %u\r\n\n",h_color_sensor->calib_struct.calib_value_rouge_vide);
+ 8001332:	687b      	ldr	r3, [r7, #4]
+ 8001334:	8d1b      	ldrh	r3, [r3, #40]	; 0x28
+ 8001336:	4619      	mov	r1, r3
+ 8001338:	4836      	ldr	r0, [pc, #216]	; (8001414 <colorHandleCalibrationSensor+0x248>)
+ 800133a:	f006 fe1f 	bl	8007f7c <iprintf>
 
 	//computation of the transformation coefficient
-	h_color_sensor->green_transformation.green_coef_dir=(uint16_t)((ECHELLE_VAL_HAUTE-ECHELLE_VAL_BASSE)/((h_calib_buffer_struct->calib_value_vert_vide)-(h_calib_buffer_struct->calib_value_vert_canette)));
- 800132a:	683b      	ldr	r3, [r7, #0]
- 800132c:	885b      	ldrh	r3, [r3, #2]
- 800132e:	461a      	mov	r2, r3
- 8001330:	683b      	ldr	r3, [r7, #0]
- 8001332:	881b      	ldrh	r3, [r3, #0]
- 8001334:	1ad3      	subs	r3, r2, r3
- 8001336:	f242 7210 	movw	r2, #10000	; 0x2710
- 800133a:	fb92 f3f3 	sdiv	r3, r2, r3
- 800133e:	b29a      	uxth	r2, r3
- 8001340:	687b      	ldr	r3, [r7, #4]
- 8001342:	82da      	strh	r2, [r3, #22]
-	h_color_sensor->green_transformation.green_ord_origin=(uint16_t)(ECHELLE_VAL_HAUTE-((h_color_sensor->green_transformation.green_coef_dir)*(h_calib_buffer_struct->calib_value_vert_vide)));
+	h_color_sensor->green_transformation.green_coef_dir=(uint16_t)((ECHELLE_VAL_HAUTE-ECHELLE_VAL_BASSE)/((h_color_sensor->calib_struct.calib_value_vert_vide)-(h_color_sensor->calib_struct.calib_value_vert_canette)));
+ 800133e:	687b      	ldr	r3, [r7, #4]
+ 8001340:	8c9b      	ldrh	r3, [r3, #36]	; 0x24
+ 8001342:	461a      	mov	r2, r3
  8001344:	687b      	ldr	r3, [r7, #4]
- 8001346:	8ada      	ldrh	r2, [r3, #22]
- 8001348:	683b      	ldr	r3, [r7, #0]
- 800134a:	885b      	ldrh	r3, [r3, #2]
- 800134c:	fb12 f303 	smulbb	r3, r2, r3
- 8001350:	b29a      	uxth	r2, r3
- 8001352:	f644 6320 	movw	r3, #20000	; 0x4e20
- 8001356:	1a9b      	subs	r3, r3, r2
- 8001358:	b29a      	uxth	r2, r3
- 800135a:	687b      	ldr	r3, [r7, #4]
- 800135c:	831a      	strh	r2, [r3, #24]
+ 8001346:	8c5b      	ldrh	r3, [r3, #34]	; 0x22
+ 8001348:	1ad3      	subs	r3, r2, r3
+ 800134a:	f242 7210 	movw	r2, #10000	; 0x2710
+ 800134e:	fb92 f3f3 	sdiv	r3, r2, r3
+ 8001352:	b29a      	uxth	r2, r3
+ 8001354:	687b      	ldr	r3, [r7, #4]
+ 8001356:	82da      	strh	r2, [r3, #22]
+	h_color_sensor->green_transformation.green_ord_origin=(uint16_t)(ECHELLE_VAL_HAUTE-((h_color_sensor->green_transformation.green_coef_dir)*(h_color_sensor->calib_struct.calib_value_vert_vide)));
+ 8001358:	687b      	ldr	r3, [r7, #4]
+ 800135a:	8ada      	ldrh	r2, [r3, #22]
+ 800135c:	687b      	ldr	r3, [r7, #4]
+ 800135e:	8c9b      	ldrh	r3, [r3, #36]	; 0x24
+ 8001360:	fb12 f303 	smulbb	r3, r2, r3
+ 8001364:	b29a      	uxth	r2, r3
+ 8001366:	f644 6320 	movw	r3, #20000	; 0x4e20
+ 800136a:	1a9b      	subs	r3, r3, r2
+ 800136c:	b29a      	uxth	r2, r3
+ 800136e:	687b      	ldr	r3, [r7, #4]
+ 8001370:	831a      	strh	r2, [r3, #24]
 	printf("coef dir vert : %u\r\nord origin vert : %u\r\nmin freq vert : %u\r\n\n",h_color_sensor->green_transformation.green_coef_dir,h_color_sensor->green_transformation.green_ord_origin,h_color_sensor->green_transformation.green_min_freq);
- 800135e:	687b      	ldr	r3, [r7, #4]
- 8001360:	8adb      	ldrh	r3, [r3, #22]
- 8001362:	4619      	mov	r1, r3
- 8001364:	687b      	ldr	r3, [r7, #4]
- 8001366:	8b1b      	ldrh	r3, [r3, #24]
- 8001368:	461a      	mov	r2, r3
- 800136a:	687b      	ldr	r3, [r7, #4]
- 800136c:	8b5b      	ldrh	r3, [r3, #26]
- 800136e:	4825      	ldr	r0, [pc, #148]	; (8001404 <colorHandleCalibrationSensor+0x250>)
- 8001370:	f006 fe04 	bl	8007f7c <iprintf>
+ 8001372:	687b      	ldr	r3, [r7, #4]
+ 8001374:	8adb      	ldrh	r3, [r3, #22]
+ 8001376:	4619      	mov	r1, r3
+ 8001378:	687b      	ldr	r3, [r7, #4]
+ 800137a:	8b1b      	ldrh	r3, [r3, #24]
+ 800137c:	461a      	mov	r2, r3
+ 800137e:	687b      	ldr	r3, [r7, #4]
+ 8001380:	8b5b      	ldrh	r3, [r3, #26]
+ 8001382:	4825      	ldr	r0, [pc, #148]	; (8001418 <colorHandleCalibrationSensor+0x24c>)
+ 8001384:	f006 fdfa 	bl	8007f7c <iprintf>
 
-	h_color_sensor->red_transformation.red_coef_dir=(uint16_t)((ECHELLE_VAL_HAUTE-ECHELLE_VAL_BASSE)/((h_calib_buffer_struct->calib_value_rouge_vide)-(h_calib_buffer_struct->calib_value_rouge_canette)));
- 8001374:	683b      	ldr	r3, [r7, #0]
- 8001376:	88db      	ldrh	r3, [r3, #6]
- 8001378:	461a      	mov	r2, r3
- 800137a:	683b      	ldr	r3, [r7, #0]
- 800137c:	889b      	ldrh	r3, [r3, #4]
- 800137e:	1ad3      	subs	r3, r2, r3
- 8001380:	f242 7210 	movw	r2, #10000	; 0x2710
- 8001384:	fb92 f3f3 	sdiv	r3, r2, r3
- 8001388:	b29a      	uxth	r2, r3
- 800138a:	687b      	ldr	r3, [r7, #4]
- 800138c:	839a      	strh	r2, [r3, #28]
-	h_color_sensor->red_transformation.red_ord_origin=(uint16_t)(ECHELLE_VAL_HAUTE-((h_color_sensor->red_transformation.red_coef_dir)*(h_calib_buffer_struct->calib_value_rouge_vide)));
+	h_color_sensor->red_transformation.red_coef_dir=(uint16_t)((ECHELLE_VAL_HAUTE-ECHELLE_VAL_BASSE)/((h_color_sensor->calib_struct.calib_value_rouge_vide)-(h_color_sensor->calib_struct.calib_value_rouge_canette)));
+ 8001388:	687b      	ldr	r3, [r7, #4]
+ 800138a:	8d1b      	ldrh	r3, [r3, #40]	; 0x28
+ 800138c:	461a      	mov	r2, r3
  800138e:	687b      	ldr	r3, [r7, #4]
- 8001390:	8b9a      	ldrh	r2, [r3, #28]
- 8001392:	683b      	ldr	r3, [r7, #0]
- 8001394:	88db      	ldrh	r3, [r3, #6]
- 8001396:	fb12 f303 	smulbb	r3, r2, r3
- 800139a:	b29a      	uxth	r2, r3
- 800139c:	f644 6320 	movw	r3, #20000	; 0x4e20
- 80013a0:	1a9b      	subs	r3, r3, r2
- 80013a2:	b29a      	uxth	r2, r3
- 80013a4:	687b      	ldr	r3, [r7, #4]
- 80013a6:	83da      	strh	r2, [r3, #30]
+ 8001390:	8cdb      	ldrh	r3, [r3, #38]	; 0x26
+ 8001392:	1ad3      	subs	r3, r2, r3
+ 8001394:	f242 7210 	movw	r2, #10000	; 0x2710
+ 8001398:	fb92 f3f3 	sdiv	r3, r2, r3
+ 800139c:	b29a      	uxth	r2, r3
+ 800139e:	687b      	ldr	r3, [r7, #4]
+ 80013a0:	839a      	strh	r2, [r3, #28]
+	h_color_sensor->red_transformation.red_ord_origin=(uint16_t)(ECHELLE_VAL_HAUTE-((h_color_sensor->red_transformation.red_coef_dir)*(h_color_sensor->calib_struct.calib_value_rouge_vide)));
+ 80013a2:	687b      	ldr	r3, [r7, #4]
+ 80013a4:	8b9a      	ldrh	r2, [r3, #28]
+ 80013a6:	687b      	ldr	r3, [r7, #4]
+ 80013a8:	8d1b      	ldrh	r3, [r3, #40]	; 0x28
+ 80013aa:	fb12 f303 	smulbb	r3, r2, r3
+ 80013ae:	b29a      	uxth	r2, r3
+ 80013b0:	f644 6320 	movw	r3, #20000	; 0x4e20
+ 80013b4:	1a9b      	subs	r3, r3, r2
+ 80013b6:	b29a      	uxth	r2, r3
+ 80013b8:	687b      	ldr	r3, [r7, #4]
+ 80013ba:	83da      	strh	r2, [r3, #30]
 	printf("coef dir rouge : %u\r\nord origin rouge : %u\r\nmin freq rouge : %u\r\n\n",h_color_sensor->red_transformation.red_coef_dir,h_color_sensor->red_transformation.red_ord_origin,h_color_sensor->red_transformation.red_min_freq);
- 80013a8:	687b      	ldr	r3, [r7, #4]
- 80013aa:	8b9b      	ldrh	r3, [r3, #28]
- 80013ac:	4619      	mov	r1, r3
- 80013ae:	687b      	ldr	r3, [r7, #4]
- 80013b0:	8bdb      	ldrh	r3, [r3, #30]
- 80013b2:	461a      	mov	r2, r3
- 80013b4:	687b      	ldr	r3, [r7, #4]
- 80013b6:	8c1b      	ldrh	r3, [r3, #32]
- 80013b8:	4813      	ldr	r0, [pc, #76]	; (8001408 <colorHandleCalibrationSensor+0x254>)
- 80013ba:	f006 fddf 	bl	8007f7c <iprintf>
+ 80013bc:	687b      	ldr	r3, [r7, #4]
+ 80013be:	8b9b      	ldrh	r3, [r3, #28]
+ 80013c0:	4619      	mov	r1, r3
+ 80013c2:	687b      	ldr	r3, [r7, #4]
+ 80013c4:	8bdb      	ldrh	r3, [r3, #30]
+ 80013c6:	461a      	mov	r2, r3
+ 80013c8:	687b      	ldr	r3, [r7, #4]
+ 80013ca:	8c1b      	ldrh	r3, [r3, #32]
+ 80013cc:	4813      	ldr	r0, [pc, #76]	; (800141c <colorHandleCalibrationSensor+0x250>)
+ 80013ce:	f006 fdd5 	bl	8007f7c <iprintf>
 
 
 	// flag to say hey calibration finished
 	calibration_flag=0;
- 80013be:	4b04      	ldr	r3, [pc, #16]	; (80013d0 <colorHandleCalibrationSensor+0x21c>)
- 80013c0:	2200      	movs	r2, #0
- 80013c2:	701a      	strb	r2, [r3, #0]
+ 80013d2:	4b04      	ldr	r3, [pc, #16]	; (80013e4 <colorHandleCalibrationSensor+0x218>)
+ 80013d4:	2200      	movs	r2, #0
+ 80013d6:	701a      	strb	r2, [r3, #0]
 	return 0;
- 80013c4:	2300      	movs	r3, #0
+ 80013d8:	2300      	movs	r3, #0
 }
- 80013c6:	4618      	mov	r0, r3
- 80013c8:	3710      	adds	r7, #16
- 80013ca:	46bd      	mov	sp, r7
- 80013cc:	bd80      	pop	{r7, pc}
- 80013ce:	bf00      	nop
- 80013d0:	200002d8 	.word	0x200002d8
- 80013d4:	0800ae08 	.word	0x0800ae08
- 80013d8:	0800ae20 	.word	0x0800ae20
- 80013dc:	0800ae4c 	.word	0x0800ae4c
- 80013e0:	0800ae50 	.word	0x0800ae50
- 80013e4:	0800ae64 	.word	0x0800ae64
- 80013e8:	0800ae90 	.word	0x0800ae90
- 80013ec:	0800aea8 	.word	0x0800aea8
- 80013f0:	0800aed0 	.word	0x0800aed0
- 80013f4:	0800aee4 	.word	0x0800aee4
- 80013f8:	0800af00 	.word	0x0800af00
- 80013fc:	0800af1c 	.word	0x0800af1c
- 8001400:	0800af38 	.word	0x0800af38
- 8001404:	0800af54 	.word	0x0800af54
- 8001408:	0800af94 	.word	0x0800af94
+ 80013da:	4618      	mov	r0, r3
+ 80013dc:	3710      	adds	r7, #16
+ 80013de:	46bd      	mov	sp, r7
+ 80013e0:	bd80      	pop	{r7, pc}
+ 80013e2:	bf00      	nop
+ 80013e4:	200002d8 	.word	0x200002d8
+ 80013e8:	0800ae08 	.word	0x0800ae08
+ 80013ec:	0800ae20 	.word	0x0800ae20
+ 80013f0:	0800ae4c 	.word	0x0800ae4c
+ 80013f4:	0800ae50 	.word	0x0800ae50
+ 80013f8:	0800ae64 	.word	0x0800ae64
+ 80013fc:	0800ae90 	.word	0x0800ae90
+ 8001400:	0800aea8 	.word	0x0800aea8
+ 8001404:	0800aed0 	.word	0x0800aed0
+ 8001408:	0800aee4 	.word	0x0800aee4
+ 800140c:	0800af00 	.word	0x0800af00
+ 8001410:	0800af1c 	.word	0x0800af1c
+ 8001414:	0800af38 	.word	0x0800af38
+ 8001418:	0800af54 	.word	0x0800af54
+ 800141c:	0800af94 	.word	0x0800af94
 
-0800140c <colorSensorHandleInputCapture_IT>:
+08001420 <colorSensorHandleInputCapture_IT>:
 
 
 // --- fonction de gestion du retour capteur ---
 
-void colorSensorHandleInputCapture_IT(h_color_sensor_t * h_color_sensor,TIM_TypeDef *TIM,h_calib_buffer_structure_t * h_calib_buffer_struct){
- 800140c:	b580      	push	{r7, lr}
- 800140e:	b084      	sub	sp, #16
- 8001410:	af00      	add	r7, sp, #0
- 8001412:	60f8      	str	r0, [r7, #12]
- 8001414:	60b9      	str	r1, [r7, #8]
- 8001416:	607a      	str	r2, [r7, #4]
+void colorSensorHandleInputCapture_IT(h_color_sensor_t * h_color_sensor,TIM_TypeDef *TIM){
+ 8001420:	b580      	push	{r7, lr}
+ 8001422:	b082      	sub	sp, #8
+ 8001424:	af00      	add	r7, sp, #0
+ 8001426:	6078      	str	r0, [r7, #4]
+ 8001428:	6039      	str	r1, [r7, #0]
 	//printf("entré dans tim2 IT\r\n");
 	if(tour==0){
- 8001418:	4b29      	ldr	r3, [pc, #164]	; (80014c0 <colorSensorHandleInputCapture_IT+0xb4>)
- 800141a:	681b      	ldr	r3, [r3, #0]
- 800141c:	2b00      	cmp	r3, #0
- 800141e:	d107      	bne.n	8001430 <colorSensorHandleInputCapture_IT+0x24>
+ 800142a:	4b29      	ldr	r3, [pc, #164]	; (80014d0 <colorSensorHandleInputCapture_IT+0xb0>)
+ 800142c:	681b      	ldr	r3, [r3, #0]
+ 800142e:	2b00      	cmp	r3, #0
+ 8001430:	d107      	bne.n	8001442 <colorSensorHandleInputCapture_IT+0x22>
 		temps1=TIM->CNT;
- 8001420:	68bb      	ldr	r3, [r7, #8]
- 8001422:	6a5b      	ldr	r3, [r3, #36]	; 0x24
- 8001424:	461a      	mov	r2, r3
- 8001426:	4b27      	ldr	r3, [pc, #156]	; (80014c4 <colorSensorHandleInputCapture_IT+0xb8>)
- 8001428:	601a      	str	r2, [r3, #0]
+ 8001432:	683b      	ldr	r3, [r7, #0]
+ 8001434:	6a5b      	ldr	r3, [r3, #36]	; 0x24
+ 8001436:	461a      	mov	r2, r3
+ 8001438:	4b26      	ldr	r3, [pc, #152]	; (80014d4 <colorSensorHandleInputCapture_IT+0xb4>)
+ 800143a:	601a      	str	r2, [r3, #0]
 		tour=0;
- 800142a:	4b25      	ldr	r3, [pc, #148]	; (80014c0 <colorSensorHandleInputCapture_IT+0xb4>)
- 800142c:	2200      	movs	r2, #0
- 800142e:	601a      	str	r2, [r3, #0]
+ 800143c:	4b24      	ldr	r3, [pc, #144]	; (80014d0 <colorSensorHandleInputCapture_IT+0xb0>)
+ 800143e:	2200      	movs	r2, #0
+ 8001440:	601a      	str	r2, [r3, #0]
 	}
 	if(tour==1){
- 8001430:	4b23      	ldr	r3, [pc, #140]	; (80014c0 <colorSensorHandleInputCapture_IT+0xb4>)
- 8001432:	681b      	ldr	r3, [r3, #0]
- 8001434:	2b01      	cmp	r3, #1
- 8001436:	d107      	bne.n	8001448 <colorSensorHandleInputCapture_IT+0x3c>
+ 8001442:	4b23      	ldr	r3, [pc, #140]	; (80014d0 <colorSensorHandleInputCapture_IT+0xb0>)
+ 8001444:	681b      	ldr	r3, [r3, #0]
+ 8001446:	2b01      	cmp	r3, #1
+ 8001448:	d107      	bne.n	800145a <colorSensorHandleInputCapture_IT+0x3a>
 		temps2=TIM->CNT;
- 8001438:	68bb      	ldr	r3, [r7, #8]
- 800143a:	6a5b      	ldr	r3, [r3, #36]	; 0x24
- 800143c:	461a      	mov	r2, r3
- 800143e:	4b22      	ldr	r3, [pc, #136]	; (80014c8 <colorSensorHandleInputCapture_IT+0xbc>)
- 8001440:	601a      	str	r2, [r3, #0]
+ 800144a:	683b      	ldr	r3, [r7, #0]
+ 800144c:	6a5b      	ldr	r3, [r3, #36]	; 0x24
+ 800144e:	461a      	mov	r2, r3
+ 8001450:	4b21      	ldr	r3, [pc, #132]	; (80014d8 <colorSensorHandleInputCapture_IT+0xb8>)
+ 8001452:	601a      	str	r2, [r3, #0]
 		tour=1;
- 8001442:	4b1f      	ldr	r3, [pc, #124]	; (80014c0 <colorSensorHandleInputCapture_IT+0xb4>)
- 8001444:	2201      	movs	r2, #1
- 8001446:	601a      	str	r2, [r3, #0]
+ 8001454:	4b1e      	ldr	r3, [pc, #120]	; (80014d0 <colorSensorHandleInputCapture_IT+0xb0>)
+ 8001456:	2201      	movs	r2, #1
+ 8001458:	601a      	str	r2, [r3, #0]
 	}
 	tour=1-tour;
- 8001448:	4b1d      	ldr	r3, [pc, #116]	; (80014c0 <colorSensorHandleInputCapture_IT+0xb4>)
- 800144a:	681b      	ldr	r3, [r3, #0]
- 800144c:	f1c3 0301 	rsb	r3, r3, #1
- 8001450:	4a1b      	ldr	r2, [pc, #108]	; (80014c0 <colorSensorHandleInputCapture_IT+0xb4>)
- 8001452:	6013      	str	r3, [r2, #0]
+ 800145a:	4b1d      	ldr	r3, [pc, #116]	; (80014d0 <colorSensorHandleInputCapture_IT+0xb0>)
+ 800145c:	681b      	ldr	r3, [r3, #0]
+ 800145e:	f1c3 0301 	rsb	r3, r3, #1
+ 8001462:	4a1b      	ldr	r2, [pc, #108]	; (80014d0 <colorSensorHandleInputCapture_IT+0xb0>)
+ 8001464:	6013      	str	r3, [r2, #0]
 	freq=abs(temps2-temps1);
- 8001454:	4b1c      	ldr	r3, [pc, #112]	; (80014c8 <colorSensorHandleInputCapture_IT+0xbc>)
- 8001456:	681a      	ldr	r2, [r3, #0]
- 8001458:	4b1a      	ldr	r3, [pc, #104]	; (80014c4 <colorSensorHandleInputCapture_IT+0xb8>)
- 800145a:	681b      	ldr	r3, [r3, #0]
- 800145c:	1ad3      	subs	r3, r2, r3
- 800145e:	2b00      	cmp	r3, #0
- 8001460:	bfb8      	it	lt
- 8001462:	425b      	neglt	r3, r3
- 8001464:	461a      	mov	r2, r3
- 8001466:	4b19      	ldr	r3, [pc, #100]	; (80014cc <colorSensorHandleInputCapture_IT+0xc0>)
- 8001468:	601a      	str	r2, [r3, #0]
+ 8001466:	4b1c      	ldr	r3, [pc, #112]	; (80014d8 <colorSensorHandleInputCapture_IT+0xb8>)
+ 8001468:	681a      	ldr	r2, [r3, #0]
+ 800146a:	4b1a      	ldr	r3, [pc, #104]	; (80014d4 <colorSensorHandleInputCapture_IT+0xb4>)
+ 800146c:	681b      	ldr	r3, [r3, #0]
+ 800146e:	1ad3      	subs	r3, r2, r3
+ 8001470:	2b00      	cmp	r3, #0
+ 8001472:	bfb8      	it	lt
+ 8001474:	425b      	neglt	r3, r3
+ 8001476:	461a      	mov	r2, r3
+ 8001478:	4b18      	ldr	r3, [pc, #96]	; (80014dc <colorSensorHandleInputCapture_IT+0xbc>)
+ 800147a:	601a      	str	r2, [r3, #0]
 	h_color_sensor->frequence=freq;
- 800146a:	4b18      	ldr	r3, [pc, #96]	; (80014cc <colorSensorHandleInputCapture_IT+0xc0>)
- 800146c:	681a      	ldr	r2, [r3, #0]
- 800146e:	68fb      	ldr	r3, [r7, #12]
- 8001470:	605a      	str	r2, [r3, #4]
+ 800147c:	4b17      	ldr	r3, [pc, #92]	; (80014dc <colorSensorHandleInputCapture_IT+0xbc>)
+ 800147e:	681a      	ldr	r2, [r3, #0]
+ 8001480:	687b      	ldr	r3, [r7, #4]
+ 8001482:	605a      	str	r2, [r3, #4]
 		}
 		printf("fin affichage\r\n");
 		u=0;
 	}*/
 
 	if((calibration_flag==1)&&(freq<FREQ_MAX_ACCEPTABLE)){
- 8001472:	4b17      	ldr	r3, [pc, #92]	; (80014d0 <colorSensorHandleInputCapture_IT+0xc4>)
- 8001474:	781b      	ldrb	r3, [r3, #0]
- 8001476:	2b01      	cmp	r3, #1
- 8001478:	d10d      	bne.n	8001496 <colorSensorHandleInputCapture_IT+0x8a>
- 800147a:	4b14      	ldr	r3, [pc, #80]	; (80014cc <colorSensorHandleInputCapture_IT+0xc0>)
- 800147c:	681b      	ldr	r3, [r3, #0]
- 800147e:	f24c 324f 	movw	r2, #49999	; 0xc34f
- 8001482:	4293      	cmp	r3, r2
- 8001484:	d807      	bhi.n	8001496 <colorSensorHandleInputCapture_IT+0x8a>
-		colorHandleCalibrationValues(h_color_sensor,freq,h_calib_buffer_struct);
- 8001486:	4b11      	ldr	r3, [pc, #68]	; (80014cc <colorSensorHandleInputCapture_IT+0xc0>)
- 8001488:	681b      	ldr	r3, [r3, #0]
- 800148a:	687a      	ldr	r2, [r7, #4]
- 800148c:	4619      	mov	r1, r3
- 800148e:	68f8      	ldr	r0, [r7, #12]
- 8001490:	f000 f820 	bl	80014d4 <colorHandleCalibrationValues>
+ 8001484:	4b16      	ldr	r3, [pc, #88]	; (80014e0 <colorSensorHandleInputCapture_IT+0xc0>)
+ 8001486:	781b      	ldrb	r3, [r3, #0]
+ 8001488:	2b01      	cmp	r3, #1
+ 800148a:	d10c      	bne.n	80014a6 <colorSensorHandleInputCapture_IT+0x86>
+ 800148c:	4b13      	ldr	r3, [pc, #76]	; (80014dc <colorSensorHandleInputCapture_IT+0xbc>)
+ 800148e:	681b      	ldr	r3, [r3, #0]
+ 8001490:	f24c 324f 	movw	r2, #49999	; 0xc34f
+ 8001494:	4293      	cmp	r3, r2
+ 8001496:	d806      	bhi.n	80014a6 <colorSensorHandleInputCapture_IT+0x86>
+		colorHandleCalibrationValues(h_color_sensor,freq);
+ 8001498:	4b10      	ldr	r3, [pc, #64]	; (80014dc <colorSensorHandleInputCapture_IT+0xbc>)
+ 800149a:	681b      	ldr	r3, [r3, #0]
+ 800149c:	4619      	mov	r1, r3
+ 800149e:	6878      	ldr	r0, [r7, #4]
+ 80014a0:	f000 f820 	bl	80014e4 <colorHandleCalibrationValues>
 	}
 	else if ((calibration_flag==0)&&(freq<FREQ_MAX_ACCEPTABLE)){
 		// Analyse des valeur pour prise de decision sur la couleur
 		colorHandleRawValues(h_color_sensor, freq);
 	}
 }
- 8001494:	e00f      	b.n	80014b6 <colorSensorHandleInputCapture_IT+0xaa>
+ 80014a4:	e00f      	b.n	80014c6 <colorSensorHandleInputCapture_IT+0xa6>
 	else if ((calibration_flag==0)&&(freq<FREQ_MAX_ACCEPTABLE)){
- 8001496:	4b0e      	ldr	r3, [pc, #56]	; (80014d0 <colorSensorHandleInputCapture_IT+0xc4>)
- 8001498:	781b      	ldrb	r3, [r3, #0]
- 800149a:	2b00      	cmp	r3, #0
- 800149c:	d10b      	bne.n	80014b6 <colorSensorHandleInputCapture_IT+0xaa>
- 800149e:	4b0b      	ldr	r3, [pc, #44]	; (80014cc <colorSensorHandleInputCapture_IT+0xc0>)
- 80014a0:	681b      	ldr	r3, [r3, #0]
- 80014a2:	f24c 324f 	movw	r2, #49999	; 0xc34f
- 80014a6:	4293      	cmp	r3, r2
- 80014a8:	d805      	bhi.n	80014b6 <colorSensorHandleInputCapture_IT+0xaa>
+ 80014a6:	4b0e      	ldr	r3, [pc, #56]	; (80014e0 <colorSensorHandleInputCapture_IT+0xc0>)
+ 80014a8:	781b      	ldrb	r3, [r3, #0]
+ 80014aa:	2b00      	cmp	r3, #0
+ 80014ac:	d10b      	bne.n	80014c6 <colorSensorHandleInputCapture_IT+0xa6>
+ 80014ae:	4b0b      	ldr	r3, [pc, #44]	; (80014dc <colorSensorHandleInputCapture_IT+0xbc>)
+ 80014b0:	681b      	ldr	r3, [r3, #0]
+ 80014b2:	f24c 324f 	movw	r2, #49999	; 0xc34f
+ 80014b6:	4293      	cmp	r3, r2
+ 80014b8:	d805      	bhi.n	80014c6 <colorSensorHandleInputCapture_IT+0xa6>
 		colorHandleRawValues(h_color_sensor, freq);
- 80014aa:	4b08      	ldr	r3, [pc, #32]	; (80014cc <colorSensorHandleInputCapture_IT+0xc0>)
- 80014ac:	681b      	ldr	r3, [r3, #0]
- 80014ae:	4619      	mov	r1, r3
- 80014b0:	68f8      	ldr	r0, [r7, #12]
- 80014b2:	f000 f8cf 	bl	8001654 <colorHandleRawValues>
+ 80014ba:	4b08      	ldr	r3, [pc, #32]	; (80014dc <colorSensorHandleInputCapture_IT+0xbc>)
+ 80014bc:	681b      	ldr	r3, [r3, #0]
+ 80014be:	4619      	mov	r1, r3
+ 80014c0:	6878      	ldr	r0, [r7, #4]
+ 80014c2:	f000 f8cd 	bl	8001660 <colorHandleRawValues>
 }
- 80014b6:	bf00      	nop
- 80014b8:	3710      	adds	r7, #16
- 80014ba:	46bd      	mov	sp, r7
- 80014bc:	bd80      	pop	{r7, pc}
- 80014be:	bf00      	nop
- 80014c0:	20000208 	.word	0x20000208
- 80014c4:	20000200 	.word	0x20000200
- 80014c8:	20000204 	.word	0x20000204
- 80014cc:	200001fc 	.word	0x200001fc
- 80014d0:	200002d8 	.word	0x200002d8
+ 80014c6:	bf00      	nop
+ 80014c8:	3708      	adds	r7, #8
+ 80014ca:	46bd      	mov	sp, r7
+ 80014cc:	bd80      	pop	{r7, pc}
+ 80014ce:	bf00      	nop
+ 80014d0:	20000208 	.word	0x20000208
+ 80014d4:	20000200 	.word	0x20000200
+ 80014d8:	20000204 	.word	0x20000204
+ 80014dc:	200001fc 	.word	0x200001fc
+ 80014e0:	200002d8 	.word	0x200002d8
 
-080014d4 <colorHandleCalibrationValues>:
+080014e4 <colorHandleCalibrationValues>:
 
-static int colorHandleCalibrationValues(h_color_sensor_t * h_color_sensor, uint32_t frequence,h_calib_buffer_structure_t * h_calib_buffer_struct){
- 80014d4:	b580      	push	{r7, lr}
- 80014d6:	b086      	sub	sp, #24
- 80014d8:	af00      	add	r7, sp, #0
- 80014da:	60f8      	str	r0, [r7, #12]
- 80014dc:	60b9      	str	r1, [r7, #8]
- 80014de:	607a      	str	r2, [r7, #4]
+static int colorHandleCalibrationValues(h_color_sensor_t * h_color_sensor, uint32_t frequence){
+ 80014e4:	b580      	push	{r7, lr}
+ 80014e6:	b084      	sub	sp, #16
+ 80014e8:	af00      	add	r7, sp, #0
+ 80014ea:	6078      	str	r0, [r7, #4]
+ 80014ec:	6039      	str	r1, [r7, #0]
 	calib_tab[u]=freq;
- 80014e0:	4b4e      	ldr	r3, [pc, #312]	; (800161c <colorHandleCalibrationValues+0x148>)
- 80014e2:	681b      	ldr	r3, [r3, #0]
- 80014e4:	4a4e      	ldr	r2, [pc, #312]	; (8001620 <colorHandleCalibrationValues+0x14c>)
- 80014e6:	6812      	ldr	r2, [r2, #0]
- 80014e8:	494e      	ldr	r1, [pc, #312]	; (8001624 <colorHandleCalibrationValues+0x150>)
- 80014ea:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
-	u++;
- 80014ee:	4b4b      	ldr	r3, [pc, #300]	; (800161c <colorHandleCalibrationValues+0x148>)
+ 80014ee:	4b4e      	ldr	r3, [pc, #312]	; (8001628 <colorHandleCalibrationValues+0x144>)
  80014f0:	681b      	ldr	r3, [r3, #0]
- 80014f2:	3301      	adds	r3, #1
- 80014f4:	4a49      	ldr	r2, [pc, #292]	; (800161c <colorHandleCalibrationValues+0x148>)
- 80014f6:	6013      	str	r3, [r2, #0]
+ 80014f2:	4a4e      	ldr	r2, [pc, #312]	; (800162c <colorHandleCalibrationValues+0x148>)
+ 80014f4:	6812      	ldr	r2, [r2, #0]
+ 80014f6:	494e      	ldr	r1, [pc, #312]	; (8001630 <colorHandleCalibrationValues+0x14c>)
+ 80014f8:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
+	u++;
+ 80014fc:	4b4a      	ldr	r3, [pc, #296]	; (8001628 <colorHandleCalibrationValues+0x144>)
+ 80014fe:	681b      	ldr	r3, [r3, #0]
+ 8001500:	3301      	adds	r3, #1
+ 8001502:	4a49      	ldr	r2, [pc, #292]	; (8001628 <colorHandleCalibrationValues+0x144>)
+ 8001504:	6013      	str	r3, [r2, #0]
 	if(u==CALIBRATION_NB_VALUES){
- 80014f8:	4b48      	ldr	r3, [pc, #288]	; (800161c <colorHandleCalibrationValues+0x148>)
- 80014fa:	681b      	ldr	r3, [r3, #0]
- 80014fc:	2b1e      	cmp	r3, #30
- 80014fe:	f040 8088 	bne.w	8001612 <colorHandleCalibrationValues+0x13e>
+ 8001506:	4b48      	ldr	r3, [pc, #288]	; (8001628 <colorHandleCalibrationValues+0x144>)
+ 8001508:	681b      	ldr	r3, [r3, #0]
+ 800150a:	2b1e      	cmp	r3, #30
+ 800150c:	f040 8087 	bne.w	800161e <colorHandleCalibrationValues+0x13a>
 		colorDisable(h_color_sensor);
- 8001502:	68f8      	ldr	r0, [r7, #12]
- 8001504:	f7ff fdfe 	bl	8001104 <colorDisable>
+ 8001510:	6878      	ldr	r0, [r7, #4]
+ 8001512:	f7ff fe03 	bl	800111c <colorDisable>
 		uint32_t res=0;
- 8001508:	2300      	movs	r3, #0
- 800150a:	617b      	str	r3, [r7, #20]
+ 8001516:	2300      	movs	r3, #0
+ 8001518:	60fb      	str	r3, [r7, #12]
 		for(int i=0;i<30;i++){
- 800150c:	2300      	movs	r3, #0
- 800150e:	613b      	str	r3, [r7, #16]
- 8001510:	e012      	b.n	8001538 <colorHandleCalibrationValues+0x64>
+ 800151a:	2300      	movs	r3, #0
+ 800151c:	60bb      	str	r3, [r7, #8]
+ 800151e:	e012      	b.n	8001546 <colorHandleCalibrationValues+0x62>
 			res=res+calib_tab[i];
- 8001512:	4a44      	ldr	r2, [pc, #272]	; (8001624 <colorHandleCalibrationValues+0x150>)
- 8001514:	693b      	ldr	r3, [r7, #16]
- 8001516:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
- 800151a:	697a      	ldr	r2, [r7, #20]
- 800151c:	4413      	add	r3, r2
- 800151e:	617b      	str	r3, [r7, #20]
-			printf("calib values[%d] : %ld\r\n",i,calib_tab[i]);
- 8001520:	4a40      	ldr	r2, [pc, #256]	; (8001624 <colorHandleCalibrationValues+0x150>)
- 8001522:	693b      	ldr	r3, [r7, #16]
+ 8001520:	4a43      	ldr	r2, [pc, #268]	; (8001630 <colorHandleCalibrationValues+0x14c>)
+ 8001522:	68bb      	ldr	r3, [r7, #8]
  8001524:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
- 8001528:	461a      	mov	r2, r3
- 800152a:	6939      	ldr	r1, [r7, #16]
- 800152c:	483e      	ldr	r0, [pc, #248]	; (8001628 <colorHandleCalibrationValues+0x154>)
- 800152e:	f006 fd25 	bl	8007f7c <iprintf>
+ 8001528:	68fa      	ldr	r2, [r7, #12]
+ 800152a:	4413      	add	r3, r2
+ 800152c:	60fb      	str	r3, [r7, #12]
+			printf("calib values[%d] : %ld\r\n",i,calib_tab[i]);
+ 800152e:	4a40      	ldr	r2, [pc, #256]	; (8001630 <colorHandleCalibrationValues+0x14c>)
+ 8001530:	68bb      	ldr	r3, [r7, #8]
+ 8001532:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
+ 8001536:	461a      	mov	r2, r3
+ 8001538:	68b9      	ldr	r1, [r7, #8]
+ 800153a:	483e      	ldr	r0, [pc, #248]	; (8001634 <colorHandleCalibrationValues+0x150>)
+ 800153c:	f006 fd1e 	bl	8007f7c <iprintf>
 		for(int i=0;i<30;i++){
- 8001532:	693b      	ldr	r3, [r7, #16]
- 8001534:	3301      	adds	r3, #1
- 8001536:	613b      	str	r3, [r7, #16]
- 8001538:	693b      	ldr	r3, [r7, #16]
- 800153a:	2b1d      	cmp	r3, #29
- 800153c:	dde9      	ble.n	8001512 <colorHandleCalibrationValues+0x3e>
+ 8001540:	68bb      	ldr	r3, [r7, #8]
+ 8001542:	3301      	adds	r3, #1
+ 8001544:	60bb      	str	r3, [r7, #8]
+ 8001546:	68bb      	ldr	r3, [r7, #8]
+ 8001548:	2b1d      	cmp	r3, #29
+ 800154a:	dde9      	ble.n	8001520 <colorHandleCalibrationValues+0x3c>
 		}
 		switch(h_color_sensor->calib_state){
- 800153e:	68fb      	ldr	r3, [r7, #12]
- 8001540:	7d1b      	ldrb	r3, [r3, #20]
- 8001542:	3b01      	subs	r3, #1
- 8001544:	2b03      	cmp	r3, #3
- 8001546:	d85b      	bhi.n	8001600 <colorHandleCalibrationValues+0x12c>
- 8001548:	a201      	add	r2, pc, #4	; (adr r2, 8001550 <colorHandleCalibrationValues+0x7c>)
- 800154a:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
- 800154e:	bf00      	nop
- 8001550:	08001561 	.word	0x08001561
- 8001554:	0800158d 	.word	0x0800158d
- 8001558:	080015b1 	.word	0x080015b1
- 800155c:	080015dd 	.word	0x080015dd
+ 800154c:	687b      	ldr	r3, [r7, #4]
+ 800154e:	7d1b      	ldrb	r3, [r3, #20]
+ 8001550:	3b01      	subs	r3, #1
+ 8001552:	2b03      	cmp	r3, #3
+ 8001554:	d85a      	bhi.n	800160c <colorHandleCalibrationValues+0x128>
+ 8001556:	a201      	add	r2, pc, #4	; (adr r2, 800155c <colorHandleCalibrationValues+0x78>)
+ 8001558:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
+ 800155c:	0800156d 	.word	0x0800156d
+ 8001560:	08001599 	.word	0x08001599
+ 8001564:	080015bd 	.word	0x080015bd
+ 8001568:	080015e9 	.word	0x080015e9
 		case CALIB_VERT_CANETTE:
-			h_calib_buffer_struct->calib_value_vert_canette=(uint16_t)(res/CALIBRATION_NB_VALUES);
- 8001560:	697b      	ldr	r3, [r7, #20]
- 8001562:	4a32      	ldr	r2, [pc, #200]	; (800162c <colorHandleCalibrationValues+0x158>)
- 8001564:	fba2 2303 	umull	r2, r3, r2, r3
- 8001568:	091b      	lsrs	r3, r3, #4
- 800156a:	b29a      	uxth	r2, r3
- 800156c:	687b      	ldr	r3, [r7, #4]
- 800156e:	801a      	strh	r2, [r3, #0]
-			h_color_sensor->green_transformation.green_min_freq=h_calib_buffer_struct->calib_value_vert_canette;
- 8001570:	687b      	ldr	r3, [r7, #4]
- 8001572:	881a      	ldrh	r2, [r3, #0]
- 8001574:	68fb      	ldr	r3, [r7, #12]
- 8001576:	835a      	strh	r2, [r3, #26]
+			h_color_sensor->calib_struct.calib_value_vert_canette=(uint16_t)(res/CALIBRATION_NB_VALUES);
+ 800156c:	68fb      	ldr	r3, [r7, #12]
+ 800156e:	4a32      	ldr	r2, [pc, #200]	; (8001638 <colorHandleCalibrationValues+0x154>)
+ 8001570:	fba2 2303 	umull	r2, r3, r2, r3
+ 8001574:	091b      	lsrs	r3, r3, #4
+ 8001576:	b29a      	uxth	r2, r3
+ 8001578:	687b      	ldr	r3, [r7, #4]
+ 800157a:	845a      	strh	r2, [r3, #34]	; 0x22
+			h_color_sensor->green_transformation.green_min_freq=h_color_sensor->calib_struct.calib_value_vert_canette;
+ 800157c:	687b      	ldr	r3, [r7, #4]
+ 800157e:	8c5a      	ldrh	r2, [r3, #34]	; 0x22
+ 8001580:	687b      	ldr	r3, [r7, #4]
+ 8001582:	835a      	strh	r2, [r3, #26]
 			printf("Struct calib : champ vert_canette remplie\r\n");
- 8001578:	482d      	ldr	r0, [pc, #180]	; (8001630 <colorHandleCalibrationValues+0x15c>)
- 800157a:	f006 fd85 	bl	8008088 <puts>
-			printf("Calib_value_vert_canette : %u\r\n\n",h_calib_buffer_struct->calib_value_vert_canette);
- 800157e:	687b      	ldr	r3, [r7, #4]
- 8001580:	881b      	ldrh	r3, [r3, #0]
- 8001582:	4619      	mov	r1, r3
- 8001584:	482b      	ldr	r0, [pc, #172]	; (8001634 <colorHandleCalibrationValues+0x160>)
- 8001586:	f006 fcf9 	bl	8007f7c <iprintf>
+ 8001584:	482d      	ldr	r0, [pc, #180]	; (800163c <colorHandleCalibrationValues+0x158>)
+ 8001586:	f006 fd7f 	bl	8008088 <puts>
+			printf("Calib_value_vert_canette : %u\r\n\n",h_color_sensor->calib_struct.calib_value_vert_canette);
+ 800158a:	687b      	ldr	r3, [r7, #4]
+ 800158c:	8c5b      	ldrh	r3, [r3, #34]	; 0x22
+ 800158e:	4619      	mov	r1, r3
+ 8001590:	482b      	ldr	r0, [pc, #172]	; (8001640 <colorHandleCalibrationValues+0x15c>)
+ 8001592:	f006 fcf3 	bl	8007f7c <iprintf>
 			break;
- 800158a:	e03d      	b.n	8001608 <colorHandleCalibrationValues+0x134>
+ 8001596:	e03d      	b.n	8001614 <colorHandleCalibrationValues+0x130>
 		case CALIB_VERT_VIDE:
-			h_calib_buffer_struct->calib_value_vert_vide=(uint16_t)(res/CALIBRATION_NB_VALUES);
- 800158c:	697b      	ldr	r3, [r7, #20]
- 800158e:	4a27      	ldr	r2, [pc, #156]	; (800162c <colorHandleCalibrationValues+0x158>)
- 8001590:	fba2 2303 	umull	r2, r3, r2, r3
- 8001594:	091b      	lsrs	r3, r3, #4
- 8001596:	b29a      	uxth	r2, r3
- 8001598:	687b      	ldr	r3, [r7, #4]
- 800159a:	805a      	strh	r2, [r3, #2]
+			h_color_sensor->calib_struct.calib_value_vert_vide=(uint16_t)(res/CALIBRATION_NB_VALUES);
+ 8001598:	68fb      	ldr	r3, [r7, #12]
+ 800159a:	4a27      	ldr	r2, [pc, #156]	; (8001638 <colorHandleCalibrationValues+0x154>)
+ 800159c:	fba2 2303 	umull	r2, r3, r2, r3
+ 80015a0:	091b      	lsrs	r3, r3, #4
+ 80015a2:	b29a      	uxth	r2, r3
+ 80015a4:	687b      	ldr	r3, [r7, #4]
+ 80015a6:	849a      	strh	r2, [r3, #36]	; 0x24
 			printf("Struct calib : champ vert_vide remplie\r\n");
- 800159c:	4826      	ldr	r0, [pc, #152]	; (8001638 <colorHandleCalibrationValues+0x164>)
- 800159e:	f006 fd73 	bl	8008088 <puts>
-			printf("Calib_value_vert_vide : %u\r\n\n",h_calib_buffer_struct->calib_value_vert_vide);
- 80015a2:	687b      	ldr	r3, [r7, #4]
- 80015a4:	885b      	ldrh	r3, [r3, #2]
- 80015a6:	4619      	mov	r1, r3
- 80015a8:	4824      	ldr	r0, [pc, #144]	; (800163c <colorHandleCalibrationValues+0x168>)
- 80015aa:	f006 fce7 	bl	8007f7c <iprintf>
+ 80015a8:	4826      	ldr	r0, [pc, #152]	; (8001644 <colorHandleCalibrationValues+0x160>)
+ 80015aa:	f006 fd6d 	bl	8008088 <puts>
+			printf("Calib_value_vert_vide : %u\r\n\n",h_color_sensor->calib_struct.calib_value_vert_vide);
+ 80015ae:	687b      	ldr	r3, [r7, #4]
+ 80015b0:	8c9b      	ldrh	r3, [r3, #36]	; 0x24
+ 80015b2:	4619      	mov	r1, r3
+ 80015b4:	4824      	ldr	r0, [pc, #144]	; (8001648 <colorHandleCalibrationValues+0x164>)
+ 80015b6:	f006 fce1 	bl	8007f7c <iprintf>
 			break;
- 80015ae:	e02b      	b.n	8001608 <colorHandleCalibrationValues+0x134>
+ 80015ba:	e02b      	b.n	8001614 <colorHandleCalibrationValues+0x130>
 		case CALIB_ROUGE_CANETTE:
-			h_calib_buffer_struct->calib_value_rouge_canette=(uint16_t)(res/CALIBRATION_NB_VALUES);
- 80015b0:	697b      	ldr	r3, [r7, #20]
- 80015b2:	4a1e      	ldr	r2, [pc, #120]	; (800162c <colorHandleCalibrationValues+0x158>)
- 80015b4:	fba2 2303 	umull	r2, r3, r2, r3
- 80015b8:	091b      	lsrs	r3, r3, #4
- 80015ba:	b29a      	uxth	r2, r3
- 80015bc:	687b      	ldr	r3, [r7, #4]
- 80015be:	809a      	strh	r2, [r3, #4]
-			h_color_sensor->red_transformation.red_min_freq=h_calib_buffer_struct->calib_value_rouge_canette;
- 80015c0:	687b      	ldr	r3, [r7, #4]
- 80015c2:	889a      	ldrh	r2, [r3, #4]
- 80015c4:	68fb      	ldr	r3, [r7, #12]
- 80015c6:	841a      	strh	r2, [r3, #32]
+			h_color_sensor->calib_struct.calib_value_rouge_canette=(uint16_t)(res/CALIBRATION_NB_VALUES);
+ 80015bc:	68fb      	ldr	r3, [r7, #12]
+ 80015be:	4a1e      	ldr	r2, [pc, #120]	; (8001638 <colorHandleCalibrationValues+0x154>)
+ 80015c0:	fba2 2303 	umull	r2, r3, r2, r3
+ 80015c4:	091b      	lsrs	r3, r3, #4
+ 80015c6:	b29a      	uxth	r2, r3
+ 80015c8:	687b      	ldr	r3, [r7, #4]
+ 80015ca:	84da      	strh	r2, [r3, #38]	; 0x26
+			h_color_sensor->red_transformation.red_min_freq=h_color_sensor->calib_struct.calib_value_rouge_canette;
+ 80015cc:	687b      	ldr	r3, [r7, #4]
+ 80015ce:	8cda      	ldrh	r2, [r3, #38]	; 0x26
+ 80015d0:	687b      	ldr	r3, [r7, #4]
+ 80015d2:	841a      	strh	r2, [r3, #32]
 			printf("Struct calib : champ rouge_canette remplie\r\n");
- 80015c8:	481d      	ldr	r0, [pc, #116]	; (8001640 <colorHandleCalibrationValues+0x16c>)
- 80015ca:	f006 fd5d 	bl	8008088 <puts>
-			printf("Calib_value_rouge_canette : %u\r\n\n",h_calib_buffer_struct->calib_value_rouge_canette);
- 80015ce:	687b      	ldr	r3, [r7, #4]
- 80015d0:	889b      	ldrh	r3, [r3, #4]
- 80015d2:	4619      	mov	r1, r3
- 80015d4:	481b      	ldr	r0, [pc, #108]	; (8001644 <colorHandleCalibrationValues+0x170>)
- 80015d6:	f006 fcd1 	bl	8007f7c <iprintf>
+ 80015d4:	481d      	ldr	r0, [pc, #116]	; (800164c <colorHandleCalibrationValues+0x168>)
+ 80015d6:	f006 fd57 	bl	8008088 <puts>
+			printf("Calib_value_rouge_canette : %u\r\n\n",h_color_sensor->calib_struct.calib_value_rouge_canette);
+ 80015da:	687b      	ldr	r3, [r7, #4]
+ 80015dc:	8cdb      	ldrh	r3, [r3, #38]	; 0x26
+ 80015de:	4619      	mov	r1, r3
+ 80015e0:	481b      	ldr	r0, [pc, #108]	; (8001650 <colorHandleCalibrationValues+0x16c>)
+ 80015e2:	f006 fccb 	bl	8007f7c <iprintf>
 			break;
- 80015da:	e015      	b.n	8001608 <colorHandleCalibrationValues+0x134>
+ 80015e6:	e015      	b.n	8001614 <colorHandleCalibrationValues+0x130>
 		case CALIB_ROUGE_VIDE:
-			h_calib_buffer_struct->calib_value_rouge_vide=(uint16_t)(res/CALIBRATION_NB_VALUES);
- 80015dc:	697b      	ldr	r3, [r7, #20]
- 80015de:	4a13      	ldr	r2, [pc, #76]	; (800162c <colorHandleCalibrationValues+0x158>)
- 80015e0:	fba2 2303 	umull	r2, r3, r2, r3
- 80015e4:	091b      	lsrs	r3, r3, #4
- 80015e6:	b29a      	uxth	r2, r3
- 80015e8:	687b      	ldr	r3, [r7, #4]
- 80015ea:	80da      	strh	r2, [r3, #6]
+			h_color_sensor->calib_struct.calib_value_rouge_vide=(uint16_t)(res/CALIBRATION_NB_VALUES);
+ 80015e8:	68fb      	ldr	r3, [r7, #12]
+ 80015ea:	4a13      	ldr	r2, [pc, #76]	; (8001638 <colorHandleCalibrationValues+0x154>)
+ 80015ec:	fba2 2303 	umull	r2, r3, r2, r3
+ 80015f0:	091b      	lsrs	r3, r3, #4
+ 80015f2:	b29a      	uxth	r2, r3
+ 80015f4:	687b      	ldr	r3, [r7, #4]
+ 80015f6:	851a      	strh	r2, [r3, #40]	; 0x28
 			printf("Struct calib : champ rouge_vide remplie\r\n");
- 80015ec:	4816      	ldr	r0, [pc, #88]	; (8001648 <colorHandleCalibrationValues+0x174>)
- 80015ee:	f006 fd4b 	bl	8008088 <puts>
-			printf("Calib_value_vert_canette : %u\r\n",h_calib_buffer_struct->calib_value_rouge_vide);
- 80015f2:	687b      	ldr	r3, [r7, #4]
- 80015f4:	88db      	ldrh	r3, [r3, #6]
- 80015f6:	4619      	mov	r1, r3
- 80015f8:	4814      	ldr	r0, [pc, #80]	; (800164c <colorHandleCalibrationValues+0x178>)
- 80015fa:	f006 fcbf 	bl	8007f7c <iprintf>
+ 80015f8:	4816      	ldr	r0, [pc, #88]	; (8001654 <colorHandleCalibrationValues+0x170>)
+ 80015fa:	f006 fd45 	bl	8008088 <puts>
+			printf("Calib_value_vert_canette : %u\r\n",h_color_sensor->calib_struct.calib_value_rouge_vide);
+ 80015fe:	687b      	ldr	r3, [r7, #4]
+ 8001600:	8d1b      	ldrh	r3, [r3, #40]	; 0x28
+ 8001602:	4619      	mov	r1, r3
+ 8001604:	4814      	ldr	r0, [pc, #80]	; (8001658 <colorHandleCalibrationValues+0x174>)
+ 8001606:	f006 fcb9 	bl	8007f7c <iprintf>
 			break;
- 80015fe:	e003      	b.n	8001608 <colorHandleCalibrationValues+0x134>
+ 800160a:	e003      	b.n	8001614 <colorHandleCalibrationValues+0x130>
 		default:
 			printf("bug dans la calibration\r\n\n");
- 8001600:	4813      	ldr	r0, [pc, #76]	; (8001650 <colorHandleCalibrationValues+0x17c>)
- 8001602:	f006 fd41 	bl	8008088 <puts>
+ 800160c:	4813      	ldr	r0, [pc, #76]	; (800165c <colorHandleCalibrationValues+0x178>)
+ 800160e:	f006 fd3b 	bl	8008088 <puts>
 			break;
- 8001606:	bf00      	nop
+ 8001612:	bf00      	nop
 		}
 		u=0;
- 8001608:	4b04      	ldr	r3, [pc, #16]	; (800161c <colorHandleCalibrationValues+0x148>)
- 800160a:	2200      	movs	r2, #0
- 800160c:	601a      	str	r2, [r3, #0]
+ 8001614:	4b04      	ldr	r3, [pc, #16]	; (8001628 <colorHandleCalibrationValues+0x144>)
+ 8001616:	2200      	movs	r2, #0
+ 8001618:	601a      	str	r2, [r3, #0]
 		return 1;
- 800160e:	2301      	movs	r3, #1
- 8001610:	e000      	b.n	8001614 <colorHandleCalibrationValues+0x140>
+ 800161a:	2301      	movs	r3, #1
+ 800161c:	e000      	b.n	8001620 <colorHandleCalibrationValues+0x13c>
 	}
 	return 0;
- 8001612:	2300      	movs	r3, #0
+ 800161e:	2300      	movs	r3, #0
 }
- 8001614:	4618      	mov	r0, r3
- 8001616:	3718      	adds	r7, #24
- 8001618:	46bd      	mov	sp, r7
- 800161a:	bd80      	pop	{r7, pc}
- 800161c:	20000354 	.word	0x20000354
- 8001620:	200001fc 	.word	0x200001fc
- 8001624:	200002dc 	.word	0x200002dc
- 8001628:	0800afd8 	.word	0x0800afd8
- 800162c:	88888889 	.word	0x88888889
- 8001630:	0800aff4 	.word	0x0800aff4
- 8001634:	0800b020 	.word	0x0800b020
- 8001638:	0800b044 	.word	0x0800b044
- 800163c:	0800b06c 	.word	0x0800b06c
- 8001640:	0800b08c 	.word	0x0800b08c
- 8001644:	0800b0b8 	.word	0x0800b0b8
- 8001648:	0800b0dc 	.word	0x0800b0dc
- 800164c:	0800b108 	.word	0x0800b108
- 8001650:	0800b128 	.word	0x0800b128
+ 8001620:	4618      	mov	r0, r3
+ 8001622:	3710      	adds	r7, #16
+ 8001624:	46bd      	mov	sp, r7
+ 8001626:	bd80      	pop	{r7, pc}
+ 8001628:	20000354 	.word	0x20000354
+ 800162c:	200001fc 	.word	0x200001fc
+ 8001630:	200002dc 	.word	0x200002dc
+ 8001634:	0800afd8 	.word	0x0800afd8
+ 8001638:	88888889 	.word	0x88888889
+ 800163c:	0800aff4 	.word	0x0800aff4
+ 8001640:	0800b020 	.word	0x0800b020
+ 8001644:	0800b044 	.word	0x0800b044
+ 8001648:	0800b06c 	.word	0x0800b06c
+ 800164c:	0800b08c 	.word	0x0800b08c
+ 8001650:	0800b0b8 	.word	0x0800b0b8
+ 8001654:	0800b0dc 	.word	0x0800b0dc
+ 8001658:	0800b108 	.word	0x0800b108
+ 800165c:	0800b128 	.word	0x0800b128
 
-08001654 <colorHandleRawValues>:
+08001660 <colorHandleRawValues>:
 
 static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t frequence){
- 8001654:	b580      	push	{r7, lr}
- 8001656:	b08a      	sub	sp, #40	; 0x28
- 8001658:	af02      	add	r7, sp, #8
- 800165a:	6078      	str	r0, [r7, #4]
- 800165c:	6039      	str	r1, [r7, #0]
+ 8001660:	b580      	push	{r7, lr}
+ 8001662:	b08a      	sub	sp, #40	; 0x28
+ 8001664:	af02      	add	r7, sp, #8
+ 8001666:	6078      	str	r0, [r7, #4]
+ 8001668:	6039      	str	r1, [r7, #0]
 	//printf("entre dans color_handle\r\n");
 	if(raw_values_compteur<((NB_MEASURE_WANTED/2)-1)){
- 800165e:	4b84      	ldr	r3, [pc, #528]	; (8001870 <colorHandleRawValues+0x21c>)
- 8001660:	781b      	ldrb	r3, [r3, #0]
- 8001662:	2b08      	cmp	r3, #8
- 8001664:	d826      	bhi.n	80016b4 <colorHandleRawValues+0x60>
+ 800166a:	4b84      	ldr	r3, [pc, #528]	; (800187c <colorHandleRawValues+0x21c>)
+ 800166c:	781b      	ldrb	r3, [r3, #0]
+ 800166e:	2b08      	cmp	r3, #8
+ 8001670:	d826      	bhi.n	80016c0 <colorHandleRawValues+0x60>
 		// premieres valeurs du tableau donc on est dans le vert
 		if(frequence<(h_color_sensor->green_transformation.green_min_freq)){
- 8001666:	687b      	ldr	r3, [r7, #4]
- 8001668:	8b5b      	ldrh	r3, [r3, #26]
- 800166a:	461a      	mov	r2, r3
- 800166c:	683b      	ldr	r3, [r7, #0]
- 800166e:	4293      	cmp	r3, r2
- 8001670:	d202      	bcs.n	8001678 <colorHandleRawValues+0x24>
-			frequence = (uint32_t)h_color_sensor->green_transformation.green_min_freq;
  8001672:	687b      	ldr	r3, [r7, #4]
  8001674:	8b5b      	ldrh	r3, [r3, #26]
- 8001676:	603b      	str	r3, [r7, #0]
+ 8001676:	461a      	mov	r2, r3
+ 8001678:	683b      	ldr	r3, [r7, #0]
+ 800167a:	4293      	cmp	r3, r2
+ 800167c:	d202      	bcs.n	8001684 <colorHandleRawValues+0x24>
+			frequence = (uint32_t)h_color_sensor->green_transformation.green_min_freq;
+ 800167e:	687b      	ldr	r3, [r7, #4]
+ 8001680:	8b5b      	ldrh	r3, [r3, #26]
+ 8001682:	603b      	str	r3, [r7, #0]
 		}
 		//--debug
 		color_raw_values[raw_values_compteur]=frequence;
- 8001678:	4b7d      	ldr	r3, [pc, #500]	; (8001870 <colorHandleRawValues+0x21c>)
- 800167a:	781b      	ldrb	r3, [r3, #0]
- 800167c:	4619      	mov	r1, r3
- 800167e:	4a7d      	ldr	r2, [pc, #500]	; (8001874 <colorHandleRawValues+0x220>)
- 8001680:	683b      	ldr	r3, [r7, #0]
- 8001682:	f842 3021 	str.w	r3, [r2, r1, lsl #2]
+ 8001684:	4b7d      	ldr	r3, [pc, #500]	; (800187c <colorHandleRawValues+0x21c>)
+ 8001686:	781b      	ldrb	r3, [r3, #0]
+ 8001688:	4619      	mov	r1, r3
+ 800168a:	4a7d      	ldr	r2, [pc, #500]	; (8001880 <colorHandleRawValues+0x220>)
+ 800168c:	683b      	ldr	r3, [r7, #0]
+ 800168e:	f842 3021 	str.w	r3, [r2, r1, lsl #2]
 		//--fin debug
 		color_scaled_values[raw_values_compteur]=((h_color_sensor->green_transformation.green_coef_dir)*frequence)+(h_color_sensor->green_transformation.green_ord_origin);
- 8001686:	687b      	ldr	r3, [r7, #4]
- 8001688:	8adb      	ldrh	r3, [r3, #22]
- 800168a:	461a      	mov	r2, r3
- 800168c:	683b      	ldr	r3, [r7, #0]
- 800168e:	fb02 f303 	mul.w	r3, r2, r3
- 8001692:	687a      	ldr	r2, [r7, #4]
- 8001694:	8b12      	ldrh	r2, [r2, #24]
- 8001696:	4610      	mov	r0, r2
- 8001698:	4a75      	ldr	r2, [pc, #468]	; (8001870 <colorHandleRawValues+0x21c>)
- 800169a:	7812      	ldrb	r2, [r2, #0]
- 800169c:	4611      	mov	r1, r2
- 800169e:	4403      	add	r3, r0
- 80016a0:	4a75      	ldr	r2, [pc, #468]	; (8001878 <colorHandleRawValues+0x224>)
- 80016a2:	f842 3021 	str.w	r3, [r2, r1, lsl #2]
+ 8001692:	687b      	ldr	r3, [r7, #4]
+ 8001694:	8adb      	ldrh	r3, [r3, #22]
+ 8001696:	461a      	mov	r2, r3
+ 8001698:	683b      	ldr	r3, [r7, #0]
+ 800169a:	fb02 f303 	mul.w	r3, r2, r3
+ 800169e:	687a      	ldr	r2, [r7, #4]
+ 80016a0:	8b12      	ldrh	r2, [r2, #24]
+ 80016a2:	4610      	mov	r0, r2
+ 80016a4:	4a75      	ldr	r2, [pc, #468]	; (800187c <colorHandleRawValues+0x21c>)
+ 80016a6:	7812      	ldrb	r2, [r2, #0]
+ 80016a8:	4611      	mov	r1, r2
+ 80016aa:	4403      	add	r3, r0
+ 80016ac:	4a75      	ldr	r2, [pc, #468]	; (8001884 <colorHandleRawValues+0x224>)
+ 80016ae:	f842 3021 	str.w	r3, [r2, r1, lsl #2]
 		raw_values_compteur++;
- 80016a6:	4b72      	ldr	r3, [pc, #456]	; (8001870 <colorHandleRawValues+0x21c>)
- 80016a8:	781b      	ldrb	r3, [r3, #0]
- 80016aa:	3301      	adds	r3, #1
- 80016ac:	b2da      	uxtb	r2, r3
- 80016ae:	4b70      	ldr	r3, [pc, #448]	; (8001870 <colorHandleRawValues+0x21c>)
- 80016b0:	701a      	strb	r2, [r3, #0]
- 80016b2:	e0d7      	b.n	8001864 <colorHandleRawValues+0x210>
+ 80016b2:	4b72      	ldr	r3, [pc, #456]	; (800187c <colorHandleRawValues+0x21c>)
+ 80016b4:	781b      	ldrb	r3, [r3, #0]
+ 80016b6:	3301      	adds	r3, #1
+ 80016b8:	b2da      	uxtb	r2, r3
+ 80016ba:	4b70      	ldr	r3, [pc, #448]	; (800187c <colorHandleRawValues+0x21c>)
+ 80016bc:	701a      	strb	r2, [r3, #0]
+ 80016be:	e0d7      	b.n	8001870 <colorHandleRawValues+0x210>
 	}
 
 	else if(raw_values_compteur==((NB_MEASURE_WANTED/2)-1)){
- 80016b4:	4b6e      	ldr	r3, [pc, #440]	; (8001870 <colorHandleRawValues+0x21c>)
- 80016b6:	781b      	ldrb	r3, [r3, #0]
- 80016b8:	2b09      	cmp	r3, #9
- 80016ba:	d130      	bne.n	800171e <colorHandleRawValues+0xca>
+ 80016c0:	4b6e      	ldr	r3, [pc, #440]	; (800187c <colorHandleRawValues+0x21c>)
+ 80016c2:	781b      	ldrb	r3, [r3, #0]
+ 80016c4:	2b09      	cmp	r3, #9
+ 80016c6:	d130      	bne.n	800172a <colorHandleRawValues+0xca>
 		//on est encore dans le vert mais on doit en plus changer la couleur de detection
 		if(frequence<(h_color_sensor->green_transformation.green_min_freq)){
- 80016bc:	687b      	ldr	r3, [r7, #4]
- 80016be:	8b5b      	ldrh	r3, [r3, #26]
- 80016c0:	461a      	mov	r2, r3
- 80016c2:	683b      	ldr	r3, [r7, #0]
- 80016c4:	4293      	cmp	r3, r2
- 80016c6:	d202      	bcs.n	80016ce <colorHandleRawValues+0x7a>
-			frequence = (uint32_t)h_color_sensor->green_transformation.green_min_freq;
  80016c8:	687b      	ldr	r3, [r7, #4]
  80016ca:	8b5b      	ldrh	r3, [r3, #26]
- 80016cc:	603b      	str	r3, [r7, #0]
+ 80016cc:	461a      	mov	r2, r3
+ 80016ce:	683b      	ldr	r3, [r7, #0]
+ 80016d0:	4293      	cmp	r3, r2
+ 80016d2:	d202      	bcs.n	80016da <colorHandleRawValues+0x7a>
+			frequence = (uint32_t)h_color_sensor->green_transformation.green_min_freq;
+ 80016d4:	687b      	ldr	r3, [r7, #4]
+ 80016d6:	8b5b      	ldrh	r3, [r3, #26]
+ 80016d8:	603b      	str	r3, [r7, #0]
 		}
 		//--debug
 		color_raw_values[raw_values_compteur]=frequence;
- 80016ce:	4b68      	ldr	r3, [pc, #416]	; (8001870 <colorHandleRawValues+0x21c>)
- 80016d0:	781b      	ldrb	r3, [r3, #0]
- 80016d2:	4619      	mov	r1, r3
- 80016d4:	4a67      	ldr	r2, [pc, #412]	; (8001874 <colorHandleRawValues+0x220>)
- 80016d6:	683b      	ldr	r3, [r7, #0]
- 80016d8:	f842 3021 	str.w	r3, [r2, r1, lsl #2]
+ 80016da:	4b68      	ldr	r3, [pc, #416]	; (800187c <colorHandleRawValues+0x21c>)
+ 80016dc:	781b      	ldrb	r3, [r3, #0]
+ 80016de:	4619      	mov	r1, r3
+ 80016e0:	4a67      	ldr	r2, [pc, #412]	; (8001880 <colorHandleRawValues+0x220>)
+ 80016e2:	683b      	ldr	r3, [r7, #0]
+ 80016e4:	f842 3021 	str.w	r3, [r2, r1, lsl #2]
 		//--fin debug
 		color_scaled_values[raw_values_compteur]=((h_color_sensor->green_transformation.green_coef_dir)*frequence)+(h_color_sensor->green_transformation.green_ord_origin);
- 80016dc:	687b      	ldr	r3, [r7, #4]
- 80016de:	8adb      	ldrh	r3, [r3, #22]
- 80016e0:	461a      	mov	r2, r3
- 80016e2:	683b      	ldr	r3, [r7, #0]
- 80016e4:	fb02 f303 	mul.w	r3, r2, r3
- 80016e8:	687a      	ldr	r2, [r7, #4]
- 80016ea:	8b12      	ldrh	r2, [r2, #24]
- 80016ec:	4610      	mov	r0, r2
- 80016ee:	4a60      	ldr	r2, [pc, #384]	; (8001870 <colorHandleRawValues+0x21c>)
- 80016f0:	7812      	ldrb	r2, [r2, #0]
- 80016f2:	4611      	mov	r1, r2
- 80016f4:	4403      	add	r3, r0
- 80016f6:	4a60      	ldr	r2, [pc, #384]	; (8001878 <colorHandleRawValues+0x224>)
- 80016f8:	f842 3021 	str.w	r3, [r2, r1, lsl #2]
+ 80016e8:	687b      	ldr	r3, [r7, #4]
+ 80016ea:	8adb      	ldrh	r3, [r3, #22]
+ 80016ec:	461a      	mov	r2, r3
+ 80016ee:	683b      	ldr	r3, [r7, #0]
+ 80016f0:	fb02 f303 	mul.w	r3, r2, r3
+ 80016f4:	687a      	ldr	r2, [r7, #4]
+ 80016f6:	8b12      	ldrh	r2, [r2, #24]
+ 80016f8:	4610      	mov	r0, r2
+ 80016fa:	4a60      	ldr	r2, [pc, #384]	; (800187c <colorHandleRawValues+0x21c>)
+ 80016fc:	7812      	ldrb	r2, [r2, #0]
+ 80016fe:	4611      	mov	r1, r2
+ 8001700:	4403      	add	r3, r0
+ 8001702:	4a60      	ldr	r2, [pc, #384]	; (8001884 <colorHandleRawValues+0x224>)
+ 8001704:	f842 3021 	str.w	r3, [r2, r1, lsl #2]
 		raw_values_compteur++;
- 80016fc:	4b5c      	ldr	r3, [pc, #368]	; (8001870 <colorHandleRawValues+0x21c>)
- 80016fe:	781b      	ldrb	r3, [r3, #0]
- 8001700:	3301      	adds	r3, #1
- 8001702:	b2da      	uxtb	r2, r3
- 8001704:	4b5a      	ldr	r3, [pc, #360]	; (8001870 <colorHandleRawValues+0x21c>)
- 8001706:	701a      	strb	r2, [r3, #0]
+ 8001708:	4b5c      	ldr	r3, [pc, #368]	; (800187c <colorHandleRawValues+0x21c>)
+ 800170a:	781b      	ldrb	r3, [r3, #0]
+ 800170c:	3301      	adds	r3, #1
+ 800170e:	b2da      	uxtb	r2, r3
+ 8001710:	4b5a      	ldr	r3, [pc, #360]	; (800187c <colorHandleRawValues+0x21c>)
+ 8001712:	701a      	strb	r2, [r3, #0]
 
 		// color change
 		colorDisable(h_color_sensor);
- 8001708:	6878      	ldr	r0, [r7, #4]
- 800170a:	f7ff fcfb 	bl	8001104 <colorDisable>
+ 8001714:	6878      	ldr	r0, [r7, #4]
+ 8001716:	f7ff fd01 	bl	800111c <colorDisable>
 		colorSetPhotodiodeType(h_color_sensor,RED);
- 800170e:	2101      	movs	r1, #1
- 8001710:	6878      	ldr	r0, [r7, #4]
- 8001712:	f7ff fc53 	bl	8000fbc <colorSetPhotodiodeType>
+ 800171a:	2101      	movs	r1, #1
+ 800171c:	6878      	ldr	r0, [r7, #4]
+ 800171e:	f7ff fc4d 	bl	8000fbc <colorSetPhotodiodeType>
 		colorEnable(h_color_sensor);
- 8001716:	6878      	ldr	r0, [r7, #4]
- 8001718:	f7ff fd20 	bl	800115c <colorEnable>
- 800171c:	e0a2      	b.n	8001864 <colorHandleRawValues+0x210>
+ 8001722:	6878      	ldr	r0, [r7, #4]
+ 8001724:	f7ff fd26 	bl	8001174 <colorEnable>
+ 8001728:	e0a2      	b.n	8001870 <colorHandleRawValues+0x210>
 	}
 
 	else if((raw_values_compteur>((NB_MEASURE_WANTED/2)-1))&&(raw_values_compteur<NB_MEASURE_WANTED)){
- 800171e:	4b54      	ldr	r3, [pc, #336]	; (8001870 <colorHandleRawValues+0x21c>)
- 8001720:	781b      	ldrb	r3, [r3, #0]
- 8001722:	2b09      	cmp	r3, #9
- 8001724:	d92a      	bls.n	800177c <colorHandleRawValues+0x128>
- 8001726:	4b52      	ldr	r3, [pc, #328]	; (8001870 <colorHandleRawValues+0x21c>)
- 8001728:	781b      	ldrb	r3, [r3, #0]
- 800172a:	2b13      	cmp	r3, #19
- 800172c:	d826      	bhi.n	800177c <colorHandleRawValues+0x128>
+ 800172a:	4b54      	ldr	r3, [pc, #336]	; (800187c <colorHandleRawValues+0x21c>)
+ 800172c:	781b      	ldrb	r3, [r3, #0]
+ 800172e:	2b09      	cmp	r3, #9
+ 8001730:	d92a      	bls.n	8001788 <colorHandleRawValues+0x128>
+ 8001732:	4b52      	ldr	r3, [pc, #328]	; (800187c <colorHandleRawValues+0x21c>)
+ 8001734:	781b      	ldrb	r3, [r3, #0]
+ 8001736:	2b13      	cmp	r3, #19
+ 8001738:	d826      	bhi.n	8001788 <colorHandleRawValues+0x128>
 		// valeures rouges
 		if(frequence<(h_color_sensor->red_transformation.red_min_freq)){
- 800172e:	687b      	ldr	r3, [r7, #4]
- 8001730:	8c1b      	ldrh	r3, [r3, #32]
- 8001732:	461a      	mov	r2, r3
- 8001734:	683b      	ldr	r3, [r7, #0]
- 8001736:	4293      	cmp	r3, r2
- 8001738:	d202      	bcs.n	8001740 <colorHandleRawValues+0xec>
-			frequence = (uint32_t)h_color_sensor->red_transformation.red_min_freq;
  800173a:	687b      	ldr	r3, [r7, #4]
  800173c:	8c1b      	ldrh	r3, [r3, #32]
- 800173e:	603b      	str	r3, [r7, #0]
+ 800173e:	461a      	mov	r2, r3
+ 8001740:	683b      	ldr	r3, [r7, #0]
+ 8001742:	4293      	cmp	r3, r2
+ 8001744:	d202      	bcs.n	800174c <colorHandleRawValues+0xec>
+			frequence = (uint32_t)h_color_sensor->red_transformation.red_min_freq;
+ 8001746:	687b      	ldr	r3, [r7, #4]
+ 8001748:	8c1b      	ldrh	r3, [r3, #32]
+ 800174a:	603b      	str	r3, [r7, #0]
 		}
 		//--debug
 		color_raw_values[raw_values_compteur]=frequence;
- 8001740:	4b4b      	ldr	r3, [pc, #300]	; (8001870 <colorHandleRawValues+0x21c>)
- 8001742:	781b      	ldrb	r3, [r3, #0]
- 8001744:	4619      	mov	r1, r3
- 8001746:	4a4b      	ldr	r2, [pc, #300]	; (8001874 <colorHandleRawValues+0x220>)
- 8001748:	683b      	ldr	r3, [r7, #0]
- 800174a:	f842 3021 	str.w	r3, [r2, r1, lsl #2]
+ 800174c:	4b4b      	ldr	r3, [pc, #300]	; (800187c <colorHandleRawValues+0x21c>)
+ 800174e:	781b      	ldrb	r3, [r3, #0]
+ 8001750:	4619      	mov	r1, r3
+ 8001752:	4a4b      	ldr	r2, [pc, #300]	; (8001880 <colorHandleRawValues+0x220>)
+ 8001754:	683b      	ldr	r3, [r7, #0]
+ 8001756:	f842 3021 	str.w	r3, [r2, r1, lsl #2]
 		//--fin debug
 		color_scaled_values[raw_values_compteur]=((h_color_sensor->red_transformation.red_coef_dir)*frequence)+(h_color_sensor->red_transformation.red_ord_origin);
- 800174e:	687b      	ldr	r3, [r7, #4]
- 8001750:	8b9b      	ldrh	r3, [r3, #28]
- 8001752:	461a      	mov	r2, r3
- 8001754:	683b      	ldr	r3, [r7, #0]
- 8001756:	fb02 f303 	mul.w	r3, r2, r3
- 800175a:	687a      	ldr	r2, [r7, #4]
- 800175c:	8bd2      	ldrh	r2, [r2, #30]
- 800175e:	4610      	mov	r0, r2
- 8001760:	4a43      	ldr	r2, [pc, #268]	; (8001870 <colorHandleRawValues+0x21c>)
- 8001762:	7812      	ldrb	r2, [r2, #0]
- 8001764:	4611      	mov	r1, r2
- 8001766:	4403      	add	r3, r0
- 8001768:	4a43      	ldr	r2, [pc, #268]	; (8001878 <colorHandleRawValues+0x224>)
- 800176a:	f842 3021 	str.w	r3, [r2, r1, lsl #2]
+ 800175a:	687b      	ldr	r3, [r7, #4]
+ 800175c:	8b9b      	ldrh	r3, [r3, #28]
+ 800175e:	461a      	mov	r2, r3
+ 8001760:	683b      	ldr	r3, [r7, #0]
+ 8001762:	fb02 f303 	mul.w	r3, r2, r3
+ 8001766:	687a      	ldr	r2, [r7, #4]
+ 8001768:	8bd2      	ldrh	r2, [r2, #30]
+ 800176a:	4610      	mov	r0, r2
+ 800176c:	4a43      	ldr	r2, [pc, #268]	; (800187c <colorHandleRawValues+0x21c>)
+ 800176e:	7812      	ldrb	r2, [r2, #0]
+ 8001770:	4611      	mov	r1, r2
+ 8001772:	4403      	add	r3, r0
+ 8001774:	4a43      	ldr	r2, [pc, #268]	; (8001884 <colorHandleRawValues+0x224>)
+ 8001776:	f842 3021 	str.w	r3, [r2, r1, lsl #2]
 		raw_values_compteur++;
- 800176e:	4b40      	ldr	r3, [pc, #256]	; (8001870 <colorHandleRawValues+0x21c>)
- 8001770:	781b      	ldrb	r3, [r3, #0]
- 8001772:	3301      	adds	r3, #1
- 8001774:	b2da      	uxtb	r2, r3
- 8001776:	4b3e      	ldr	r3, [pc, #248]	; (8001870 <colorHandleRawValues+0x21c>)
- 8001778:	701a      	strb	r2, [r3, #0]
- 800177a:	e073      	b.n	8001864 <colorHandleRawValues+0x210>
+ 800177a:	4b40      	ldr	r3, [pc, #256]	; (800187c <colorHandleRawValues+0x21c>)
+ 800177c:	781b      	ldrb	r3, [r3, #0]
+ 800177e:	3301      	adds	r3, #1
+ 8001780:	b2da      	uxtb	r2, r3
+ 8001782:	4b3e      	ldr	r3, [pc, #248]	; (800187c <colorHandleRawValues+0x21c>)
+ 8001784:	701a      	strb	r2, [r3, #0]
+ 8001786:	e073      	b.n	8001870 <colorHandleRawValues+0x210>
 	}
 
 	else if(raw_values_compteur==NB_MEASURE_WANTED){
- 800177c:	4b3c      	ldr	r3, [pc, #240]	; (8001870 <colorHandleRawValues+0x21c>)
- 800177e:	781b      	ldrb	r3, [r3, #0]
- 8001780:	2b14      	cmp	r3, #20
- 8001782:	d16f      	bne.n	8001864 <colorHandleRawValues+0x210>
+ 8001788:	4b3c      	ldr	r3, [pc, #240]	; (800187c <colorHandleRawValues+0x21c>)
+ 800178a:	781b      	ldrb	r3, [r3, #0]
+ 800178c:	2b14      	cmp	r3, #20
+ 800178e:	d16f      	bne.n	8001870 <colorHandleRawValues+0x210>
 		// Pret a faire la moyenne du tableau pour plus de fiabilité
 		colorDisable(h_color_sensor);
- 8001784:	6878      	ldr	r0, [r7, #4]
- 8001786:	f7ff fcbd 	bl	8001104 <colorDisable>
+ 8001790:	6878      	ldr	r0, [r7, #4]
+ 8001792:	f7ff fcc3 	bl	800111c <colorDisable>
 		uint32_t green_mean=0;
- 800178a:	2300      	movs	r3, #0
- 800178c:	61fb      	str	r3, [r7, #28]
+ 8001796:	2300      	movs	r3, #0
+ 8001798:	61fb      	str	r3, [r7, #28]
 		uint32_t red_mean=0;
- 800178e:	2300      	movs	r3, #0
- 8001790:	61bb      	str	r3, [r7, #24]
+ 800179a:	2300      	movs	r3, #0
+ 800179c:	61bb      	str	r3, [r7, #24]
 
 		// green mean with erase of waste values (the 2 first one each time)
 		//printf("calcul moyenne vert\r\n");
 		for(int i=DECHET_MEASURE; i<((NB_MEASURE_WANTED/2));i++){
- 8001792:	2302      	movs	r3, #2
- 8001794:	617b      	str	r3, [r7, #20]
- 8001796:	e009      	b.n	80017ac <colorHandleRawValues+0x158>
+ 800179e:	2302      	movs	r3, #2
+ 80017a0:	617b      	str	r3, [r7, #20]
+ 80017a2:	e009      	b.n	80017b8 <colorHandleRawValues+0x158>
 			green_mean=green_mean+color_scaled_values[i];
- 8001798:	4a37      	ldr	r2, [pc, #220]	; (8001878 <colorHandleRawValues+0x224>)
- 800179a:	697b      	ldr	r3, [r7, #20]
- 800179c:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
- 80017a0:	69fa      	ldr	r2, [r7, #28]
- 80017a2:	4413      	add	r3, r2
- 80017a4:	61fb      	str	r3, [r7, #28]
-		for(int i=DECHET_MEASURE; i<((NB_MEASURE_WANTED/2));i++){
+ 80017a4:	4a37      	ldr	r2, [pc, #220]	; (8001884 <colorHandleRawValues+0x224>)
  80017a6:	697b      	ldr	r3, [r7, #20]
- 80017a8:	3301      	adds	r3, #1
- 80017aa:	617b      	str	r3, [r7, #20]
- 80017ac:	697b      	ldr	r3, [r7, #20]
- 80017ae:	2b09      	cmp	r3, #9
- 80017b0:	ddf2      	ble.n	8001798 <colorHandleRawValues+0x144>
+ 80017a8:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
+ 80017ac:	69fa      	ldr	r2, [r7, #28]
+ 80017ae:	4413      	add	r3, r2
+ 80017b0:	61fb      	str	r3, [r7, #28]
+		for(int i=DECHET_MEASURE; i<((NB_MEASURE_WANTED/2));i++){
+ 80017b2:	697b      	ldr	r3, [r7, #20]
+ 80017b4:	3301      	adds	r3, #1
+ 80017b6:	617b      	str	r3, [r7, #20]
+ 80017b8:	697b      	ldr	r3, [r7, #20]
+ 80017ba:	2b09      	cmp	r3, #9
+ 80017bc:	ddf2      	ble.n	80017a4 <colorHandleRawValues+0x144>
 
 			//--debug
 			/*printf("i=%d,\t ajouté a la moyenne verte : %ld\r\n",i,color_scaled_values[i]);
 			printf("green mean : %ld\r\n",green_mean);*/
 		}
 		green_color_value=floor(green_mean/((NB_MEASURE_WANTED/2)-DECHET_MEASURE));
- 80017b2:	69fb      	ldr	r3, [r7, #28]
- 80017b4:	08db      	lsrs	r3, r3, #3
- 80017b6:	4618      	mov	r0, r3
- 80017b8:	f7fe fec4 	bl	8000544 <__aeabi_ui2d>
- 80017bc:	4602      	mov	r2, r0
- 80017be:	460b      	mov	r3, r1
- 80017c0:	4610      	mov	r0, r2
- 80017c2:	4619      	mov	r1, r3
- 80017c4:	f7ff fa10 	bl	8000be8 <__aeabi_d2uiz>
- 80017c8:	4603      	mov	r3, r0
- 80017ca:	4a2c      	ldr	r2, [pc, #176]	; (800187c <colorHandleRawValues+0x228>)
- 80017cc:	6013      	str	r3, [r2, #0]
+ 80017be:	69fb      	ldr	r3, [r7, #28]
+ 80017c0:	08db      	lsrs	r3, r3, #3
+ 80017c2:	4618      	mov	r0, r3
+ 80017c4:	f7fe febe 	bl	8000544 <__aeabi_ui2d>
+ 80017c8:	4602      	mov	r2, r0
+ 80017ca:	460b      	mov	r3, r1
+ 80017cc:	4610      	mov	r0, r2
+ 80017ce:	4619      	mov	r1, r3
+ 80017d0:	f7ff fa0a 	bl	8000be8 <__aeabi_d2uiz>
+ 80017d4:	4603      	mov	r3, r0
+ 80017d6:	4a2c      	ldr	r2, [pc, #176]	; (8001888 <colorHandleRawValues+0x228>)
+ 80017d8:	6013      	str	r3, [r2, #0]
 		h_color_sensor->green_color=green_color_value;
- 80017ce:	4b2b      	ldr	r3, [pc, #172]	; (800187c <colorHandleRawValues+0x228>)
- 80017d0:	681a      	ldr	r2, [r3, #0]
- 80017d2:	687b      	ldr	r3, [r7, #4]
- 80017d4:	609a      	str	r2, [r3, #8]
+ 80017da:	4b2b      	ldr	r3, [pc, #172]	; (8001888 <colorHandleRawValues+0x228>)
+ 80017dc:	681a      	ldr	r2, [r3, #0]
+ 80017de:	687b      	ldr	r3, [r7, #4]
+ 80017e0:	609a      	str	r2, [r3, #8]
 		//printf("green color value : %ld\r\n",green_color_value);
 
 
 		//red values mean
 		//printf("calcul moyenne rouge\r\n");
 		for(int i=((NB_MEASURE_WANTED/2)+DECHET_MEASURE);i<NB_MEASURE_WANTED;i++){
- 80017d6:	230c      	movs	r3, #12
- 80017d8:	613b      	str	r3, [r7, #16]
- 80017da:	e009      	b.n	80017f0 <colorHandleRawValues+0x19c>
+ 80017e2:	230c      	movs	r3, #12
+ 80017e4:	613b      	str	r3, [r7, #16]
+ 80017e6:	e009      	b.n	80017fc <colorHandleRawValues+0x19c>
 			red_mean=red_mean+color_scaled_values[i];
- 80017dc:	4a26      	ldr	r2, [pc, #152]	; (8001878 <colorHandleRawValues+0x224>)
- 80017de:	693b      	ldr	r3, [r7, #16]
- 80017e0:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
- 80017e4:	69ba      	ldr	r2, [r7, #24]
- 80017e6:	4413      	add	r3, r2
- 80017e8:	61bb      	str	r3, [r7, #24]
-		for(int i=((NB_MEASURE_WANTED/2)+DECHET_MEASURE);i<NB_MEASURE_WANTED;i++){
+ 80017e8:	4a26      	ldr	r2, [pc, #152]	; (8001884 <colorHandleRawValues+0x224>)
  80017ea:	693b      	ldr	r3, [r7, #16]
- 80017ec:	3301      	adds	r3, #1
- 80017ee:	613b      	str	r3, [r7, #16]
- 80017f0:	693b      	ldr	r3, [r7, #16]
- 80017f2:	2b13      	cmp	r3, #19
- 80017f4:	ddf2      	ble.n	80017dc <colorHandleRawValues+0x188>
+ 80017ec:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
+ 80017f0:	69ba      	ldr	r2, [r7, #24]
+ 80017f2:	4413      	add	r3, r2
+ 80017f4:	61bb      	str	r3, [r7, #24]
+		for(int i=((NB_MEASURE_WANTED/2)+DECHET_MEASURE);i<NB_MEASURE_WANTED;i++){
+ 80017f6:	693b      	ldr	r3, [r7, #16]
+ 80017f8:	3301      	adds	r3, #1
+ 80017fa:	613b      	str	r3, [r7, #16]
+ 80017fc:	693b      	ldr	r3, [r7, #16]
+ 80017fe:	2b13      	cmp	r3, #19
+ 8001800:	ddf2      	ble.n	80017e8 <colorHandleRawValues+0x188>
 
 			//--debug
 			/*printf("i=%d,\t ajouté a la moyenne rouge : %ld\r\n",i,color_scaled_values[i]);
 			printf("red mean : %ld\r\n",red_mean);*/
 		}
 		red_color_value=floor(red_mean/((NB_MEASURE_WANTED/2)-DECHET_MEASURE));
- 80017f6:	69bb      	ldr	r3, [r7, #24]
- 80017f8:	08db      	lsrs	r3, r3, #3
- 80017fa:	4618      	mov	r0, r3
- 80017fc:	f7fe fea2 	bl	8000544 <__aeabi_ui2d>
- 8001800:	4602      	mov	r2, r0
- 8001802:	460b      	mov	r3, r1
- 8001804:	4610      	mov	r0, r2
- 8001806:	4619      	mov	r1, r3
- 8001808:	f7ff f9ee 	bl	8000be8 <__aeabi_d2uiz>
- 800180c:	4603      	mov	r3, r0
- 800180e:	4a1c      	ldr	r2, [pc, #112]	; (8001880 <colorHandleRawValues+0x22c>)
- 8001810:	6013      	str	r3, [r2, #0]
+ 8001802:	69bb      	ldr	r3, [r7, #24]
+ 8001804:	08db      	lsrs	r3, r3, #3
+ 8001806:	4618      	mov	r0, r3
+ 8001808:	f7fe fe9c 	bl	8000544 <__aeabi_ui2d>
+ 800180c:	4602      	mov	r2, r0
+ 800180e:	460b      	mov	r3, r1
+ 8001810:	4610      	mov	r0, r2
+ 8001812:	4619      	mov	r1, r3
+ 8001814:	f7ff f9e8 	bl	8000be8 <__aeabi_d2uiz>
+ 8001818:	4603      	mov	r3, r0
+ 800181a:	4a1c      	ldr	r2, [pc, #112]	; (800188c <colorHandleRawValues+0x22c>)
+ 800181c:	6013      	str	r3, [r2, #0]
 		h_color_sensor->red_color=red_color_value;
- 8001812:	4b1b      	ldr	r3, [pc, #108]	; (8001880 <colorHandleRawValues+0x22c>)
- 8001814:	681a      	ldr	r2, [r3, #0]
- 8001816:	687b      	ldr	r3, [r7, #4]
- 8001818:	60da      	str	r2, [r3, #12]
+ 800181e:	4b1b      	ldr	r3, [pc, #108]	; (800188c <colorHandleRawValues+0x22c>)
+ 8001820:	681a      	ldr	r2, [r3, #0]
+ 8001822:	687b      	ldr	r3, [r7, #4]
+ 8001824:	60da      	str	r2, [r3, #12]
 
 		//--debug
 		//printf("red color value : %ld\r\n",red_color_value);
 
 		raw_values_compteur=0;
- 800181a:	4b15      	ldr	r3, [pc, #84]	; (8001870 <colorHandleRawValues+0x21c>)
- 800181c:	2200      	movs	r2, #0
- 800181e:	701a      	strb	r2, [r3, #0]
+ 8001826:	4b15      	ldr	r3, [pc, #84]	; (800187c <colorHandleRawValues+0x21c>)
+ 8001828:	2200      	movs	r2, #0
+ 800182a:	701a      	strb	r2, [r3, #0]
 
 		//Affichage tableau
 		for(int i=0;i<NB_MEASURE_WANTED;i++){
- 8001820:	2300      	movs	r3, #0
- 8001822:	60fb      	str	r3, [r7, #12]
- 8001824:	e010      	b.n	8001848 <colorHandleRawValues+0x1f4>
+ 800182c:	2300      	movs	r3, #0
+ 800182e:	60fb      	str	r3, [r7, #12]
+ 8001830:	e010      	b.n	8001854 <colorHandleRawValues+0x1f4>
 			printf("color_raw_values[%d] : %ld\t->\t color_scaled_value[%d] : %ld\r\n",i,color_raw_values[i],i,color_scaled_values[i]);
- 8001826:	4a13      	ldr	r2, [pc, #76]	; (8001874 <colorHandleRawValues+0x220>)
- 8001828:	68fb      	ldr	r3, [r7, #12]
- 800182a:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
- 800182e:	4912      	ldr	r1, [pc, #72]	; (8001878 <colorHandleRawValues+0x224>)
- 8001830:	68fb      	ldr	r3, [r7, #12]
- 8001832:	f851 3023 	ldr.w	r3, [r1, r3, lsl #2]
- 8001836:	9300      	str	r3, [sp, #0]
- 8001838:	68fb      	ldr	r3, [r7, #12]
- 800183a:	68f9      	ldr	r1, [r7, #12]
- 800183c:	4811      	ldr	r0, [pc, #68]	; (8001884 <colorHandleRawValues+0x230>)
- 800183e:	f006 fb9d 	bl	8007f7c <iprintf>
+ 8001832:	4a13      	ldr	r2, [pc, #76]	; (8001880 <colorHandleRawValues+0x220>)
+ 8001834:	68fb      	ldr	r3, [r7, #12]
+ 8001836:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
+ 800183a:	4912      	ldr	r1, [pc, #72]	; (8001884 <colorHandleRawValues+0x224>)
+ 800183c:	68fb      	ldr	r3, [r7, #12]
+ 800183e:	f851 3023 	ldr.w	r3, [r1, r3, lsl #2]
+ 8001842:	9300      	str	r3, [sp, #0]
+ 8001844:	68fb      	ldr	r3, [r7, #12]
+ 8001846:	68f9      	ldr	r1, [r7, #12]
+ 8001848:	4811      	ldr	r0, [pc, #68]	; (8001890 <colorHandleRawValues+0x230>)
+ 800184a:	f006 fb97 	bl	8007f7c <iprintf>
 		for(int i=0;i<NB_MEASURE_WANTED;i++){
- 8001842:	68fb      	ldr	r3, [r7, #12]
- 8001844:	3301      	adds	r3, #1
- 8001846:	60fb      	str	r3, [r7, #12]
- 8001848:	68fb      	ldr	r3, [r7, #12]
- 800184a:	2b13      	cmp	r3, #19
- 800184c:	ddeb      	ble.n	8001826 <colorHandleRawValues+0x1d2>
+ 800184e:	68fb      	ldr	r3, [r7, #12]
+ 8001850:	3301      	adds	r3, #1
+ 8001852:	60fb      	str	r3, [r7, #12]
+ 8001854:	68fb      	ldr	r3, [r7, #12]
+ 8001856:	2b13      	cmp	r3, #19
+ 8001858:	ddeb      	ble.n	8001832 <colorHandleRawValues+0x1d2>
 		}
 		colorAnalyse(h_color_sensor,green_color_value,red_color_value);
- 800184e:	4b0b      	ldr	r3, [pc, #44]	; (800187c <colorHandleRawValues+0x228>)
- 8001850:	681b      	ldr	r3, [r3, #0]
- 8001852:	4a0b      	ldr	r2, [pc, #44]	; (8001880 <colorHandleRawValues+0x22c>)
- 8001854:	6812      	ldr	r2, [r2, #0]
- 8001856:	4619      	mov	r1, r3
- 8001858:	6878      	ldr	r0, [r7, #4]
- 800185a:	f000 f817 	bl	800188c <colorAnalyse>
+ 800185a:	4b0b      	ldr	r3, [pc, #44]	; (8001888 <colorHandleRawValues+0x228>)
+ 800185c:	681b      	ldr	r3, [r3, #0]
+ 800185e:	4a0b      	ldr	r2, [pc, #44]	; (800188c <colorHandleRawValues+0x22c>)
+ 8001860:	6812      	ldr	r2, [r2, #0]
+ 8001862:	4619      	mov	r1, r3
+ 8001864:	6878      	ldr	r0, [r7, #4]
+ 8001866:	f000 f817 	bl	8001898 <colorAnalyse>
 		printf("waiting for button press : \r\n");
- 800185e:	480a      	ldr	r0, [pc, #40]	; (8001888 <colorHandleRawValues+0x234>)
- 8001860:	f006 fc12 	bl	8008088 <puts>
+ 800186a:	480a      	ldr	r0, [pc, #40]	; (8001894 <colorHandleRawValues+0x234>)
+ 800186c:	f006 fc0c 	bl	8008088 <puts>
 	}
 
 	return 0; // fonctionnement normal
- 8001864:	2300      	movs	r3, #0
+ 8001870:	2300      	movs	r3, #0
 }
- 8001866:	4618      	mov	r0, r3
- 8001868:	3720      	adds	r7, #32
- 800186a:	46bd      	mov	sp, r7
- 800186c:	bd80      	pop	{r7, pc}
- 800186e:	bf00      	nop
- 8001870:	200002cc 	.word	0x200002cc
- 8001874:	2000026c 	.word	0x2000026c
- 8001878:	2000020c 	.word	0x2000020c
- 800187c:	200002d0 	.word	0x200002d0
- 8001880:	200002d4 	.word	0x200002d4
- 8001884:	0800b144 	.word	0x0800b144
- 8001888:	0800b184 	.word	0x0800b184
+ 8001872:	4618      	mov	r0, r3
+ 8001874:	3720      	adds	r7, #32
+ 8001876:	46bd      	mov	sp, r7
+ 8001878:	bd80      	pop	{r7, pc}
+ 800187a:	bf00      	nop
+ 800187c:	200002cc 	.word	0x200002cc
+ 8001880:	2000026c 	.word	0x2000026c
+ 8001884:	2000020c 	.word	0x2000020c
+ 8001888:	200002d0 	.word	0x200002d0
+ 800188c:	200002d4 	.word	0x200002d4
+ 8001890:	0800b144 	.word	0x0800b144
+ 8001894:	0800b184 	.word	0x0800b184
 
-0800188c <colorAnalyse>:
+08001898 <colorAnalyse>:
 
 
 // --- fonction d'analyse et de prise de décision ---
 
 static void colorAnalyse(h_color_sensor_t * h_color_sensor, color_t green, color_t red){
- 800188c:	b580      	push	{r7, lr}
- 800188e:	b084      	sub	sp, #16
- 8001890:	af00      	add	r7, sp, #0
- 8001892:	60f8      	str	r0, [r7, #12]
- 8001894:	60b9      	str	r1, [r7, #8]
- 8001896:	607a      	str	r2, [r7, #4]
+ 8001898:	b580      	push	{r7, lr}
+ 800189a:	b084      	sub	sp, #16
+ 800189c:	af00      	add	r7, sp, #0
+ 800189e:	60f8      	str	r0, [r7, #12]
+ 80018a0:	60b9      	str	r1, [r7, #8]
+ 80018a2:	607a      	str	r2, [r7, #4]
 	printf("green : %ld \r\n",green);
- 8001898:	68b9      	ldr	r1, [r7, #8]
- 800189a:	480f      	ldr	r0, [pc, #60]	; (80018d8 <colorAnalyse+0x4c>)
- 800189c:	f006 fb6e 	bl	8007f7c <iprintf>
+ 80018a4:	68b9      	ldr	r1, [r7, #8]
+ 80018a6:	480f      	ldr	r0, [pc, #60]	; (80018e4 <colorAnalyse+0x4c>)
+ 80018a8:	f006 fb68 	bl	8007f7c <iprintf>
 	printf("red : %ld \r\n",red);
- 80018a0:	6879      	ldr	r1, [r7, #4]
- 80018a2:	480e      	ldr	r0, [pc, #56]	; (80018dc <colorAnalyse+0x50>)
- 80018a4:	f006 fb6a 	bl	8007f7c <iprintf>
+ 80018ac:	6879      	ldr	r1, [r7, #4]
+ 80018ae:	480e      	ldr	r0, [pc, #56]	; (80018e8 <colorAnalyse+0x50>)
+ 80018b0:	f006 fb64 	bl	8007f7c <iprintf>
 	if(green<red){
- 80018a8:	68ba      	ldr	r2, [r7, #8]
- 80018aa:	687b      	ldr	r3, [r7, #4]
- 80018ac:	429a      	cmp	r2, r3
- 80018ae:	d203      	bcs.n	80018b8 <colorAnalyse+0x2c>
+ 80018b4:	68ba      	ldr	r2, [r7, #8]
+ 80018b6:	687b      	ldr	r3, [r7, #4]
+ 80018b8:	429a      	cmp	r2, r3
+ 80018ba:	d203      	bcs.n	80018c4 <colorAnalyse+0x2c>
 		printf("c'est vert\r\n");
- 80018b0:	480b      	ldr	r0, [pc, #44]	; (80018e0 <colorAnalyse+0x54>)
- 80018b2:	f006 fbe9 	bl	8008088 <puts>
+ 80018bc:	480b      	ldr	r0, [pc, #44]	; (80018ec <colorAnalyse+0x54>)
+ 80018be:	f006 fbe3 	bl	8008088 <puts>
 		colorDoMeasureAgain(h_color_sensor);
 	}
 	else {
 		printf("c'est rouge\r\n");
 	}
 }
- 80018b6:	e00a      	b.n	80018ce <colorAnalyse+0x42>
+ 80018c2:	e00a      	b.n	80018da <colorAnalyse+0x42>
 	else if(green==red){
- 80018b8:	68ba      	ldr	r2, [r7, #8]
- 80018ba:	687b      	ldr	r3, [r7, #4]
- 80018bc:	429a      	cmp	r2, r3
- 80018be:	d103      	bne.n	80018c8 <colorAnalyse+0x3c>
+ 80018c4:	68ba      	ldr	r2, [r7, #8]
+ 80018c6:	687b      	ldr	r3, [r7, #4]
+ 80018c8:	429a      	cmp	r2, r3
+ 80018ca:	d103      	bne.n	80018d4 <colorAnalyse+0x3c>
 		colorDoMeasureAgain(h_color_sensor);
- 80018c0:	68f8      	ldr	r0, [r7, #12]
- 80018c2:	f000 f811 	bl	80018e8 <colorDoMeasureAgain>
+ 80018cc:	68f8      	ldr	r0, [r7, #12]
+ 80018ce:	f000 f811 	bl	80018f4 <colorDoMeasureAgain>
 }
- 80018c6:	e002      	b.n	80018ce <colorAnalyse+0x42>
+ 80018d2:	e002      	b.n	80018da <colorAnalyse+0x42>
 		printf("c'est rouge\r\n");
- 80018c8:	4806      	ldr	r0, [pc, #24]	; (80018e4 <colorAnalyse+0x58>)
- 80018ca:	f006 fbdd 	bl	8008088 <puts>
+ 80018d4:	4806      	ldr	r0, [pc, #24]	; (80018f0 <colorAnalyse+0x58>)
+ 80018d6:	f006 fbd7 	bl	8008088 <puts>
 }
- 80018ce:	bf00      	nop
- 80018d0:	3710      	adds	r7, #16
- 80018d2:	46bd      	mov	sp, r7
- 80018d4:	bd80      	pop	{r7, pc}
- 80018d6:	bf00      	nop
- 80018d8:	0800b1a4 	.word	0x0800b1a4
- 80018dc:	0800b1b4 	.word	0x0800b1b4
- 80018e0:	0800b1c4 	.word	0x0800b1c4
- 80018e4:	0800b1d0 	.word	0x0800b1d0
+ 80018da:	bf00      	nop
+ 80018dc:	3710      	adds	r7, #16
+ 80018de:	46bd      	mov	sp, r7
+ 80018e0:	bd80      	pop	{r7, pc}
+ 80018e2:	bf00      	nop
+ 80018e4:	0800b1a4 	.word	0x0800b1a4
+ 80018e8:	0800b1b4 	.word	0x0800b1b4
+ 80018ec:	0800b1c4 	.word	0x0800b1c4
+ 80018f0:	0800b1d0 	.word	0x0800b1d0
 
-080018e8 <colorDoMeasureAgain>:
+080018f4 <colorDoMeasureAgain>:
 
 static void colorDoMeasureAgain(h_color_sensor_t * h_color_sensor){
- 80018e8:	b580      	push	{r7, lr}
- 80018ea:	b082      	sub	sp, #8
- 80018ec:	af00      	add	r7, sp, #0
- 80018ee:	6078      	str	r0, [r7, #4]
+ 80018f4:	b580      	push	{r7, lr}
+ 80018f6:	b082      	sub	sp, #8
+ 80018f8:	af00      	add	r7, sp, #0
+ 80018fa:	6078      	str	r0, [r7, #4]
 	colorEnable(h_color_sensor);
- 80018f0:	6878      	ldr	r0, [r7, #4]
- 80018f2:	f7ff fc33 	bl	800115c <colorEnable>
+ 80018fc:	6878      	ldr	r0, [r7, #4]
+ 80018fe:	f7ff fc39 	bl	8001174 <colorEnable>
 }
- 80018f6:	bf00      	nop
- 80018f8:	3708      	adds	r7, #8
- 80018fa:	46bd      	mov	sp, r7
- 80018fc:	bd80      	pop	{r7, pc}
+ 8001902:	bf00      	nop
+ 8001904:	3708      	adds	r7, #8
+ 8001906:	46bd      	mov	sp, r7
+ 8001908:	bd80      	pop	{r7, pc}
 
-080018fe <timer_handle>:
+0800190a <timer_handle>:
  * tim_mode_t mode : htim configuration accirding to what is in .ioc file (INPUT_CAPTURE_IT, BASE_IT, PWM)
  * tim_status_t status : same but START,STOP
  * uint32_t channel ; the output channel of htim
  * @return none
  */
 void timer_handle(TIM_HandleTypeDef htim, tim_mode_t mode, tim_status_t status,uint32_t channel){
- 80018fe:	b084      	sub	sp, #16
- 8001900:	b580      	push	{r7, lr}
- 8001902:	af00      	add	r7, sp, #0
- 8001904:	f107 0c08 	add.w	ip, r7, #8
- 8001908:	e88c 000f 	stmia.w	ip, {r0, r1, r2, r3}
+ 800190a:	b084      	sub	sp, #16
+ 800190c:	b580      	push	{r7, lr}
+ 800190e:	af00      	add	r7, sp, #0
+ 8001910:	f107 0c08 	add.w	ip, r7, #8
+ 8001914:	e88c 000f 	stmia.w	ip, {r0, r1, r2, r3}
 	if(status==START){
- 800190c:	f897 3058 	ldrb.w	r3, [r7, #88]	; 0x58
- 8001910:	2b01      	cmp	r3, #1
- 8001912:	d11b      	bne.n	800194c <timer_handle+0x4e>
+ 8001918:	f897 3058 	ldrb.w	r3, [r7, #88]	; 0x58
+ 800191c:	2b01      	cmp	r3, #1
+ 800191e:	d11b      	bne.n	8001958 <timer_handle+0x4e>
 		switch(mode){
- 8001914:	f897 3054 	ldrb.w	r3, [r7, #84]	; 0x54
- 8001918:	2b03      	cmp	r3, #3
- 800191a:	d00c      	beq.n	8001936 <timer_handle+0x38>
- 800191c:	2b03      	cmp	r3, #3
- 800191e:	dc53      	bgt.n	80019c8 <timer_handle+0xca>
- 8001920:	2b01      	cmp	r3, #1
- 8001922:	d002      	beq.n	800192a <timer_handle+0x2c>
- 8001924:	2b02      	cmp	r3, #2
- 8001926:	d00c      	beq.n	8001942 <timer_handle+0x44>
+ 8001920:	f897 3054 	ldrb.w	r3, [r7, #84]	; 0x54
+ 8001924:	2b03      	cmp	r3, #3
+ 8001926:	d00c      	beq.n	8001942 <timer_handle+0x38>
+ 8001928:	2b03      	cmp	r3, #3
+ 800192a:	dc53      	bgt.n	80019d4 <timer_handle+0xca>
+ 800192c:	2b01      	cmp	r3, #1
+ 800192e:	d002      	beq.n	8001936 <timer_handle+0x2c>
+ 8001930:	2b02      	cmp	r3, #2
+ 8001932:	d00c      	beq.n	800194e <timer_handle+0x44>
 			break;
 		case BASE_IT:
 			HAL_TIM_Base_Start_IT(&htim);
 			break;
 		default :
 			break;
- 8001928:	e04e      	b.n	80019c8 <timer_handle+0xca>
+ 8001934:	e04e      	b.n	80019d4 <timer_handle+0xca>
 			HAL_TIM_IC_Start_IT(&htim, channel);
- 800192a:	6df9      	ldr	r1, [r7, #92]	; 0x5c
- 800192c:	f107 0008 	add.w	r0, r7, #8
- 8001930:	f002 fcd6 	bl	80042e0 <HAL_TIM_IC_Start_IT>
-			break;
- 8001934:	e04f      	b.n	80019d6 <timer_handle+0xd8>
-			HAL_TIM_PWM_Start(&htim,channel);
  8001936:	6df9      	ldr	r1, [r7, #92]	; 0x5c
  8001938:	f107 0008 	add.w	r0, r7, #8
- 800193c:	f002 faf4 	bl	8003f28 <HAL_TIM_PWM_Start>
+ 800193c:	f002 fcd0 	bl	80042e0 <HAL_TIM_IC_Start_IT>
 			break;
- 8001940:	e049      	b.n	80019d6 <timer_handle+0xd8>
+ 8001940:	e04f      	b.n	80019e2 <timer_handle+0xd8>
+			HAL_TIM_PWM_Start(&htim,channel);
+ 8001942:	6df9      	ldr	r1, [r7, #92]	; 0x5c
+ 8001944:	f107 0008 	add.w	r0, r7, #8
+ 8001948:	f002 faee 	bl	8003f28 <HAL_TIM_PWM_Start>
+			break;
+ 800194c:	e049      	b.n	80019e2 <timer_handle+0xd8>
 			HAL_TIM_Base_Start_IT(&htim);
- 8001942:	f107 0008 	add.w	r0, r7, #8
- 8001946:	f002 f9e7 	bl	8003d18 <HAL_TIM_Base_Start_IT>
+ 800194e:	f107 0008 	add.w	r0, r7, #8
+ 8001952:	f002 f9e1 	bl	8003d18 <HAL_TIM_Base_Start_IT>
 			break;
- 800194a:	e044      	b.n	80019d6 <timer_handle+0xd8>
+ 8001956:	e044      	b.n	80019e2 <timer_handle+0xd8>
 		}
 	}
 	else if (status==STOP){
- 800194c:	f897 3058 	ldrb.w	r3, [r7, #88]	; 0x58
- 8001950:	2b00      	cmp	r3, #0
- 8001952:	d11b      	bne.n	800198c <timer_handle+0x8e>
+ 8001958:	f897 3058 	ldrb.w	r3, [r7, #88]	; 0x58
+ 800195c:	2b00      	cmp	r3, #0
+ 800195e:	d11b      	bne.n	8001998 <timer_handle+0x8e>
 		switch(mode){
- 8001954:	f897 3054 	ldrb.w	r3, [r7, #84]	; 0x54
- 8001958:	2b03      	cmp	r3, #3
- 800195a:	d00c      	beq.n	8001976 <timer_handle+0x78>
- 800195c:	2b03      	cmp	r3, #3
- 800195e:	dc35      	bgt.n	80019cc <timer_handle+0xce>
- 8001960:	2b01      	cmp	r3, #1
- 8001962:	d002      	beq.n	800196a <timer_handle+0x6c>
- 8001964:	2b02      	cmp	r3, #2
- 8001966:	d00c      	beq.n	8001982 <timer_handle+0x84>
+ 8001960:	f897 3054 	ldrb.w	r3, [r7, #84]	; 0x54
+ 8001964:	2b03      	cmp	r3, #3
+ 8001966:	d00c      	beq.n	8001982 <timer_handle+0x78>
+ 8001968:	2b03      	cmp	r3, #3
+ 800196a:	dc35      	bgt.n	80019d8 <timer_handle+0xce>
+ 800196c:	2b01      	cmp	r3, #1
+ 800196e:	d002      	beq.n	8001976 <timer_handle+0x6c>
+ 8001970:	2b02      	cmp	r3, #2
+ 8001972:	d00c      	beq.n	800198e <timer_handle+0x84>
 			break;
 		case BASE_IT:
 			HAL_TIM_Base_Stop_IT(&htim);
 			break;
 		default :
 			break;
- 8001968:	e030      	b.n	80019cc <timer_handle+0xce>
+ 8001974:	e030      	b.n	80019d8 <timer_handle+0xce>
 			HAL_TIM_IC_Stop_IT(&htim, channel);
- 800196a:	6df9      	ldr	r1, [r7, #92]	; 0x5c
- 800196c:	f107 0008 	add.w	r0, r7, #8
- 8001970:	f002 fe06 	bl	8004580 <HAL_TIM_IC_Stop_IT>
-			break;
- 8001974:	e02f      	b.n	80019d6 <timer_handle+0xd8>
-			HAL_TIM_PWM_Stop(&htim,channel);
  8001976:	6df9      	ldr	r1, [r7, #92]	; 0x5c
  8001978:	f107 0008 	add.w	r0, r7, #8
- 800197c:	f002 fbce 	bl	800411c <HAL_TIM_PWM_Stop>
+ 800197c:	f002 fe00 	bl	8004580 <HAL_TIM_IC_Stop_IT>
 			break;
- 8001980:	e029      	b.n	80019d6 <timer_handle+0xd8>
+ 8001980:	e02f      	b.n	80019e2 <timer_handle+0xd8>
+			HAL_TIM_PWM_Stop(&htim,channel);
+ 8001982:	6df9      	ldr	r1, [r7, #92]	; 0x5c
+ 8001984:	f107 0008 	add.w	r0, r7, #8
+ 8001988:	f002 fbc8 	bl	800411c <HAL_TIM_PWM_Stop>
+			break;
+ 800198c:	e029      	b.n	80019e2 <timer_handle+0xd8>
 			HAL_TIM_Base_Stop_IT(&htim);
- 8001982:	f107 0008 	add.w	r0, r7, #8
- 8001986:	f002 fa3f 	bl	8003e08 <HAL_TIM_Base_Stop_IT>
+ 800198e:	f107 0008 	add.w	r0, r7, #8
+ 8001992:	f002 fa39 	bl	8003e08 <HAL_TIM_Base_Stop_IT>
 			break;
- 800198a:	e024      	b.n	80019d6 <timer_handle+0xd8>
+ 8001996:	e024      	b.n	80019e2 <timer_handle+0xd8>
 		}
 	}
 	else if (status==INIT){
- 800198c:	f897 3058 	ldrb.w	r3, [r7, #88]	; 0x58
- 8001990:	2b02      	cmp	r3, #2
- 8001992:	d11d      	bne.n	80019d0 <timer_handle+0xd2>
+ 8001998:	f897 3058 	ldrb.w	r3, [r7, #88]	; 0x58
+ 800199c:	2b02      	cmp	r3, #2
+ 800199e:	d11d      	bne.n	80019dc <timer_handle+0xd2>
 		switch(mode){
- 8001994:	f897 3054 	ldrb.w	r3, [r7, #84]	; 0x54
- 8001998:	2b03      	cmp	r3, #3
- 800199a:	d00b      	beq.n	80019b4 <timer_handle+0xb6>
- 800199c:	2b03      	cmp	r3, #3
- 800199e:	dc19      	bgt.n	80019d4 <timer_handle+0xd6>
- 80019a0:	2b01      	cmp	r3, #1
- 80019a2:	d002      	beq.n	80019aa <timer_handle+0xac>
- 80019a4:	2b02      	cmp	r3, #2
- 80019a6:	d00a      	beq.n	80019be <timer_handle+0xc0>
+ 80019a0:	f897 3054 	ldrb.w	r3, [r7, #84]	; 0x54
+ 80019a4:	2b03      	cmp	r3, #3
+ 80019a6:	d00b      	beq.n	80019c0 <timer_handle+0xb6>
+ 80019a8:	2b03      	cmp	r3, #3
+ 80019aa:	dc19      	bgt.n	80019e0 <timer_handle+0xd6>
+ 80019ac:	2b01      	cmp	r3, #1
+ 80019ae:	d002      	beq.n	80019b6 <timer_handle+0xac>
+ 80019b0:	2b02      	cmp	r3, #2
+ 80019b2:	d00a      	beq.n	80019ca <timer_handle+0xc0>
 			break;
 		case BASE_IT:
 			HAL_TIM_Base_Init(&htim);
 			break;
 		default :
 			break;
- 80019a8:	e014      	b.n	80019d4 <timer_handle+0xd6>
+ 80019b4:	e014      	b.n	80019e0 <timer_handle+0xd6>
 			HAL_TIM_IC_Init(&htim);
- 80019aa:	f107 0008 	add.w	r0, r7, #8
- 80019ae:	f002 fc35 	bl	800421c <HAL_TIM_IC_Init>
+ 80019b6:	f107 0008 	add.w	r0, r7, #8
+ 80019ba:	f002 fc2f 	bl	800421c <HAL_TIM_IC_Init>
 			break;
- 80019b2:	e010      	b.n	80019d6 <timer_handle+0xd8>
+ 80019be:	e010      	b.n	80019e2 <timer_handle+0xd8>
 			HAL_TIM_PWM_Init(&htim);
- 80019b4:	f107 0008 	add.w	r0, r7, #8
- 80019b8:	f002 fa55 	bl	8003e66 <HAL_TIM_PWM_Init>
+ 80019c0:	f107 0008 	add.w	r0, r7, #8
+ 80019c4:	f002 fa4f 	bl	8003e66 <HAL_TIM_PWM_Init>
 			break;
- 80019bc:	e00b      	b.n	80019d6 <timer_handle+0xd8>
+ 80019c8:	e00b      	b.n	80019e2 <timer_handle+0xd8>
 			HAL_TIM_Base_Init(&htim);
- 80019be:	f107 0008 	add.w	r0, r7, #8
- 80019c2:	f002 f951 	bl	8003c68 <HAL_TIM_Base_Init>
+ 80019ca:	f107 0008 	add.w	r0, r7, #8
+ 80019ce:	f002 f94b 	bl	8003c68 <HAL_TIM_Base_Init>
 			break;
- 80019c6:	e006      	b.n	80019d6 <timer_handle+0xd8>
-			break;
- 80019c8:	bf00      	nop
- 80019ca:	e004      	b.n	80019d6 <timer_handle+0xd8>
-			break;
- 80019cc:	bf00      	nop
- 80019ce:	e002      	b.n	80019d6 <timer_handle+0xd8>
-		}
-	}
- 80019d0:	bf00      	nop
- 80019d2:	e000      	b.n	80019d6 <timer_handle+0xd8>
+ 80019d2:	e006      	b.n	80019e2 <timer_handle+0xd8>
 			break;
  80019d4:	bf00      	nop
+ 80019d6:	e004      	b.n	80019e2 <timer_handle+0xd8>
+			break;
+ 80019d8:	bf00      	nop
+ 80019da:	e002      	b.n	80019e2 <timer_handle+0xd8>
+		}
+	}
+ 80019dc:	bf00      	nop
+ 80019de:	e000      	b.n	80019e2 <timer_handle+0xd8>
+			break;
+ 80019e0:	bf00      	nop
 }
- 80019d6:	bf00      	nop
- 80019d8:	46bd      	mov	sp, r7
- 80019da:	e8bd 4080 	ldmia.w	sp!, {r7, lr}
- 80019de:	b004      	add	sp, #16
- 80019e0:	4770      	bx	lr
+ 80019e2:	bf00      	nop
+ 80019e4:	46bd      	mov	sp, r7
+ 80019e6:	e8bd 4080 	ldmia.w	sp!, {r7, lr}
+ 80019ea:	b004      	add	sp, #16
+ 80019ec:	4770      	bx	lr
 
-080019e2 <GPIO_write>:
+080019ee <GPIO_write>:
  * uint16_t gpio_pin : The pin of the GPIO you want to deal with
  * GPIO_PinState gpio_PinState : the state you want your GPIO to have (1 or 0)
  *
  * @return 0 if fail else 1
  */
 void GPIO_write(GPIO_TypeDef * gpio_port,uint16_t gpio_pin,GPIO_PinState gpio_PinState ){
- 80019e2:	b580      	push	{r7, lr}
- 80019e4:	b082      	sub	sp, #8
- 80019e6:	af00      	add	r7, sp, #0
- 80019e8:	6078      	str	r0, [r7, #4]
- 80019ea:	460b      	mov	r3, r1
- 80019ec:	807b      	strh	r3, [r7, #2]
- 80019ee:	4613      	mov	r3, r2
- 80019f0:	707b      	strb	r3, [r7, #1]
+ 80019ee:	b580      	push	{r7, lr}
+ 80019f0:	b082      	sub	sp, #8
+ 80019f2:	af00      	add	r7, sp, #0
+ 80019f4:	6078      	str	r0, [r7, #4]
+ 80019f6:	460b      	mov	r3, r1
+ 80019f8:	807b      	strh	r3, [r7, #2]
+ 80019fa:	4613      	mov	r3, r2
+ 80019fc:	707b      	strb	r3, [r7, #1]
 	HAL_GPIO_WritePin(gpio_port,gpio_pin,gpio_PinState);
- 80019f2:	787a      	ldrb	r2, [r7, #1]
- 80019f4:	887b      	ldrh	r3, [r7, #2]
- 80019f6:	4619      	mov	r1, r3
- 80019f8:	6878      	ldr	r0, [r7, #4]
- 80019fa:	f001 f807 	bl	8002a0c <HAL_GPIO_WritePin>
+ 80019fe:	787a      	ldrb	r2, [r7, #1]
+ 8001a00:	887b      	ldrh	r3, [r7, #2]
+ 8001a02:	4619      	mov	r1, r3
+ 8001a04:	6878      	ldr	r0, [r7, #4]
+ 8001a06:	f001 f801 	bl	8002a0c <HAL_GPIO_WritePin>
 }
- 80019fe:	bf00      	nop
- 8001a00:	3708      	adds	r7, #8
- 8001a02:	46bd      	mov	sp, r7
- 8001a04:	bd80      	pop	{r7, pc}
+ 8001a0a:	bf00      	nop
+ 8001a0c:	3708      	adds	r7, #8
+ 8001a0e:	46bd      	mov	sp, r7
+ 8001a10:	bd80      	pop	{r7, pc}
 	...
 
-08001a08 <vApplicationGetIdleTaskMemory>:
+08001a14 <vApplicationGetIdleTaskMemory>:
 /* USER CODE BEGIN GET_IDLE_TASK_MEMORY */
 static StaticTask_t xIdleTaskTCBBuffer;
 static StackType_t xIdleStack[configMINIMAL_STACK_SIZE];
 
 void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize )
 {
- 8001a08:	b480      	push	{r7}
- 8001a0a:	b085      	sub	sp, #20
- 8001a0c:	af00      	add	r7, sp, #0
- 8001a0e:	60f8      	str	r0, [r7, #12]
- 8001a10:	60b9      	str	r1, [r7, #8]
- 8001a12:	607a      	str	r2, [r7, #4]
+ 8001a14:	b480      	push	{r7}
+ 8001a16:	b085      	sub	sp, #20
+ 8001a18:	af00      	add	r7, sp, #0
+ 8001a1a:	60f8      	str	r0, [r7, #12]
+ 8001a1c:	60b9      	str	r1, [r7, #8]
+ 8001a1e:	607a      	str	r2, [r7, #4]
   *ppxIdleTaskTCBBuffer = &xIdleTaskTCBBuffer;
- 8001a14:	68fb      	ldr	r3, [r7, #12]
- 8001a16:	4a07      	ldr	r2, [pc, #28]	; (8001a34 <vApplicationGetIdleTaskMemory+0x2c>)
- 8001a18:	601a      	str	r2, [r3, #0]
-  *ppxIdleTaskStackBuffer = &xIdleStack[0];
- 8001a1a:	68bb      	ldr	r3, [r7, #8]
- 8001a1c:	4a06      	ldr	r2, [pc, #24]	; (8001a38 <vApplicationGetIdleTaskMemory+0x30>)
- 8001a1e:	601a      	str	r2, [r3, #0]
-  *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
- 8001a20:	687b      	ldr	r3, [r7, #4]
- 8001a22:	2280      	movs	r2, #128	; 0x80
+ 8001a20:	68fb      	ldr	r3, [r7, #12]
+ 8001a22:	4a07      	ldr	r2, [pc, #28]	; (8001a40 <vApplicationGetIdleTaskMemory+0x2c>)
  8001a24:	601a      	str	r2, [r3, #0]
+  *ppxIdleTaskStackBuffer = &xIdleStack[0];
+ 8001a26:	68bb      	ldr	r3, [r7, #8]
+ 8001a28:	4a06      	ldr	r2, [pc, #24]	; (8001a44 <vApplicationGetIdleTaskMemory+0x30>)
+ 8001a2a:	601a      	str	r2, [r3, #0]
+  *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
+ 8001a2c:	687b      	ldr	r3, [r7, #4]
+ 8001a2e:	2280      	movs	r2, #128	; 0x80
+ 8001a30:	601a      	str	r2, [r3, #0]
   /* place for user code */
 }
- 8001a26:	bf00      	nop
- 8001a28:	3714      	adds	r7, #20
- 8001a2a:	46bd      	mov	sp, r7
- 8001a2c:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8001a30:	4770      	bx	lr
  8001a32:	bf00      	nop
- 8001a34:	2000035c 	.word	0x2000035c
- 8001a38:	20000410 	.word	0x20000410
+ 8001a34:	3714      	adds	r7, #20
+ 8001a36:	46bd      	mov	sp, r7
+ 8001a38:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8001a3c:	4770      	bx	lr
+ 8001a3e:	bf00      	nop
+ 8001a40:	2000035c 	.word	0x2000035c
+ 8001a44:	20000410 	.word	0x20000410
 
-08001a3c <MX_FREERTOS_Init>:
+08001a48 <MX_FREERTOS_Init>:
 /**
   * @brief  FreeRTOS initialization
   * @param  None
   * @retval None
   */
 void MX_FREERTOS_Init(void) {
- 8001a3c:	b5b0      	push	{r4, r5, r7, lr}
- 8001a3e:	b088      	sub	sp, #32
- 8001a40:	af00      	add	r7, sp, #0
+ 8001a48:	b5b0      	push	{r4, r5, r7, lr}
+ 8001a4a:	b088      	sub	sp, #32
+ 8001a4c:	af00      	add	r7, sp, #0
   /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
- 8001a42:	4b0a      	ldr	r3, [pc, #40]	; (8001a6c <MX_FREERTOS_Init+0x30>)
- 8001a44:	1d3c      	adds	r4, r7, #4
- 8001a46:	461d      	mov	r5, r3
- 8001a48:	cd0f      	ldmia	r5!, {r0, r1, r2, r3}
- 8001a4a:	c40f      	stmia	r4!, {r0, r1, r2, r3}
- 8001a4c:	e895 0007 	ldmia.w	r5, {r0, r1, r2}
- 8001a50:	e884 0007 	stmia.w	r4, {r0, r1, r2}
+ 8001a4e:	4b0a      	ldr	r3, [pc, #40]	; (8001a78 <MX_FREERTOS_Init+0x30>)
+ 8001a50:	1d3c      	adds	r4, r7, #4
+ 8001a52:	461d      	mov	r5, r3
+ 8001a54:	cd0f      	ldmia	r5!, {r0, r1, r2, r3}
+ 8001a56:	c40f      	stmia	r4!, {r0, r1, r2, r3}
+ 8001a58:	e895 0007 	ldmia.w	r5, {r0, r1, r2}
+ 8001a5c:	e884 0007 	stmia.w	r4, {r0, r1, r2}
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
- 8001a54:	1d3b      	adds	r3, r7, #4
- 8001a56:	2100      	movs	r1, #0
- 8001a58:	4618      	mov	r0, r3
- 8001a5a:	f004 f9eb 	bl	8005e34 <osThreadCreate>
- 8001a5e:	4603      	mov	r3, r0
- 8001a60:	4a03      	ldr	r2, [pc, #12]	; (8001a70 <MX_FREERTOS_Init+0x34>)
- 8001a62:	6013      	str	r3, [r2, #0]
+ 8001a60:	1d3b      	adds	r3, r7, #4
+ 8001a62:	2100      	movs	r1, #0
+ 8001a64:	4618      	mov	r0, r3
+ 8001a66:	f004 f9e5 	bl	8005e34 <osThreadCreate>
+ 8001a6a:	4603      	mov	r3, r0
+ 8001a6c:	4a03      	ldr	r2, [pc, #12]	; (8001a7c <MX_FREERTOS_Init+0x34>)
+ 8001a6e:	6013      	str	r3, [r2, #0]
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 
 }
- 8001a64:	bf00      	nop
- 8001a66:	3720      	adds	r7, #32
- 8001a68:	46bd      	mov	sp, r7
- 8001a6a:	bdb0      	pop	{r4, r5, r7, pc}
- 8001a6c:	0800b1ec 	.word	0x0800b1ec
- 8001a70:	20000358 	.word	0x20000358
+ 8001a70:	bf00      	nop
+ 8001a72:	3720      	adds	r7, #32
+ 8001a74:	46bd      	mov	sp, r7
+ 8001a76:	bdb0      	pop	{r4, r5, r7, pc}
+ 8001a78:	0800b1ec 	.word	0x0800b1ec
+ 8001a7c:	20000358 	.word	0x20000358
 
-08001a74 <StartDefaultTask>:
+08001a80 <StartDefaultTask>:
   * @param  argument: Not used
   * @retval None
   */
 /* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void const * argument)
 {
- 8001a74:	b580      	push	{r7, lr}
- 8001a76:	b082      	sub	sp, #8
- 8001a78:	af00      	add	r7, sp, #0
- 8001a7a:	6078      	str	r0, [r7, #4]
+ 8001a80:	b580      	push	{r7, lr}
+ 8001a82:	b082      	sub	sp, #8
+ 8001a84:	af00      	add	r7, sp, #0
+ 8001a86:	6078      	str	r0, [r7, #4]
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
   for(;;)
   {
     osDelay(1);
- 8001a7c:	2001      	movs	r0, #1
- 8001a7e:	f004 fa25 	bl	8005ecc <osDelay>
- 8001a82:	e7fb      	b.n	8001a7c <StartDefaultTask+0x8>
+ 8001a88:	2001      	movs	r0, #1
+ 8001a8a:	f004 fa1f 	bl	8005ecc <osDelay>
+ 8001a8e:	e7fb      	b.n	8001a88 <StartDefaultTask+0x8>
 
-08001a84 <MX_GPIO_Init>:
+08001a90 <MX_GPIO_Init>:
         * Output
         * EVENT_OUT
         * EXTI
 */
 void MX_GPIO_Init(void)
 {
- 8001a84:	b580      	push	{r7, lr}
- 8001a86:	b08c      	sub	sp, #48	; 0x30
- 8001a88:	af00      	add	r7, sp, #0
+ 8001a90:	b580      	push	{r7, lr}
+ 8001a92:	b08c      	sub	sp, #48	; 0x30
+ 8001a94:	af00      	add	r7, sp, #0
 
   GPIO_InitTypeDef GPIO_InitStruct = {0};
- 8001a8a:	f107 031c 	add.w	r3, r7, #28
- 8001a8e:	2200      	movs	r2, #0
- 8001a90:	601a      	str	r2, [r3, #0]
- 8001a92:	605a      	str	r2, [r3, #4]
- 8001a94:	609a      	str	r2, [r3, #8]
- 8001a96:	60da      	str	r2, [r3, #12]
- 8001a98:	611a      	str	r2, [r3, #16]
+ 8001a96:	f107 031c 	add.w	r3, r7, #28
+ 8001a9a:	2200      	movs	r2, #0
+ 8001a9c:	601a      	str	r2, [r3, #0]
+ 8001a9e:	605a      	str	r2, [r3, #4]
+ 8001aa0:	609a      	str	r2, [r3, #8]
+ 8001aa2:	60da      	str	r2, [r3, #12]
+ 8001aa4:	611a      	str	r2, [r3, #16]
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOB_CLK_ENABLE();
- 8001a9a:	4b4d      	ldr	r3, [pc, #308]	; (8001bd0 <MX_GPIO_Init+0x14c>)
- 8001a9c:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 8001a9e:	4a4c      	ldr	r2, [pc, #304]	; (8001bd0 <MX_GPIO_Init+0x14c>)
- 8001aa0:	f043 0302 	orr.w	r3, r3, #2
- 8001aa4:	6313      	str	r3, [r2, #48]	; 0x30
- 8001aa6:	4b4a      	ldr	r3, [pc, #296]	; (8001bd0 <MX_GPIO_Init+0x14c>)
+ 8001aa6:	4b4d      	ldr	r3, [pc, #308]	; (8001bdc <MX_GPIO_Init+0x14c>)
  8001aa8:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 8001aaa:	f003 0302 	and.w	r3, r3, #2
- 8001aae:	61bb      	str	r3, [r7, #24]
- 8001ab0:	69bb      	ldr	r3, [r7, #24]
-  __HAL_RCC_GPIOA_CLK_ENABLE();
- 8001ab2:	4b47      	ldr	r3, [pc, #284]	; (8001bd0 <MX_GPIO_Init+0x14c>)
+ 8001aaa:	4a4c      	ldr	r2, [pc, #304]	; (8001bdc <MX_GPIO_Init+0x14c>)
+ 8001aac:	f043 0302 	orr.w	r3, r3, #2
+ 8001ab0:	6313      	str	r3, [r2, #48]	; 0x30
+ 8001ab2:	4b4a      	ldr	r3, [pc, #296]	; (8001bdc <MX_GPIO_Init+0x14c>)
  8001ab4:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 8001ab6:	4a46      	ldr	r2, [pc, #280]	; (8001bd0 <MX_GPIO_Init+0x14c>)
- 8001ab8:	f043 0301 	orr.w	r3, r3, #1
- 8001abc:	6313      	str	r3, [r2, #48]	; 0x30
- 8001abe:	4b44      	ldr	r3, [pc, #272]	; (8001bd0 <MX_GPIO_Init+0x14c>)
+ 8001ab6:	f003 0302 	and.w	r3, r3, #2
+ 8001aba:	61bb      	str	r3, [r7, #24]
+ 8001abc:	69bb      	ldr	r3, [r7, #24]
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+ 8001abe:	4b47      	ldr	r3, [pc, #284]	; (8001bdc <MX_GPIO_Init+0x14c>)
  8001ac0:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 8001ac2:	f003 0301 	and.w	r3, r3, #1
- 8001ac6:	617b      	str	r3, [r7, #20]
- 8001ac8:	697b      	ldr	r3, [r7, #20]
-  __HAL_RCC_GPIOI_CLK_ENABLE();
- 8001aca:	4b41      	ldr	r3, [pc, #260]	; (8001bd0 <MX_GPIO_Init+0x14c>)
+ 8001ac2:	4a46      	ldr	r2, [pc, #280]	; (8001bdc <MX_GPIO_Init+0x14c>)
+ 8001ac4:	f043 0301 	orr.w	r3, r3, #1
+ 8001ac8:	6313      	str	r3, [r2, #48]	; 0x30
+ 8001aca:	4b44      	ldr	r3, [pc, #272]	; (8001bdc <MX_GPIO_Init+0x14c>)
  8001acc:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 8001ace:	4a40      	ldr	r2, [pc, #256]	; (8001bd0 <MX_GPIO_Init+0x14c>)
- 8001ad0:	f443 7380 	orr.w	r3, r3, #256	; 0x100
- 8001ad4:	6313      	str	r3, [r2, #48]	; 0x30
- 8001ad6:	4b3e      	ldr	r3, [pc, #248]	; (8001bd0 <MX_GPIO_Init+0x14c>)
+ 8001ace:	f003 0301 	and.w	r3, r3, #1
+ 8001ad2:	617b      	str	r3, [r7, #20]
+ 8001ad4:	697b      	ldr	r3, [r7, #20]
+  __HAL_RCC_GPIOI_CLK_ENABLE();
+ 8001ad6:	4b41      	ldr	r3, [pc, #260]	; (8001bdc <MX_GPIO_Init+0x14c>)
  8001ad8:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 8001ada:	f403 7380 	and.w	r3, r3, #256	; 0x100
- 8001ade:	613b      	str	r3, [r7, #16]
- 8001ae0:	693b      	ldr	r3, [r7, #16]
-  __HAL_RCC_GPIOH_CLK_ENABLE();
- 8001ae2:	4b3b      	ldr	r3, [pc, #236]	; (8001bd0 <MX_GPIO_Init+0x14c>)
+ 8001ada:	4a40      	ldr	r2, [pc, #256]	; (8001bdc <MX_GPIO_Init+0x14c>)
+ 8001adc:	f443 7380 	orr.w	r3, r3, #256	; 0x100
+ 8001ae0:	6313      	str	r3, [r2, #48]	; 0x30
+ 8001ae2:	4b3e      	ldr	r3, [pc, #248]	; (8001bdc <MX_GPIO_Init+0x14c>)
  8001ae4:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 8001ae6:	4a3a      	ldr	r2, [pc, #232]	; (8001bd0 <MX_GPIO_Init+0x14c>)
- 8001ae8:	f043 0380 	orr.w	r3, r3, #128	; 0x80
- 8001aec:	6313      	str	r3, [r2, #48]	; 0x30
- 8001aee:	4b38      	ldr	r3, [pc, #224]	; (8001bd0 <MX_GPIO_Init+0x14c>)
+ 8001ae6:	f403 7380 	and.w	r3, r3, #256	; 0x100
+ 8001aea:	613b      	str	r3, [r7, #16]
+ 8001aec:	693b      	ldr	r3, [r7, #16]
+  __HAL_RCC_GPIOH_CLK_ENABLE();
+ 8001aee:	4b3b      	ldr	r3, [pc, #236]	; (8001bdc <MX_GPIO_Init+0x14c>)
  8001af0:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 8001af2:	f003 0380 	and.w	r3, r3, #128	; 0x80
- 8001af6:	60fb      	str	r3, [r7, #12]
- 8001af8:	68fb      	ldr	r3, [r7, #12]
-  __HAL_RCC_GPIOC_CLK_ENABLE();
- 8001afa:	4b35      	ldr	r3, [pc, #212]	; (8001bd0 <MX_GPIO_Init+0x14c>)
+ 8001af2:	4a3a      	ldr	r2, [pc, #232]	; (8001bdc <MX_GPIO_Init+0x14c>)
+ 8001af4:	f043 0380 	orr.w	r3, r3, #128	; 0x80
+ 8001af8:	6313      	str	r3, [r2, #48]	; 0x30
+ 8001afa:	4b38      	ldr	r3, [pc, #224]	; (8001bdc <MX_GPIO_Init+0x14c>)
  8001afc:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 8001afe:	4a34      	ldr	r2, [pc, #208]	; (8001bd0 <MX_GPIO_Init+0x14c>)
- 8001b00:	f043 0304 	orr.w	r3, r3, #4
- 8001b04:	6313      	str	r3, [r2, #48]	; 0x30
- 8001b06:	4b32      	ldr	r3, [pc, #200]	; (8001bd0 <MX_GPIO_Init+0x14c>)
+ 8001afe:	f003 0380 	and.w	r3, r3, #128	; 0x80
+ 8001b02:	60fb      	str	r3, [r7, #12]
+ 8001b04:	68fb      	ldr	r3, [r7, #12]
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+ 8001b06:	4b35      	ldr	r3, [pc, #212]	; (8001bdc <MX_GPIO_Init+0x14c>)
  8001b08:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 8001b0a:	f003 0304 	and.w	r3, r3, #4
- 8001b0e:	60bb      	str	r3, [r7, #8]
- 8001b10:	68bb      	ldr	r3, [r7, #8]
-  __HAL_RCC_GPIOG_CLK_ENABLE();
- 8001b12:	4b2f      	ldr	r3, [pc, #188]	; (8001bd0 <MX_GPIO_Init+0x14c>)
+ 8001b0a:	4a34      	ldr	r2, [pc, #208]	; (8001bdc <MX_GPIO_Init+0x14c>)
+ 8001b0c:	f043 0304 	orr.w	r3, r3, #4
+ 8001b10:	6313      	str	r3, [r2, #48]	; 0x30
+ 8001b12:	4b32      	ldr	r3, [pc, #200]	; (8001bdc <MX_GPIO_Init+0x14c>)
  8001b14:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 8001b16:	4a2e      	ldr	r2, [pc, #184]	; (8001bd0 <MX_GPIO_Init+0x14c>)
- 8001b18:	f043 0340 	orr.w	r3, r3, #64	; 0x40
- 8001b1c:	6313      	str	r3, [r2, #48]	; 0x30
- 8001b1e:	4b2c      	ldr	r3, [pc, #176]	; (8001bd0 <MX_GPIO_Init+0x14c>)
+ 8001b16:	f003 0304 	and.w	r3, r3, #4
+ 8001b1a:	60bb      	str	r3, [r7, #8]
+ 8001b1c:	68bb      	ldr	r3, [r7, #8]
+  __HAL_RCC_GPIOG_CLK_ENABLE();
+ 8001b1e:	4b2f      	ldr	r3, [pc, #188]	; (8001bdc <MX_GPIO_Init+0x14c>)
  8001b20:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 8001b22:	f003 0340 	and.w	r3, r3, #64	; 0x40
- 8001b26:	607b      	str	r3, [r7, #4]
- 8001b28:	687b      	ldr	r3, [r7, #4]
+ 8001b22:	4a2e      	ldr	r2, [pc, #184]	; (8001bdc <MX_GPIO_Init+0x14c>)
+ 8001b24:	f043 0340 	orr.w	r3, r3, #64	; 0x40
+ 8001b28:	6313      	str	r3, [r2, #48]	; 0x30
+ 8001b2a:	4b2c      	ldr	r3, [pc, #176]	; (8001bdc <MX_GPIO_Init+0x14c>)
+ 8001b2c:	6b1b      	ldr	r3, [r3, #48]	; 0x30
+ 8001b2e:	f003 0340 	and.w	r3, r3, #64	; 0x40
+ 8001b32:	607b      	str	r3, [r7, #4]
+ 8001b34:	687b      	ldr	r3, [r7, #4]
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(color_S2_GPIO_Port, color_S2_Pin, GPIO_PIN_RESET);
- 8001b2a:	2200      	movs	r2, #0
- 8001b2c:	2110      	movs	r1, #16
- 8001b2e:	4829      	ldr	r0, [pc, #164]	; (8001bd4 <MX_GPIO_Init+0x150>)
- 8001b30:	f000 ff6c 	bl	8002a0c <HAL_GPIO_WritePin>
+ 8001b36:	2200      	movs	r2, #0
+ 8001b38:	2110      	movs	r1, #16
+ 8001b3a:	4829      	ldr	r0, [pc, #164]	; (8001be0 <MX_GPIO_Init+0x150>)
+ 8001b3c:	f000 ff66 	bl	8002a0c <HAL_GPIO_WritePin>
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, color_enable_Pin|color_S0_Pin, GPIO_PIN_RESET);
- 8001b34:	2200      	movs	r2, #0
- 8001b36:	21c0      	movs	r1, #192	; 0xc0
- 8001b38:	4827      	ldr	r0, [pc, #156]	; (8001bd8 <MX_GPIO_Init+0x154>)
- 8001b3a:	f000 ff67 	bl	8002a0c <HAL_GPIO_WritePin>
+ 8001b40:	2200      	movs	r2, #0
+ 8001b42:	21c0      	movs	r1, #192	; 0xc0
+ 8001b44:	4827      	ldr	r0, [pc, #156]	; (8001be4 <MX_GPIO_Init+0x154>)
+ 8001b46:	f000 ff61 	bl	8002a0c <HAL_GPIO_WritePin>
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOG, color_S3_Pin|color_S1_Pin, GPIO_PIN_RESET);
- 8001b3e:	2200      	movs	r2, #0
- 8001b40:	21c0      	movs	r1, #192	; 0xc0
- 8001b42:	4826      	ldr	r0, [pc, #152]	; (8001bdc <MX_GPIO_Init+0x158>)
- 8001b44:	f000 ff62 	bl	8002a0c <HAL_GPIO_WritePin>
+ 8001b4a:	2200      	movs	r2, #0
+ 8001b4c:	21c0      	movs	r1, #192	; 0xc0
+ 8001b4e:	4826      	ldr	r0, [pc, #152]	; (8001be8 <MX_GPIO_Init+0x158>)
+ 8001b50:	f000 ff5c 	bl	8002a0c <HAL_GPIO_WritePin>
 
   /*Configure GPIO pin : PtPin */
   GPIO_InitStruct.Pin = color_S2_Pin;
- 8001b48:	2310      	movs	r3, #16
- 8001b4a:	61fb      	str	r3, [r7, #28]
+ 8001b54:	2310      	movs	r3, #16
+ 8001b56:	61fb      	str	r3, [r7, #28]
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 8001b4c:	2301      	movs	r3, #1
- 8001b4e:	623b      	str	r3, [r7, #32]
+ 8001b58:	2301      	movs	r3, #1
+ 8001b5a:	623b      	str	r3, [r7, #32]
   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 8001b50:	2300      	movs	r3, #0
- 8001b52:	627b      	str	r3, [r7, #36]	; 0x24
+ 8001b5c:	2300      	movs	r3, #0
+ 8001b5e:	627b      	str	r3, [r7, #36]	; 0x24
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
- 8001b54:	2300      	movs	r3, #0
- 8001b56:	62bb      	str	r3, [r7, #40]	; 0x28
+ 8001b60:	2300      	movs	r3, #0
+ 8001b62:	62bb      	str	r3, [r7, #40]	; 0x28
   HAL_GPIO_Init(color_S2_GPIO_Port, &GPIO_InitStruct);
- 8001b58:	f107 031c 	add.w	r3, r7, #28
- 8001b5c:	4619      	mov	r1, r3
- 8001b5e:	481d      	ldr	r0, [pc, #116]	; (8001bd4 <MX_GPIO_Init+0x150>)
- 8001b60:	f000 fda8 	bl	80026b4 <HAL_GPIO_Init>
+ 8001b64:	f107 031c 	add.w	r3, r7, #28
+ 8001b68:	4619      	mov	r1, r3
+ 8001b6a:	481d      	ldr	r0, [pc, #116]	; (8001be0 <MX_GPIO_Init+0x150>)
+ 8001b6c:	f000 fda2 	bl	80026b4 <HAL_GPIO_Init>
 
   /*Configure GPIO pin : PtPin */
   GPIO_InitStruct.Pin = button_Pin;
- 8001b64:	f44f 6300 	mov.w	r3, #2048	; 0x800
- 8001b68:	61fb      	str	r3, [r7, #28]
+ 8001b70:	f44f 6300 	mov.w	r3, #2048	; 0x800
+ 8001b74:	61fb      	str	r3, [r7, #28]
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
- 8001b6a:	f44f 1388 	mov.w	r3, #1114112	; 0x110000
- 8001b6e:	623b      	str	r3, [r7, #32]
+ 8001b76:	f44f 1388 	mov.w	r3, #1114112	; 0x110000
+ 8001b7a:	623b      	str	r3, [r7, #32]
   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 8001b70:	2300      	movs	r3, #0
- 8001b72:	627b      	str	r3, [r7, #36]	; 0x24
+ 8001b7c:	2300      	movs	r3, #0
+ 8001b7e:	627b      	str	r3, [r7, #36]	; 0x24
   HAL_GPIO_Init(button_GPIO_Port, &GPIO_InitStruct);
- 8001b74:	f107 031c 	add.w	r3, r7, #28
- 8001b78:	4619      	mov	r1, r3
- 8001b7a:	4819      	ldr	r0, [pc, #100]	; (8001be0 <MX_GPIO_Init+0x15c>)
- 8001b7c:	f000 fd9a 	bl	80026b4 <HAL_GPIO_Init>
+ 8001b80:	f107 031c 	add.w	r3, r7, #28
+ 8001b84:	4619      	mov	r1, r3
+ 8001b86:	4819      	ldr	r0, [pc, #100]	; (8001bec <MX_GPIO_Init+0x15c>)
+ 8001b88:	f000 fd94 	bl	80026b4 <HAL_GPIO_Init>
 
   /*Configure GPIO pins : PCPin PCPin */
   GPIO_InitStruct.Pin = color_enable_Pin|color_S0_Pin;
- 8001b80:	23c0      	movs	r3, #192	; 0xc0
- 8001b82:	61fb      	str	r3, [r7, #28]
+ 8001b8c:	23c0      	movs	r3, #192	; 0xc0
+ 8001b8e:	61fb      	str	r3, [r7, #28]
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 8001b84:	2301      	movs	r3, #1
- 8001b86:	623b      	str	r3, [r7, #32]
+ 8001b90:	2301      	movs	r3, #1
+ 8001b92:	623b      	str	r3, [r7, #32]
   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 8001b88:	2300      	movs	r3, #0
- 8001b8a:	627b      	str	r3, [r7, #36]	; 0x24
+ 8001b94:	2300      	movs	r3, #0
+ 8001b96:	627b      	str	r3, [r7, #36]	; 0x24
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
- 8001b8c:	2300      	movs	r3, #0
- 8001b8e:	62bb      	str	r3, [r7, #40]	; 0x28
+ 8001b98:	2300      	movs	r3, #0
+ 8001b9a:	62bb      	str	r3, [r7, #40]	; 0x28
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
- 8001b90:	f107 031c 	add.w	r3, r7, #28
- 8001b94:	4619      	mov	r1, r3
- 8001b96:	4810      	ldr	r0, [pc, #64]	; (8001bd8 <MX_GPIO_Init+0x154>)
- 8001b98:	f000 fd8c 	bl	80026b4 <HAL_GPIO_Init>
+ 8001b9c:	f107 031c 	add.w	r3, r7, #28
+ 8001ba0:	4619      	mov	r1, r3
+ 8001ba2:	4810      	ldr	r0, [pc, #64]	; (8001be4 <MX_GPIO_Init+0x154>)
+ 8001ba4:	f000 fd86 	bl	80026b4 <HAL_GPIO_Init>
 
   /*Configure GPIO pins : PGPin PGPin */
   GPIO_InitStruct.Pin = color_S3_Pin|color_S1_Pin;
- 8001b9c:	23c0      	movs	r3, #192	; 0xc0
- 8001b9e:	61fb      	str	r3, [r7, #28]
+ 8001ba8:	23c0      	movs	r3, #192	; 0xc0
+ 8001baa:	61fb      	str	r3, [r7, #28]
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 8001ba0:	2301      	movs	r3, #1
- 8001ba2:	623b      	str	r3, [r7, #32]
+ 8001bac:	2301      	movs	r3, #1
+ 8001bae:	623b      	str	r3, [r7, #32]
   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 8001ba4:	2300      	movs	r3, #0
- 8001ba6:	627b      	str	r3, [r7, #36]	; 0x24
+ 8001bb0:	2300      	movs	r3, #0
+ 8001bb2:	627b      	str	r3, [r7, #36]	; 0x24
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
- 8001ba8:	2300      	movs	r3, #0
- 8001baa:	62bb      	str	r3, [r7, #40]	; 0x28
+ 8001bb4:	2300      	movs	r3, #0
+ 8001bb6:	62bb      	str	r3, [r7, #40]	; 0x28
   HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
- 8001bac:	f107 031c 	add.w	r3, r7, #28
- 8001bb0:	4619      	mov	r1, r3
- 8001bb2:	480a      	ldr	r0, [pc, #40]	; (8001bdc <MX_GPIO_Init+0x158>)
- 8001bb4:	f000 fd7e 	bl	80026b4 <HAL_GPIO_Init>
+ 8001bb8:	f107 031c 	add.w	r3, r7, #28
+ 8001bbc:	4619      	mov	r1, r3
+ 8001bbe:	480a      	ldr	r0, [pc, #40]	; (8001be8 <MX_GPIO_Init+0x158>)
+ 8001bc0:	f000 fd78 	bl	80026b4 <HAL_GPIO_Init>
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 5, 0);
- 8001bb8:	2200      	movs	r2, #0
- 8001bba:	2105      	movs	r1, #5
- 8001bbc:	2028      	movs	r0, #40	; 0x28
- 8001bbe:	f000 fd4f 	bl	8002660 <HAL_NVIC_SetPriority>
+ 8001bc4:	2200      	movs	r2, #0
+ 8001bc6:	2105      	movs	r1, #5
+ 8001bc8:	2028      	movs	r0, #40	; 0x28
+ 8001bca:	f000 fd49 	bl	8002660 <HAL_NVIC_SetPriority>
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
- 8001bc2:	2028      	movs	r0, #40	; 0x28
- 8001bc4:	f000 fd68 	bl	8002698 <HAL_NVIC_EnableIRQ>
+ 8001bce:	2028      	movs	r0, #40	; 0x28
+ 8001bd0:	f000 fd62 	bl	8002698 <HAL_NVIC_EnableIRQ>
 
 }
- 8001bc8:	bf00      	nop
- 8001bca:	3730      	adds	r7, #48	; 0x30
- 8001bcc:	46bd      	mov	sp, r7
- 8001bce:	bd80      	pop	{r7, pc}
- 8001bd0:	40023800 	.word	0x40023800
- 8001bd4:	40020400 	.word	0x40020400
- 8001bd8:	40020800 	.word	0x40020800
- 8001bdc:	40021800 	.word	0x40021800
- 8001be0:	40022000 	.word	0x40022000
+ 8001bd4:	bf00      	nop
+ 8001bd6:	3730      	adds	r7, #48	; 0x30
+ 8001bd8:	46bd      	mov	sp, r7
+ 8001bda:	bd80      	pop	{r7, pc}
+ 8001bdc:	40023800 	.word	0x40023800
+ 8001be0:	40020400 	.word	0x40020400
+ 8001be4:	40020800 	.word	0x40020800
+ 8001be8:	40021800 	.word	0x40021800
+ 8001bec:	40022000 	.word	0x40022000
 
-08001be4 <HAL_GPIO_EXTI_Callback>:
+08001bf0 <HAL_GPIO_EXTI_Callback>:
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
- 8001be4:	b580      	push	{r7, lr}
- 8001be6:	b082      	sub	sp, #8
- 8001be8:	af00      	add	r7, sp, #0
- 8001bea:	4603      	mov	r3, r0
- 8001bec:	80fb      	strh	r3, [r7, #6]
+ 8001bf0:	b580      	push	{r7, lr}
+ 8001bf2:	b082      	sub	sp, #8
+ 8001bf4:	af00      	add	r7, sp, #0
+ 8001bf6:	4603      	mov	r3, r0
+ 8001bf8:	80fb      	strh	r3, [r7, #6]
 	if(GPIO_Pin==button_Pin){
- 8001bee:	88fb      	ldrh	r3, [r7, #6]
- 8001bf0:	f5b3 6f00 	cmp.w	r3, #2048	; 0x800
- 8001bf4:	d109      	bne.n	8001c0a <HAL_GPIO_EXTI_Callback+0x26>
+ 8001bfa:	88fb      	ldrh	r3, [r7, #6]
+ 8001bfc:	f5b3 6f00 	cmp.w	r3, #2048	; 0x800
+ 8001c00:	d109      	bne.n	8001c16 <HAL_GPIO_EXTI_Callback+0x26>
 		printf("----- appui bouton -----\r\n");
- 8001bf6:	4807      	ldr	r0, [pc, #28]	; (8001c14 <HAL_GPIO_EXTI_Callback+0x30>)
- 8001bf8:	f006 fa46 	bl	8008088 <puts>
+ 8001c02:	4807      	ldr	r0, [pc, #28]	; (8001c20 <HAL_GPIO_EXTI_Callback+0x30>)
+ 8001c04:	f006 fa40 	bl	8008088 <puts>
 		colorSetPhotodiodeType(&color_sensor1, GREEN);
- 8001bfc:	2104      	movs	r1, #4
- 8001bfe:	4806      	ldr	r0, [pc, #24]	; (8001c18 <HAL_GPIO_EXTI_Callback+0x34>)
- 8001c00:	f7ff f9dc 	bl	8000fbc <colorSetPhotodiodeType>
+ 8001c08:	2104      	movs	r1, #4
+ 8001c0a:	4806      	ldr	r0, [pc, #24]	; (8001c24 <HAL_GPIO_EXTI_Callback+0x34>)
+ 8001c0c:	f7ff f9d6 	bl	8000fbc <colorSetPhotodiodeType>
 		colorEnable(&color_sensor1);
- 8001c04:	4804      	ldr	r0, [pc, #16]	; (8001c18 <HAL_GPIO_EXTI_Callback+0x34>)
- 8001c06:	f7ff faa9 	bl	800115c <colorEnable>
+ 8001c10:	4804      	ldr	r0, [pc, #16]	; (8001c24 <HAL_GPIO_EXTI_Callback+0x34>)
+ 8001c12:	f7ff faaf 	bl	8001174 <colorEnable>
 	}
 }
- 8001c0a:	bf00      	nop
- 8001c0c:	3708      	adds	r7, #8
- 8001c0e:	46bd      	mov	sp, r7
- 8001c10:	bd80      	pop	{r7, pc}
- 8001c12:	bf00      	nop
- 8001c14:	0800b208 	.word	0x0800b208
- 8001c18:	20000610 	.word	0x20000610
+ 8001c16:	bf00      	nop
+ 8001c18:	3708      	adds	r7, #8
+ 8001c1a:	46bd      	mov	sp, r7
+ 8001c1c:	bd80      	pop	{r7, pc}
+ 8001c1e:	bf00      	nop
+ 8001c20:	0800b208 	.word	0x0800b208
+ 8001c24:	20000610 	.word	0x20000610
 
-08001c1c <main>:
+08001c28 <main>:
 /**
   * @brief  The application entry point.
   * @retval int
   */
 int main(void)
 {
- 8001c1c:	b580      	push	{r7, lr}
- 8001c1e:	af00      	add	r7, sp, #0
+ 8001c28:	b580      	push	{r7, lr}
+ 8001c2a:	af00      	add	r7, sp, #0
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
- 8001c20:	f000 fc39 	bl	8002496 <HAL_Init>
+ 8001c2c:	f000 fc33 	bl	8002496 <HAL_Init>
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
 
   /* Configure the system clock */
   SystemClock_Config();
- 8001c24:	f000 f834 	bl	8001c90 <SystemClock_Config>
+ 8001c30:	f000 f832 	bl	8001c98 <SystemClock_Config>
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
- 8001c28:	f7ff ff2c 	bl	8001a84 <MX_GPIO_Init>
+ 8001c34:	f7ff ff2c 	bl	8001a90 <MX_GPIO_Init>
   MX_TIM2_Init();
- 8001c2c:	f000 fa9c 	bl	8002168 <MX_TIM2_Init>
+ 8001c38:	f000 fa96 	bl	8002168 <MX_TIM2_Init>
   MX_USART1_UART_Init();
- 8001c30:	f000 fb56 	bl	80022e0 <MX_USART1_UART_Init>
+ 8001c3c:	f000 fb50 	bl	80022e0 <MX_USART1_UART_Init>
   /* USER CODE BEGIN 2 */
 
   //desactive the internal buffering for scanf, that is set by default in syscalls.c
   setvbuf(stdin, NULL, _IONBF, 0);
- 8001c34:	4b10      	ldr	r3, [pc, #64]	; (8001c78 <main+0x5c>)
- 8001c36:	681b      	ldr	r3, [r3, #0]
- 8001c38:	6858      	ldr	r0, [r3, #4]
- 8001c3a:	2300      	movs	r3, #0
- 8001c3c:	2202      	movs	r2, #2
- 8001c3e:	2100      	movs	r1, #0
- 8001c40:	f006 fabc 	bl	80081bc <setvbuf>
+ 8001c40:	4b10      	ldr	r3, [pc, #64]	; (8001c84 <main+0x5c>)
+ 8001c42:	681b      	ldr	r3, [r3, #0]
+ 8001c44:	6858      	ldr	r0, [r3, #4]
+ 8001c46:	2300      	movs	r3, #0
+ 8001c48:	2202      	movs	r2, #2
+ 8001c4a:	2100      	movs	r1, #0
+ 8001c4c:	f006 fab6 	bl	80081bc <setvbuf>
 
 	printf("---- color sensor ----\r\n");
- 8001c44:	480d      	ldr	r0, [pc, #52]	; (8001c7c <main+0x60>)
- 8001c46:	f006 fa1f 	bl	8008088 <puts>
+ 8001c50:	480d      	ldr	r0, [pc, #52]	; (8001c88 <main+0x60>)
+ 8001c52:	f006 fa19 	bl	8008088 <puts>
   color_sensor_init(&color_sensor1,GREEN,CENT_POUR_CENT,SENSOR_DISABLE);
   printf("color sensor initialized\r\nwaiting for button press : \r\n");*/
 
 
   	// ----- test 3 : Fonction de calibration -----
   	printf("--- calibration lancée ---\r\n");
- 8001c4a:	480d      	ldr	r0, [pc, #52]	; (8001c80 <main+0x64>)
- 8001c4c:	f006 fa1c 	bl	8008088 <puts>
+ 8001c56:	480d      	ldr	r0, [pc, #52]	; (8001c8c <main+0x64>)
+ 8001c58:	f006 fa16 	bl	8008088 <puts>
   	colorSensorInit(&color_sensor1, GREEN,CENT_POUR_CENT,SENSOR_DISABLE);
- 8001c50:	2300      	movs	r3, #0
- 8001c52:	2204      	movs	r2, #4
- 8001c54:	2104      	movs	r1, #4
- 8001c56:	480b      	ldr	r0, [pc, #44]	; (8001c84 <main+0x68>)
- 8001c58:	f7ff fa10 	bl	800107c <colorSensorInit>
-  	colorHandleCalibrationSensor(&color_sensor1,&color_sensor1_buffer_calibration);
- 8001c5c:	490a      	ldr	r1, [pc, #40]	; (8001c88 <main+0x6c>)
- 8001c5e:	4809      	ldr	r0, [pc, #36]	; (8001c84 <main+0x68>)
- 8001c60:	f7ff faa8 	bl	80011b4 <colorHandleCalibrationSensor>
+ 8001c5c:	2300      	movs	r3, #0
+ 8001c5e:	2204      	movs	r2, #4
+ 8001c60:	2104      	movs	r1, #4
+ 8001c62:	480b      	ldr	r0, [pc, #44]	; (8001c90 <main+0x68>)
+ 8001c64:	f7ff fa0a 	bl	800107c <colorSensorInit>
+  	colorHandleCalibrationSensor(&color_sensor1);
+ 8001c68:	4809      	ldr	r0, [pc, #36]	; (8001c90 <main+0x68>)
+ 8001c6a:	f7ff faaf 	bl	80011cc <colorHandleCalibrationSensor>
   	printf("waiting for button press to measure : \r\n");
- 8001c64:	4809      	ldr	r0, [pc, #36]	; (8001c8c <main+0x70>)
- 8001c66:	f006 fa0f 	bl	8008088 <puts>
+ 8001c6e:	4809      	ldr	r0, [pc, #36]	; (8001c94 <main+0x6c>)
+ 8001c70:	f006 fa0a 	bl	8008088 <puts>
 
 
   	vTaskStartScheduler();
- 8001c6a:	f004 fbdf 	bl	800642c <vTaskStartScheduler>
+ 8001c74:	f004 fbda 	bl	800642c <vTaskStartScheduler>
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
   MX_FREERTOS_Init();
- 8001c6e:	f7ff fee5 	bl	8001a3c <MX_FREERTOS_Init>
+ 8001c78:	f7ff fee6 	bl	8001a48 <MX_FREERTOS_Init>
 
   /* Start scheduler */
   osKernelStart();
- 8001c72:	f004 f8d8 	bl	8005e26 <osKernelStart>
+ 8001c7c:	f004 f8d3 	bl	8005e26 <osKernelStart>
 
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	while (1)
- 8001c76:	e7fe      	b.n	8001c76 <main+0x5a>
- 8001c78:	20000010 	.word	0x20000010
- 8001c7c:	0800b224 	.word	0x0800b224
- 8001c80:	0800b23c 	.word	0x0800b23c
- 8001c84:	20000610 	.word	0x20000610
- 8001c88:	20000634 	.word	0x20000634
- 8001c8c:	0800b25c 	.word	0x0800b25c
+ 8001c80:	e7fe      	b.n	8001c80 <main+0x58>
+ 8001c82:	bf00      	nop
+ 8001c84:	20000010 	.word	0x20000010
+ 8001c88:	0800b224 	.word	0x0800b224
+ 8001c8c:	0800b23c 	.word	0x0800b23c
+ 8001c90:	20000610 	.word	0x20000610
+ 8001c94:	0800b25c 	.word	0x0800b25c
 
-08001c90 <SystemClock_Config>:
+08001c98 <SystemClock_Config>:
 /**
   * @brief System Clock Configuration
   * @retval None
   */
 void SystemClock_Config(void)
 {
- 8001c90:	b580      	push	{r7, lr}
- 8001c92:	b094      	sub	sp, #80	; 0x50
- 8001c94:	af00      	add	r7, sp, #0
+ 8001c98:	b580      	push	{r7, lr}
+ 8001c9a:	b094      	sub	sp, #80	; 0x50
+ 8001c9c:	af00      	add	r7, sp, #0
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
- 8001c96:	f107 0320 	add.w	r3, r7, #32
- 8001c9a:	2230      	movs	r2, #48	; 0x30
- 8001c9c:	2100      	movs	r1, #0
- 8001c9e:	4618      	mov	r0, r3
- 8001ca0:	f005 fc65 	bl	800756e <memset>
+ 8001c9e:	f107 0320 	add.w	r3, r7, #32
+ 8001ca2:	2230      	movs	r2, #48	; 0x30
+ 8001ca4:	2100      	movs	r1, #0
+ 8001ca6:	4618      	mov	r0, r3
+ 8001ca8:	f005 fc61 	bl	800756e <memset>
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
- 8001ca4:	f107 030c 	add.w	r3, r7, #12
- 8001ca8:	2200      	movs	r2, #0
- 8001caa:	601a      	str	r2, [r3, #0]
- 8001cac:	605a      	str	r2, [r3, #4]
- 8001cae:	609a      	str	r2, [r3, #8]
- 8001cb0:	60da      	str	r2, [r3, #12]
- 8001cb2:	611a      	str	r2, [r3, #16]
+ 8001cac:	f107 030c 	add.w	r3, r7, #12
+ 8001cb0:	2200      	movs	r2, #0
+ 8001cb2:	601a      	str	r2, [r3, #0]
+ 8001cb4:	605a      	str	r2, [r3, #4]
+ 8001cb6:	609a      	str	r2, [r3, #8]
+ 8001cb8:	60da      	str	r2, [r3, #12]
+ 8001cba:	611a      	str	r2, [r3, #16]
 
   /** Configure the main internal regulator output voltage
   */
   __HAL_RCC_PWR_CLK_ENABLE();
- 8001cb4:	4b2b      	ldr	r3, [pc, #172]	; (8001d64 <SystemClock_Config+0xd4>)
- 8001cb6:	6c1b      	ldr	r3, [r3, #64]	; 0x40
- 8001cb8:	4a2a      	ldr	r2, [pc, #168]	; (8001d64 <SystemClock_Config+0xd4>)
- 8001cba:	f043 5380 	orr.w	r3, r3, #268435456	; 0x10000000
- 8001cbe:	6413      	str	r3, [r2, #64]	; 0x40
- 8001cc0:	4b28      	ldr	r3, [pc, #160]	; (8001d64 <SystemClock_Config+0xd4>)
- 8001cc2:	6c1b      	ldr	r3, [r3, #64]	; 0x40
- 8001cc4:	f003 5380 	and.w	r3, r3, #268435456	; 0x10000000
- 8001cc8:	60bb      	str	r3, [r7, #8]
- 8001cca:	68bb      	ldr	r3, [r7, #8]
+ 8001cbc:	4b2b      	ldr	r3, [pc, #172]	; (8001d6c <SystemClock_Config+0xd4>)
+ 8001cbe:	6c1b      	ldr	r3, [r3, #64]	; 0x40
+ 8001cc0:	4a2a      	ldr	r2, [pc, #168]	; (8001d6c <SystemClock_Config+0xd4>)
+ 8001cc2:	f043 5380 	orr.w	r3, r3, #268435456	; 0x10000000
+ 8001cc6:	6413      	str	r3, [r2, #64]	; 0x40
+ 8001cc8:	4b28      	ldr	r3, [pc, #160]	; (8001d6c <SystemClock_Config+0xd4>)
+ 8001cca:	6c1b      	ldr	r3, [r3, #64]	; 0x40
+ 8001ccc:	f003 5380 	and.w	r3, r3, #268435456	; 0x10000000
+ 8001cd0:	60bb      	str	r3, [r7, #8]
+ 8001cd2:	68bb      	ldr	r3, [r7, #8]
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
- 8001ccc:	4b26      	ldr	r3, [pc, #152]	; (8001d68 <SystemClock_Config+0xd8>)
- 8001cce:	681b      	ldr	r3, [r3, #0]
- 8001cd0:	4a25      	ldr	r2, [pc, #148]	; (8001d68 <SystemClock_Config+0xd8>)
- 8001cd2:	f443 4340 	orr.w	r3, r3, #49152	; 0xc000
- 8001cd6:	6013      	str	r3, [r2, #0]
- 8001cd8:	4b23      	ldr	r3, [pc, #140]	; (8001d68 <SystemClock_Config+0xd8>)
- 8001cda:	681b      	ldr	r3, [r3, #0]
- 8001cdc:	f403 4340 	and.w	r3, r3, #49152	; 0xc000
- 8001ce0:	607b      	str	r3, [r7, #4]
- 8001ce2:	687b      	ldr	r3, [r7, #4]
+ 8001cd4:	4b26      	ldr	r3, [pc, #152]	; (8001d70 <SystemClock_Config+0xd8>)
+ 8001cd6:	681b      	ldr	r3, [r3, #0]
+ 8001cd8:	4a25      	ldr	r2, [pc, #148]	; (8001d70 <SystemClock_Config+0xd8>)
+ 8001cda:	f443 4340 	orr.w	r3, r3, #49152	; 0xc000
+ 8001cde:	6013      	str	r3, [r2, #0]
+ 8001ce0:	4b23      	ldr	r3, [pc, #140]	; (8001d70 <SystemClock_Config+0xd8>)
+ 8001ce2:	681b      	ldr	r3, [r3, #0]
+ 8001ce4:	f403 4340 	and.w	r3, r3, #49152	; 0xc000
+ 8001ce8:	607b      	str	r3, [r7, #4]
+ 8001cea:	687b      	ldr	r3, [r7, #4]
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
- 8001ce4:	2301      	movs	r3, #1
- 8001ce6:	623b      	str	r3, [r7, #32]
+ 8001cec:	2301      	movs	r3, #1
+ 8001cee:	623b      	str	r3, [r7, #32]
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
- 8001ce8:	f44f 3380 	mov.w	r3, #65536	; 0x10000
- 8001cec:	627b      	str	r3, [r7, #36]	; 0x24
+ 8001cf0:	f44f 3380 	mov.w	r3, #65536	; 0x10000
+ 8001cf4:	627b      	str	r3, [r7, #36]	; 0x24
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
- 8001cee:	2302      	movs	r3, #2
- 8001cf0:	63bb      	str	r3, [r7, #56]	; 0x38
+ 8001cf6:	2302      	movs	r3, #2
+ 8001cf8:	63bb      	str	r3, [r7, #56]	; 0x38
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
- 8001cf2:	f44f 0380 	mov.w	r3, #4194304	; 0x400000
- 8001cf6:	63fb      	str	r3, [r7, #60]	; 0x3c
+ 8001cfa:	f44f 0380 	mov.w	r3, #4194304	; 0x400000
+ 8001cfe:	63fb      	str	r3, [r7, #60]	; 0x3c
   RCC_OscInitStruct.PLL.PLLM = 25;
- 8001cf8:	2319      	movs	r3, #25
- 8001cfa:	643b      	str	r3, [r7, #64]	; 0x40
+ 8001d00:	2319      	movs	r3, #25
+ 8001d02:	643b      	str	r3, [r7, #64]	; 0x40
   RCC_OscInitStruct.PLL.PLLN = 400;
- 8001cfc:	f44f 73c8 	mov.w	r3, #400	; 0x190
- 8001d00:	647b      	str	r3, [r7, #68]	; 0x44
+ 8001d04:	f44f 73c8 	mov.w	r3, #400	; 0x190
+ 8001d08:	647b      	str	r3, [r7, #68]	; 0x44
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
- 8001d02:	2302      	movs	r3, #2
- 8001d04:	64bb      	str	r3, [r7, #72]	; 0x48
+ 8001d0a:	2302      	movs	r3, #2
+ 8001d0c:	64bb      	str	r3, [r7, #72]	; 0x48
   RCC_OscInitStruct.PLL.PLLQ = 9;
- 8001d06:	2309      	movs	r3, #9
- 8001d08:	64fb      	str	r3, [r7, #76]	; 0x4c
+ 8001d0e:	2309      	movs	r3, #9
+ 8001d10:	64fb      	str	r3, [r7, #76]	; 0x4c
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 8001d0a:	f107 0320 	add.w	r3, r7, #32
- 8001d0e:	4618      	mov	r0, r3
- 8001d10:	f000 fefe 	bl	8002b10 <HAL_RCC_OscConfig>
- 8001d14:	4603      	mov	r3, r0
- 8001d16:	2b00      	cmp	r3, #0
- 8001d18:	d001      	beq.n	8001d1e <SystemClock_Config+0x8e>
+ 8001d12:	f107 0320 	add.w	r3, r7, #32
+ 8001d16:	4618      	mov	r0, r3
+ 8001d18:	f000 fefa 	bl	8002b10 <HAL_RCC_OscConfig>
+ 8001d1c:	4603      	mov	r3, r0
+ 8001d1e:	2b00      	cmp	r3, #0
+ 8001d20:	d001      	beq.n	8001d26 <SystemClock_Config+0x8e>
   {
     Error_Handler();
- 8001d1a:	f000 f869 	bl	8001df0 <Error_Handler>
+ 8001d22:	f000 f869 	bl	8001df8 <Error_Handler>
   }
 
   /** Activate the Over-Drive mode
   */
   if (HAL_PWREx_EnableOverDrive() != HAL_OK)
- 8001d1e:	f000 fea7 	bl	8002a70 <HAL_PWREx_EnableOverDrive>
- 8001d22:	4603      	mov	r3, r0
- 8001d24:	2b00      	cmp	r3, #0
- 8001d26:	d001      	beq.n	8001d2c <SystemClock_Config+0x9c>
+ 8001d26:	f000 fea3 	bl	8002a70 <HAL_PWREx_EnableOverDrive>
+ 8001d2a:	4603      	mov	r3, r0
+ 8001d2c:	2b00      	cmp	r3, #0
+ 8001d2e:	d001      	beq.n	8001d34 <SystemClock_Config+0x9c>
   {
     Error_Handler();
- 8001d28:	f000 f862 	bl	8001df0 <Error_Handler>
+ 8001d30:	f000 f862 	bl	8001df8 <Error_Handler>
   }
 
   /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
- 8001d2c:	230f      	movs	r3, #15
- 8001d2e:	60fb      	str	r3, [r7, #12]
+ 8001d34:	230f      	movs	r3, #15
+ 8001d36:	60fb      	str	r3, [r7, #12]
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
- 8001d30:	2302      	movs	r3, #2
- 8001d32:	613b      	str	r3, [r7, #16]
+ 8001d38:	2302      	movs	r3, #2
+ 8001d3a:	613b      	str	r3, [r7, #16]
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 8001d34:	2300      	movs	r3, #0
- 8001d36:	617b      	str	r3, [r7, #20]
+ 8001d3c:	2300      	movs	r3, #0
+ 8001d3e:	617b      	str	r3, [r7, #20]
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
- 8001d38:	f44f 53a0 	mov.w	r3, #5120	; 0x1400
- 8001d3c:	61bb      	str	r3, [r7, #24]
+ 8001d40:	f44f 53a0 	mov.w	r3, #5120	; 0x1400
+ 8001d44:	61bb      	str	r3, [r7, #24]
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
- 8001d3e:	f44f 5380 	mov.w	r3, #4096	; 0x1000
- 8001d42:	61fb      	str	r3, [r7, #28]
+ 8001d46:	f44f 5380 	mov.w	r3, #4096	; 0x1000
+ 8001d4a:	61fb      	str	r3, [r7, #28]
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_6) != HAL_OK)
- 8001d44:	f107 030c 	add.w	r3, r7, #12
- 8001d48:	2106      	movs	r1, #6
- 8001d4a:	4618      	mov	r0, r3
- 8001d4c:	f001 f984 	bl	8003058 <HAL_RCC_ClockConfig>
- 8001d50:	4603      	mov	r3, r0
- 8001d52:	2b00      	cmp	r3, #0
- 8001d54:	d001      	beq.n	8001d5a <SystemClock_Config+0xca>
+ 8001d4c:	f107 030c 	add.w	r3, r7, #12
+ 8001d50:	2106      	movs	r1, #6
+ 8001d52:	4618      	mov	r0, r3
+ 8001d54:	f001 f980 	bl	8003058 <HAL_RCC_ClockConfig>
+ 8001d58:	4603      	mov	r3, r0
+ 8001d5a:	2b00      	cmp	r3, #0
+ 8001d5c:	d001      	beq.n	8001d62 <SystemClock_Config+0xca>
   {
     Error_Handler();
- 8001d56:	f000 f84b 	bl	8001df0 <Error_Handler>
+ 8001d5e:	f000 f84b 	bl	8001df8 <Error_Handler>
   }
 }
- 8001d5a:	bf00      	nop
- 8001d5c:	3750      	adds	r7, #80	; 0x50
- 8001d5e:	46bd      	mov	sp, r7
- 8001d60:	bd80      	pop	{r7, pc}
  8001d62:	bf00      	nop
- 8001d64:	40023800 	.word	0x40023800
- 8001d68:	40007000 	.word	0x40007000
+ 8001d64:	3750      	adds	r7, #80	; 0x50
+ 8001d66:	46bd      	mov	sp, r7
+ 8001d68:	bd80      	pop	{r7, pc}
+ 8001d6a:	bf00      	nop
+ 8001d6c:	40023800 	.word	0x40023800
+ 8001d70:	40007000 	.word	0x40007000
 
-08001d6c <__io_putchar>:
+08001d74 <__io_putchar>:
 
 /* USER CODE BEGIN 4 */
 
 //--_ Redirection du printf
 int __io_putchar(int ch){
- 8001d6c:	b580      	push	{r7, lr}
- 8001d6e:	b082      	sub	sp, #8
- 8001d70:	af00      	add	r7, sp, #0
- 8001d72:	6078      	str	r0, [r7, #4]
+ 8001d74:	b580      	push	{r7, lr}
+ 8001d76:	b082      	sub	sp, #8
+ 8001d78:	af00      	add	r7, sp, #0
+ 8001d7a:	6078      	str	r0, [r7, #4]
 	HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xFFFF);
- 8001d74:	1d39      	adds	r1, r7, #4
- 8001d76:	f64f 73ff 	movw	r3, #65535	; 0xffff
- 8001d7a:	2201      	movs	r2, #1
- 8001d7c:	4803      	ldr	r0, [pc, #12]	; (8001d8c <__io_putchar+0x20>)
- 8001d7e:	f003 faef 	bl	8005360 <HAL_UART_Transmit>
+ 8001d7c:	1d39      	adds	r1, r7, #4
+ 8001d7e:	f64f 73ff 	movw	r3, #65535	; 0xffff
+ 8001d82:	2201      	movs	r2, #1
+ 8001d84:	4803      	ldr	r0, [pc, #12]	; (8001d94 <__io_putchar+0x20>)
+ 8001d86:	f003 faeb 	bl	8005360 <HAL_UART_Transmit>
 	return ch;
- 8001d82:	687b      	ldr	r3, [r7, #4]
+ 8001d8a:	687b      	ldr	r3, [r7, #4]
 }
- 8001d84:	4618      	mov	r0, r3
- 8001d86:	3708      	adds	r7, #8
- 8001d88:	46bd      	mov	sp, r7
- 8001d8a:	bd80      	pop	{r7, pc}
- 8001d8c:	200006d8 	.word	0x200006d8
+ 8001d8c:	4618      	mov	r0, r3
+ 8001d8e:	3708      	adds	r7, #8
+ 8001d90:	46bd      	mov	sp, r7
+ 8001d92:	bd80      	pop	{r7, pc}
+ 8001d94:	200006d8 	.word	0x200006d8
 
-08001d90 <__io_getchar>:
+08001d98 <__io_getchar>:
 
 
 // --- redirection du scanf
 int __io_getchar(void){
- 8001d90:	b580      	push	{r7, lr}
- 8001d92:	b082      	sub	sp, #8
- 8001d94:	af00      	add	r7, sp, #0
+ 8001d98:	b580      	push	{r7, lr}
+ 8001d9a:	b082      	sub	sp, #8
+ 8001d9c:	af00      	add	r7, sp, #0
   uint8_t ch = 0;
- 8001d96:	2300      	movs	r3, #0
- 8001d98:	71fb      	strb	r3, [r7, #7]
+ 8001d9e:	2300      	movs	r3, #0
+ 8001da0:	71fb      	strb	r3, [r7, #7]
 
   /* Clear the Overrun flag just before receiving the first character */
   __HAL_UART_CLEAR_OREFLAG(&huart1);
- 8001d9a:	4b0b      	ldr	r3, [pc, #44]	; (8001dc8 <__io_getchar+0x38>)
- 8001d9c:	681b      	ldr	r3, [r3, #0]
- 8001d9e:	2208      	movs	r2, #8
- 8001da0:	621a      	str	r2, [r3, #32]
+ 8001da2:	4b0b      	ldr	r3, [pc, #44]	; (8001dd0 <__io_getchar+0x38>)
+ 8001da4:	681b      	ldr	r3, [r3, #0]
+ 8001da6:	2208      	movs	r2, #8
+ 8001da8:	621a      	str	r2, [r3, #32]
 
   /* Wait for reception of a character on the USART RX line and echo this
    * character on console */
   HAL_UART_Receive(&huart1, (uint8_t *)&ch, 1, HAL_MAX_DELAY);
- 8001da2:	1df9      	adds	r1, r7, #7
- 8001da4:	f04f 33ff 	mov.w	r3, #4294967295
- 8001da8:	2201      	movs	r2, #1
- 8001daa:	4807      	ldr	r0, [pc, #28]	; (8001dc8 <__io_getchar+0x38>)
- 8001dac:	f003 fb5b 	bl	8005466 <HAL_UART_Receive>
+ 8001daa:	1df9      	adds	r1, r7, #7
+ 8001dac:	f04f 33ff 	mov.w	r3, #4294967295
+ 8001db0:	2201      	movs	r2, #1
+ 8001db2:	4807      	ldr	r0, [pc, #28]	; (8001dd0 <__io_getchar+0x38>)
+ 8001db4:	f003 fb57 	bl	8005466 <HAL_UART_Receive>
   HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, HAL_MAX_DELAY);
- 8001db0:	1df9      	adds	r1, r7, #7
- 8001db2:	f04f 33ff 	mov.w	r3, #4294967295
- 8001db6:	2201      	movs	r2, #1
- 8001db8:	4803      	ldr	r0, [pc, #12]	; (8001dc8 <__io_getchar+0x38>)
- 8001dba:	f003 fad1 	bl	8005360 <HAL_UART_Transmit>
+ 8001db8:	1df9      	adds	r1, r7, #7
+ 8001dba:	f04f 33ff 	mov.w	r3, #4294967295
+ 8001dbe:	2201      	movs	r2, #1
+ 8001dc0:	4803      	ldr	r0, [pc, #12]	; (8001dd0 <__io_getchar+0x38>)
+ 8001dc2:	f003 facd 	bl	8005360 <HAL_UART_Transmit>
   return ch;
- 8001dbe:	79fb      	ldrb	r3, [r7, #7]
+ 8001dc6:	79fb      	ldrb	r3, [r7, #7]
 }
- 8001dc0:	4618      	mov	r0, r3
- 8001dc2:	3708      	adds	r7, #8
- 8001dc4:	46bd      	mov	sp, r7
- 8001dc6:	bd80      	pop	{r7, pc}
- 8001dc8:	200006d8 	.word	0x200006d8
+ 8001dc8:	4618      	mov	r0, r3
+ 8001dca:	3708      	adds	r7, #8
+ 8001dcc:	46bd      	mov	sp, r7
+ 8001dce:	bd80      	pop	{r7, pc}
+ 8001dd0:	200006d8 	.word	0x200006d8
 
-08001dcc <HAL_TIM_PeriodElapsedCallback>:
+08001dd4 <HAL_TIM_PeriodElapsedCallback>:
   * a global variable "uwTick" used as application time base.
   * @param  htim : TIM handle
   * @retval None
   */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
- 8001dcc:	b580      	push	{r7, lr}
- 8001dce:	b082      	sub	sp, #8
- 8001dd0:	af00      	add	r7, sp, #0
- 8001dd2:	6078      	str	r0, [r7, #4]
+ 8001dd4:	b580      	push	{r7, lr}
+ 8001dd6:	b082      	sub	sp, #8
+ 8001dd8:	af00      	add	r7, sp, #0
+ 8001dda:	6078      	str	r0, [r7, #4]
   /* USER CODE BEGIN Callback 0 */
 
   /* USER CODE END Callback 0 */
   if (htim->Instance == TIM6) {
- 8001dd4:	687b      	ldr	r3, [r7, #4]
- 8001dd6:	681b      	ldr	r3, [r3, #0]
- 8001dd8:	4a04      	ldr	r2, [pc, #16]	; (8001dec <HAL_TIM_PeriodElapsedCallback+0x20>)
- 8001dda:	4293      	cmp	r3, r2
- 8001ddc:	d101      	bne.n	8001de2 <HAL_TIM_PeriodElapsedCallback+0x16>
+ 8001ddc:	687b      	ldr	r3, [r7, #4]
+ 8001dde:	681b      	ldr	r3, [r3, #0]
+ 8001de0:	4a04      	ldr	r2, [pc, #16]	; (8001df4 <HAL_TIM_PeriodElapsedCallback+0x20>)
+ 8001de2:	4293      	cmp	r3, r2
+ 8001de4:	d101      	bne.n	8001dea <HAL_TIM_PeriodElapsedCallback+0x16>
     HAL_IncTick();
- 8001dde:	f000 fb67 	bl	80024b0 <HAL_IncTick>
+ 8001de6:	f000 fb63 	bl	80024b0 <HAL_IncTick>
   }
   /* USER CODE BEGIN Callback 1 */
 
   /* USER CODE END Callback 1 */
 }
- 8001de2:	bf00      	nop
- 8001de4:	3708      	adds	r7, #8
- 8001de6:	46bd      	mov	sp, r7
- 8001de8:	bd80      	pop	{r7, pc}
  8001dea:	bf00      	nop
- 8001dec:	40001000 	.word	0x40001000
+ 8001dec:	3708      	adds	r7, #8
+ 8001dee:	46bd      	mov	sp, r7
+ 8001df0:	bd80      	pop	{r7, pc}
+ 8001df2:	bf00      	nop
+ 8001df4:	40001000 	.word	0x40001000
 
-08001df0 <Error_Handler>:
+08001df8 <Error_Handler>:
 /**
   * @brief  This function is executed in case of error occurrence.
   * @retval None
   */
 void Error_Handler(void)
 {
- 8001df0:	b480      	push	{r7}
- 8001df2:	af00      	add	r7, sp, #0
+ 8001df8:	b480      	push	{r7}
+ 8001dfa:	af00      	add	r7, sp, #0
   \details Disables IRQ interrupts by setting the I-bit in the CPSR.
            Can only be executed in Privileged modes.
  */
 __STATIC_FORCEINLINE void __disable_irq(void)
 {
   __ASM volatile ("cpsid i" : : : "memory");
- 8001df4:	b672      	cpsid	i
+ 8001dfc:	b672      	cpsid	i
 }
- 8001df6:	bf00      	nop
+ 8001dfe:	bf00      	nop
   /* USER CODE BEGIN Error_Handler_Debug */
 	/* User can add his own implementation to report the HAL error return state */
 	__disable_irq();
 	while (1)
- 8001df8:	e7fe      	b.n	8001df8 <Error_Handler+0x8>
+ 8001e00:	e7fe      	b.n	8001e00 <Error_Handler+0x8>
 	...
 
-08001dfc <HAL_MspInit>:
+08001e04 <HAL_MspInit>:
 /* USER CODE END 0 */
 /**
   * Initializes the Global MSP.
   */
 void HAL_MspInit(void)
 {
- 8001dfc:	b580      	push	{r7, lr}
- 8001dfe:	b082      	sub	sp, #8
- 8001e00:	af00      	add	r7, sp, #0
+ 8001e04:	b580      	push	{r7, lr}
+ 8001e06:	b082      	sub	sp, #8
+ 8001e08:	af00      	add	r7, sp, #0
   /* USER CODE BEGIN MspInit 0 */
 
   /* USER CODE END MspInit 0 */
 
   __HAL_RCC_PWR_CLK_ENABLE();
- 8001e02:	4b11      	ldr	r3, [pc, #68]	; (8001e48 <HAL_MspInit+0x4c>)
- 8001e04:	6c1b      	ldr	r3, [r3, #64]	; 0x40
- 8001e06:	4a10      	ldr	r2, [pc, #64]	; (8001e48 <HAL_MspInit+0x4c>)
- 8001e08:	f043 5380 	orr.w	r3, r3, #268435456	; 0x10000000
- 8001e0c:	6413      	str	r3, [r2, #64]	; 0x40
- 8001e0e:	4b0e      	ldr	r3, [pc, #56]	; (8001e48 <HAL_MspInit+0x4c>)
- 8001e10:	6c1b      	ldr	r3, [r3, #64]	; 0x40
- 8001e12:	f003 5380 	and.w	r3, r3, #268435456	; 0x10000000
- 8001e16:	607b      	str	r3, [r7, #4]
- 8001e18:	687b      	ldr	r3, [r7, #4]
+ 8001e0a:	4b11      	ldr	r3, [pc, #68]	; (8001e50 <HAL_MspInit+0x4c>)
+ 8001e0c:	6c1b      	ldr	r3, [r3, #64]	; 0x40
+ 8001e0e:	4a10      	ldr	r2, [pc, #64]	; (8001e50 <HAL_MspInit+0x4c>)
+ 8001e10:	f043 5380 	orr.w	r3, r3, #268435456	; 0x10000000
+ 8001e14:	6413      	str	r3, [r2, #64]	; 0x40
+ 8001e16:	4b0e      	ldr	r3, [pc, #56]	; (8001e50 <HAL_MspInit+0x4c>)
+ 8001e18:	6c1b      	ldr	r3, [r3, #64]	; 0x40
+ 8001e1a:	f003 5380 	and.w	r3, r3, #268435456	; 0x10000000
+ 8001e1e:	607b      	str	r3, [r7, #4]
+ 8001e20:	687b      	ldr	r3, [r7, #4]
   __HAL_RCC_SYSCFG_CLK_ENABLE();
- 8001e1a:	4b0b      	ldr	r3, [pc, #44]	; (8001e48 <HAL_MspInit+0x4c>)
- 8001e1c:	6c5b      	ldr	r3, [r3, #68]	; 0x44
- 8001e1e:	4a0a      	ldr	r2, [pc, #40]	; (8001e48 <HAL_MspInit+0x4c>)
- 8001e20:	f443 4380 	orr.w	r3, r3, #16384	; 0x4000
- 8001e24:	6453      	str	r3, [r2, #68]	; 0x44
- 8001e26:	4b08      	ldr	r3, [pc, #32]	; (8001e48 <HAL_MspInit+0x4c>)
- 8001e28:	6c5b      	ldr	r3, [r3, #68]	; 0x44
- 8001e2a:	f403 4380 	and.w	r3, r3, #16384	; 0x4000
- 8001e2e:	603b      	str	r3, [r7, #0]
- 8001e30:	683b      	ldr	r3, [r7, #0]
+ 8001e22:	4b0b      	ldr	r3, [pc, #44]	; (8001e50 <HAL_MspInit+0x4c>)
+ 8001e24:	6c5b      	ldr	r3, [r3, #68]	; 0x44
+ 8001e26:	4a0a      	ldr	r2, [pc, #40]	; (8001e50 <HAL_MspInit+0x4c>)
+ 8001e28:	f443 4380 	orr.w	r3, r3, #16384	; 0x4000
+ 8001e2c:	6453      	str	r3, [r2, #68]	; 0x44
+ 8001e2e:	4b08      	ldr	r3, [pc, #32]	; (8001e50 <HAL_MspInit+0x4c>)
+ 8001e30:	6c5b      	ldr	r3, [r3, #68]	; 0x44
+ 8001e32:	f403 4380 	and.w	r3, r3, #16384	; 0x4000
+ 8001e36:	603b      	str	r3, [r7, #0]
+ 8001e38:	683b      	ldr	r3, [r7, #0]
 
   /* System interrupt init*/
   /* PendSV_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(PendSV_IRQn, 15, 0);
- 8001e32:	2200      	movs	r2, #0
- 8001e34:	210f      	movs	r1, #15
- 8001e36:	f06f 0001 	mvn.w	r0, #1
- 8001e3a:	f000 fc11 	bl	8002660 <HAL_NVIC_SetPriority>
+ 8001e3a:	2200      	movs	r2, #0
+ 8001e3c:	210f      	movs	r1, #15
+ 8001e3e:	f06f 0001 	mvn.w	r0, #1
+ 8001e42:	f000 fc0d 	bl	8002660 <HAL_NVIC_SetPriority>
 
   /* USER CODE BEGIN MspInit 1 */
 
   /* USER CODE END MspInit 1 */
 }
- 8001e3e:	bf00      	nop
- 8001e40:	3708      	adds	r7, #8
- 8001e42:	46bd      	mov	sp, r7
- 8001e44:	bd80      	pop	{r7, pc}
  8001e46:	bf00      	nop
- 8001e48:	40023800 	.word	0x40023800
+ 8001e48:	3708      	adds	r7, #8
+ 8001e4a:	46bd      	mov	sp, r7
+ 8001e4c:	bd80      	pop	{r7, pc}
+ 8001e4e:	bf00      	nop
+ 8001e50:	40023800 	.word	0x40023800
 
-08001e4c <HAL_InitTick>:
+08001e54 <HAL_InitTick>:
   *         reset by HAL_Init() or at any time when clock is configured, by HAL_RCC_ClockConfig().
   * @param  TickPriority: Tick interrupt priority.
   * @retval HAL status
   */
 HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
 {
- 8001e4c:	b580      	push	{r7, lr}
- 8001e4e:	b08e      	sub	sp, #56	; 0x38
- 8001e50:	af00      	add	r7, sp, #0
- 8001e52:	6078      	str	r0, [r7, #4]
+ 8001e54:	b580      	push	{r7, lr}
+ 8001e56:	b08e      	sub	sp, #56	; 0x38
+ 8001e58:	af00      	add	r7, sp, #0
+ 8001e5a:	6078      	str	r0, [r7, #4]
   RCC_ClkInitTypeDef    clkconfig;
   uint32_t              uwTimclock, uwAPB1Prescaler = 0U;
- 8001e54:	2300      	movs	r3, #0
- 8001e56:	62fb      	str	r3, [r7, #44]	; 0x2c
+ 8001e5c:	2300      	movs	r3, #0
+ 8001e5e:	62fb      	str	r3, [r7, #44]	; 0x2c
 
   uint32_t              uwPrescalerValue = 0U;
- 8001e58:	2300      	movs	r3, #0
- 8001e5a:	62bb      	str	r3, [r7, #40]	; 0x28
+ 8001e60:	2300      	movs	r3, #0
+ 8001e62:	62bb      	str	r3, [r7, #40]	; 0x28
   uint32_t              pFLatency;
   HAL_StatusTypeDef     status;
 
   /* Enable TIM6 clock */
   __HAL_RCC_TIM6_CLK_ENABLE();
- 8001e5c:	4b33      	ldr	r3, [pc, #204]	; (8001f2c <HAL_InitTick+0xe0>)
- 8001e5e:	6c1b      	ldr	r3, [r3, #64]	; 0x40
- 8001e60:	4a32      	ldr	r2, [pc, #200]	; (8001f2c <HAL_InitTick+0xe0>)
- 8001e62:	f043 0310 	orr.w	r3, r3, #16
- 8001e66:	6413      	str	r3, [r2, #64]	; 0x40
- 8001e68:	4b30      	ldr	r3, [pc, #192]	; (8001f2c <HAL_InitTick+0xe0>)
- 8001e6a:	6c1b      	ldr	r3, [r3, #64]	; 0x40
- 8001e6c:	f003 0310 	and.w	r3, r3, #16
- 8001e70:	60fb      	str	r3, [r7, #12]
- 8001e72:	68fb      	ldr	r3, [r7, #12]
+ 8001e64:	4b33      	ldr	r3, [pc, #204]	; (8001f34 <HAL_InitTick+0xe0>)
+ 8001e66:	6c1b      	ldr	r3, [r3, #64]	; 0x40
+ 8001e68:	4a32      	ldr	r2, [pc, #200]	; (8001f34 <HAL_InitTick+0xe0>)
+ 8001e6a:	f043 0310 	orr.w	r3, r3, #16
+ 8001e6e:	6413      	str	r3, [r2, #64]	; 0x40
+ 8001e70:	4b30      	ldr	r3, [pc, #192]	; (8001f34 <HAL_InitTick+0xe0>)
+ 8001e72:	6c1b      	ldr	r3, [r3, #64]	; 0x40
+ 8001e74:	f003 0310 	and.w	r3, r3, #16
+ 8001e78:	60fb      	str	r3, [r7, #12]
+ 8001e7a:	68fb      	ldr	r3, [r7, #12]
 
   /* Get clock configuration */
   HAL_RCC_GetClockConfig(&clkconfig, &pFLatency);
- 8001e74:	f107 0210 	add.w	r2, r7, #16
- 8001e78:	f107 0314 	add.w	r3, r7, #20
- 8001e7c:	4611      	mov	r1, r2
- 8001e7e:	4618      	mov	r0, r3
- 8001e80:	f001 fad0 	bl	8003424 <HAL_RCC_GetClockConfig>
+ 8001e7c:	f107 0210 	add.w	r2, r7, #16
+ 8001e80:	f107 0314 	add.w	r3, r7, #20
+ 8001e84:	4611      	mov	r1, r2
+ 8001e86:	4618      	mov	r0, r3
+ 8001e88:	f001 facc 	bl	8003424 <HAL_RCC_GetClockConfig>
 
   /* Get APB1 prescaler */
   uwAPB1Prescaler = clkconfig.APB1CLKDivider;
- 8001e84:	6a3b      	ldr	r3, [r7, #32]
- 8001e86:	62fb      	str	r3, [r7, #44]	; 0x2c
+ 8001e8c:	6a3b      	ldr	r3, [r7, #32]
+ 8001e8e:	62fb      	str	r3, [r7, #44]	; 0x2c
   /* Compute TIM6 clock */
   if (uwAPB1Prescaler == RCC_HCLK_DIV1)
- 8001e88:	6afb      	ldr	r3, [r7, #44]	; 0x2c
- 8001e8a:	2b00      	cmp	r3, #0
- 8001e8c:	d103      	bne.n	8001e96 <HAL_InitTick+0x4a>
+ 8001e90:	6afb      	ldr	r3, [r7, #44]	; 0x2c
+ 8001e92:	2b00      	cmp	r3, #0
+ 8001e94:	d103      	bne.n	8001e9e <HAL_InitTick+0x4a>
   {
     uwTimclock = HAL_RCC_GetPCLK1Freq();
- 8001e8e:	f001 faa1 	bl	80033d4 <HAL_RCC_GetPCLK1Freq>
- 8001e92:	6378      	str	r0, [r7, #52]	; 0x34
- 8001e94:	e004      	b.n	8001ea0 <HAL_InitTick+0x54>
+ 8001e96:	f001 fa9d 	bl	80033d4 <HAL_RCC_GetPCLK1Freq>
+ 8001e9a:	6378      	str	r0, [r7, #52]	; 0x34
+ 8001e9c:	e004      	b.n	8001ea8 <HAL_InitTick+0x54>
   }
   else
   {
     uwTimclock = 2UL * HAL_RCC_GetPCLK1Freq();
- 8001e96:	f001 fa9d 	bl	80033d4 <HAL_RCC_GetPCLK1Freq>
- 8001e9a:	4603      	mov	r3, r0
- 8001e9c:	005b      	lsls	r3, r3, #1
- 8001e9e:	637b      	str	r3, [r7, #52]	; 0x34
+ 8001e9e:	f001 fa99 	bl	80033d4 <HAL_RCC_GetPCLK1Freq>
+ 8001ea2:	4603      	mov	r3, r0
+ 8001ea4:	005b      	lsls	r3, r3, #1
+ 8001ea6:	637b      	str	r3, [r7, #52]	; 0x34
   }
 
   /* Compute the prescaler value to have TIM6 counter clock equal to 1MHz */
   uwPrescalerValue = (uint32_t) ((uwTimclock / 1000000U) - 1U);
- 8001ea0:	6b7b      	ldr	r3, [r7, #52]	; 0x34
- 8001ea2:	4a23      	ldr	r2, [pc, #140]	; (8001f30 <HAL_InitTick+0xe4>)
- 8001ea4:	fba2 2303 	umull	r2, r3, r2, r3
- 8001ea8:	0c9b      	lsrs	r3, r3, #18
- 8001eaa:	3b01      	subs	r3, #1
- 8001eac:	62bb      	str	r3, [r7, #40]	; 0x28
+ 8001ea8:	6b7b      	ldr	r3, [r7, #52]	; 0x34
+ 8001eaa:	4a23      	ldr	r2, [pc, #140]	; (8001f38 <HAL_InitTick+0xe4>)
+ 8001eac:	fba2 2303 	umull	r2, r3, r2, r3
+ 8001eb0:	0c9b      	lsrs	r3, r3, #18
+ 8001eb2:	3b01      	subs	r3, #1
+ 8001eb4:	62bb      	str	r3, [r7, #40]	; 0x28
 
   /* Initialize TIM6 */
   htim6.Instance = TIM6;
- 8001eae:	4b21      	ldr	r3, [pc, #132]	; (8001f34 <HAL_InitTick+0xe8>)
- 8001eb0:	4a21      	ldr	r2, [pc, #132]	; (8001f38 <HAL_InitTick+0xec>)
- 8001eb2:	601a      	str	r2, [r3, #0]
+ 8001eb6:	4b21      	ldr	r3, [pc, #132]	; (8001f3c <HAL_InitTick+0xe8>)
+ 8001eb8:	4a21      	ldr	r2, [pc, #132]	; (8001f40 <HAL_InitTick+0xec>)
+ 8001eba:	601a      	str	r2, [r3, #0]
   + Period = [(TIM6CLK/1000) - 1]. to have a (1/1000) s time base.
   + Prescaler = (uwTimclock/1000000 - 1) to have a 1MHz counter clock.
   + ClockDivision = 0
   + Counter direction = Up
   */
   htim6.Init.Period = (1000000U / 1000U) - 1U;
- 8001eb4:	4b1f      	ldr	r3, [pc, #124]	; (8001f34 <HAL_InitTick+0xe8>)
- 8001eb6:	f240 32e7 	movw	r2, #999	; 0x3e7
- 8001eba:	60da      	str	r2, [r3, #12]
+ 8001ebc:	4b1f      	ldr	r3, [pc, #124]	; (8001f3c <HAL_InitTick+0xe8>)
+ 8001ebe:	f240 32e7 	movw	r2, #999	; 0x3e7
+ 8001ec2:	60da      	str	r2, [r3, #12]
   htim6.Init.Prescaler = uwPrescalerValue;
- 8001ebc:	4a1d      	ldr	r2, [pc, #116]	; (8001f34 <HAL_InitTick+0xe8>)
- 8001ebe:	6abb      	ldr	r3, [r7, #40]	; 0x28
- 8001ec0:	6053      	str	r3, [r2, #4]
+ 8001ec4:	4a1d      	ldr	r2, [pc, #116]	; (8001f3c <HAL_InitTick+0xe8>)
+ 8001ec6:	6abb      	ldr	r3, [r7, #40]	; 0x28
+ 8001ec8:	6053      	str	r3, [r2, #4]
   htim6.Init.ClockDivision = 0;
- 8001ec2:	4b1c      	ldr	r3, [pc, #112]	; (8001f34 <HAL_InitTick+0xe8>)
- 8001ec4:	2200      	movs	r2, #0
- 8001ec6:	611a      	str	r2, [r3, #16]
+ 8001eca:	4b1c      	ldr	r3, [pc, #112]	; (8001f3c <HAL_InitTick+0xe8>)
+ 8001ecc:	2200      	movs	r2, #0
+ 8001ece:	611a      	str	r2, [r3, #16]
   htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
- 8001ec8:	4b1a      	ldr	r3, [pc, #104]	; (8001f34 <HAL_InitTick+0xe8>)
- 8001eca:	2200      	movs	r2, #0
- 8001ecc:	609a      	str	r2, [r3, #8]
+ 8001ed0:	4b1a      	ldr	r3, [pc, #104]	; (8001f3c <HAL_InitTick+0xe8>)
+ 8001ed2:	2200      	movs	r2, #0
+ 8001ed4:	609a      	str	r2, [r3, #8]
   htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
- 8001ece:	4b19      	ldr	r3, [pc, #100]	; (8001f34 <HAL_InitTick+0xe8>)
- 8001ed0:	2200      	movs	r2, #0
- 8001ed2:	619a      	str	r2, [r3, #24]
+ 8001ed6:	4b19      	ldr	r3, [pc, #100]	; (8001f3c <HAL_InitTick+0xe8>)
+ 8001ed8:	2200      	movs	r2, #0
+ 8001eda:	619a      	str	r2, [r3, #24]
 
   status = HAL_TIM_Base_Init(&htim6);
- 8001ed4:	4817      	ldr	r0, [pc, #92]	; (8001f34 <HAL_InitTick+0xe8>)
- 8001ed6:	f001 fec7 	bl	8003c68 <HAL_TIM_Base_Init>
- 8001eda:	4603      	mov	r3, r0
- 8001edc:	f887 3033 	strb.w	r3, [r7, #51]	; 0x33
+ 8001edc:	4817      	ldr	r0, [pc, #92]	; (8001f3c <HAL_InitTick+0xe8>)
+ 8001ede:	f001 fec3 	bl	8003c68 <HAL_TIM_Base_Init>
+ 8001ee2:	4603      	mov	r3, r0
+ 8001ee4:	f887 3033 	strb.w	r3, [r7, #51]	; 0x33
   if (status == HAL_OK)
- 8001ee0:	f897 3033 	ldrb.w	r3, [r7, #51]	; 0x33
- 8001ee4:	2b00      	cmp	r3, #0
- 8001ee6:	d11b      	bne.n	8001f20 <HAL_InitTick+0xd4>
+ 8001ee8:	f897 3033 	ldrb.w	r3, [r7, #51]	; 0x33
+ 8001eec:	2b00      	cmp	r3, #0
+ 8001eee:	d11b      	bne.n	8001f28 <HAL_InitTick+0xd4>
   {
     /* Start the TIM time Base generation in interrupt mode */
     status = HAL_TIM_Base_Start_IT(&htim6);
- 8001ee8:	4812      	ldr	r0, [pc, #72]	; (8001f34 <HAL_InitTick+0xe8>)
- 8001eea:	f001 ff15 	bl	8003d18 <HAL_TIM_Base_Start_IT>
- 8001eee:	4603      	mov	r3, r0
- 8001ef0:	f887 3033 	strb.w	r3, [r7, #51]	; 0x33
+ 8001ef0:	4812      	ldr	r0, [pc, #72]	; (8001f3c <HAL_InitTick+0xe8>)
+ 8001ef2:	f001 ff11 	bl	8003d18 <HAL_TIM_Base_Start_IT>
+ 8001ef6:	4603      	mov	r3, r0
+ 8001ef8:	f887 3033 	strb.w	r3, [r7, #51]	; 0x33
     if (status == HAL_OK)
- 8001ef4:	f897 3033 	ldrb.w	r3, [r7, #51]	; 0x33
- 8001ef8:	2b00      	cmp	r3, #0
- 8001efa:	d111      	bne.n	8001f20 <HAL_InitTick+0xd4>
+ 8001efc:	f897 3033 	ldrb.w	r3, [r7, #51]	; 0x33
+ 8001f00:	2b00      	cmp	r3, #0
+ 8001f02:	d111      	bne.n	8001f28 <HAL_InitTick+0xd4>
     {
     /* Enable the TIM6 global Interrupt */
         HAL_NVIC_EnableIRQ(TIM6_DAC_IRQn);
- 8001efc:	2036      	movs	r0, #54	; 0x36
- 8001efe:	f000 fbcb 	bl	8002698 <HAL_NVIC_EnableIRQ>
+ 8001f04:	2036      	movs	r0, #54	; 0x36
+ 8001f06:	f000 fbc7 	bl	8002698 <HAL_NVIC_EnableIRQ>
       /* Configure the SysTick IRQ priority */
       if (TickPriority < (1UL << __NVIC_PRIO_BITS))
- 8001f02:	687b      	ldr	r3, [r7, #4]
- 8001f04:	2b0f      	cmp	r3, #15
- 8001f06:	d808      	bhi.n	8001f1a <HAL_InitTick+0xce>
+ 8001f0a:	687b      	ldr	r3, [r7, #4]
+ 8001f0c:	2b0f      	cmp	r3, #15
+ 8001f0e:	d808      	bhi.n	8001f22 <HAL_InitTick+0xce>
       {
         /* Configure the TIM IRQ priority */
         HAL_NVIC_SetPriority(TIM6_DAC_IRQn, TickPriority, 0U);
- 8001f08:	2200      	movs	r2, #0
- 8001f0a:	6879      	ldr	r1, [r7, #4]
- 8001f0c:	2036      	movs	r0, #54	; 0x36
- 8001f0e:	f000 fba7 	bl	8002660 <HAL_NVIC_SetPriority>
+ 8001f10:	2200      	movs	r2, #0
+ 8001f12:	6879      	ldr	r1, [r7, #4]
+ 8001f14:	2036      	movs	r0, #54	; 0x36
+ 8001f16:	f000 fba3 	bl	8002660 <HAL_NVIC_SetPriority>
         uwTickPrio = TickPriority;
- 8001f12:	4a0a      	ldr	r2, [pc, #40]	; (8001f3c <HAL_InitTick+0xf0>)
- 8001f14:	687b      	ldr	r3, [r7, #4]
- 8001f16:	6013      	str	r3, [r2, #0]
- 8001f18:	e002      	b.n	8001f20 <HAL_InitTick+0xd4>
+ 8001f1a:	4a0a      	ldr	r2, [pc, #40]	; (8001f44 <HAL_InitTick+0xf0>)
+ 8001f1c:	687b      	ldr	r3, [r7, #4]
+ 8001f1e:	6013      	str	r3, [r2, #0]
+ 8001f20:	e002      	b.n	8001f28 <HAL_InitTick+0xd4>
       }
       else
       {
         status = HAL_ERROR;
- 8001f1a:	2301      	movs	r3, #1
- 8001f1c:	f887 3033 	strb.w	r3, [r7, #51]	; 0x33
+ 8001f22:	2301      	movs	r3, #1
+ 8001f24:	f887 3033 	strb.w	r3, [r7, #51]	; 0x33
       }
     }
   }
 
  /* Return function status */
   return status;
- 8001f20:	f897 3033 	ldrb.w	r3, [r7, #51]	; 0x33
+ 8001f28:	f897 3033 	ldrb.w	r3, [r7, #51]	; 0x33
 }
- 8001f24:	4618      	mov	r0, r3
- 8001f26:	3738      	adds	r7, #56	; 0x38
- 8001f28:	46bd      	mov	sp, r7
- 8001f2a:	bd80      	pop	{r7, pc}
- 8001f2c:	40023800 	.word	0x40023800
- 8001f30:	431bde83 	.word	0x431bde83
- 8001f34:	2000063c 	.word	0x2000063c
- 8001f38:	40001000 	.word	0x40001000
- 8001f3c:	20000004 	.word	0x20000004
+ 8001f2c:	4618      	mov	r0, r3
+ 8001f2e:	3738      	adds	r7, #56	; 0x38
+ 8001f30:	46bd      	mov	sp, r7
+ 8001f32:	bd80      	pop	{r7, pc}
+ 8001f34:	40023800 	.word	0x40023800
+ 8001f38:	431bde83 	.word	0x431bde83
+ 8001f3c:	2000063c 	.word	0x2000063c
+ 8001f40:	40001000 	.word	0x40001000
+ 8001f44:	20000004 	.word	0x20000004
 
-08001f40 <NMI_Handler>:
+08001f48 <NMI_Handler>:
 /******************************************************************************/
 /**
   * @brief This function handles Non maskable interrupt.
   */
 void NMI_Handler(void)
 {
- 8001f40:	b480      	push	{r7}
- 8001f42:	af00      	add	r7, sp, #0
+ 8001f48:	b480      	push	{r7}
+ 8001f4a:	af00      	add	r7, sp, #0
   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
 
   /* USER CODE END NonMaskableInt_IRQn 0 */
   /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
   while (1)
- 8001f44:	e7fe      	b.n	8001f44 <NMI_Handler+0x4>
+ 8001f4c:	e7fe      	b.n	8001f4c <NMI_Handler+0x4>
 
-08001f46 <HardFault_Handler>:
+08001f4e <HardFault_Handler>:
 
 /**
   * @brief This function handles Hard fault interrupt.
   */
 void HardFault_Handler(void)
 {
- 8001f46:	b480      	push	{r7}
- 8001f48:	af00      	add	r7, sp, #0
+ 8001f4e:	b480      	push	{r7}
+ 8001f50:	af00      	add	r7, sp, #0
   /* USER CODE BEGIN HardFault_IRQn 0 */
 
   /* USER CODE END HardFault_IRQn 0 */
   while (1)
- 8001f4a:	e7fe      	b.n	8001f4a <HardFault_Handler+0x4>
+ 8001f52:	e7fe      	b.n	8001f52 <HardFault_Handler+0x4>
 
-08001f4c <MemManage_Handler>:
+08001f54 <MemManage_Handler>:
 
 /**
   * @brief This function handles Memory management fault.
   */
 void MemManage_Handler(void)
 {
- 8001f4c:	b480      	push	{r7}
- 8001f4e:	af00      	add	r7, sp, #0
+ 8001f54:	b480      	push	{r7}
+ 8001f56:	af00      	add	r7, sp, #0
   /* USER CODE BEGIN MemoryManagement_IRQn 0 */
 
   /* USER CODE END MemoryManagement_IRQn 0 */
   while (1)
- 8001f50:	e7fe      	b.n	8001f50 <MemManage_Handler+0x4>
+ 8001f58:	e7fe      	b.n	8001f58 <MemManage_Handler+0x4>
 
-08001f52 <BusFault_Handler>:
+08001f5a <BusFault_Handler>:
 
 /**
   * @brief This function handles Pre-fetch fault, memory access fault.
   */
 void BusFault_Handler(void)
 {
- 8001f52:	b480      	push	{r7}
- 8001f54:	af00      	add	r7, sp, #0
+ 8001f5a:	b480      	push	{r7}
+ 8001f5c:	af00      	add	r7, sp, #0
   /* USER CODE BEGIN BusFault_IRQn 0 */
 
   /* USER CODE END BusFault_IRQn 0 */
   while (1)
- 8001f56:	e7fe      	b.n	8001f56 <BusFault_Handler+0x4>
+ 8001f5e:	e7fe      	b.n	8001f5e <BusFault_Handler+0x4>
 
-08001f58 <UsageFault_Handler>:
+08001f60 <UsageFault_Handler>:
 
 /**
   * @brief This function handles Undefined instruction or illegal state.
   */
 void UsageFault_Handler(void)
 {
- 8001f58:	b480      	push	{r7}
- 8001f5a:	af00      	add	r7, sp, #0
+ 8001f60:	b480      	push	{r7}
+ 8001f62:	af00      	add	r7, sp, #0
   /* USER CODE BEGIN UsageFault_IRQn 0 */
 
   /* USER CODE END UsageFault_IRQn 0 */
   while (1)
- 8001f5c:	e7fe      	b.n	8001f5c <UsageFault_Handler+0x4>
+ 8001f64:	e7fe      	b.n	8001f64 <UsageFault_Handler+0x4>
 
-08001f5e <DebugMon_Handler>:
+08001f66 <DebugMon_Handler>:
 
 /**
   * @brief This function handles Debug monitor.
   */
 void DebugMon_Handler(void)
 {
- 8001f5e:	b480      	push	{r7}
- 8001f60:	af00      	add	r7, sp, #0
+ 8001f66:	b480      	push	{r7}
+ 8001f68:	af00      	add	r7, sp, #0
 
   /* USER CODE END DebugMonitor_IRQn 0 */
   /* USER CODE BEGIN DebugMonitor_IRQn 1 */
 
   /* USER CODE END DebugMonitor_IRQn 1 */
 }
- 8001f62:	bf00      	nop
- 8001f64:	46bd      	mov	sp, r7
- 8001f66:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8001f6a:	4770      	bx	lr
+ 8001f6a:	bf00      	nop
+ 8001f6c:	46bd      	mov	sp, r7
+ 8001f6e:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8001f72:	4770      	bx	lr
 
-08001f6c <TIM2_IRQHandler>:
+08001f74 <TIM2_IRQHandler>:
 
 /**
   * @brief This function handles TIM2 global interrupt.
   */
 void TIM2_IRQHandler(void)
 {
- 8001f6c:	b580      	push	{r7, lr}
- 8001f6e:	af00      	add	r7, sp, #0
+ 8001f74:	b580      	push	{r7, lr}
+ 8001f76:	af00      	add	r7, sp, #0
   /* USER CODE BEGIN TIM2_IRQn 0 */
-	colorSensorHandleInputCapture_IT(&color_sensor1, TIM2,&color_sensor1_buffer_calibration);
- 8001f70:	4a05      	ldr	r2, [pc, #20]	; (8001f88 <TIM2_IRQHandler+0x1c>)
- 8001f72:	f04f 4180 	mov.w	r1, #1073741824	; 0x40000000
- 8001f76:	4805      	ldr	r0, [pc, #20]	; (8001f8c <TIM2_IRQHandler+0x20>)
- 8001f78:	f7ff fa48 	bl	800140c <colorSensorHandleInputCapture_IT>
+	colorSensorHandleInputCapture_IT(&color_sensor1, TIM2);
+ 8001f78:	f04f 4180 	mov.w	r1, #1073741824	; 0x40000000
+ 8001f7c:	4803      	ldr	r0, [pc, #12]	; (8001f8c <TIM2_IRQHandler+0x18>)
+ 8001f7e:	f7ff fa4f 	bl	8001420 <colorSensorHandleInputCapture_IT>
   /* USER CODE END TIM2_IRQn 0 */
   HAL_TIM_IRQHandler(&htim2);
- 8001f7c:	4804      	ldr	r0, [pc, #16]	; (8001f90 <TIM2_IRQHandler+0x24>)
- 8001f7e:	f002 fbbd 	bl	80046fc <HAL_TIM_IRQHandler>
+ 8001f82:	4803      	ldr	r0, [pc, #12]	; (8001f90 <TIM2_IRQHandler+0x1c>)
+ 8001f84:	f002 fbba 	bl	80046fc <HAL_TIM_IRQHandler>
   /* USER CODE BEGIN TIM2_IRQn 1 */
 
   /* USER CODE END TIM2_IRQn 1 */
 }
- 8001f82:	bf00      	nop
- 8001f84:	bd80      	pop	{r7, pc}
- 8001f86:	bf00      	nop
- 8001f88:	20000634 	.word	0x20000634
+ 8001f88:	bf00      	nop
+ 8001f8a:	bd80      	pop	{r7, pc}
  8001f8c:	20000610 	.word	0x20000610
  8001f90:	2000068c 	.word	0x2000068c
 
@@ -4037,7 +4046,7 @@ __attribute__((weak)) int _read(int file, char *ptr, int len)
  800200c:	e00a      	b.n	8002024 <_read+0x28>
 	{
 		*ptr++ = __io_getchar();
- 800200e:	f7ff febf 	bl	8001d90 <__io_getchar>
+ 800200e:	f7ff fec3 	bl	8001d98 <__io_getchar>
  8002012:	4601      	mov	r1, r0
  8002014:	68bb      	ldr	r3, [r7, #8]
  8002016:	1c5a      	adds	r2, r3, #1
@@ -4085,7 +4094,7 @@ __attribute__((weak)) int _write(int file, char *ptr, int len)
  800204c:	60ba      	str	r2, [r7, #8]
  800204e:	781b      	ldrb	r3, [r3, #0]
  8002050:	4618      	mov	r0, r3
- 8002052:	f7ff fe8b 	bl	8001d6c <__io_putchar>
+ 8002052:	f7ff fe8f 	bl	8001d74 <__io_putchar>
 	for (DataIdx = 0; DataIdx < len; DataIdx++)
  8002056:	697b      	ldr	r3, [r7, #20]
  8002058:	3301      	adds	r3, #1
@@ -4362,7 +4371,7 @@ void MX_TIM2_Init(void)
  80021c4:	d001      	beq.n	80021ca <MX_TIM2_Init+0x62>
   {
     Error_Handler();
- 80021c6:	f7ff fe13 	bl	8001df0 <Error_Handler>
+ 80021c6:	f7ff fe17 	bl	8001df8 <Error_Handler>
   }
   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
  80021ca:	f44f 5380 	mov.w	r3, #4096	; 0x1000
@@ -4377,7 +4386,7 @@ void MX_TIM2_Init(void)
  80021e0:	d001      	beq.n	80021e6 <MX_TIM2_Init+0x7e>
   {
     Error_Handler();
- 80021e2:	f7ff fe05 	bl	8001df0 <Error_Handler>
+ 80021e2:	f7ff fe09 	bl	8001df8 <Error_Handler>
   }
   if (HAL_TIM_IC_Init(&htim2) != HAL_OK)
  80021e6:	4817      	ldr	r0, [pc, #92]	; (8002244 <MX_TIM2_Init+0xdc>)
@@ -4387,7 +4396,7 @@ void MX_TIM2_Init(void)
  80021f0:	d001      	beq.n	80021f6 <MX_TIM2_Init+0x8e>
   {
     Error_Handler();
- 80021f2:	f7ff fdfd 	bl	8001df0 <Error_Handler>
+ 80021f2:	f7ff fe01 	bl	8001df8 <Error_Handler>
   }
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
  80021f6:	2300      	movs	r3, #0
@@ -4405,7 +4414,7 @@ void MX_TIM2_Init(void)
  800220e:	d001      	beq.n	8002214 <MX_TIM2_Init+0xac>
   {
     Error_Handler();
- 8002210:	f7ff fdee 	bl	8001df0 <Error_Handler>
+ 8002210:	f7ff fdf2 	bl	8001df8 <Error_Handler>
   }
   sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
  8002214:	2300      	movs	r3, #0
@@ -4430,7 +4439,7 @@ void MX_TIM2_Init(void)
  8002234:	d001      	beq.n	800223a <MX_TIM2_Init+0xd2>
   {
     Error_Handler();
- 8002236:	f7ff fddb 	bl	8001df0 <Error_Handler>
+ 8002236:	f7ff fddf 	bl	8001df8 <Error_Handler>
   }
   /* USER CODE BEGIN TIM2_Init 2 */
 
@@ -4602,7 +4611,7 @@ void MX_USART1_UART_Init(void)
  800232c:	d001      	beq.n	8002332 <MX_USART1_UART_Init+0x52>
   {
     Error_Handler();
- 800232e:	f7ff fd5f 	bl	8001df0 <Error_Handler>
+ 800232e:	f7ff fd63 	bl	8001df8 <Error_Handler>
   }
   /* USER CODE BEGIN USART1_Init 2 */
 
@@ -4664,7 +4673,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
  8002386:	d001      	beq.n	800238c <HAL_UART_MspInit+0x4c>
     {
       Error_Handler();
- 8002388:	f7ff fd32 	bl	8001df0 <Error_Handler>
+ 8002388:	f7ff fd36 	bl	8001df8 <Error_Handler>
     }
 
     /* USART1 clock enable */
@@ -4838,7 +4847,7 @@ LoopFillZerobss:
  8002472:	f005 f847 	bl	8007504 <__libc_init_array>
 /* Call the application's entry point.*/
   bl  main
- 8002476:	f7ff fbd1 	bl	8001c1c <main>
+ 8002476:	f7ff fbd7 	bl	8001c28 <main>
   bx  lr    
  800247a:	4770      	bx	lr
   ldr   sp, =_estack      /* set stack pointer */
@@ -4884,11 +4893,11 @@ HAL_StatusTypeDef HAL_Init(void)
   /* Use systick as time base source and configure 1ms tick (default clock after Reset is HSI) */
   HAL_InitTick(TICK_INT_PRIORITY);
  80024a0:	200f      	movs	r0, #15
- 80024a2:	f7ff fcd3 	bl	8001e4c <HAL_InitTick>
+ 80024a2:	f7ff fcd7 	bl	8001e54 <HAL_InitTick>
 
   /* Init the low level hardware */
   HAL_MspInit();
- 80024a6:	f7ff fca9 	bl	8001dfc <HAL_MspInit>
+ 80024a6:	f7ff fcad 	bl	8001e04 <HAL_MspInit>
 
   /* Return function status */
   return HAL_OK;
@@ -5843,7 +5852,7 @@ void HAL_GPIO_EXTI_IRQHandler(uint16_t GPIO_Pin)
     HAL_GPIO_EXTI_Callback(GPIO_Pin);
  8002a5c:	88fb      	ldrh	r3, [r7, #6]
  8002a5e:	4618      	mov	r0, r3
- 8002a60:	f7ff f8c0 	bl	8001be4 <HAL_GPIO_EXTI_Callback>
+ 8002a60:	f7ff f8c6 	bl	8001bf0 <HAL_GPIO_EXTI_Callback>
   }
 }
  8002a64:	bf00      	nop
@@ -7207,7 +7216,7 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, ui
  8003206:	4b09      	ldr	r3, [pc, #36]	; (800322c <HAL_RCC_ClockConfig+0x1d4>)
  8003208:	681b      	ldr	r3, [r3, #0]
  800320a:	4618      	mov	r0, r3
- 800320c:	f7fe fe1e 	bl	8001e4c <HAL_InitTick>
+ 800320c:	f7fe fe22 	bl	8001e54 <HAL_InitTick>
 
   return HAL_OK;
  8003210:	2300      	movs	r3, #0
@@ -10823,7 +10832,7 @@ void HAL_TIM_IRQHandler(TIM_HandleTypeDef *htim)
 #else
       HAL_TIM_PeriodElapsedCallback(htim);
  800487a:	6878      	ldr	r0, [r7, #4]
- 800487c:	f7fd faa6 	bl	8001dcc <HAL_TIM_PeriodElapsedCallback>
+ 800487c:	f7fd faaa 	bl	8001dd4 <HAL_TIM_PeriodElapsedCallback>
 #endif /* USE_HAL_TIM_REGISTER_CALLBACKS */
     }
   }
@@ -15756,7 +15765,7 @@ BaseType_t xReturn;
  800643c:	1d39      	adds	r1, r7, #4
  800643e:	f107 0308 	add.w	r3, r7, #8
  8006442:	4618      	mov	r0, r3
- 8006444:	f7fb fae0 	bl	8001a08 <vApplicationGetIdleTaskMemory>
+ 8006444:	f7fb fae6 	bl	8001a14 <vApplicationGetIdleTaskMemory>
 		xIdleTaskHandle = xTaskCreateStatic(	prvIdleTask,
  8006448:	6839      	ldr	r1, [r7, #0]
  800644a:	687b      	ldr	r3, [r7, #4]

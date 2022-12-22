@@ -126,7 +126,7 @@ typedef struct h_color_sensor_t{
 	calibration_state_t calib_state;
 	h_green_transformation_t green_transformation;
 	h_red_transformation_t red_transformation;
-	h_calib_buffer_structure_t calib_struct;
+	h_calib_buffer_structure_t sensor_calib_struct;
 }h_color_sensor_t;
 
 
@@ -178,16 +178,17 @@ uint32_t colorGetRedValue(h_color_sensor_t * h_color_sensor);
  * @param h_calib_buffer_struct : buffer calibration structure used in case of the sensor being calibrated
  * @return 0 if failed else 1
  */
-void colorSensorHandleInputCapture_IT(h_color_sensor_t * h_color_sensor, TIM_TypeDef* TIM);
+void colorSensorHandleInputCapture_IT(h_color_sensor_t * h_color_sensor, TIM_TypeDef* TIM,h_calib_buffer_structure_t * h_calib_buffer_struct);
 
 /**
- * @fn uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor);
+ * @fn uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor,h_calib_buffer_structure_t * h_calib_struct);
  * @brief handle the input capture interruption. Manage if the sensor is being operated of calibrated
  *
  * @param h_color_sensor : color_sensor structure
+ * @param h_calib_buffer_struct : buffer calibration structure used in case of the sensor being calibrated
  * @return 0 if failed else 1
  */
-uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor);
+uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor,h_calib_buffer_structure_t * h_calib_struct);
 
 /**
  * @fn int colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor)

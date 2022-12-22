@@ -178,7 +178,7 @@ uint32_t colorGetRedValue(h_color_sensor_t * h_color_sensor);
  * @param h_calib_buffer_struct : buffer calibration structure used in case of the sensor being calibrated
  * @return 0 if failed else 1
  */
-void colorSensorHandleInputCapture_IT(h_color_sensor_t * h_color_sensor, TIM_TypeDef* TIM);
+void colorSensorHandleInputCapture_IT(h_color_sensor_t * h_color_sensor, TIM_TypeDef* TIM,h_calib_buffer_structure_t * h_calib_buffer_struct);
 
 /**
  * @fn uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor);

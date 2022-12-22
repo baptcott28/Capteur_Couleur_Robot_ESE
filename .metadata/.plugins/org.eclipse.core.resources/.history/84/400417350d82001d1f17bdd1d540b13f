@@ -95,7 +95,7 @@ static void colorDoMeasureAgain(h_color_sensor_t * h_color_sensor);
  * @param h_calib_buffer_structure : calibration structure to fill
  * @return : 1 if calibration is processing, 0 if finished
  */
-static int colorHandleCalibrationValues(h_color_sensor_t * h_color_sensor, uint32_t frequence);
+static int colorHandleCalibrationValues(h_color_sensor_t * h_color_sensor, uint32_t frequence,h_calib_buffer_structure_t * h_calib_struct);
 
 /**
  * @fn int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t frequence)
@@ -341,7 +341,7 @@ void colorSensorHandleInputCapture_IT(h_color_sensor_t * h_color_sensor,TIM_Type
 	}*/
 
 	if((calibration_flag==1)&&(freq<FREQ_MAX_ACCEPTABLE)){
-		colorHandleCalibrationValues(h_color_sensor,freq);
+		colorHandleCalibrationValues(h_color_sensor,freq,h_calib_buffer_struct);
 	}
 	else if ((calibration_flag==0)&&(freq<FREQ_MAX_ACCEPTABLE)){
 		// Analyse des valeur pour prise de decision sur la couleur

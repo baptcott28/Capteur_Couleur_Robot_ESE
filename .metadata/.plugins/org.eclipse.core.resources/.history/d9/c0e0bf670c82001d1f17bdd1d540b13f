@@ -48,6 +48,7 @@
 
 /* USER CODE BEGIN PV */
 h_color_sensor_t color_sensor1;
+h_calib_buffer_structure_t color_sensor1_buffer_calibration;
 h_green_transformation_t color_sensor1_green_transformation;
 h_red_transformation_t color_sensor1_transformation;
 /* USER CODE END PV */
@@ -138,7 +139,7 @@ int main(void)
   	// ----- test 3 : Fonction de calibration -----
   	printf("--- calibration lancée ---\r\n");
   	colorSensorInit(&color_sensor1, GREEN,CENT_POUR_CENT,SENSOR_DISABLE);
-  	colorHandleCalibrationSensor(&color_sensor1);
+  	colorHandleCalibrationSensor(&color_sensor1,&color_sensor1_buffer_calibration);
   	printf("waiting for button press to measure : \r\n");
 
 
