@@ -388,10 +388,13 @@ static int colorHandleCalibrationValues(h_color_sensor_t * h_color_sensor, uint3
 static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t frequence){
 	//printf("entre dans color_handle\r\n");
 	if(raw_values_compteur<((NB_MEASURE_WANTED/2)-1)){
-		// premieres valeurs du tableau donc on est dans le vert
+		//printf("raw_values_compteur<(NB_MEASURE_WANTED/2)-1\r\n");
+		//green_scaling
+
 		if(frequence<(h_color_sensor->green_transformation.green_min_freq)){
 			frequence = (uint32_t)h_color_sensor->green_transformation.green_min_freq;
 		}
+
 		//--debug
 		color_raw_values[raw_values_compteur]=frequence;
 		//--fin debug
@@ -399,11 +402,11 @@ static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t freq
 		raw_values_compteur++;
 	}
 
+
 	else if(raw_values_compteur==((NB_MEASURE_WANTED/2)-1)){
-		//on est encore dans le vert mais on doit en plus changer la couleur de detection
-		if(frequence<(h_color_sensor->green_transformation.green_min_freq)){
-			frequence = (uint32_t)h_color_sensor->green_transformation.green_min_freq;
-		}
+		//printf("raw_values_compteur==(NB_MEASURE_WANTED/2)-1\r\n");
+		//red scaling
+
 		//--debug
 		color_raw_values[raw_values_compteur]=frequence;
 		//--fin debug
@@ -417,10 +420,9 @@ static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t freq
 	}
 
 	else if((raw_values_compteur>((NB_MEASURE_WANTED/2)-1))&&(raw_values_compteur<NB_MEASURE_WANTED)){
-		// valeures rouges
-		if(frequence<(h_color_sensor->red_transformation.red_min_freq)){
-			frequence = (uint32_t)h_color_sensor->red_transformation.red_min_freq;
-		}
+		//printf("raw_values_compteur>(NB_MEASURE_WANTED/2)-1\r\n");
+		//red scaling
+
 		//--debug
 		color_raw_values[raw_values_compteur]=frequence;
 		//--fin debug
@@ -428,13 +430,15 @@ static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t freq
 		raw_values_compteur++;
 	}
 
+
 	else if(raw_values_compteur==NB_MEASURE_WANTED){
+		//printf("raw_value_compteur==NB_measure_wanted\r\n");
 		// Pret a faire la moyenne du tableau pour plus de fiabilité
 		colorDisable(h_color_sensor);
 		uint32_t green_mean=0;
 		uint32_t red_mean=0;
 
-		// green mean with erase of waste values (the 2 first one each time)
+		// green values mean sans valeur erronées
 		//printf("calcul moyenne vert\r\n");
 		for(int i=DECHET_MEASURE; i<((NB_MEASURE_WANTED/2));i++){
 			green_mean=green_mean+color_scaled_values[i];

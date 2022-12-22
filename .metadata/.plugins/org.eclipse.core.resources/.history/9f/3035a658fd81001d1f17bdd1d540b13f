@@ -429,12 +429,13 @@ static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t freq
 	}
 
 	else if(raw_values_compteur==NB_MEASURE_WANTED){
+		//printf("raw_value_compteur==NB_measure_wanted\r\n");
 		// Pret a faire la moyenne du tableau pour plus de fiabilité
 		colorDisable(h_color_sensor);
 		uint32_t green_mean=0;
 		uint32_t red_mean=0;
 
-		// green mean with erase of waste values (the 2 first one each time)
+		// green values mean sans valeur erronées
 		//printf("calcul moyenne vert\r\n");
 		for(int i=DECHET_MEASURE; i<((NB_MEASURE_WANTED/2));i++){
 			green_mean=green_mean+color_scaled_values[i];
