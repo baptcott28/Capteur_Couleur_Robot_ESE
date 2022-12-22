@@ -176,10 +176,10 @@ void colorSensorInit(h_color_sensor_t *h_color_sensor, color_sensor_color_t colo
 	h_color_sensor->green_color=0;
 	h_color_sensor->red_color=0;
 	h_color_sensor->green_transformation.green_coef_dir=1;
-	h_color_sensor->green_transformation.green_min_freq=1;
+	h_color_sensor->green_transformation.green_max_freq=1;
 	h_color_sensor->green_transformation.green_ord_origin=1;
 	h_color_sensor->red_transformation.red_coef_dir=1;
-	h_color_sensor->red_transformation.red_min_freq=1;
+	h_color_sensor->red_transformation.red_max_freq=1;
 	h_color_sensor->red_transformation.red_ord_origin=1;
 	h_color_sensor->calib_state=WAINTING_FOR_CALIB;
 	colorSetOutputFreqScaling(h_color_sensor);
@@ -292,11 +292,11 @@ uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor,h_calib_
 	//computation of the transformation coefficient
 	h_color_sensor->green_transformation.green_coef_dir=(uint16_t)((ECHELLE_VAL_HAUTE-ECHELLE_VAL_BASSE)/((h_calib_buffer_struct->calib_value_vert_vide)-(h_calib_buffer_struct->calib_value_vert_canette)));
 	h_color_sensor->green_transformation.green_ord_origin=(uint16_t)(ECHELLE_VAL_HAUTE-((h_color_sensor->green_transformation.green_coef_dir)*(h_calib_buffer_struct->calib_value_vert_vide)));
-	printf("coef dir vert : %u\r\nord origin vert : %u\r\nmin freq vert : %u\r\n\n",h_color_sensor->green_transformation.green_coef_dir,h_color_sensor->green_transformation.green_ord_origin,h_color_sensor->green_transformation.green_min_freq);
+	printf("coef dir vert : %u\r\nord origin vert : %u\r\nmax freq vert : %u\r\n\n",h_color_sensor->green_transformation.green_coef_dir,h_color_sensor->green_transformation.green_ord_origin,h_color_sensor->green_transformation.green_max_freq);
 
 	h_color_sensor->red_transformation.red_coef_dir=(uint16_t)((ECHELLE_VAL_HAUTE-ECHELLE_VAL_BASSE)/((h_calib_buffer_struct->calib_value_rouge_vide)-(h_calib_buffer_struct->calib_value_rouge_canette)));
 	h_color_sensor->red_transformation.red_ord_origin=(uint16_t)(ECHELLE_VAL_HAUTE-((h_color_sensor->red_transformation.red_coef_dir)*(h_calib_buffer_struct->calib_value_rouge_vide)));
-	printf("coef dir rouge : %u\r\nord origin rouge : %u\r\nmin freq rouge : %u\r\n\n",h_color_sensor->red_transformation.red_coef_dir,h_color_sensor->red_transformation.red_ord_origin,h_color_sensor->red_transformation.red_min_freq);
+	printf("coef dir rouge : %u\r\nord origin rouge : %u\r\nmax freq rouge : %u\r\n\n",h_color_sensor->red_transformation.red_coef_dir,h_color_sensor->red_transformation.red_ord_origin,h_color_sensor->red_transformation.red_max_freq);
 
 
 	// flag to say hey calibration finished

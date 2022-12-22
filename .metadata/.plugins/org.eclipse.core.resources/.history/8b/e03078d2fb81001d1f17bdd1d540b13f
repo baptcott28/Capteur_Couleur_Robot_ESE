@@ -81,7 +81,7 @@ typedef enum calibration_state_enum{
 typedef struct h_green_transormation_t{
 	uint16_t green_coef_dir;
 	uint16_t green_ord_origin;
-	uint16_t green_min_freq;
+	uint16_t green_max_freq;
 }h_green_transformation_t;
 
 /**
@@ -91,7 +91,7 @@ typedef struct h_green_transormation_t{
 typedef struct h_red_transformation_t{
 	uint16_t red_coef_dir;
 	uint16_t red_ord_origin;
-	uint16_t red_min_freq;
+	uint16_t red_max_freq;
 }h_red_transformation_t;
 
 /**

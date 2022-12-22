@@ -1470,7 +1470,7 @@ void colorSensorInit(h_color_sensor_t *h_color_sensor, color_sensor_color_t colo
  80010c0:	687b      	ldr	r3, [r7, #4]
  80010c2:	2201      	movs	r2, #1
  80010c4:	82da      	strh	r2, [r3, #22]
-	h_color_sensor->green_transformation.green_max_freq=1;
+	h_color_sensor->green_transformation.green_min_freq=1;
  80010c6:	687b      	ldr	r3, [r7, #4]
  80010c8:	2201      	movs	r2, #1
  80010ca:	835a      	strh	r2, [r3, #26]
@@ -1482,7 +1482,7 @@ void colorSensorInit(h_color_sensor_t *h_color_sensor, color_sensor_color_t colo
  80010d2:	687b      	ldr	r3, [r7, #4]
  80010d4:	2201      	movs	r2, #1
  80010d6:	839a      	strh	r2, [r3, #28]
-	h_color_sensor->red_transformation.red_max_freq=1;
+	h_color_sensor->red_transformation.red_min_freq=1;
  80010d8:	687b      	ldr	r3, [r7, #4]
  80010da:	2201      	movs	r2, #1
  80010dc:	841a      	strh	r2, [r3, #32]
@@ -1859,7 +1859,7 @@ uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor,h_calib_
  8001358:	b29a      	uxth	r2, r3
  800135a:	687b      	ldr	r3, [r7, #4]
  800135c:	831a      	strh	r2, [r3, #24]
-	printf("coef dir vert : %u\r\nord origin vert : %u\r\nmax freq vert : %u\r\n\n",h_color_sensor->green_transformation.green_coef_dir,h_color_sensor->green_transformation.green_ord_origin,h_color_sensor->green_transformation.green_max_freq);
+	printf("coef dir vert : %u\r\nord origin vert : %u\r\nmin freq vert : %u\r\n\n",h_color_sensor->green_transformation.green_coef_dir,h_color_sensor->green_transformation.green_ord_origin,h_color_sensor->green_transformation.green_min_freq);
  800135e:	687b      	ldr	r3, [r7, #4]
  8001360:	8adb      	ldrh	r3, [r3, #22]
  8001362:	4619      	mov	r1, r3
@@ -1895,7 +1895,7 @@ uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor,h_calib_
  80013a2:	b29a      	uxth	r2, r3
  80013a4:	687b      	ldr	r3, [r7, #4]
  80013a6:	83da      	strh	r2, [r3, #30]
-	printf("coef dir rouge : %u\r\nord origin rouge : %u\r\nmax freq rouge : %u\r\n\n",h_color_sensor->red_transformation.red_coef_dir,h_color_sensor->red_transformation.red_ord_origin,h_color_sensor->red_transformation.red_max_freq);
+	printf("coef dir rouge : %u\r\nord origin rouge : %u\r\nmin freq rouge : %u\r\n\n",h_color_sensor->red_transformation.red_coef_dir,h_color_sensor->red_transformation.red_ord_origin,h_color_sensor->red_transformation.red_min_freq);
  80013a8:	687b      	ldr	r3, [r7, #4]
  80013aa:	8b9b      	ldrh	r3, [r3, #28]
  80013ac:	4619      	mov	r1, r3
