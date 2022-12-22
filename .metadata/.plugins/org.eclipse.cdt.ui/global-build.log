@@ -1,0 +1,35 @@
+14:46:56 **** Incremental Build of configuration Debug for project capteur_couleur ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/color_sensor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/color_sensor.d" -MT"Core/Src/color_sensor.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/color_sensor.o"
+arm-none-eabi-gcc -o "capteur_couleur.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\bapti\Documents\GitHub\capteur_couleur\capteur_couleur\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="capteur_couleur.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: capteur_couleur.elf
+ 
+arm-none-eabi-size   capteur_couleur.elf 
+arm-none-eabi-objdump -h -S  capteur_couleur.elf  > "capteur_couleur.list"
+   text	   data	    bss	    dec	    hex	filename
+  40788	    484	   2196	  43468	   a9cc	capteur_couleur.elf
+Finished building: default.size.stdout
+ 
+Finished building: capteur_couleur.list
+ 
+15:24:12 **** Incremental Build of configuration Debug for project capteur_couleur ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/color_sensor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/color_sensor.d" -MT"Core/Src/color_sensor.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/color_sensor.o"
+arm-none-eabi-gcc -o "capteur_couleur.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\bapti\Documents\GitHub\capteur_couleur\capteur_couleur\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="capteur_couleur.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: capteur_couleur.elf
+ 
+arm-none-eabi-size   capteur_couleur.elf 
+arm-none-eabi-objdump -h -S  capteur_couleur.elf  > "capteur_couleur.list"
+   text	   data	    bss	    dec	    hex	filename
+  40788	    484	   2196	  43468	   a9cc	capteur_couleur.elf
+Finished building: default.size.stdout
+ 
+Finished building: capteur_couleur.list
+ 
+15:29:57 **** Incremental Build of configuration Debug for project capteur_couleur ****
+make -j8 all 
+arm-none-eabi-size   capteur_couleur.elf 
+   text	   data	    bss	    dec	    hex	filename
+  40788	    484	   2196	  43468	   a9cc	capteur_couleur.elf
+Finished building: default.size.stdout
+ 

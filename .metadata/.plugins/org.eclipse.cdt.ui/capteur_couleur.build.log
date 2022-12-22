@@ -1,0 +1,10 @@
+15:29:57 **** Incremental Build of configuration Debug for project capteur_couleur ****
+make -j8 all 
+arm-none-eabi-size   capteur_couleur.elf 
+   text	   data	    bss	    dec	    hex	filename
+  40788	    484	   2196	  43468	   a9cc	capteur_couleur.elf
+Finished building: default.size.stdout
+ 
+
+15:29:58 Build Finished. 0 errors, 0 warnings. (took 461ms)
+

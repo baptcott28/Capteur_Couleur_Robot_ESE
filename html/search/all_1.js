@@ -1,0 +1,9 @@
+var searchData=
+[
+  ['color_5fgetgreenvalue_0',['color_getGreenValue',['../color__sensor_8c.html#aecfcf5eadb09711977bc92f7f27f5015',1,'color_getGreenValue(h_color_sensor_t *h_color_sensor):&#160;color_sensor.c'],['../color__sensor_8h.html#aecfcf5eadb09711977bc92f7f27f5015',1,'color_getGreenValue(h_color_sensor_t *h_color_sensor):&#160;color_sensor.c']]],
+  ['color_5fgetredvalue_1',['color_getRedValue',['../color__sensor_8c.html#a6e490bcc477fc50b528c7aeb766d2a8c',1,'color_getRedValue(h_color_sensor_t *h_color_sensor):&#160;color_sensor.c'],['../color__sensor_8h.html#a6e490bcc477fc50b528c7aeb766d2a8c',1,'color_getRedValue(h_color_sensor_t *h_color_sensor):&#160;color_sensor.c']]],
+  ['color_5fhandle_5fcalibration_5fsensor_2',['color_handle_calibration_sensor',['../color__sensor_8c.html#a78d9ca88032321a7ec54f09be7fd1c11',1,'color_handle_calibration_sensor(h_color_sensor_t *h_color_sensor, h_calib_buffer_structure_t *h_calib_buffer_struct):&#160;color_sensor.c'],['../color__sensor_8h.html#a67fa3bbf6a923c5cffaf63c5a465a86f',1,'color_handle_calibration_sensor(h_color_sensor_t *h_color_sensor, h_calib_buffer_structure_t *h_calib_struct):&#160;color_sensor.c']]],
+  ['color_5fsensor_2ec_3',['color_sensor.c',['../color__sensor_8c.html',1,'']]],
+  ['color_5fsensor_2eh_4',['color_sensor.h',['../color__sensor_8h.html',1,'']]],
+  ['color_5fsensor_5fhandle_5finput_5fcapture_5fit_5',['color_sensor_handle_input_capture_IT',['../color__sensor_8c.html#a9ee212690a41e3f4895100a3f8006f74',1,'color_sensor_handle_input_capture_IT(h_color_sensor_t *h_color_sensor, TIM_TypeDef *TIM, h_calib_buffer_structure_t *h_calib_buffer_struct):&#160;color_sensor.c'],['../color__sensor_8h.html#a9ee212690a41e3f4895100a3f8006f74',1,'color_sensor_handle_input_capture_IT(h_color_sensor_t *h_color_sensor, TIM_TypeDef *TIM, h_calib_buffer_structure_t *h_calib_buffer_struct):&#160;color_sensor.c']]]
+];
