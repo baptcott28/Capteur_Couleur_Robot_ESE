@@ -175,12 +175,12 @@ void colorSensorInit(h_color_sensor_t *h_color_sensor, color_sensor_color_t colo
 	h_color_sensor->blue_color=0;
 	h_color_sensor->green_color=0;
 	h_color_sensor->red_color=0;
-	h_color_sensor->green_transformation.green_coef_dir=1;
-	h_color_sensor->green_transformation.green_max_freq=1;
-	h_color_sensor->green_transformation.green_ord_origin=1;
-	h_color_sensor->red_transformation.red_coef_dir=1;
-	h_color_sensor->red_transformation.red_max_freq=1;
-	h_color_sensor->red_transformation.red_ord_origin=1;
+	h_color_sensor->green_transformation.green_coef_dir=0;
+	h_color_sensor->green_transformation.green_max_freq=0;
+	h_color_sensor->green_transformation.green_ord_origin=0;
+	h_color_sensor->red_transformation.red_coef_dir=0;
+	h_color_sensor->red_transformation.red_max_freq=0;
+	h_color_sensor->red_transformation.red_ord_origin=0;
 	h_color_sensor->calib_state=WAINTING_FOR_CALIB;
 	colorSetOutputFreqScaling(h_color_sensor);
 	colorSetPhotodiodeType(h_color_sensor,color);
