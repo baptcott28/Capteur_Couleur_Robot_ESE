@@ -7,6 +7,7 @@
 
 #include "main.h"
 #include "color_sensor.h"
+#include "cmsis_os.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,6 +20,7 @@ extern TIM_HandleTypeDef htim2;			//<! Timer en input capture
 extern TIM_HandleTypeDef htim3;			//<! Timer de gestion des filtres
 
 extern h_color_sensor_t color_sensor1; 	// a inclure dans le fichier it.c aussi
+
 
 // parametrage des variables timers.
 #define TIMER_INPUT_CAPTURE htim2
@@ -107,6 +109,15 @@ static int colorHandleCalibrationValues(h_color_sensor_t * h_color_sensor, uint3
  */
 static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t frequence);
 
+/**
+ * @fn static void colorMeasureTask(void * pvParameters)
+ * @brief Measure task. Perform a measure. Triggered by the release of a sempahore
+ *
+ * @param (void *)color_sensor
+ * @return : 1 if calibration is processing, 0 if finished
+ */
+static void colorMeasureTask(void * pvParameters);
+
 // ----- Global Fonctions -----
 
 
@@ -191,6 +202,7 @@ void colorSensorInit(h_color_sensor_t *h_color_sensor, color_sensor_color_t colo
 	h_color_sensor->calib_struct.calib_value_vert_vide=1;
 	colorSetOutputFreqScaling(h_color_sensor);
 	colorSetPhotodiodeType(h_color_sensor,color);
+	colorDisable(h_color_sensor);
 }
 
 
@@ -235,6 +247,7 @@ uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor){
 			// -- waiting for operator to put a green can in front of the sensor
 			printf("press enter when a green can is captured\r\n");
 			scanf( "%s",entree);
+			printf("%s\r\n",entree);
 			h_color_sensor->calib_struct.calib_value_vert_canette=0;
 			colorEnable(h_color_sensor);
 			while(h_color_sensor->calib_struct.calib_value_vert_canette==0){
@@ -508,6 +521,48 @@ static void colorDoMeasureAgain(h_color_sensor_t * h_color_sensor){
 
 
 // --- FreeRTOS ---
+
+extern TaskHandle_t h_colorCalibTask;
+extern TaskHandle_t h_colorMeasureTask;
+extern SemaphoreHandle_t colorCalibSemaphore;
+extern SemaphoreHandle_t colorMeasureSemaphore;
+
+int colorStartSensor(h_color_sensor_t * h_color_sensor){
+
+	//creation colorMeasureTask et colorMeasureSempahore
+	if(pdTRUE==xTaskCreate(colorMeasureTask,"colorMeasureTask",COLOR_STACK_DEPTH,(void *)h_color_sensor,COLOR_MEASURE_TASK_PRIORiTY,&h_colorMeasureTask)){
+		printf("colorMeasureTask created successfully\r\n");
+	}
+	else{
+		printf("colorMeasureTask creation failed !\r\n");
+		return 1;
+	}
+	colorMeasureSemaphore=xSemaphoreCreateBinary();
+	if(colorMeasureSemaphore==NULL){
+		printf("colorCalibSemaphore creation failed ! \r\n");
+		return 1;
+	}
+	printf("colorMeasureSemaphore created\r\n");
+	return 0;
+}
+
+
+static void colorMeasureTask(void * pvParameters){
+	printf("entré dans colorMeasureTask\r\n");
+	for(;;){
+		if(pdTRUE==xSemaphoreTake(colorCalibSemaphore,portMAX_DELAY)){
+			printf("semaphore colorMeasureSemaphore pris\r\n");
+			// le semapore a été libéré
+			h_color_sensor_t * h_color_sensor =(h_color_sensor_t *) pvParameters;
+			colorEnable(h_color_sensor);
+			xSemaphoreGive(colorMeasureSemaphore);
+		}
+		else{
+			printf("semaphore colorMeasureSemaphore pas pris\r\n");
+			//on a pas eu acces au semaphore
+		}
+	}
+}
 
 
 

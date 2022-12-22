@@ -37,6 +37,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -50,6 +51,12 @@
 h_color_sensor_t color_sensor1;
 h_green_transformation_t color_sensor1_green_transformation;
 h_red_transformation_t color_sensor1_transformation;
+
+SemaphoreHandle_t colorCalibSemaphore;
+SemaphoreHandle_t colorMeasureSemaphore;
+
+TaskHandle_t h_colorCalibTask;
+TaskHandle_t h_colorMeasureTask;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -64,9 +71,16 @@ void MX_FREERTOS_Init(void);
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	if(GPIO_Pin==button_Pin){
+
 		printf("----- appui bouton -----\r\n");
 		colorSetPhotodiodeType(&color_sensor1, GREEN);
 		colorEnable(&color_sensor1);
+
+		/*BaseType_t higher_priority_task_woken = pdFALSE;
+		colorSetPhotodiodeType(&color_sensor1, GREEN);
+		printf("semaphore colormeasureSemaphore donné\r\n");
+		xSemaphoreGiveFromISR(colorMeasureSemaphore,&higher_priority_task_woken);
+		//colorEnable(&color_sensor1);*/
 	}
 }
 /* USER CODE END 0 */
@@ -135,13 +149,21 @@ int main(void)
   printf("color sensor initialized\r\nwaiting for button press : \r\n");*/
 
 
-  	// ----- test 3 : Fonction de calibration -----
+  	/*// ----- test 3 : Fonction de calibration -----
   	printf("--- calibration lancée ---\r\n");
   	colorSensorInit(&color_sensor1, GREEN,CENT_POUR_CENT,SENSOR_DISABLE);
   	colorHandleCalibrationSensor(&color_sensor1);
-  	printf("waiting for button press to measure : \r\n");
+  	printf("waiting for button press to measure : \r\n");*/
+
+	// ----- test 4 : FreeRTOS -----
+	colorSensorInit(&color_sensor1, GREEN,CENT_POUR_CENT,SENSOR_DISABLE);
+	colorHandleCalibrationSensor(&color_sensor1);
+	//colorStartSensor(&color_sensor1);
 
 
+
+
+	printf("scheduler started\r\n");
   	vTaskStartScheduler();
   /* USER CODE END 2 */
 

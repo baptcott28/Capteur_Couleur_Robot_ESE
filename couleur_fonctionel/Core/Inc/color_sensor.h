@@ -30,6 +30,9 @@
 #define color_S1_GPIO_Port GPIOG
 
 #define NB_MEASURE_WANTED 20 			// Mettre un nombre pair, moyennage des valeur obtenues.
+#define COLOR_STACK_DEPTH 500
+#define COLOR_CALIB_TASK_PRIORITY 2
+#define COLOR_MEASURE_TASK_PRIORiTY 1
 
 
 // --- fonction d'abstraction de la HAL ---
@@ -198,6 +201,15 @@ uint32_t colorHandleCalibrationSensor(h_color_sensor_t * h_color_sensor);
  * @return 0 if failed else 1
  */
 void colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color_t color);
+
+/**
+ * @fn void colorStartSensor(h_color_sensor_t h_color_sensor)
+ * @brief Start task dealing with the colorSensor
+ *
+ * @param (void *) color_sensor
+ * @return 1 if failed else 0
+ */
+int colorStartSensor(h_color_sensor_t * h_color_sensor);
 
 
 /*  liste des Pins
