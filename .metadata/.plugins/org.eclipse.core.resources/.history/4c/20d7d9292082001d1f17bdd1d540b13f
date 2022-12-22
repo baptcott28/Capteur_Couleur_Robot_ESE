@@ -550,13 +550,17 @@ int colorStartSensor(h_color_sensor_t * h_color_sensor){
 static void colorMeasureTask(void * pvParameters){
 	printf("entré dans colorMeasureTask\r\n");
 	for(;;){
-		xSemaphoreTake(colorCalibSemaphore,portMAX_DELAY);
-		printf("semaphore colorMeasureSemaphore pris\r\n");
-		// le semapore a été libéré
-		h_color_sensor_t * h_color_sensor =(h_color_sensor_t *) pvParameters;
-		colorEnable(h_color_sensor);
-		xSemaphoreGive(colorMeasureSemaphore);
-
+		if(pdTRUE==xSemaphoreTake(colorCalibSemaphore,portMAX_DELAY)){
+			printf("semaphore colorMeasureSemaphore pris\r\n");
+			// le semapore a été libéré
+			h_color_sensor_t * h_color_sensor =(h_color_sensor_t *) pvParameters;
+			colorEnable(h_color_sensor);
+			xSemaphoreGive(colorMeasureSemaphore);
+		}
+		else{
+			printf("semaphore colorMeasureSemaphore pas pris\r\n");
+			//on a pas eu acces au semaphore
+		}
 	}
 }
 

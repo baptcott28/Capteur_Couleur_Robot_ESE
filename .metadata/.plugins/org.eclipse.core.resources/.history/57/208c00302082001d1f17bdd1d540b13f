@@ -550,7 +550,7 @@ int colorStartSensor(h_color_sensor_t * h_color_sensor){
 static void colorMeasureTask(void * pvParameters){
 	printf("entré dans colorMeasureTask\r\n");
 	for(;;){
-		xSemaphoreTake(colorCalibSemaphore,portMAX_DELAY);
+		xSemaphoreTakeFromISR(colorCalibSemaphore,portMAX_DELAY);
 		printf("semaphore colorMeasureSemaphore pris\r\n");
 		// le semapore a été libéré
 		h_color_sensor_t * h_color_sensor =(h_color_sensor_t *) pvParameters;

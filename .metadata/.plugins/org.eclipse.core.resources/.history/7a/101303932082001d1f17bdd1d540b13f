@@ -77,43 +77,20 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 		colorSetPhotodiodeType(&color_sensor1, GREEN);
 		colorEnable(&color_sensor1);*/
 
-		/*BaseType_t higher_priority_task_woken = pdFALSE;
+		BaseType_t higher_priority_task_woken = pdFALSE;
 		colorSetPhotodiodeType(&color_sensor1, GREEN);
 		printf("semaphore colormeasureSemaphore donné\r\n");
-		xSemaphoreGiveFromISR(colorMeasureSemaphore,&higher_priority_task_woken);*/
+		xSemaphoreGiveFromISR(colorMeasureSemaphore,&higher_priority_task_woken);
 		//colorEnable(&color_sensor1);
 	}
 }
 
-TaskHandle_t h_bidonTask;
-TaskHandle_t h_processWU;
-SemaphoreHandle_t sem_bidon;
+TaskHandle_t h_bidonTask
 
 void bidonTask(void * pvParameters){
-	for(;;){
-		xSemaphoreTake(sem_bidon,portMAX_DELAY);
-		printf("je suis la fonction bidon\r\n");
-		xSemaphoreGive(sem_bidon);
-	}
+	xSemaphoreTake(bidonSemaphore,portMAX_DELAY);
+	printf("je suis la fonciton bidon\r\n");
 }
-
-void task_process_Wake_Up(void * pvParameters){
-	sem_bidon=xSemaphoreCreateBinary();
-	uint32_t counter=0;
-
-	for(;;){
-		if(counter==500){
-			xSemaphoreGive(sem_bidon);
-			counter=0;
-		}
-		/*if(counter==800){
-			xSemaphoreGive(colorMeasureSemaphore);
-		}*/
-		counter++;
-		vTaskDelay(1); //crée le delay de 1ms
-	}
-}
-
 /* USER CODE END 0 */
 
 /**
@@ -151,7 +128,7 @@ int main(void)
   //desactive the internal buffering for scanf, that is set by default in syscalls.c
   setvbuf(stdin, NULL, _IONBF, 0);
 
-	printf("\n\n---- color sensor ----\r\n");
+	printf("---- color sensor ----\r\n");
 
 
 	// vrai code
@@ -187,36 +164,9 @@ int main(void)
   	printf("waiting for button press to measure : \r\n");*/
 
 	// ----- test 4 : FreeRTOS -----
-
 	colorSensorInit(&color_sensor1, GREEN,CENT_POUR_CENT,SENSOR_DISABLE);
 	colorHandleCalibrationSensor(&color_sensor1);
-
-
-	// creation tache process
-	if(pdTRUE==xTaskCreate(task_process_Wake_Up,"Taskprocess",COLOR_STACK_DEPTH,NULL,10,&h_processWU)){
-		printf("process wake up created successfully\r\n");
-	}
-	else{
-		printf("process wake up creation failed !\r\n");
-	}
-
-	// creation tache bidon
-	if(pdTRUE==xTaskCreate(bidonTask,"bidonTask",COLOR_STACK_DEPTH,NULL,1,&h_bidonTask)){
-		printf("bidonTask created successfully\r\n");
-	}
-	else{
-		printf("bidonTask creation failed !\r\n");
-	}
-
-	// creation semaphore bidon
-	sem_bidon=xSemaphoreCreateBinary();
-	if(sem_bidon==NULL){
-		printf("sem bidon creation failed ! \r\n");
-	}
-	printf("sem bidon created\r\n");
-
-
-	//colorStartSensor(&color_sensor1);
+	colorStartSensor(&color_sensor1);
 
 
 
