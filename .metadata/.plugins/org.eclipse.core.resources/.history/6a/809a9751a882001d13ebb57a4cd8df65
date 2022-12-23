@@ -100,12 +100,8 @@ void task_process_Wake_Up(void * pvParameters){
 
 	for(;;){
 		if(counter==1000){
-			printf("\ncounter=1000\r\n");
-			xSemaphoreGive(colorMeasureSemaphore);
-			printf("semaphore colorMeasureSemaphore donné\r\n");
 			xSemaphoreGive(sem_bidon);
-			printf("semaphore sem_bidon donné\r\n");
-
+			xSemaphoreGive(colorMeasureSemaphore);
 			counter=0;
 		}
 		counter++;
@@ -115,7 +111,9 @@ void task_process_Wake_Up(void * pvParameters){
 
 void colorMeasureTask(void * pvParameters){
 	for(;;){
+		printf("waiting for colorMeasureSemaphore give\r\n");
 		xSemaphoreTake(colorMeasureSemaphore,portMAX_DELAY);
+		printf("semaphore colorMeasureSemaphore pris\r\n");
 		printf("-----contenu de colorMeasureTask------\r\n");
 		/*// le semapore a été libéré
 		h_color_sensor_t * h_color_sensor =(h_color_sensor_t *) pvParameters;

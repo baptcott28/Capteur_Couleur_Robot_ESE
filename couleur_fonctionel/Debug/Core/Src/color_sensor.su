@@ -11,7 +11,5 @@
 ../Core/Src/color_sensor.c:408:12:colorHandleRawValues	48	static
 ../Core/Src/color_sensor.c:504:13:colorAnalyse	24	static
 ../Core/Src/color_sensor.c:518:13:colorDoMeasureAgain	16	static
-../Core/Src/color_sensor.c:530:5:colorStartSensor	24	static
-../Core/Src/color_sensor.c:550:13:colorMeasureTask	24	static
-../Core/Src/color_sensor.c:581:6:timer_handle	8	static
-../Core/Src/color_sensor.c:640:6:GPIO_write	16	static
+../Core/Src/color_sensor.c:551:6:timer_handle	8	static
+../Core/Src/color_sensor.c:610:6:GPIO_write	16	static

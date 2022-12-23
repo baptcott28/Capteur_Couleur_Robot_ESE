@@ -101,11 +101,10 @@ void task_process_Wake_Up(void * pvParameters){
 	for(;;){
 		if(counter==1000){
 			printf("\ncounter=1000\r\n");
-			xSemaphoreGive(colorMeasureSemaphore);
-			printf("semaphore colorMeasureSemaphore donné\r\n");
 			xSemaphoreGive(sem_bidon);
 			printf("semaphore sem_bidon donné\r\n");
-
+			xSemaphoreGive(colorMeasureSemaphore);
+			printf("semaphore colorMeasureSemaphore donné\r\n");
 			counter=0;
 		}
 		counter++;

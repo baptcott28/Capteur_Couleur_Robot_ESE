@@ -31,6 +31,7 @@
 
 #define NB_MEASURE_WANTED 20 			// Mettre un nombre pair, moyennage des valeur obtenues.
 #define COLOR_STACK_DEPTH 500
+#define COLOR_CALIB_TASK_PRIORITY 2
 #define COLOR_MEASURE_TASK_PRIORiTY 3
 
 

@@ -52,7 +52,10 @@ h_color_sensor_t color_sensor1;
 h_green_transformation_t color_sensor1_green_transformation;
 h_red_transformation_t color_sensor1_transformation;
 
+SemaphoreHandle_t colorCalibSemaphore;
 SemaphoreHandle_t colorMeasureSemaphore;
+
+TaskHandle_t h_colorCalibTask;
 TaskHandle_t h_colorMeasureTask;
 /* USER CODE END PV */
 
@@ -100,46 +103,16 @@ void task_process_Wake_Up(void * pvParameters){
 
 	for(;;){
 		if(counter==1000){
-			printf("\ncounter=1000\r\n");
-			xSemaphoreGive(colorMeasureSemaphore);
-			printf("semaphore colorMeasureSemaphore donné\r\n");
+			printf("semaphore donné\r\n");
 			xSemaphoreGive(sem_bidon);
-			printf("semaphore sem_bidon donné\r\n");
-
 			counter=0;
 		}
+		/*if(counter==800){
+			xSemaphoreGive(colorMeasureSemaphore);
+		}*/
 		counter++;
 		vTaskDelay(1); //crée le delay de 1ms
 	}
-}
-
-void colorMeasureTask(void * pvParameters){
-	for(;;){
-		xSemaphoreTake(colorMeasureSemaphore,portMAX_DELAY);
-		printf("-----contenu de colorMeasureTask------\r\n");
-		/*// le semapore a été libéré
-		h_color_sensor_t * h_color_sensor =(h_color_sensor_t *) pvParameters;
-		colorEnable(h_color_sensor);*/
-	}
-}
-
-int colorStartSensor(h_color_sensor_t * h_color_sensor){
-
-	//creation colorMeasureTask et colorMeasureSempahore
-	if(pdTRUE==xTaskCreate(colorMeasureTask,"colorMeasureTask",COLOR_STACK_DEPTH,(void *)h_color_sensor,COLOR_MEASURE_TASK_PRIORiTY,&h_colorMeasureTask)){
-		printf("colorMeasureTask created successfully\r\n");
-	}
-	else{
-		printf("colorMeasureTask creation failed !\r\n");
-		return 1;
-	}
-	colorMeasureSemaphore=xSemaphoreCreateBinary();
-	if(colorMeasureSemaphore==NULL){
-		printf("colorCalibSemaphore creation failed ! \r\n");
-		return 1;
-	}
-	printf("colorMeasureSemaphore created successfully\r\n");
-	return 0;
 }
 
 void creationTaskProcessing(void){
@@ -153,7 +126,7 @@ void creationTaskProcessing(void){
 	}
 
 	// creation tache bidon
-	if(pdTRUE==xTaskCreate(bidonTask,"bidonTask",COLOR_STACK_DEPTH,NULL,2,&h_bidonTask)){
+	if(pdTRUE==xTaskCreate(bidonTask,"bidonTask",COLOR_STACK_DEPTH,NULL,1,&h_bidonTask)){
 		printf("bidonTask created successfully\r\n");
 	}
 	else{
@@ -165,7 +138,7 @@ void creationTaskProcessing(void){
 	if(sem_bidon==NULL){
 		printf("sem bidon creation failed ! \r\n");
 	}
-	printf("sem bidon created sucessfully\r\n");
+	printf("sem bidon created\r\n");
 }
 /* USER CODE END 0 */
 
@@ -244,7 +217,7 @@ int main(void)
 	colorSensorInit(&color_sensor1, GREEN,CENT_POUR_CENT,SENSOR_DISABLE);
 	//colorHandleCalibrationSensor(&color_sensor1);
 
-	colorStartSensor(&color_sensor1);
+
 	creationTaskProcessing();
 
 

@@ -100,26 +100,12 @@ void task_process_Wake_Up(void * pvParameters){
 
 	for(;;){
 		if(counter==1000){
-			printf("\ncounter=1000\r\n");
-			xSemaphoreGive(colorMeasureSemaphore);
-			printf("semaphore colorMeasureSemaphore donné\r\n");
 			xSemaphoreGive(sem_bidon);
-			printf("semaphore sem_bidon donné\r\n");
-
+			xSemaphoreGive(colorMeasureSemaphore);
 			counter=0;
 		}
 		counter++;
 		vTaskDelay(1); //crée le delay de 1ms
-	}
-}
-
-void colorMeasureTask(void * pvParameters){
-	for(;;){
-		xSemaphoreTake(colorMeasureSemaphore,portMAX_DELAY);
-		printf("-----contenu de colorMeasureTask------\r\n");
-		/*// le semapore a été libéré
-		h_color_sensor_t * h_color_sensor =(h_color_sensor_t *) pvParameters;
-		colorEnable(h_color_sensor);*/
 	}
 }
 
@@ -138,9 +124,22 @@ int colorStartSensor(h_color_sensor_t * h_color_sensor){
 		printf("colorCalibSemaphore creation failed ! \r\n");
 		return 1;
 	}
-	printf("colorMeasureSemaphore created successfully\r\n");
+	printf("colorMeasureSemaphore created\r\n");
 	return 0;
 }
+
+void colorMeasureTask(void * pvParameters){
+	for(;;){
+		printf("waiting for colorMeasureSemaphore give\r\n");
+		xSemaphoreTake(colorMeasureSemaphore,portMAX_DELAY);
+		printf("semaphore colorMeasureSemaphore pris\r\n");
+		printf("-----contenu de colorMeasureTask------\r\n");
+		/*// le semapore a été libéré
+		h_color_sensor_t * h_color_sensor =(h_color_sensor_t *) pvParameters;
+		colorEnable(h_color_sensor);*/
+	}
+}
+
 
 void creationTaskProcessing(void){
 	// creation tache process
@@ -153,7 +152,7 @@ void creationTaskProcessing(void){
 	}
 
 	// creation tache bidon
-	if(pdTRUE==xTaskCreate(bidonTask,"bidonTask",COLOR_STACK_DEPTH,NULL,2,&h_bidonTask)){
+	if(pdTRUE==xTaskCreate(bidonTask,"bidonTask",COLOR_STACK_DEPTH,NULL,1,&h_bidonTask)){
 		printf("bidonTask created successfully\r\n");
 	}
 	else{
@@ -165,7 +164,7 @@ void creationTaskProcessing(void){
 	if(sem_bidon==NULL){
 		printf("sem bidon creation failed ! \r\n");
 	}
-	printf("sem bidon created sucessfully\r\n");
+	printf("sem bidon created\r\n");
 }
 /* USER CODE END 0 */
 
