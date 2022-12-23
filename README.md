@@ -9,7 +9,7 @@
 - Fonctionne avec une tache temoin et la tache colorMeasure (affichage uniquement) dans color_sensor.c et la fonction de calib au debut
 - test avec un declenchement de mesure dans colormeasureTask 
 - fonctionne avec une distance inferieure au cm VS la surface a mesurer
-- colorMeasureTask s'execute sans tâche autour mais fuck up la mesure jsp pk
+- colorMeasureTask s'execute sans tâche autour mais fuck up la mesure jsp pk ( la valeur d'initialisation de vert vide n'est pas aussi haute que prevue, doit etre aux alentour de 500 et n'est que de 300);
 - test avec les vTaskSuspend(process) (a faire mais modif avec flag de retour de fin de mesure a faire)
 
 ## ne pas oublier 
