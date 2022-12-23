@@ -157,25 +157,25 @@ void colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color
 		//GREEN
 		GPIO_write(color_S2_GPIO_Port,color_S2_Pin,1);
 		GPIO_write(color_S3_GPIO_Port,color_S3_Pin,1);
-		//printf("\n--- photosensor set vert ---\r\n\n");
+		printf("\n--- photosensor set vert ---\r\n\n");
 		break;
 	case CLEAR:
 		//clear
 		GPIO_write(color_S2_GPIO_Port,color_S2_Pin,1);
 		GPIO_write(color_S3_GPIO_Port,color_S3_Pin,0);
-		//printf("\n--- photosensor set clear ---\r\n\n");
+		printf("\n--- photosensor set clear ---\r\n\n");
 		break;
 	case BLUE:
 		//BLUE
 		GPIO_write(color_S2_GPIO_Port,color_S2_Pin,0);
 		GPIO_write(color_S3_GPIO_Port,color_S3_Pin,1);
-		//printf("\n--- photosensor set blue ---\r\n\n");
+		printf("\n--- photosensor set blue ---\r\n\n");
 		break;
 	case RED:
 		//RED
 		GPIO_write(color_S2_GPIO_Port,color_S2_Pin,0);
 		GPIO_write(color_S3_GPIO_Port,color_S3_Pin,0);
-		//printf("\n--- photosensor set rouge ---\r\n\n");
+		printf("\n--- photosensor set rouge ---\r\n\n");
 		break;
 	}
 }
