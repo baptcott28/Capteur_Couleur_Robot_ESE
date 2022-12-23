@@ -523,7 +523,6 @@ static void colorMeasureTask(void * pvParameters){
 		//printf("-----contenu de colorMeasureTask------\r\n");
 		// le semapore a été libéré
 		h_color_sensor_t * h_color_sensor =(h_color_sensor_t *) pvParameters;
-		colorSetPhotodiodeType(h_color_sensor, GREEN);
 		colorEnable(h_color_sensor);
 	}
 }

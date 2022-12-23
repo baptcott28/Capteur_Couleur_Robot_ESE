@@ -395,7 +395,7 @@ static int colorHandleCalibrationValues(h_color_sensor_t * h_color_sensor, uint3
 		case CALIB_ROUGE_VIDE:
 			h_color_sensor->calib_struct.calib_value_rouge_vide=(uint16_t)(res/CALIBRATION_NB_VALUES);
 			printf("Struct calib : champ rouge_vide remplie\r\n");
-			printf("Calib_value_rouge_vide : %u\r\n",h_color_sensor->calib_struct.calib_value_rouge_vide);
+			printf("Calib_value_vert_canette : %u\r\n",h_color_sensor->calib_struct.calib_value_rouge_vide);
 			break;
 		default:
 			printf("bug dans la calibration\r\n\n");
@@ -473,9 +473,9 @@ static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t freq
 		raw_values_compteur=0;
 
 		//Affichage tableau
-		for(int i=0;i<NB_MEASURE_WANTED;i++){
+		/*for(int i=0;i<NB_MEASURE_WANTED;i++){
 			printf("color_raw_values[%d] : %ld\t->\t color_scaled_value[%d] : %ld\r\n",i,color_raw_values[i],i,color_scaled_values[i]);
-		}
+		}*/
 		colorAnalyse(h_color_sensor,green_color_value,red_color_value);
 	}
 
@@ -523,7 +523,6 @@ static void colorMeasureTask(void * pvParameters){
 		//printf("-----contenu de colorMeasureTask------\r\n");
 		// le semapore a été libéré
 		h_color_sensor_t * h_color_sensor =(h_color_sensor_t *) pvParameters;
-		colorSetPhotodiodeType(h_color_sensor, GREEN);
 		colorEnable(h_color_sensor);
 	}
 }
