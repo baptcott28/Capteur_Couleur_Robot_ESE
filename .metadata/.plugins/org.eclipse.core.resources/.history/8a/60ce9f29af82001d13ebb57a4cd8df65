@@ -457,18 +457,35 @@ static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t freq
 		uint32_t red_mean=0;
 
 		// green mean with erase of waste values (the 2 first one each time)
+		//printf("calcul moyenne vert\r\n");
 		for(int i=DECHET_MEASURE; i<((NB_MEASURE_WANTED/2));i++){
 			green_mean=green_mean+color_scaled_values[i];
+
+			//--debug
+			/*printf("i=%d,\t ajouté a la moyenne verte : %ld\r\n",i,color_scaled_values[i]);
+			printf("green mean : %ld\r\n",green_mean);*/
 		}
 		green_color_value=floor(green_mean/((NB_MEASURE_WANTED/2)-DECHET_MEASURE));
 		h_color_sensor->green_color=green_color_value;
 
+		//--debug
+		//printf("green color value : %ld\r\n",green_color_value);
+
+
 		//red values mean
+		//printf("calcul moyenne rouge\r\n");
 		for(int i=((NB_MEASURE_WANTED/2)+DECHET_MEASURE);i<NB_MEASURE_WANTED;i++){
 			red_mean=red_mean+color_scaled_values[i];
+
+			//--debug
+			/*printf("i=%d,\t ajouté a la moyenne rouge : %ld\r\n",i,color_scaled_values[i]);
+			printf("red mean : %ld\r\n",red_mean);*/
 		}
 		red_color_value=floor(red_mean/((NB_MEASURE_WANTED/2)-DECHET_MEASURE));
 		h_color_sensor->red_color=red_color_value;
+
+		//--debug
+		//printf("red color value : %ld\r\n",red_color_value);
 
 		raw_values_compteur=0;
 
@@ -477,6 +494,7 @@ static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t freq
 			printf("color_raw_values[%d] : %ld\t->\t color_scaled_value[%d] : %ld\r\n",i,color_raw_values[i],i,color_scaled_values[i]);
 		}*/
 		colorAnalyse(h_color_sensor,green_color_value,red_color_value);
+		printf("waiting for button press : \r\n");
 	}
 
 	return 0; // fonctionnement normal
@@ -520,6 +538,7 @@ extern SemaphoreHandle_t colorMeasureSemaphore;
 static void colorMeasureTask(void * pvParameters){
 	for(;;){
 		xSemaphoreTake(colorMeasureSemaphore,portMAX_DELAY);
+		printf("task suspen all\r\n");
 		//printf("-----contenu de colorMeasureTask------\r\n");
 		// le semapore a été libéré
 		h_color_sensor_t * h_color_sensor =(h_color_sensor_t *) pvParameters;

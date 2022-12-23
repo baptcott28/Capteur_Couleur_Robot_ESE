@@ -97,7 +97,9 @@ void bidonTask(void * pvParameters){
 void task_process_Wake_Up(void * pvParameters){
 	sem_bidon=xSemaphoreCreateBinary();
 	uint32_t counter=0;
+
 	for(;;){
+		printf("counter : %ld\r\n",counter);
 		if((counter%1000)==0){
 			printf("\ncounter=0mod(1000)\r\n");
 			xSemaphoreGive(sem_bidon);

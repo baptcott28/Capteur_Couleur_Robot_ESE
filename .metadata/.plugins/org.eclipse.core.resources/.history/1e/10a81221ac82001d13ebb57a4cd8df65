@@ -97,15 +97,15 @@ void bidonTask(void * pvParameters){
 void task_process_Wake_Up(void * pvParameters){
 	sem_bidon=xSemaphoreCreateBinary();
 	uint32_t counter=0;
+
 	for(;;){
-		if((counter%1000)==0){
-			printf("\ncounter=0mod(1000)\r\n");
-			xSemaphoreGive(sem_bidon);
-			printf("semaphore sem_bidon donné\r\n");
-		}
-		if (counter ==3000){
+		if(counter==1000){
+			printf("\ncounter=1000\r\n");
 			xSemaphoreGive(colorMeasureSemaphore);
 			printf("semaphore colorMeasureSemaphore donné\r\n");
+			xSemaphoreGive(sem_bidon);
+			printf("semaphore sem_bidon donné\r\n");
+
 			counter=0;
 		}
 		counter++;
