@@ -216,6 +216,11 @@ int main(void)
 	creationTaskProcessing();
 
 
+	//colorStartSensor(&color_sensor1);
+
+
+
+
 	printf("scheduler started\r\n");
   	vTaskStartScheduler();
   /* USER CODE END 2 */

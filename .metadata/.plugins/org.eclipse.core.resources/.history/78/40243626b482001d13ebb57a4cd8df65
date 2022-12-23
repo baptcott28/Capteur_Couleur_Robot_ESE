@@ -88,7 +88,9 @@ SemaphoreHandle_t sem_bidon;
 
 void bidonTask(void * pvParameters){
 	for(;;){
+		printf("waiting for semaphore sem_bidon\r\n");
 		xSemaphoreTake(sem_bidon,portMAX_DELAY);
+		printf("je suis la fonction bidon\r\n");
 	}
 }
 
@@ -103,6 +105,7 @@ void task_process_Wake_Up(void * pvParameters){
 		}*/
 		if (counter ==300){
 			xSemaphoreGive(colorMeasureSemaphore);
+			printf("semaphore colorMeasureSemaphore donné\r\n");
 			counter=0;
 		}
 		counter++;
@@ -214,6 +217,11 @@ int main(void)
 
 	colorTaskCreation(&color_sensor1);
 	creationTaskProcessing();
+
+
+	//colorStartSensor(&color_sensor1);
+
+
 
 
 	printf("scheduler started\r\n");
