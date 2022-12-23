@@ -6,7 +6,7 @@
 - integration d'une structure de calib au sein d'un sensor
 - taches colormeasureTask écrite
 - ecriture de fonction de process pour debloquer les semaphore et les donner aux autres taches
-- Fonctionne avec une tache temoin et la tache colorMeasure (affichage uniquement) dans color_sensor.c
+- Fonctionne avec une tache temoin et la tache colorMeasure (affichage uniquement) dans color_sensor.c et la fonction de calib au debut
 - test avec un declenchement de mesure dans colormeasureTask (en cours)
 
 ## ne pas oublier 
