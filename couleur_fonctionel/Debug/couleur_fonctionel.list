@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  000201e0  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0001b4c1  00000000  00000000  00020210  2**0
+ 12 .debug_info   0001b5ff  00000000  00000000  00020210  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00003bc4  00000000  00000000  0003b6d1  2**0
+ 13 .debug_abbrev 00003be0  00000000  00000000  0003b80f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00001460  00000000  00000000  0003f298  2**3
+ 14 .debug_aranges 00001460  00000000  00000000  0003f3f0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 000012d8  00000000  00000000  000406f8  2**3
+ 15 .debug_ranges 000012d8  00000000  00000000  00040850  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  000299b9  00000000  00000000  000419d0  2**0
+ 16 .debug_macro  000299b9  00000000  00000000  00041b28  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00018fcd  00000000  00000000  0006b389  2**0
+ 17 .debug_line   00018fcd  00000000  00000000  0006b4e1  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000fb5db  00000000  00000000  00084356  2**0
+ 18 .debug_str    000fb5db  00000000  00000000  000844ae  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  0017f931  2**0
+ 19 .comment      00000050  00000000  00000000  0017fa89  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000064b0  00000000  00000000  0017f984  2**2
+ 20 .debug_frame  000064b0  00000000  00000000  0017fadc  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1258,12 +1258,12 @@ static void colorSetOutputFreqScaling(h_color_sensor_t * h_color_sensor){
  8000f54:	2201      	movs	r2, #1
  8000f56:	2140      	movs	r1, #64	; 0x40
  8000f58:	4816      	ldr	r0, [pc, #88]	; (8000fb4 <colorSetOutputFreqScaling+0x88>)
- 8000f5a:	f000 fc20 	bl	800179e <GPIO_write>
+ 8000f5a:	f000 fc79 	bl	8001850 <GPIO_write>
 		GPIO_write(color_S1_GPIO_Port,color_S1_Pin,1);
  8000f5e:	2201      	movs	r2, #1
  8000f60:	2140      	movs	r1, #64	; 0x40
  8000f62:	4815      	ldr	r0, [pc, #84]	; (8000fb8 <colorSetOutputFreqScaling+0x8c>)
- 8000f64:	f000 fc1b 	bl	800179e <GPIO_write>
+ 8000f64:	f000 fc74 	bl	8001850 <GPIO_write>
 		break;
  8000f68:	e020      	b.n	8000fac <colorSetOutputFreqScaling+0x80>
 	case 3:
@@ -1272,12 +1272,12 @@ static void colorSetOutputFreqScaling(h_color_sensor_t * h_color_sensor){
  8000f6a:	2201      	movs	r2, #1
  8000f6c:	2140      	movs	r1, #64	; 0x40
  8000f6e:	4811      	ldr	r0, [pc, #68]	; (8000fb4 <colorSetOutputFreqScaling+0x88>)
- 8000f70:	f000 fc15 	bl	800179e <GPIO_write>
+ 8000f70:	f000 fc6e 	bl	8001850 <GPIO_write>
 		GPIO_write(color_S1_GPIO_Port,color_S1_Pin,0);
  8000f74:	2200      	movs	r2, #0
  8000f76:	2140      	movs	r1, #64	; 0x40
  8000f78:	480f      	ldr	r0, [pc, #60]	; (8000fb8 <colorSetOutputFreqScaling+0x8c>)
- 8000f7a:	f000 fc10 	bl	800179e <GPIO_write>
+ 8000f7a:	f000 fc69 	bl	8001850 <GPIO_write>
 		break;
  8000f7e:	e015      	b.n	8000fac <colorSetOutputFreqScaling+0x80>
 	case 2:
@@ -1286,12 +1286,12 @@ static void colorSetOutputFreqScaling(h_color_sensor_t * h_color_sensor){
  8000f80:	2200      	movs	r2, #0
  8000f82:	2140      	movs	r1, #64	; 0x40
  8000f84:	480b      	ldr	r0, [pc, #44]	; (8000fb4 <colorSetOutputFreqScaling+0x88>)
- 8000f86:	f000 fc0a 	bl	800179e <GPIO_write>
+ 8000f86:	f000 fc63 	bl	8001850 <GPIO_write>
 		GPIO_write(color_S1_GPIO_Port,color_S1_Pin,1);
  8000f8a:	2201      	movs	r2, #1
  8000f8c:	2140      	movs	r1, #64	; 0x40
  8000f8e:	480a      	ldr	r0, [pc, #40]	; (8000fb8 <colorSetOutputFreqScaling+0x8c>)
- 8000f90:	f000 fc05 	bl	800179e <GPIO_write>
+ 8000f90:	f000 fc5e 	bl	8001850 <GPIO_write>
 		break;
  8000f94:	e00a      	b.n	8000fac <colorSetOutputFreqScaling+0x80>
 	case 1:
@@ -1300,12 +1300,12 @@ static void colorSetOutputFreqScaling(h_color_sensor_t * h_color_sensor){
  8000f96:	2200      	movs	r2, #0
  8000f98:	2140      	movs	r1, #64	; 0x40
  8000f9a:	4806      	ldr	r0, [pc, #24]	; (8000fb4 <colorSetOutputFreqScaling+0x88>)
- 8000f9c:	f000 fbff 	bl	800179e <GPIO_write>
+ 8000f9c:	f000 fc58 	bl	8001850 <GPIO_write>
 		GPIO_write(color_S1_GPIO_Port,color_S1_Pin,0);
  8000fa0:	2200      	movs	r2, #0
  8000fa2:	2140      	movs	r1, #64	; 0x40
  8000fa4:	4804      	ldr	r0, [pc, #16]	; (8000fb8 <colorSetOutputFreqScaling+0x8c>)
- 8000fa6:	f000 fbfa 	bl	800179e <GPIO_write>
+ 8000fa6:	f000 fc53 	bl	8001850 <GPIO_write>
 		break;
  8000faa:	bf00      	nop
 	}
@@ -1347,12 +1347,12 @@ void colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color
  8000fec:	2201      	movs	r2, #1
  8000fee:	2110      	movs	r1, #16
  8000ff0:	481c      	ldr	r0, [pc, #112]	; (8001064 <colorSetPhotodiodeType+0xa8>)
- 8000ff2:	f000 fbd4 	bl	800179e <GPIO_write>
+ 8000ff2:	f000 fc2d 	bl	8001850 <GPIO_write>
 		GPIO_write(color_S3_GPIO_Port,color_S3_Pin,1);
  8000ff6:	2201      	movs	r2, #1
  8000ff8:	2180      	movs	r1, #128	; 0x80
  8000ffa:	481b      	ldr	r0, [pc, #108]	; (8001068 <colorSetPhotodiodeType+0xac>)
- 8000ffc:	f000 fbcf 	bl	800179e <GPIO_write>
+ 8000ffc:	f000 fc28 	bl	8001850 <GPIO_write>
 		printf("\n--- photosensor set vert ---\r\n\n");
  8001000:	481a      	ldr	r0, [pc, #104]	; (800106c <colorSetPhotodiodeType+0xb0>)
  8001002:	f007 febd 	bl	8008d80 <puts>
@@ -1364,12 +1364,12 @@ void colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color
  8001008:	2201      	movs	r2, #1
  800100a:	2110      	movs	r1, #16
  800100c:	4815      	ldr	r0, [pc, #84]	; (8001064 <colorSetPhotodiodeType+0xa8>)
- 800100e:	f000 fbc6 	bl	800179e <GPIO_write>
+ 800100e:	f000 fc1f 	bl	8001850 <GPIO_write>
 		GPIO_write(color_S3_GPIO_Port,color_S3_Pin,0);
  8001012:	2200      	movs	r2, #0
  8001014:	2180      	movs	r1, #128	; 0x80
  8001016:	4814      	ldr	r0, [pc, #80]	; (8001068 <colorSetPhotodiodeType+0xac>)
- 8001018:	f000 fbc1 	bl	800179e <GPIO_write>
+ 8001018:	f000 fc1a 	bl	8001850 <GPIO_write>
 		printf("\n--- photosensor set clear ---\r\n\n");
  800101c:	4814      	ldr	r0, [pc, #80]	; (8001070 <colorSetPhotodiodeType+0xb4>)
  800101e:	f007 feaf 	bl	8008d80 <puts>
@@ -1381,12 +1381,12 @@ void colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color
  8001024:	2200      	movs	r2, #0
  8001026:	2110      	movs	r1, #16
  8001028:	480e      	ldr	r0, [pc, #56]	; (8001064 <colorSetPhotodiodeType+0xa8>)
- 800102a:	f000 fbb8 	bl	800179e <GPIO_write>
+ 800102a:	f000 fc11 	bl	8001850 <GPIO_write>
 		GPIO_write(color_S3_GPIO_Port,color_S3_Pin,1);
  800102e:	2201      	movs	r2, #1
  8001030:	2180      	movs	r1, #128	; 0x80
  8001032:	480d      	ldr	r0, [pc, #52]	; (8001068 <colorSetPhotodiodeType+0xac>)
- 8001034:	f000 fbb3 	bl	800179e <GPIO_write>
+ 8001034:	f000 fc0c 	bl	8001850 <GPIO_write>
 		printf("\n--- photosensor set blue ---\r\n\n");
  8001038:	480e      	ldr	r0, [pc, #56]	; (8001074 <colorSetPhotodiodeType+0xb8>)
  800103a:	f007 fea1 	bl	8008d80 <puts>
@@ -1398,12 +1398,12 @@ void colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color
  8001040:	2200      	movs	r2, #0
  8001042:	2110      	movs	r1, #16
  8001044:	4807      	ldr	r0, [pc, #28]	; (8001064 <colorSetPhotodiodeType+0xa8>)
- 8001046:	f000 fbaa 	bl	800179e <GPIO_write>
+ 8001046:	f000 fc03 	bl	8001850 <GPIO_write>
 		GPIO_write(color_S3_GPIO_Port,color_S3_Pin,0);
  800104a:	2200      	movs	r2, #0
  800104c:	2180      	movs	r1, #128	; 0x80
  800104e:	4806      	ldr	r0, [pc, #24]	; (8001068 <colorSetPhotodiodeType+0xac>)
- 8001050:	f000 fba5 	bl	800179e <GPIO_write>
+ 8001050:	f000 fbfe 	bl	8001850 <GPIO_write>
 		printf("\n--- photosensor set rouge ---\r\n\n");
  8001054:	4808      	ldr	r0, [pc, #32]	; (8001078 <colorSetPhotodiodeType+0xbc>)
  8001056:	f007 fe93 	bl	8008d80 <puts>
@@ -1545,7 +1545,7 @@ void colorDisable(h_color_sensor_t * h_color_sensor){
  8001128:	2201      	movs	r2, #1
  800112a:	2180      	movs	r1, #128	; 0x80
  800112c:	4810      	ldr	r0, [pc, #64]	; (8001170 <colorDisable+0x50>)
- 800112e:	f000 fb36 	bl	800179e <GPIO_write>
+ 800112e:	f000 fb8f 	bl	8001850 <GPIO_write>
 	h_color_sensor->sensor_state=SENSOR_DISABLE;
  8001132:	687b      	ldr	r3, [r7, #4]
  8001134:	2200      	movs	r2, #0
@@ -1569,7 +1569,7 @@ void colorDisable(h_color_sensor_t * h_color_sensor){
  8001158:	e894 0007 	ldmia.w	r4, {r0, r1, r2}
  800115c:	e885 0007 	stmia.w	r5, {r0, r1, r2}
  8001160:	e896 000f 	ldmia.w	r6, {r0, r1, r2, r3}
- 8001164:	f000 faa9 	bl	80016ba <timer_handle>
+ 8001164:	f000 fb02 	bl	800176c <timer_handle>
 }
  8001168:	bf00      	nop
  800116a:	370c      	adds	r7, #12
@@ -1589,7 +1589,7 @@ void colorEnable(h_color_sensor_t * h_color_sensor){
  8001180:	2200      	movs	r2, #0
  8001182:	2180      	movs	r1, #128	; 0x80
  8001184:	4810      	ldr	r0, [pc, #64]	; (80011c8 <colorEnable+0x50>)
- 8001186:	f000 fb0a 	bl	800179e <GPIO_write>
+ 8001186:	f000 fb63 	bl	8001850 <GPIO_write>
 	h_color_sensor->sensor_state=SENSOR_ENABLE;
  800118a:	687b      	ldr	r3, [r7, #4]
  800118c:	2201      	movs	r2, #1
@@ -1613,7 +1613,7 @@ void colorEnable(h_color_sensor_t * h_color_sensor){
  80011b0:	e894 0007 	ldmia.w	r4, {r0, r1, r2}
  80011b4:	e885 0007 	stmia.w	r5, {r0, r1, r2}
  80011b8:	e896 000f 	ldmia.w	r6, {r0, r1, r2, r3}
- 80011bc:	f000 fa7d 	bl	80016ba <timer_handle>
+ 80011bc:	f000 fad6 	bl	800176c <timer_handle>
 }
  80011c0:	bf00      	nop
  80011c2:	370c      	adds	r7, #12
@@ -2367,713 +2367,717 @@ static void colorDoMeasureAgain(h_color_sensor_t * h_color_sensor){
  80016b4:	3708      	adds	r7, #8
  80016b6:	46bd      	mov	sp, r7
  80016b8:	bd80      	pop	{r7, pc}
-
-080016ba <timer_handle>:
- * tim_mode_t mode : htim configuration accirding to what is in .ioc file (INPUT_CAPTURE_IT, BASE_IT, PWM)
- * tim_status_t status : same but START,STOP
- * uint32_t channel ; the output channel of htim
- * @return none
- */
-void timer_handle(TIM_HandleTypeDef htim, tim_mode_t mode, tim_status_t status,uint32_t channel){
- 80016ba:	b084      	sub	sp, #16
- 80016bc:	b580      	push	{r7, lr}
- 80016be:	af00      	add	r7, sp, #0
- 80016c0:	f107 0c08 	add.w	ip, r7, #8
- 80016c4:	e88c 000f 	stmia.w	ip, {r0, r1, r2, r3}
-	if(status==START){
- 80016c8:	f897 3058 	ldrb.w	r3, [r7, #88]	; 0x58
- 80016cc:	2b01      	cmp	r3, #1
- 80016ce:	d11b      	bne.n	8001708 <timer_handle+0x4e>
-		switch(mode){
- 80016d0:	f897 3054 	ldrb.w	r3, [r7, #84]	; 0x54
- 80016d4:	2b03      	cmp	r3, #3
- 80016d6:	d00c      	beq.n	80016f2 <timer_handle+0x38>
- 80016d8:	2b03      	cmp	r3, #3
- 80016da:	dc53      	bgt.n	8001784 <timer_handle+0xca>
- 80016dc:	2b01      	cmp	r3, #1
- 80016de:	d002      	beq.n	80016e6 <timer_handle+0x2c>
- 80016e0:	2b02      	cmp	r3, #2
- 80016e2:	d00c      	beq.n	80016fe <timer_handle+0x44>
-			break;
-		case BASE_IT:
-			HAL_TIM_Base_Start_IT(&htim);
-			break;
-		default :
-			break;
- 80016e4:	e04e      	b.n	8001784 <timer_handle+0xca>
-			HAL_TIM_IC_Start_IT(&htim, channel);
- 80016e6:	6df9      	ldr	r1, [r7, #92]	; 0x5c
- 80016e8:	f107 0008 	add.w	r0, r7, #8
- 80016ec:	f002 fdc0 	bl	8004270 <HAL_TIM_IC_Start_IT>
-			break;
- 80016f0:	e04f      	b.n	8001792 <timer_handle+0xd8>
-			HAL_TIM_PWM_Start(&htim,channel);
- 80016f2:	6df9      	ldr	r1, [r7, #92]	; 0x5c
- 80016f4:	f107 0008 	add.w	r0, r7, #8
- 80016f8:	f002 fbde 	bl	8003eb8 <HAL_TIM_PWM_Start>
-			break;
- 80016fc:	e049      	b.n	8001792 <timer_handle+0xd8>
-			HAL_TIM_Base_Start_IT(&htim);
- 80016fe:	f107 0008 	add.w	r0, r7, #8
- 8001702:	f002 fad1 	bl	8003ca8 <HAL_TIM_Base_Start_IT>
-			break;
- 8001706:	e044      	b.n	8001792 <timer_handle+0xd8>
-		}
-	}
-	else if (status==STOP){
- 8001708:	f897 3058 	ldrb.w	r3, [r7, #88]	; 0x58
- 800170c:	2b00      	cmp	r3, #0
- 800170e:	d11b      	bne.n	8001748 <timer_handle+0x8e>
-		switch(mode){
- 8001710:	f897 3054 	ldrb.w	r3, [r7, #84]	; 0x54
- 8001714:	2b03      	cmp	r3, #3
- 8001716:	d00c      	beq.n	8001732 <timer_handle+0x78>
- 8001718:	2b03      	cmp	r3, #3
- 800171a:	dc35      	bgt.n	8001788 <timer_handle+0xce>
- 800171c:	2b01      	cmp	r3, #1
- 800171e:	d002      	beq.n	8001726 <timer_handle+0x6c>
- 8001720:	2b02      	cmp	r3, #2
- 8001722:	d00c      	beq.n	800173e <timer_handle+0x84>
-			break;
-		case BASE_IT:
-			HAL_TIM_Base_Stop_IT(&htim);
-			break;
-		default :
-			break;
- 8001724:	e030      	b.n	8001788 <timer_handle+0xce>
-			HAL_TIM_IC_Stop_IT(&htim, channel);
- 8001726:	6df9      	ldr	r1, [r7, #92]	; 0x5c
- 8001728:	f107 0008 	add.w	r0, r7, #8
- 800172c:	f002 fef0 	bl	8004510 <HAL_TIM_IC_Stop_IT>
-			break;
- 8001730:	e02f      	b.n	8001792 <timer_handle+0xd8>
-			HAL_TIM_PWM_Stop(&htim,channel);
- 8001732:	6df9      	ldr	r1, [r7, #92]	; 0x5c
- 8001734:	f107 0008 	add.w	r0, r7, #8
- 8001738:	f002 fcb8 	bl	80040ac <HAL_TIM_PWM_Stop>
-			break;
- 800173c:	e029      	b.n	8001792 <timer_handle+0xd8>
-			HAL_TIM_Base_Stop_IT(&htim);
- 800173e:	f107 0008 	add.w	r0, r7, #8
- 8001742:	f002 fb29 	bl	8003d98 <HAL_TIM_Base_Stop_IT>
-			break;
- 8001746:	e024      	b.n	8001792 <timer_handle+0xd8>
-		}
-	}
-	else if (status==INIT){
- 8001748:	f897 3058 	ldrb.w	r3, [r7, #88]	; 0x58
- 800174c:	2b02      	cmp	r3, #2
- 800174e:	d11d      	bne.n	800178c <timer_handle+0xd2>
-		switch(mode){
- 8001750:	f897 3054 	ldrb.w	r3, [r7, #84]	; 0x54
- 8001754:	2b03      	cmp	r3, #3
- 8001756:	d00b      	beq.n	8001770 <timer_handle+0xb6>
- 8001758:	2b03      	cmp	r3, #3
- 800175a:	dc19      	bgt.n	8001790 <timer_handle+0xd6>
- 800175c:	2b01      	cmp	r3, #1
- 800175e:	d002      	beq.n	8001766 <timer_handle+0xac>
- 8001760:	2b02      	cmp	r3, #2
- 8001762:	d00a      	beq.n	800177a <timer_handle+0xc0>
-			break;
-		case BASE_IT:
-			HAL_TIM_Base_Init(&htim);
-			break;
-		default :
-			break;
- 8001764:	e014      	b.n	8001790 <timer_handle+0xd6>
-			HAL_TIM_IC_Init(&htim);
- 8001766:	f107 0008 	add.w	r0, r7, #8
- 800176a:	f002 fd1f 	bl	80041ac <HAL_TIM_IC_Init>
-			break;
- 800176e:	e010      	b.n	8001792 <timer_handle+0xd8>
-			HAL_TIM_PWM_Init(&htim);
- 8001770:	f107 0008 	add.w	r0, r7, #8
- 8001774:	f002 fb3f 	bl	8003df6 <HAL_TIM_PWM_Init>
-			break;
- 8001778:	e00b      	b.n	8001792 <timer_handle+0xd8>
-			HAL_TIM_Base_Init(&htim);
- 800177a:	f107 0008 	add.w	r0, r7, #8
- 800177e:	f002 fa3b 	bl	8003bf8 <HAL_TIM_Base_Init>
-			break;
- 8001782:	e006      	b.n	8001792 <timer_handle+0xd8>
-			break;
- 8001784:	bf00      	nop
- 8001786:	e004      	b.n	8001792 <timer_handle+0xd8>
-			break;
- 8001788:	bf00      	nop
- 800178a:	e002      	b.n	8001792 <timer_handle+0xd8>
-		}
-	}
- 800178c:	bf00      	nop
- 800178e:	e000      	b.n	8001792 <timer_handle+0xd8>
-			break;
- 8001790:	bf00      	nop
-}
- 8001792:	bf00      	nop
- 8001794:	46bd      	mov	sp, r7
- 8001796:	e8bd 4080 	ldmia.w	sp!, {r7, lr}
- 800179a:	b004      	add	sp, #16
- 800179c:	4770      	bx	lr
-
-0800179e <GPIO_write>:
- * uint16_t gpio_pin : The pin of the GPIO you want to deal with
- * GPIO_PinState gpio_PinState : the state you want your GPIO to have (1 or 0)
- *
- * @return 0 if fail else 1
- */
-void GPIO_write(GPIO_TypeDef * gpio_port,uint16_t gpio_pin,GPIO_PinState gpio_PinState ){
- 800179e:	b580      	push	{r7, lr}
- 80017a0:	b082      	sub	sp, #8
- 80017a2:	af00      	add	r7, sp, #0
- 80017a4:	6078      	str	r0, [r7, #4]
- 80017a6:	460b      	mov	r3, r1
- 80017a8:	807b      	strh	r3, [r7, #2]
- 80017aa:	4613      	mov	r3, r2
- 80017ac:	707b      	strb	r3, [r7, #1]
-	HAL_GPIO_WritePin(gpio_port,gpio_pin,gpio_PinState);
- 80017ae:	787a      	ldrb	r2, [r7, #1]
- 80017b0:	887b      	ldrh	r3, [r7, #2]
- 80017b2:	4619      	mov	r1, r3
- 80017b4:	6878      	ldr	r0, [r7, #4]
- 80017b6:	f001 f8f1 	bl	800299c <HAL_GPIO_WritePin>
-}
- 80017ba:	bf00      	nop
- 80017bc:	3708      	adds	r7, #8
- 80017be:	46bd      	mov	sp, r7
- 80017c0:	bd80      	pop	{r7, pc}
 	...
 
-080017c4 <vApplicationGetIdleTaskMemory>:
-/* USER CODE BEGIN GET_IDLE_TASK_MEMORY */
-static StaticTask_t xIdleTaskTCBBuffer;
-static StackType_t xIdleStack[configMINIMAL_STACK_SIZE];
+080016bc <colorMeasureTask>:
+// --- FreeRTOS ---
 
-void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize )
-{
- 80017c4:	b480      	push	{r7}
- 80017c6:	b085      	sub	sp, #20
- 80017c8:	af00      	add	r7, sp, #0
- 80017ca:	60f8      	str	r0, [r7, #12]
- 80017cc:	60b9      	str	r1, [r7, #8]
- 80017ce:	607a      	str	r2, [r7, #4]
-  *ppxIdleTaskTCBBuffer = &xIdleTaskTCBBuffer;
- 80017d0:	68fb      	ldr	r3, [r7, #12]
- 80017d2:	4a07      	ldr	r2, [pc, #28]	; (80017f0 <vApplicationGetIdleTaskMemory+0x2c>)
- 80017d4:	601a      	str	r2, [r3, #0]
-  *ppxIdleTaskStackBuffer = &xIdleStack[0];
- 80017d6:	68bb      	ldr	r3, [r7, #8]
- 80017d8:	4a06      	ldr	r2, [pc, #24]	; (80017f4 <vApplicationGetIdleTaskMemory+0x30>)
- 80017da:	601a      	str	r2, [r3, #0]
-  *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
- 80017dc:	687b      	ldr	r3, [r7, #4]
- 80017de:	2280      	movs	r2, #128	; 0x80
- 80017e0:	601a      	str	r2, [r3, #0]
-  /* place for user code */
-}
- 80017e2:	bf00      	nop
- 80017e4:	3714      	adds	r7, #20
- 80017e6:	46bd      	mov	sp, r7
- 80017e8:	f85d 7b04 	ldr.w	r7, [sp], #4
- 80017ec:	4770      	bx	lr
- 80017ee:	bf00      	nop
- 80017f0:	2000035c 	.word	0x2000035c
- 80017f4:	20000410 	.word	0x20000410
-
-080017f8 <MX_FREERTOS_Init>:
-/**
-  * @brief  FreeRTOS initialization
-  * @param  None
-  * @retval None
-  */
-void MX_FREERTOS_Init(void) {
- 80017f8:	b5b0      	push	{r4, r5, r7, lr}
- 80017fa:	b088      	sub	sp, #32
- 80017fc:	af00      	add	r7, sp, #0
-  /* add queues, ... */
-  /* USER CODE END RTOS_QUEUES */
-
-  /* Create the thread(s) */
-  /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
- 80017fe:	4b0a      	ldr	r3, [pc, #40]	; (8001828 <MX_FREERTOS_Init+0x30>)
- 8001800:	1d3c      	adds	r4, r7, #4
- 8001802:	461d      	mov	r5, r3
- 8001804:	cd0f      	ldmia	r5!, {r0, r1, r2, r3}
- 8001806:	c40f      	stmia	r4!, {r0, r1, r2, r3}
- 8001808:	e895 0007 	ldmia.w	r5, {r0, r1, r2}
- 800180c:	e884 0007 	stmia.w	r4, {r0, r1, r2}
-  defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
- 8001810:	1d3b      	adds	r3, r7, #4
- 8001812:	2100      	movs	r1, #0
- 8001814:	4618      	mov	r0, r3
- 8001816:	f004 fad5 	bl	8005dc4 <osThreadCreate>
- 800181a:	4603      	mov	r3, r0
- 800181c:	4a03      	ldr	r2, [pc, #12]	; (800182c <MX_FREERTOS_Init+0x34>)
- 800181e:	6013      	str	r3, [r2, #0]
-
-  /* USER CODE BEGIN RTOS_THREADS */
-  /* add threads, ... */
-  /* USER CODE END RTOS_THREADS */
-
-}
- 8001820:	bf00      	nop
- 8001822:	3720      	adds	r7, #32
- 8001824:	46bd      	mov	sp, r7
- 8001826:	bdb0      	pop	{r4, r5, r7, pc}
- 8001828:	0800b2bc 	.word	0x0800b2bc
- 800182c:	20000358 	.word	0x20000358
-
-08001830 <StartDefaultTask>:
-  * @param  argument: Not used
-  * @retval None
-  */
-/* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void const * argument)
-{
- 8001830:	b580      	push	{r7, lr}
- 8001832:	b082      	sub	sp, #8
- 8001834:	af00      	add	r7, sp, #0
- 8001836:	6078      	str	r0, [r7, #4]
-  /* USER CODE BEGIN StartDefaultTask */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
- 8001838:	2001      	movs	r0, #1
- 800183a:	f004 fb0f 	bl	8005e5c <osDelay>
- 800183e:	e7fb      	b.n	8001838 <StartDefaultTask+0x8>
-
-08001840 <MX_GPIO_Init>:
-        * Output
-        * EVENT_OUT
-        * EXTI
-*/
-void MX_GPIO_Init(void)
-{
- 8001840:	b580      	push	{r7, lr}
- 8001842:	b08c      	sub	sp, #48	; 0x30
- 8001844:	af00      	add	r7, sp, #0
-
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
- 8001846:	f107 031c 	add.w	r3, r7, #28
- 800184a:	2200      	movs	r2, #0
- 800184c:	601a      	str	r2, [r3, #0]
- 800184e:	605a      	str	r2, [r3, #4]
- 8001850:	609a      	str	r2, [r3, #8]
- 8001852:	60da      	str	r2, [r3, #12]
- 8001854:	611a      	str	r2, [r3, #16]
-
-  /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOB_CLK_ENABLE();
- 8001856:	4b4d      	ldr	r3, [pc, #308]	; (800198c <MX_GPIO_Init+0x14c>)
- 8001858:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 800185a:	4a4c      	ldr	r2, [pc, #304]	; (800198c <MX_GPIO_Init+0x14c>)
- 800185c:	f043 0302 	orr.w	r3, r3, #2
- 8001860:	6313      	str	r3, [r2, #48]	; 0x30
- 8001862:	4b4a      	ldr	r3, [pc, #296]	; (800198c <MX_GPIO_Init+0x14c>)
- 8001864:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 8001866:	f003 0302 	and.w	r3, r3, #2
- 800186a:	61bb      	str	r3, [r7, #24]
- 800186c:	69bb      	ldr	r3, [r7, #24]
-  __HAL_RCC_GPIOA_CLK_ENABLE();
- 800186e:	4b47      	ldr	r3, [pc, #284]	; (800198c <MX_GPIO_Init+0x14c>)
- 8001870:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 8001872:	4a46      	ldr	r2, [pc, #280]	; (800198c <MX_GPIO_Init+0x14c>)
- 8001874:	f043 0301 	orr.w	r3, r3, #1
- 8001878:	6313      	str	r3, [r2, #48]	; 0x30
- 800187a:	4b44      	ldr	r3, [pc, #272]	; (800198c <MX_GPIO_Init+0x14c>)
- 800187c:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 800187e:	f003 0301 	and.w	r3, r3, #1
- 8001882:	617b      	str	r3, [r7, #20]
- 8001884:	697b      	ldr	r3, [r7, #20]
-  __HAL_RCC_GPIOI_CLK_ENABLE();
- 8001886:	4b41      	ldr	r3, [pc, #260]	; (800198c <MX_GPIO_Init+0x14c>)
- 8001888:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 800188a:	4a40      	ldr	r2, [pc, #256]	; (800198c <MX_GPIO_Init+0x14c>)
- 800188c:	f443 7380 	orr.w	r3, r3, #256	; 0x100
- 8001890:	6313      	str	r3, [r2, #48]	; 0x30
- 8001892:	4b3e      	ldr	r3, [pc, #248]	; (800198c <MX_GPIO_Init+0x14c>)
- 8001894:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 8001896:	f403 7380 	and.w	r3, r3, #256	; 0x100
- 800189a:	613b      	str	r3, [r7, #16]
- 800189c:	693b      	ldr	r3, [r7, #16]
-  __HAL_RCC_GPIOH_CLK_ENABLE();
- 800189e:	4b3b      	ldr	r3, [pc, #236]	; (800198c <MX_GPIO_Init+0x14c>)
- 80018a0:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 80018a2:	4a3a      	ldr	r2, [pc, #232]	; (800198c <MX_GPIO_Init+0x14c>)
- 80018a4:	f043 0380 	orr.w	r3, r3, #128	; 0x80
- 80018a8:	6313      	str	r3, [r2, #48]	; 0x30
- 80018aa:	4b38      	ldr	r3, [pc, #224]	; (800198c <MX_GPIO_Init+0x14c>)
- 80018ac:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 80018ae:	f003 0380 	and.w	r3, r3, #128	; 0x80
- 80018b2:	60fb      	str	r3, [r7, #12]
- 80018b4:	68fb      	ldr	r3, [r7, #12]
-  __HAL_RCC_GPIOC_CLK_ENABLE();
- 80018b6:	4b35      	ldr	r3, [pc, #212]	; (800198c <MX_GPIO_Init+0x14c>)
- 80018b8:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 80018ba:	4a34      	ldr	r2, [pc, #208]	; (800198c <MX_GPIO_Init+0x14c>)
- 80018bc:	f043 0304 	orr.w	r3, r3, #4
- 80018c0:	6313      	str	r3, [r2, #48]	; 0x30
- 80018c2:	4b32      	ldr	r3, [pc, #200]	; (800198c <MX_GPIO_Init+0x14c>)
- 80018c4:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 80018c6:	f003 0304 	and.w	r3, r3, #4
- 80018ca:	60bb      	str	r3, [r7, #8]
- 80018cc:	68bb      	ldr	r3, [r7, #8]
-  __HAL_RCC_GPIOG_CLK_ENABLE();
- 80018ce:	4b2f      	ldr	r3, [pc, #188]	; (800198c <MX_GPIO_Init+0x14c>)
- 80018d0:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 80018d2:	4a2e      	ldr	r2, [pc, #184]	; (800198c <MX_GPIO_Init+0x14c>)
- 80018d4:	f043 0340 	orr.w	r3, r3, #64	; 0x40
- 80018d8:	6313      	str	r3, [r2, #48]	; 0x30
- 80018da:	4b2c      	ldr	r3, [pc, #176]	; (800198c <MX_GPIO_Init+0x14c>)
- 80018dc:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 80018de:	f003 0340 	and.w	r3, r3, #64	; 0x40
- 80018e2:	607b      	str	r3, [r7, #4]
- 80018e4:	687b      	ldr	r3, [r7, #4]
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(color_S2_GPIO_Port, color_S2_Pin, GPIO_PIN_RESET);
- 80018e6:	2200      	movs	r2, #0
- 80018e8:	2110      	movs	r1, #16
- 80018ea:	4829      	ldr	r0, [pc, #164]	; (8001990 <MX_GPIO_Init+0x150>)
- 80018ec:	f001 f856 	bl	800299c <HAL_GPIO_WritePin>
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, color_enable_Pin|color_S0_Pin, GPIO_PIN_RESET);
- 80018f0:	2200      	movs	r2, #0
- 80018f2:	21c0      	movs	r1, #192	; 0xc0
- 80018f4:	4827      	ldr	r0, [pc, #156]	; (8001994 <MX_GPIO_Init+0x154>)
- 80018f6:	f001 f851 	bl	800299c <HAL_GPIO_WritePin>
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOG, color_S3_Pin|color_S1_Pin, GPIO_PIN_RESET);
- 80018fa:	2200      	movs	r2, #0
- 80018fc:	21c0      	movs	r1, #192	; 0xc0
- 80018fe:	4826      	ldr	r0, [pc, #152]	; (8001998 <MX_GPIO_Init+0x158>)
- 8001900:	f001 f84c 	bl	800299c <HAL_GPIO_WritePin>
-
-  /*Configure GPIO pin : PtPin */
-  GPIO_InitStruct.Pin = color_S2_Pin;
- 8001904:	2310      	movs	r3, #16
- 8001906:	61fb      	str	r3, [r7, #28]
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 8001908:	2301      	movs	r3, #1
- 800190a:	623b      	str	r3, [r7, #32]
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
- 800190c:	2300      	movs	r3, #0
- 800190e:	627b      	str	r3, [r7, #36]	; 0x24
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
- 8001910:	2300      	movs	r3, #0
- 8001912:	62bb      	str	r3, [r7, #40]	; 0x28
-  HAL_GPIO_Init(color_S2_GPIO_Port, &GPIO_InitStruct);
- 8001914:	f107 031c 	add.w	r3, r7, #28
- 8001918:	4619      	mov	r1, r3
- 800191a:	481d      	ldr	r0, [pc, #116]	; (8001990 <MX_GPIO_Init+0x150>)
- 800191c:	f000 fe92 	bl	8002644 <HAL_GPIO_Init>
-
-  /*Configure GPIO pin : PtPin */
-  GPIO_InitStruct.Pin = button_Pin;
- 8001920:	f44f 6300 	mov.w	r3, #2048	; 0x800
- 8001924:	61fb      	str	r3, [r7, #28]
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
- 8001926:	f44f 1388 	mov.w	r3, #1114112	; 0x110000
- 800192a:	623b      	str	r3, [r7, #32]
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
- 800192c:	2300      	movs	r3, #0
- 800192e:	627b      	str	r3, [r7, #36]	; 0x24
-  HAL_GPIO_Init(button_GPIO_Port, &GPIO_InitStruct);
- 8001930:	f107 031c 	add.w	r3, r7, #28
- 8001934:	4619      	mov	r1, r3
- 8001936:	4819      	ldr	r0, [pc, #100]	; (800199c <MX_GPIO_Init+0x15c>)
- 8001938:	f000 fe84 	bl	8002644 <HAL_GPIO_Init>
-
-  /*Configure GPIO pins : PCPin PCPin */
-  GPIO_InitStruct.Pin = color_enable_Pin|color_S0_Pin;
- 800193c:	23c0      	movs	r3, #192	; 0xc0
- 800193e:	61fb      	str	r3, [r7, #28]
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 8001940:	2301      	movs	r3, #1
- 8001942:	623b      	str	r3, [r7, #32]
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
- 8001944:	2300      	movs	r3, #0
- 8001946:	627b      	str	r3, [r7, #36]	; 0x24
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
- 8001948:	2300      	movs	r3, #0
- 800194a:	62bb      	str	r3, [r7, #40]	; 0x28
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
- 800194c:	f107 031c 	add.w	r3, r7, #28
- 8001950:	4619      	mov	r1, r3
- 8001952:	4810      	ldr	r0, [pc, #64]	; (8001994 <MX_GPIO_Init+0x154>)
- 8001954:	f000 fe76 	bl	8002644 <HAL_GPIO_Init>
-
-  /*Configure GPIO pins : PGPin PGPin */
-  GPIO_InitStruct.Pin = color_S3_Pin|color_S1_Pin;
- 8001958:	23c0      	movs	r3, #192	; 0xc0
- 800195a:	61fb      	str	r3, [r7, #28]
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 800195c:	2301      	movs	r3, #1
- 800195e:	623b      	str	r3, [r7, #32]
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
- 8001960:	2300      	movs	r3, #0
- 8001962:	627b      	str	r3, [r7, #36]	; 0x24
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
- 8001964:	2300      	movs	r3, #0
- 8001966:	62bb      	str	r3, [r7, #40]	; 0x28
-  HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
- 8001968:	f107 031c 	add.w	r3, r7, #28
- 800196c:	4619      	mov	r1, r3
- 800196e:	480a      	ldr	r0, [pc, #40]	; (8001998 <MX_GPIO_Init+0x158>)
- 8001970:	f000 fe68 	bl	8002644 <HAL_GPIO_Init>
-
-  /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 5, 0);
- 8001974:	2200      	movs	r2, #0
- 8001976:	2105      	movs	r1, #5
- 8001978:	2028      	movs	r0, #40	; 0x28
- 800197a:	f000 fe39 	bl	80025f0 <HAL_NVIC_SetPriority>
-  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
- 800197e:	2028      	movs	r0, #40	; 0x28
- 8001980:	f000 fe52 	bl	8002628 <HAL_NVIC_EnableIRQ>
-
-}
- 8001984:	bf00      	nop
- 8001986:	3730      	adds	r7, #48	; 0x30
- 8001988:	46bd      	mov	sp, r7
- 800198a:	bd80      	pop	{r7, pc}
- 800198c:	40023800 	.word	0x40023800
- 8001990:	40020400 	.word	0x40020400
- 8001994:	40020800 	.word	0x40020800
- 8001998:	40021800 	.word	0x40021800
- 800199c:	40022000 	.word	0x40022000
-
-080019a0 <HAL_GPIO_EXTI_Callback>:
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
- 80019a0:	b480      	push	{r7}
- 80019a2:	b083      	sub	sp, #12
- 80019a4:	af00      	add	r7, sp, #0
- 80019a6:	4603      	mov	r3, r0
- 80019a8:	80fb      	strh	r3, [r7, #6]
-		colorSetPhotodiodeType(&color_sensor1, GREEN);
-		printf("semaphore colormeasureSemaphore donné\r\n");
-		xSemaphoreGiveFromISR(colorMeasureSemaphore,&higher_priority_task_woken);*/
-		//colorEnable(&color_sensor1);
-	}
-}
- 80019aa:	bf00      	nop
- 80019ac:	370c      	adds	r7, #12
- 80019ae:	46bd      	mov	sp, r7
- 80019b0:	f85d 7b04 	ldr.w	r7, [sp], #4
- 80019b4:	4770      	bx	lr
-	...
-
-080019b8 <bidonTask>:
-
-TaskHandle_t h_bidonTask;
-TaskHandle_t h_processWU;
-SemaphoreHandle_t sem_bidon;
-
-void bidonTask(void * pvParameters){
- 80019b8:	b580      	push	{r7, lr}
- 80019ba:	b082      	sub	sp, #8
- 80019bc:	af00      	add	r7, sp, #0
- 80019be:	6078      	str	r0, [r7, #4]
-	for(;;){
-		//printf("waiting for semaphore\r\n");
-		xSemaphoreTake(sem_bidon,portMAX_DELAY);
- 80019c0:	4b05      	ldr	r3, [pc, #20]	; (80019d8 <bidonTask+0x20>)
- 80019c2:	681b      	ldr	r3, [r3, #0]
- 80019c4:	f04f 31ff 	mov.w	r1, #4294967295
- 80019c8:	4618      	mov	r0, r3
- 80019ca:	f004 fce1 	bl	8006390 <xQueueSemaphoreTake>
-		printf("je suis la fonction bidon\r\n");
- 80019ce:	4803      	ldr	r0, [pc, #12]	; (80019dc <bidonTask+0x24>)
- 80019d0:	f007 f9d6 	bl	8008d80 <puts>
-		xSemaphoreTake(sem_bidon,portMAX_DELAY);
- 80019d4:	e7f4      	b.n	80019c0 <bidonTask+0x8>
- 80019d6:	bf00      	nop
- 80019d8:	2000064c 	.word	0x2000064c
- 80019dc:	0800b2d8 	.word	0x0800b2d8
-
-080019e0 <task_process_Wake_Up>:
-	}
-}
-
-void task_process_Wake_Up(void * pvParameters){
- 80019e0:	b580      	push	{r7, lr}
- 80019e2:	b084      	sub	sp, #16
- 80019e4:	af00      	add	r7, sp, #0
- 80019e6:	6078      	str	r0, [r7, #4]
-	sem_bidon=xSemaphoreCreateBinary();
- 80019e8:	2203      	movs	r2, #3
- 80019ea:	2100      	movs	r1, #0
- 80019ec:	2001      	movs	r0, #1
- 80019ee:	f004 fb67 	bl	80060c0 <xQueueGenericCreate>
- 80019f2:	4603      	mov	r3, r0
- 80019f4:	4a13      	ldr	r2, [pc, #76]	; (8001a44 <task_process_Wake_Up+0x64>)
- 80019f6:	6013      	str	r3, [r2, #0]
-	uint32_t counter=0;
- 80019f8:	2300      	movs	r3, #0
- 80019fa:	60fb      	str	r3, [r7, #12]
-
-	for(;;){
-		if(counter==1000){
- 80019fc:	68fb      	ldr	r3, [r7, #12]
- 80019fe:	f5b3 7f7a 	cmp.w	r3, #1000	; 0x3e8
- 8001a02:	d118      	bne.n	8001a36 <task_process_Wake_Up+0x56>
-			printf("\ncounter=1000\r\n");
- 8001a04:	4810      	ldr	r0, [pc, #64]	; (8001a48 <task_process_Wake_Up+0x68>)
- 8001a06:	f007 f9bb 	bl	8008d80 <puts>
-			xSemaphoreGive(colorMeasureSemaphore);
- 8001a0a:	4b10      	ldr	r3, [pc, #64]	; (8001a4c <task_process_Wake_Up+0x6c>)
- 8001a0c:	6818      	ldr	r0, [r3, #0]
- 8001a0e:	2300      	movs	r3, #0
- 8001a10:	2200      	movs	r2, #0
- 8001a12:	2100      	movs	r1, #0
- 8001a14:	f004 fbb6 	bl	8006184 <xQueueGenericSend>
-			printf("semaphore colorMeasureSemaphore donné\r\n");
- 8001a18:	480d      	ldr	r0, [pc, #52]	; (8001a50 <task_process_Wake_Up+0x70>)
- 8001a1a:	f007 f9b1 	bl	8008d80 <puts>
-			xSemaphoreGive(sem_bidon);
- 8001a1e:	4b09      	ldr	r3, [pc, #36]	; (8001a44 <task_process_Wake_Up+0x64>)
- 8001a20:	6818      	ldr	r0, [r3, #0]
- 8001a22:	2300      	movs	r3, #0
- 8001a24:	2200      	movs	r2, #0
- 8001a26:	2100      	movs	r1, #0
- 8001a28:	f004 fbac 	bl	8006184 <xQueueGenericSend>
-			printf("semaphore sem_bidon donné\r\n");
- 8001a2c:	4809      	ldr	r0, [pc, #36]	; (8001a54 <task_process_Wake_Up+0x74>)
- 8001a2e:	f007 f9a7 	bl	8008d80 <puts>
-
-			counter=0;
- 8001a32:	2300      	movs	r3, #0
- 8001a34:	60fb      	str	r3, [r7, #12]
-		}
-		counter++;
- 8001a36:	68fb      	ldr	r3, [r7, #12]
- 8001a38:	3301      	adds	r3, #1
- 8001a3a:	60fb      	str	r3, [r7, #12]
-		vTaskDelay(1); //crée le delay de 1ms
- 8001a3c:	2001      	movs	r0, #1
- 8001a3e:	f005 f86f 	bl	8006b20 <vTaskDelay>
-		if(counter==1000){
- 8001a42:	e7db      	b.n	80019fc <task_process_Wake_Up+0x1c>
- 8001a44:	2000064c 	.word	0x2000064c
- 8001a48:	0800b2f4 	.word	0x0800b2f4
- 8001a4c:	2000063c 	.word	0x2000063c
- 8001a50:	0800b304 	.word	0x0800b304
- 8001a54:	0800b32c 	.word	0x0800b32c
-
-08001a58 <colorMeasureTask>:
-	}
-}
+extern TaskHandle_t h_colorMeasureTask;
+extern SemaphoreHandle_t colorMeasureSemaphore;
 
 void colorMeasureTask(void * pvParameters){
- 8001a58:	b580      	push	{r7, lr}
- 8001a5a:	b082      	sub	sp, #8
- 8001a5c:	af00      	add	r7, sp, #0
- 8001a5e:	6078      	str	r0, [r7, #4]
+ 80016bc:	b580      	push	{r7, lr}
+ 80016be:	b082      	sub	sp, #8
+ 80016c0:	af00      	add	r7, sp, #0
+ 80016c2:	6078      	str	r0, [r7, #4]
 	for(;;){
 		xSemaphoreTake(colorMeasureSemaphore,portMAX_DELAY);
- 8001a60:	4b05      	ldr	r3, [pc, #20]	; (8001a78 <colorMeasureTask+0x20>)
- 8001a62:	681b      	ldr	r3, [r3, #0]
- 8001a64:	f04f 31ff 	mov.w	r1, #4294967295
- 8001a68:	4618      	mov	r0, r3
- 8001a6a:	f004 fc91 	bl	8006390 <xQueueSemaphoreTake>
+ 80016c4:	4b05      	ldr	r3, [pc, #20]	; (80016dc <colorMeasureTask+0x20>)
+ 80016c6:	681b      	ldr	r3, [r3, #0]
+ 80016c8:	f04f 31ff 	mov.w	r1, #4294967295
+ 80016cc:	4618      	mov	r0, r3
+ 80016ce:	f004 fe5f 	bl	8006390 <xQueueSemaphoreTake>
 		printf("-----contenu de colorMeasureTask------\r\n");
- 8001a6e:	4803      	ldr	r0, [pc, #12]	; (8001a7c <colorMeasureTask+0x24>)
- 8001a70:	f007 f986 	bl	8008d80 <puts>
+ 80016d2:	4803      	ldr	r0, [pc, #12]	; (80016e0 <colorMeasureTask+0x24>)
+ 80016d4:	f007 fb54 	bl	8008d80 <puts>
 		xSemaphoreTake(colorMeasureSemaphore,portMAX_DELAY);
- 8001a74:	e7f4      	b.n	8001a60 <colorMeasureTask+0x8>
- 8001a76:	bf00      	nop
- 8001a78:	2000063c 	.word	0x2000063c
- 8001a7c:	0800b348 	.word	0x0800b348
+ 80016d8:	e7f4      	b.n	80016c4 <colorMeasureTask+0x8>
+ 80016da:	bf00      	nop
+ 80016dc:	2000063c 	.word	0x2000063c
+ 80016e0:	0800b2b0 	.word	0x0800b2b0
 
-08001a80 <colorStartSensor>:
+080016e4 <colorStartSensor>:
 		h_color_sensor_t * h_color_sensor =(h_color_sensor_t *) pvParameters;
 		colorEnable(h_color_sensor);*/
 	}
 }
 
 int colorStartSensor(h_color_sensor_t * h_color_sensor){
- 8001a80:	b580      	push	{r7, lr}
- 8001a82:	b084      	sub	sp, #16
- 8001a84:	af02      	add	r7, sp, #8
- 8001a86:	6078      	str	r0, [r7, #4]
+ 80016e4:	b580      	push	{r7, lr}
+ 80016e6:	b084      	sub	sp, #16
+ 80016e8:	af02      	add	r7, sp, #8
+ 80016ea:	6078      	str	r0, [r7, #4]
 
 	//creation colorMeasureTask et colorMeasureSempahore
 	if(pdTRUE==xTaskCreate(colorMeasureTask,"colorMeasureTask",COLOR_STACK_DEPTH,(void *)h_color_sensor,COLOR_MEASURE_TASK_PRIORiTY,&h_colorMeasureTask)){
- 8001a88:	4b17      	ldr	r3, [pc, #92]	; (8001ae8 <colorStartSensor+0x68>)
- 8001a8a:	9301      	str	r3, [sp, #4]
- 8001a8c:	2303      	movs	r3, #3
- 8001a8e:	9300      	str	r3, [sp, #0]
- 8001a90:	687b      	ldr	r3, [r7, #4]
- 8001a92:	f44f 72fa 	mov.w	r2, #500	; 0x1f4
- 8001a96:	4915      	ldr	r1, [pc, #84]	; (8001aec <colorStartSensor+0x6c>)
- 8001a98:	4815      	ldr	r0, [pc, #84]	; (8001af0 <colorStartSensor+0x70>)
- 8001a9a:	f004 fef2 	bl	8006882 <xTaskCreate>
- 8001a9e:	4603      	mov	r3, r0
- 8001aa0:	2b01      	cmp	r3, #1
- 8001aa2:	d10f      	bne.n	8001ac4 <colorStartSensor+0x44>
+ 80016ec:	4b17      	ldr	r3, [pc, #92]	; (800174c <colorStartSensor+0x68>)
+ 80016ee:	9301      	str	r3, [sp, #4]
+ 80016f0:	2303      	movs	r3, #3
+ 80016f2:	9300      	str	r3, [sp, #0]
+ 80016f4:	687b      	ldr	r3, [r7, #4]
+ 80016f6:	f44f 72fa 	mov.w	r2, #500	; 0x1f4
+ 80016fa:	4915      	ldr	r1, [pc, #84]	; (8001750 <colorStartSensor+0x6c>)
+ 80016fc:	4815      	ldr	r0, [pc, #84]	; (8001754 <colorStartSensor+0x70>)
+ 80016fe:	f005 f8c0 	bl	8006882 <xTaskCreate>
+ 8001702:	4603      	mov	r3, r0
+ 8001704:	2b01      	cmp	r3, #1
+ 8001706:	d10f      	bne.n	8001728 <colorStartSensor+0x44>
 		printf("colorMeasureTask created successfully\r\n");
- 8001aa4:	4813      	ldr	r0, [pc, #76]	; (8001af4 <colorStartSensor+0x74>)
- 8001aa6:	f007 f96b 	bl	8008d80 <puts>
+ 8001708:	4813      	ldr	r0, [pc, #76]	; (8001758 <colorStartSensor+0x74>)
+ 800170a:	f007 fb39 	bl	8008d80 <puts>
 	}
 	else{
 		printf("colorMeasureTask creation failed !\r\n");
 		return 1;
 	}
 	colorMeasureSemaphore=xSemaphoreCreateBinary();
- 8001aaa:	2203      	movs	r2, #3
- 8001aac:	2100      	movs	r1, #0
- 8001aae:	2001      	movs	r0, #1
- 8001ab0:	f004 fb06 	bl	80060c0 <xQueueGenericCreate>
- 8001ab4:	4603      	mov	r3, r0
- 8001ab6:	4a10      	ldr	r2, [pc, #64]	; (8001af8 <colorStartSensor+0x78>)
- 8001ab8:	6013      	str	r3, [r2, #0]
+ 800170e:	2203      	movs	r2, #3
+ 8001710:	2100      	movs	r1, #0
+ 8001712:	2001      	movs	r0, #1
+ 8001714:	f004 fcd4 	bl	80060c0 <xQueueGenericCreate>
+ 8001718:	4603      	mov	r3, r0
+ 800171a:	4a10      	ldr	r2, [pc, #64]	; (800175c <colorStartSensor+0x78>)
+ 800171c:	6013      	str	r3, [r2, #0]
 	if(colorMeasureSemaphore==NULL){
- 8001aba:	4b0f      	ldr	r3, [pc, #60]	; (8001af8 <colorStartSensor+0x78>)
- 8001abc:	681b      	ldr	r3, [r3, #0]
- 8001abe:	2b00      	cmp	r3, #0
- 8001ac0:	d10a      	bne.n	8001ad8 <colorStartSensor+0x58>
- 8001ac2:	e004      	b.n	8001ace <colorStartSensor+0x4e>
+ 800171e:	4b0f      	ldr	r3, [pc, #60]	; (800175c <colorStartSensor+0x78>)
+ 8001720:	681b      	ldr	r3, [r3, #0]
+ 8001722:	2b00      	cmp	r3, #0
+ 8001724:	d10a      	bne.n	800173c <colorStartSensor+0x58>
+ 8001726:	e004      	b.n	8001732 <colorStartSensor+0x4e>
 		printf("colorMeasureTask creation failed !\r\n");
- 8001ac4:	480d      	ldr	r0, [pc, #52]	; (8001afc <colorStartSensor+0x7c>)
- 8001ac6:	f007 f95b 	bl	8008d80 <puts>
+ 8001728:	480d      	ldr	r0, [pc, #52]	; (8001760 <colorStartSensor+0x7c>)
+ 800172a:	f007 fb29 	bl	8008d80 <puts>
 		return 1;
- 8001aca:	2301      	movs	r3, #1
- 8001acc:	e008      	b.n	8001ae0 <colorStartSensor+0x60>
+ 800172e:	2301      	movs	r3, #1
+ 8001730:	e008      	b.n	8001744 <colorStartSensor+0x60>
 		printf("colorCalibSemaphore creation failed ! \r\n");
- 8001ace:	480c      	ldr	r0, [pc, #48]	; (8001b00 <colorStartSensor+0x80>)
- 8001ad0:	f007 f956 	bl	8008d80 <puts>
+ 8001732:	480c      	ldr	r0, [pc, #48]	; (8001764 <colorStartSensor+0x80>)
+ 8001734:	f007 fb24 	bl	8008d80 <puts>
 		return 1;
- 8001ad4:	2301      	movs	r3, #1
- 8001ad6:	e003      	b.n	8001ae0 <colorStartSensor+0x60>
+ 8001738:	2301      	movs	r3, #1
+ 800173a:	e003      	b.n	8001744 <colorStartSensor+0x60>
 	}
 	printf("colorMeasureSemaphore created successfully\r\n");
- 8001ad8:	480a      	ldr	r0, [pc, #40]	; (8001b04 <colorStartSensor+0x84>)
- 8001ada:	f007 f951 	bl	8008d80 <puts>
+ 800173c:	480a      	ldr	r0, [pc, #40]	; (8001768 <colorStartSensor+0x84>)
+ 800173e:	f007 fb1f 	bl	8008d80 <puts>
 	return 0;
- 8001ade:	2300      	movs	r3, #0
+ 8001742:	2300      	movs	r3, #0
 }
- 8001ae0:	4618      	mov	r0, r3
- 8001ae2:	3708      	adds	r7, #8
- 8001ae4:	46bd      	mov	sp, r7
- 8001ae6:	bd80      	pop	{r7, pc}
- 8001ae8:	20000640 	.word	0x20000640
- 8001aec:	0800b370 	.word	0x0800b370
- 8001af0:	08001a59 	.word	0x08001a59
- 8001af4:	0800b384 	.word	0x0800b384
- 8001af8:	2000063c 	.word	0x2000063c
- 8001afc:	0800b3ac 	.word	0x0800b3ac
- 8001b00:	0800b3d0 	.word	0x0800b3d0
- 8001b04:	0800b3f8 	.word	0x0800b3f8
+ 8001744:	4618      	mov	r0, r3
+ 8001746:	3708      	adds	r7, #8
+ 8001748:	46bd      	mov	sp, r7
+ 800174a:	bd80      	pop	{r7, pc}
+ 800174c:	20000640 	.word	0x20000640
+ 8001750:	0800b2d8 	.word	0x0800b2d8
+ 8001754:	080016bd 	.word	0x080016bd
+ 8001758:	0800b2ec 	.word	0x0800b2ec
+ 800175c:	2000063c 	.word	0x2000063c
+ 8001760:	0800b314 	.word	0x0800b314
+ 8001764:	0800b338 	.word	0x0800b338
+ 8001768:	0800b360 	.word	0x0800b360
+
+0800176c <timer_handle>:
+ * tim_mode_t mode : htim configuration accirding to what is in .ioc file (INPUT_CAPTURE_IT, BASE_IT, PWM)
+ * tim_status_t status : same but START,STOP
+ * uint32_t channel ; the output channel of htim
+ * @return none
+ */
+void timer_handle(TIM_HandleTypeDef htim, tim_mode_t mode, tim_status_t status,uint32_t channel){
+ 800176c:	b084      	sub	sp, #16
+ 800176e:	b580      	push	{r7, lr}
+ 8001770:	af00      	add	r7, sp, #0
+ 8001772:	f107 0c08 	add.w	ip, r7, #8
+ 8001776:	e88c 000f 	stmia.w	ip, {r0, r1, r2, r3}
+	if(status==START){
+ 800177a:	f897 3058 	ldrb.w	r3, [r7, #88]	; 0x58
+ 800177e:	2b01      	cmp	r3, #1
+ 8001780:	d11b      	bne.n	80017ba <timer_handle+0x4e>
+		switch(mode){
+ 8001782:	f897 3054 	ldrb.w	r3, [r7, #84]	; 0x54
+ 8001786:	2b03      	cmp	r3, #3
+ 8001788:	d00c      	beq.n	80017a4 <timer_handle+0x38>
+ 800178a:	2b03      	cmp	r3, #3
+ 800178c:	dc53      	bgt.n	8001836 <timer_handle+0xca>
+ 800178e:	2b01      	cmp	r3, #1
+ 8001790:	d002      	beq.n	8001798 <timer_handle+0x2c>
+ 8001792:	2b02      	cmp	r3, #2
+ 8001794:	d00c      	beq.n	80017b0 <timer_handle+0x44>
+			break;
+		case BASE_IT:
+			HAL_TIM_Base_Start_IT(&htim);
+			break;
+		default :
+			break;
+ 8001796:	e04e      	b.n	8001836 <timer_handle+0xca>
+			HAL_TIM_IC_Start_IT(&htim, channel);
+ 8001798:	6df9      	ldr	r1, [r7, #92]	; 0x5c
+ 800179a:	f107 0008 	add.w	r0, r7, #8
+ 800179e:	f002 fd67 	bl	8004270 <HAL_TIM_IC_Start_IT>
+			break;
+ 80017a2:	e04f      	b.n	8001844 <timer_handle+0xd8>
+			HAL_TIM_PWM_Start(&htim,channel);
+ 80017a4:	6df9      	ldr	r1, [r7, #92]	; 0x5c
+ 80017a6:	f107 0008 	add.w	r0, r7, #8
+ 80017aa:	f002 fb85 	bl	8003eb8 <HAL_TIM_PWM_Start>
+			break;
+ 80017ae:	e049      	b.n	8001844 <timer_handle+0xd8>
+			HAL_TIM_Base_Start_IT(&htim);
+ 80017b0:	f107 0008 	add.w	r0, r7, #8
+ 80017b4:	f002 fa78 	bl	8003ca8 <HAL_TIM_Base_Start_IT>
+			break;
+ 80017b8:	e044      	b.n	8001844 <timer_handle+0xd8>
+		}
+	}
+	else if (status==STOP){
+ 80017ba:	f897 3058 	ldrb.w	r3, [r7, #88]	; 0x58
+ 80017be:	2b00      	cmp	r3, #0
+ 80017c0:	d11b      	bne.n	80017fa <timer_handle+0x8e>
+		switch(mode){
+ 80017c2:	f897 3054 	ldrb.w	r3, [r7, #84]	; 0x54
+ 80017c6:	2b03      	cmp	r3, #3
+ 80017c8:	d00c      	beq.n	80017e4 <timer_handle+0x78>
+ 80017ca:	2b03      	cmp	r3, #3
+ 80017cc:	dc35      	bgt.n	800183a <timer_handle+0xce>
+ 80017ce:	2b01      	cmp	r3, #1
+ 80017d0:	d002      	beq.n	80017d8 <timer_handle+0x6c>
+ 80017d2:	2b02      	cmp	r3, #2
+ 80017d4:	d00c      	beq.n	80017f0 <timer_handle+0x84>
+			break;
+		case BASE_IT:
+			HAL_TIM_Base_Stop_IT(&htim);
+			break;
+		default :
+			break;
+ 80017d6:	e030      	b.n	800183a <timer_handle+0xce>
+			HAL_TIM_IC_Stop_IT(&htim, channel);
+ 80017d8:	6df9      	ldr	r1, [r7, #92]	; 0x5c
+ 80017da:	f107 0008 	add.w	r0, r7, #8
+ 80017de:	f002 fe97 	bl	8004510 <HAL_TIM_IC_Stop_IT>
+			break;
+ 80017e2:	e02f      	b.n	8001844 <timer_handle+0xd8>
+			HAL_TIM_PWM_Stop(&htim,channel);
+ 80017e4:	6df9      	ldr	r1, [r7, #92]	; 0x5c
+ 80017e6:	f107 0008 	add.w	r0, r7, #8
+ 80017ea:	f002 fc5f 	bl	80040ac <HAL_TIM_PWM_Stop>
+			break;
+ 80017ee:	e029      	b.n	8001844 <timer_handle+0xd8>
+			HAL_TIM_Base_Stop_IT(&htim);
+ 80017f0:	f107 0008 	add.w	r0, r7, #8
+ 80017f4:	f002 fad0 	bl	8003d98 <HAL_TIM_Base_Stop_IT>
+			break;
+ 80017f8:	e024      	b.n	8001844 <timer_handle+0xd8>
+		}
+	}
+	else if (status==INIT){
+ 80017fa:	f897 3058 	ldrb.w	r3, [r7, #88]	; 0x58
+ 80017fe:	2b02      	cmp	r3, #2
+ 8001800:	d11d      	bne.n	800183e <timer_handle+0xd2>
+		switch(mode){
+ 8001802:	f897 3054 	ldrb.w	r3, [r7, #84]	; 0x54
+ 8001806:	2b03      	cmp	r3, #3
+ 8001808:	d00b      	beq.n	8001822 <timer_handle+0xb6>
+ 800180a:	2b03      	cmp	r3, #3
+ 800180c:	dc19      	bgt.n	8001842 <timer_handle+0xd6>
+ 800180e:	2b01      	cmp	r3, #1
+ 8001810:	d002      	beq.n	8001818 <timer_handle+0xac>
+ 8001812:	2b02      	cmp	r3, #2
+ 8001814:	d00a      	beq.n	800182c <timer_handle+0xc0>
+			break;
+		case BASE_IT:
+			HAL_TIM_Base_Init(&htim);
+			break;
+		default :
+			break;
+ 8001816:	e014      	b.n	8001842 <timer_handle+0xd6>
+			HAL_TIM_IC_Init(&htim);
+ 8001818:	f107 0008 	add.w	r0, r7, #8
+ 800181c:	f002 fcc6 	bl	80041ac <HAL_TIM_IC_Init>
+			break;
+ 8001820:	e010      	b.n	8001844 <timer_handle+0xd8>
+			HAL_TIM_PWM_Init(&htim);
+ 8001822:	f107 0008 	add.w	r0, r7, #8
+ 8001826:	f002 fae6 	bl	8003df6 <HAL_TIM_PWM_Init>
+			break;
+ 800182a:	e00b      	b.n	8001844 <timer_handle+0xd8>
+			HAL_TIM_Base_Init(&htim);
+ 800182c:	f107 0008 	add.w	r0, r7, #8
+ 8001830:	f002 f9e2 	bl	8003bf8 <HAL_TIM_Base_Init>
+			break;
+ 8001834:	e006      	b.n	8001844 <timer_handle+0xd8>
+			break;
+ 8001836:	bf00      	nop
+ 8001838:	e004      	b.n	8001844 <timer_handle+0xd8>
+			break;
+ 800183a:	bf00      	nop
+ 800183c:	e002      	b.n	8001844 <timer_handle+0xd8>
+		}
+	}
+ 800183e:	bf00      	nop
+ 8001840:	e000      	b.n	8001844 <timer_handle+0xd8>
+			break;
+ 8001842:	bf00      	nop
+}
+ 8001844:	bf00      	nop
+ 8001846:	46bd      	mov	sp, r7
+ 8001848:	e8bd 4080 	ldmia.w	sp!, {r7, lr}
+ 800184c:	b004      	add	sp, #16
+ 800184e:	4770      	bx	lr
+
+08001850 <GPIO_write>:
+ * uint16_t gpio_pin : The pin of the GPIO you want to deal with
+ * GPIO_PinState gpio_PinState : the state you want your GPIO to have (1 or 0)
+ *
+ * @return 0 if fail else 1
+ */
+void GPIO_write(GPIO_TypeDef * gpio_port,uint16_t gpio_pin,GPIO_PinState gpio_PinState ){
+ 8001850:	b580      	push	{r7, lr}
+ 8001852:	b082      	sub	sp, #8
+ 8001854:	af00      	add	r7, sp, #0
+ 8001856:	6078      	str	r0, [r7, #4]
+ 8001858:	460b      	mov	r3, r1
+ 800185a:	807b      	strh	r3, [r7, #2]
+ 800185c:	4613      	mov	r3, r2
+ 800185e:	707b      	strb	r3, [r7, #1]
+	HAL_GPIO_WritePin(gpio_port,gpio_pin,gpio_PinState);
+ 8001860:	787a      	ldrb	r2, [r7, #1]
+ 8001862:	887b      	ldrh	r3, [r7, #2]
+ 8001864:	4619      	mov	r1, r3
+ 8001866:	6878      	ldr	r0, [r7, #4]
+ 8001868:	f001 f898 	bl	800299c <HAL_GPIO_WritePin>
+}
+ 800186c:	bf00      	nop
+ 800186e:	3708      	adds	r7, #8
+ 8001870:	46bd      	mov	sp, r7
+ 8001872:	bd80      	pop	{r7, pc}
+
+08001874 <vApplicationGetIdleTaskMemory>:
+/* USER CODE BEGIN GET_IDLE_TASK_MEMORY */
+static StaticTask_t xIdleTaskTCBBuffer;
+static StackType_t xIdleStack[configMINIMAL_STACK_SIZE];
+
+void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize )
+{
+ 8001874:	b480      	push	{r7}
+ 8001876:	b085      	sub	sp, #20
+ 8001878:	af00      	add	r7, sp, #0
+ 800187a:	60f8      	str	r0, [r7, #12]
+ 800187c:	60b9      	str	r1, [r7, #8]
+ 800187e:	607a      	str	r2, [r7, #4]
+  *ppxIdleTaskTCBBuffer = &xIdleTaskTCBBuffer;
+ 8001880:	68fb      	ldr	r3, [r7, #12]
+ 8001882:	4a07      	ldr	r2, [pc, #28]	; (80018a0 <vApplicationGetIdleTaskMemory+0x2c>)
+ 8001884:	601a      	str	r2, [r3, #0]
+  *ppxIdleTaskStackBuffer = &xIdleStack[0];
+ 8001886:	68bb      	ldr	r3, [r7, #8]
+ 8001888:	4a06      	ldr	r2, [pc, #24]	; (80018a4 <vApplicationGetIdleTaskMemory+0x30>)
+ 800188a:	601a      	str	r2, [r3, #0]
+  *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
+ 800188c:	687b      	ldr	r3, [r7, #4]
+ 800188e:	2280      	movs	r2, #128	; 0x80
+ 8001890:	601a      	str	r2, [r3, #0]
+  /* place for user code */
+}
+ 8001892:	bf00      	nop
+ 8001894:	3714      	adds	r7, #20
+ 8001896:	46bd      	mov	sp, r7
+ 8001898:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 800189c:	4770      	bx	lr
+ 800189e:	bf00      	nop
+ 80018a0:	2000035c 	.word	0x2000035c
+ 80018a4:	20000410 	.word	0x20000410
+
+080018a8 <MX_FREERTOS_Init>:
+/**
+  * @brief  FreeRTOS initialization
+  * @param  None
+  * @retval None
+  */
+void MX_FREERTOS_Init(void) {
+ 80018a8:	b5b0      	push	{r4, r5, r7, lr}
+ 80018aa:	b088      	sub	sp, #32
+ 80018ac:	af00      	add	r7, sp, #0
+  /* add queues, ... */
+  /* USER CODE END RTOS_QUEUES */
+
+  /* Create the thread(s) */
+  /* definition and creation of defaultTask */
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+ 80018ae:	4b0a      	ldr	r3, [pc, #40]	; (80018d8 <MX_FREERTOS_Init+0x30>)
+ 80018b0:	1d3c      	adds	r4, r7, #4
+ 80018b2:	461d      	mov	r5, r3
+ 80018b4:	cd0f      	ldmia	r5!, {r0, r1, r2, r3}
+ 80018b6:	c40f      	stmia	r4!, {r0, r1, r2, r3}
+ 80018b8:	e895 0007 	ldmia.w	r5, {r0, r1, r2}
+ 80018bc:	e884 0007 	stmia.w	r4, {r0, r1, r2}
+  defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+ 80018c0:	1d3b      	adds	r3, r7, #4
+ 80018c2:	2100      	movs	r1, #0
+ 80018c4:	4618      	mov	r0, r3
+ 80018c6:	f004 fa7d 	bl	8005dc4 <osThreadCreate>
+ 80018ca:	4603      	mov	r3, r0
+ 80018cc:	4a03      	ldr	r2, [pc, #12]	; (80018dc <MX_FREERTOS_Init+0x34>)
+ 80018ce:	6013      	str	r3, [r2, #0]
+
+  /* USER CODE BEGIN RTOS_THREADS */
+  /* add threads, ... */
+  /* USER CODE END RTOS_THREADS */
+
+}
+ 80018d0:	bf00      	nop
+ 80018d2:	3720      	adds	r7, #32
+ 80018d4:	46bd      	mov	sp, r7
+ 80018d6:	bdb0      	pop	{r4, r5, r7, pc}
+ 80018d8:	0800b398 	.word	0x0800b398
+ 80018dc:	20000358 	.word	0x20000358
+
+080018e0 <StartDefaultTask>:
+  * @param  argument: Not used
+  * @retval None
+  */
+/* USER CODE END Header_StartDefaultTask */
+void StartDefaultTask(void const * argument)
+{
+ 80018e0:	b580      	push	{r7, lr}
+ 80018e2:	b082      	sub	sp, #8
+ 80018e4:	af00      	add	r7, sp, #0
+ 80018e6:	6078      	str	r0, [r7, #4]
+  /* USER CODE BEGIN StartDefaultTask */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+ 80018e8:	2001      	movs	r0, #1
+ 80018ea:	f004 fab7 	bl	8005e5c <osDelay>
+ 80018ee:	e7fb      	b.n	80018e8 <StartDefaultTask+0x8>
+
+080018f0 <MX_GPIO_Init>:
+        * Output
+        * EVENT_OUT
+        * EXTI
+*/
+void MX_GPIO_Init(void)
+{
+ 80018f0:	b580      	push	{r7, lr}
+ 80018f2:	b08c      	sub	sp, #48	; 0x30
+ 80018f4:	af00      	add	r7, sp, #0
+
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+ 80018f6:	f107 031c 	add.w	r3, r7, #28
+ 80018fa:	2200      	movs	r2, #0
+ 80018fc:	601a      	str	r2, [r3, #0]
+ 80018fe:	605a      	str	r2, [r3, #4]
+ 8001900:	609a      	str	r2, [r3, #8]
+ 8001902:	60da      	str	r2, [r3, #12]
+ 8001904:	611a      	str	r2, [r3, #16]
+
+  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+ 8001906:	4b4d      	ldr	r3, [pc, #308]	; (8001a3c <MX_GPIO_Init+0x14c>)
+ 8001908:	6b1b      	ldr	r3, [r3, #48]	; 0x30
+ 800190a:	4a4c      	ldr	r2, [pc, #304]	; (8001a3c <MX_GPIO_Init+0x14c>)
+ 800190c:	f043 0302 	orr.w	r3, r3, #2
+ 8001910:	6313      	str	r3, [r2, #48]	; 0x30
+ 8001912:	4b4a      	ldr	r3, [pc, #296]	; (8001a3c <MX_GPIO_Init+0x14c>)
+ 8001914:	6b1b      	ldr	r3, [r3, #48]	; 0x30
+ 8001916:	f003 0302 	and.w	r3, r3, #2
+ 800191a:	61bb      	str	r3, [r7, #24]
+ 800191c:	69bb      	ldr	r3, [r7, #24]
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+ 800191e:	4b47      	ldr	r3, [pc, #284]	; (8001a3c <MX_GPIO_Init+0x14c>)
+ 8001920:	6b1b      	ldr	r3, [r3, #48]	; 0x30
+ 8001922:	4a46      	ldr	r2, [pc, #280]	; (8001a3c <MX_GPIO_Init+0x14c>)
+ 8001924:	f043 0301 	orr.w	r3, r3, #1
+ 8001928:	6313      	str	r3, [r2, #48]	; 0x30
+ 800192a:	4b44      	ldr	r3, [pc, #272]	; (8001a3c <MX_GPIO_Init+0x14c>)
+ 800192c:	6b1b      	ldr	r3, [r3, #48]	; 0x30
+ 800192e:	f003 0301 	and.w	r3, r3, #1
+ 8001932:	617b      	str	r3, [r7, #20]
+ 8001934:	697b      	ldr	r3, [r7, #20]
+  __HAL_RCC_GPIOI_CLK_ENABLE();
+ 8001936:	4b41      	ldr	r3, [pc, #260]	; (8001a3c <MX_GPIO_Init+0x14c>)
+ 8001938:	6b1b      	ldr	r3, [r3, #48]	; 0x30
+ 800193a:	4a40      	ldr	r2, [pc, #256]	; (8001a3c <MX_GPIO_Init+0x14c>)
+ 800193c:	f443 7380 	orr.w	r3, r3, #256	; 0x100
+ 8001940:	6313      	str	r3, [r2, #48]	; 0x30
+ 8001942:	4b3e      	ldr	r3, [pc, #248]	; (8001a3c <MX_GPIO_Init+0x14c>)
+ 8001944:	6b1b      	ldr	r3, [r3, #48]	; 0x30
+ 8001946:	f403 7380 	and.w	r3, r3, #256	; 0x100
+ 800194a:	613b      	str	r3, [r7, #16]
+ 800194c:	693b      	ldr	r3, [r7, #16]
+  __HAL_RCC_GPIOH_CLK_ENABLE();
+ 800194e:	4b3b      	ldr	r3, [pc, #236]	; (8001a3c <MX_GPIO_Init+0x14c>)
+ 8001950:	6b1b      	ldr	r3, [r3, #48]	; 0x30
+ 8001952:	4a3a      	ldr	r2, [pc, #232]	; (8001a3c <MX_GPIO_Init+0x14c>)
+ 8001954:	f043 0380 	orr.w	r3, r3, #128	; 0x80
+ 8001958:	6313      	str	r3, [r2, #48]	; 0x30
+ 800195a:	4b38      	ldr	r3, [pc, #224]	; (8001a3c <MX_GPIO_Init+0x14c>)
+ 800195c:	6b1b      	ldr	r3, [r3, #48]	; 0x30
+ 800195e:	f003 0380 	and.w	r3, r3, #128	; 0x80
+ 8001962:	60fb      	str	r3, [r7, #12]
+ 8001964:	68fb      	ldr	r3, [r7, #12]
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+ 8001966:	4b35      	ldr	r3, [pc, #212]	; (8001a3c <MX_GPIO_Init+0x14c>)
+ 8001968:	6b1b      	ldr	r3, [r3, #48]	; 0x30
+ 800196a:	4a34      	ldr	r2, [pc, #208]	; (8001a3c <MX_GPIO_Init+0x14c>)
+ 800196c:	f043 0304 	orr.w	r3, r3, #4
+ 8001970:	6313      	str	r3, [r2, #48]	; 0x30
+ 8001972:	4b32      	ldr	r3, [pc, #200]	; (8001a3c <MX_GPIO_Init+0x14c>)
+ 8001974:	6b1b      	ldr	r3, [r3, #48]	; 0x30
+ 8001976:	f003 0304 	and.w	r3, r3, #4
+ 800197a:	60bb      	str	r3, [r7, #8]
+ 800197c:	68bb      	ldr	r3, [r7, #8]
+  __HAL_RCC_GPIOG_CLK_ENABLE();
+ 800197e:	4b2f      	ldr	r3, [pc, #188]	; (8001a3c <MX_GPIO_Init+0x14c>)
+ 8001980:	6b1b      	ldr	r3, [r3, #48]	; 0x30
+ 8001982:	4a2e      	ldr	r2, [pc, #184]	; (8001a3c <MX_GPIO_Init+0x14c>)
+ 8001984:	f043 0340 	orr.w	r3, r3, #64	; 0x40
+ 8001988:	6313      	str	r3, [r2, #48]	; 0x30
+ 800198a:	4b2c      	ldr	r3, [pc, #176]	; (8001a3c <MX_GPIO_Init+0x14c>)
+ 800198c:	6b1b      	ldr	r3, [r3, #48]	; 0x30
+ 800198e:	f003 0340 	and.w	r3, r3, #64	; 0x40
+ 8001992:	607b      	str	r3, [r7, #4]
+ 8001994:	687b      	ldr	r3, [r7, #4]
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(color_S2_GPIO_Port, color_S2_Pin, GPIO_PIN_RESET);
+ 8001996:	2200      	movs	r2, #0
+ 8001998:	2110      	movs	r1, #16
+ 800199a:	4829      	ldr	r0, [pc, #164]	; (8001a40 <MX_GPIO_Init+0x150>)
+ 800199c:	f000 fffe 	bl	800299c <HAL_GPIO_WritePin>
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, color_enable_Pin|color_S0_Pin, GPIO_PIN_RESET);
+ 80019a0:	2200      	movs	r2, #0
+ 80019a2:	21c0      	movs	r1, #192	; 0xc0
+ 80019a4:	4827      	ldr	r0, [pc, #156]	; (8001a44 <MX_GPIO_Init+0x154>)
+ 80019a6:	f000 fff9 	bl	800299c <HAL_GPIO_WritePin>
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOG, color_S3_Pin|color_S1_Pin, GPIO_PIN_RESET);
+ 80019aa:	2200      	movs	r2, #0
+ 80019ac:	21c0      	movs	r1, #192	; 0xc0
+ 80019ae:	4826      	ldr	r0, [pc, #152]	; (8001a48 <MX_GPIO_Init+0x158>)
+ 80019b0:	f000 fff4 	bl	800299c <HAL_GPIO_WritePin>
+
+  /*Configure GPIO pin : PtPin */
+  GPIO_InitStruct.Pin = color_S2_Pin;
+ 80019b4:	2310      	movs	r3, #16
+ 80019b6:	61fb      	str	r3, [r7, #28]
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 80019b8:	2301      	movs	r3, #1
+ 80019ba:	623b      	str	r3, [r7, #32]
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 80019bc:	2300      	movs	r3, #0
+ 80019be:	627b      	str	r3, [r7, #36]	; 0x24
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 80019c0:	2300      	movs	r3, #0
+ 80019c2:	62bb      	str	r3, [r7, #40]	; 0x28
+  HAL_GPIO_Init(color_S2_GPIO_Port, &GPIO_InitStruct);
+ 80019c4:	f107 031c 	add.w	r3, r7, #28
+ 80019c8:	4619      	mov	r1, r3
+ 80019ca:	481d      	ldr	r0, [pc, #116]	; (8001a40 <MX_GPIO_Init+0x150>)
+ 80019cc:	f000 fe3a 	bl	8002644 <HAL_GPIO_Init>
+
+  /*Configure GPIO pin : PtPin */
+  GPIO_InitStruct.Pin = button_Pin;
+ 80019d0:	f44f 6300 	mov.w	r3, #2048	; 0x800
+ 80019d4:	61fb      	str	r3, [r7, #28]
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+ 80019d6:	f44f 1388 	mov.w	r3, #1114112	; 0x110000
+ 80019da:	623b      	str	r3, [r7, #32]
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 80019dc:	2300      	movs	r3, #0
+ 80019de:	627b      	str	r3, [r7, #36]	; 0x24
+  HAL_GPIO_Init(button_GPIO_Port, &GPIO_InitStruct);
+ 80019e0:	f107 031c 	add.w	r3, r7, #28
+ 80019e4:	4619      	mov	r1, r3
+ 80019e6:	4819      	ldr	r0, [pc, #100]	; (8001a4c <MX_GPIO_Init+0x15c>)
+ 80019e8:	f000 fe2c 	bl	8002644 <HAL_GPIO_Init>
+
+  /*Configure GPIO pins : PCPin PCPin */
+  GPIO_InitStruct.Pin = color_enable_Pin|color_S0_Pin;
+ 80019ec:	23c0      	movs	r3, #192	; 0xc0
+ 80019ee:	61fb      	str	r3, [r7, #28]
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 80019f0:	2301      	movs	r3, #1
+ 80019f2:	623b      	str	r3, [r7, #32]
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 80019f4:	2300      	movs	r3, #0
+ 80019f6:	627b      	str	r3, [r7, #36]	; 0x24
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 80019f8:	2300      	movs	r3, #0
+ 80019fa:	62bb      	str	r3, [r7, #40]	; 0x28
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+ 80019fc:	f107 031c 	add.w	r3, r7, #28
+ 8001a00:	4619      	mov	r1, r3
+ 8001a02:	4810      	ldr	r0, [pc, #64]	; (8001a44 <MX_GPIO_Init+0x154>)
+ 8001a04:	f000 fe1e 	bl	8002644 <HAL_GPIO_Init>
+
+  /*Configure GPIO pins : PGPin PGPin */
+  GPIO_InitStruct.Pin = color_S3_Pin|color_S1_Pin;
+ 8001a08:	23c0      	movs	r3, #192	; 0xc0
+ 8001a0a:	61fb      	str	r3, [r7, #28]
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 8001a0c:	2301      	movs	r3, #1
+ 8001a0e:	623b      	str	r3, [r7, #32]
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 8001a10:	2300      	movs	r3, #0
+ 8001a12:	627b      	str	r3, [r7, #36]	; 0x24
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 8001a14:	2300      	movs	r3, #0
+ 8001a16:	62bb      	str	r3, [r7, #40]	; 0x28
+  HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
+ 8001a18:	f107 031c 	add.w	r3, r7, #28
+ 8001a1c:	4619      	mov	r1, r3
+ 8001a1e:	480a      	ldr	r0, [pc, #40]	; (8001a48 <MX_GPIO_Init+0x158>)
+ 8001a20:	f000 fe10 	bl	8002644 <HAL_GPIO_Init>
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 5, 0);
+ 8001a24:	2200      	movs	r2, #0
+ 8001a26:	2105      	movs	r1, #5
+ 8001a28:	2028      	movs	r0, #40	; 0x28
+ 8001a2a:	f000 fde1 	bl	80025f0 <HAL_NVIC_SetPriority>
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+ 8001a2e:	2028      	movs	r0, #40	; 0x28
+ 8001a30:	f000 fdfa 	bl	8002628 <HAL_NVIC_EnableIRQ>
+
+}
+ 8001a34:	bf00      	nop
+ 8001a36:	3730      	adds	r7, #48	; 0x30
+ 8001a38:	46bd      	mov	sp, r7
+ 8001a3a:	bd80      	pop	{r7, pc}
+ 8001a3c:	40023800 	.word	0x40023800
+ 8001a40:	40020400 	.word	0x40020400
+ 8001a44:	40020800 	.word	0x40020800
+ 8001a48:	40021800 	.word	0x40021800
+ 8001a4c:	40022000 	.word	0x40022000
+
+08001a50 <HAL_GPIO_EXTI_Callback>:
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+ 8001a50:	b480      	push	{r7}
+ 8001a52:	b083      	sub	sp, #12
+ 8001a54:	af00      	add	r7, sp, #0
+ 8001a56:	4603      	mov	r3, r0
+ 8001a58:	80fb      	strh	r3, [r7, #6]
+		colorSetPhotodiodeType(&color_sensor1, GREEN);
+		printf("semaphore colormeasureSemaphore donné\r\n");
+		xSemaphoreGiveFromISR(colorMeasureSemaphore,&higher_priority_task_woken);*/
+		//colorEnable(&color_sensor1);
+	}
+}
+ 8001a5a:	bf00      	nop
+ 8001a5c:	370c      	adds	r7, #12
+ 8001a5e:	46bd      	mov	sp, r7
+ 8001a60:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8001a64:	4770      	bx	lr
+	...
+
+08001a68 <bidonTask>:
+
+TaskHandle_t h_bidonTask;
+TaskHandle_t h_processWU;
+SemaphoreHandle_t sem_bidon;
+
+void bidonTask(void * pvParameters){
+ 8001a68:	b580      	push	{r7, lr}
+ 8001a6a:	b082      	sub	sp, #8
+ 8001a6c:	af00      	add	r7, sp, #0
+ 8001a6e:	6078      	str	r0, [r7, #4]
+	for(;;){
+		//printf("waiting for semaphore\r\n");
+		xSemaphoreTake(sem_bidon,portMAX_DELAY);
+ 8001a70:	4b05      	ldr	r3, [pc, #20]	; (8001a88 <bidonTask+0x20>)
+ 8001a72:	681b      	ldr	r3, [r3, #0]
+ 8001a74:	f04f 31ff 	mov.w	r1, #4294967295
+ 8001a78:	4618      	mov	r0, r3
+ 8001a7a:	f004 fc89 	bl	8006390 <xQueueSemaphoreTake>
+		printf("je suis la fonction bidon\r\n");
+ 8001a7e:	4803      	ldr	r0, [pc, #12]	; (8001a8c <bidonTask+0x24>)
+ 8001a80:	f007 f97e 	bl	8008d80 <puts>
+		xSemaphoreTake(sem_bidon,portMAX_DELAY);
+ 8001a84:	e7f4      	b.n	8001a70 <bidonTask+0x8>
+ 8001a86:	bf00      	nop
+ 8001a88:	2000064c 	.word	0x2000064c
+ 8001a8c:	0800b3b4 	.word	0x0800b3b4
+
+08001a90 <task_process_Wake_Up>:
+	}
+}
+
+void task_process_Wake_Up(void * pvParameters){
+ 8001a90:	b580      	push	{r7, lr}
+ 8001a92:	b084      	sub	sp, #16
+ 8001a94:	af00      	add	r7, sp, #0
+ 8001a96:	6078      	str	r0, [r7, #4]
+	sem_bidon=xSemaphoreCreateBinary();
+ 8001a98:	2203      	movs	r2, #3
+ 8001a9a:	2100      	movs	r1, #0
+ 8001a9c:	2001      	movs	r0, #1
+ 8001a9e:	f004 fb0f 	bl	80060c0 <xQueueGenericCreate>
+ 8001aa2:	4603      	mov	r3, r0
+ 8001aa4:	4a13      	ldr	r2, [pc, #76]	; (8001af4 <task_process_Wake_Up+0x64>)
+ 8001aa6:	6013      	str	r3, [r2, #0]
+	uint32_t counter=0;
+ 8001aa8:	2300      	movs	r3, #0
+ 8001aaa:	60fb      	str	r3, [r7, #12]
+
+	for(;;){
+		if(counter==1000){
+ 8001aac:	68fb      	ldr	r3, [r7, #12]
+ 8001aae:	f5b3 7f7a 	cmp.w	r3, #1000	; 0x3e8
+ 8001ab2:	d118      	bne.n	8001ae6 <task_process_Wake_Up+0x56>
+			printf("\ncounter=1000\r\n");
+ 8001ab4:	4810      	ldr	r0, [pc, #64]	; (8001af8 <task_process_Wake_Up+0x68>)
+ 8001ab6:	f007 f963 	bl	8008d80 <puts>
+			xSemaphoreGive(colorMeasureSemaphore);
+ 8001aba:	4b10      	ldr	r3, [pc, #64]	; (8001afc <task_process_Wake_Up+0x6c>)
+ 8001abc:	6818      	ldr	r0, [r3, #0]
+ 8001abe:	2300      	movs	r3, #0
+ 8001ac0:	2200      	movs	r2, #0
+ 8001ac2:	2100      	movs	r1, #0
+ 8001ac4:	f004 fb5e 	bl	8006184 <xQueueGenericSend>
+			printf("semaphore colorMeasureSemaphore donné\r\n");
+ 8001ac8:	480d      	ldr	r0, [pc, #52]	; (8001b00 <task_process_Wake_Up+0x70>)
+ 8001aca:	f007 f959 	bl	8008d80 <puts>
+			xSemaphoreGive(sem_bidon);
+ 8001ace:	4b09      	ldr	r3, [pc, #36]	; (8001af4 <task_process_Wake_Up+0x64>)
+ 8001ad0:	6818      	ldr	r0, [r3, #0]
+ 8001ad2:	2300      	movs	r3, #0
+ 8001ad4:	2200      	movs	r2, #0
+ 8001ad6:	2100      	movs	r1, #0
+ 8001ad8:	f004 fb54 	bl	8006184 <xQueueGenericSend>
+			printf("semaphore sem_bidon donné\r\n");
+ 8001adc:	4809      	ldr	r0, [pc, #36]	; (8001b04 <task_process_Wake_Up+0x74>)
+ 8001ade:	f007 f94f 	bl	8008d80 <puts>
+
+			counter=0;
+ 8001ae2:	2300      	movs	r3, #0
+ 8001ae4:	60fb      	str	r3, [r7, #12]
+		}
+		counter++;
+ 8001ae6:	68fb      	ldr	r3, [r7, #12]
+ 8001ae8:	3301      	adds	r3, #1
+ 8001aea:	60fb      	str	r3, [r7, #12]
+		vTaskDelay(1); //crée le delay de 1ms
+ 8001aec:	2001      	movs	r0, #1
+ 8001aee:	f005 f817 	bl	8006b20 <vTaskDelay>
+		if(counter==1000){
+ 8001af2:	e7db      	b.n	8001aac <task_process_Wake_Up+0x1c>
+ 8001af4:	2000064c 	.word	0x2000064c
+ 8001af8:	0800b3d0 	.word	0x0800b3d0
+ 8001afc:	2000063c 	.word	0x2000063c
+ 8001b00:	0800b3e0 	.word	0x0800b3e0
+ 8001b04:	0800b408 	.word	0x0800b408
 
 08001b08 <creationTaskProcessing>:
+	}
+}
 
 void creationTaskProcessing(void){
  8001b08:	b580      	push	{r7, lr}
@@ -3157,12 +3161,12 @@ void creationTaskProcessing(void){
  8001b8a:	bd80      	pop	{r7, pc}
  8001b8c:	20000648 	.word	0x20000648
  8001b90:	0800b424 	.word	0x0800b424
- 8001b94:	080019e1 	.word	0x080019e1
+ 8001b94:	08001a91 	.word	0x08001a91
  8001b98:	0800b430 	.word	0x0800b430
  8001b9c:	0800b458 	.word	0x0800b458
  8001ba0:	20000644 	.word	0x20000644
  8001ba4:	0800b47c 	.word	0x0800b47c
- 8001ba8:	080019b9 	.word	0x080019b9
+ 8001ba8:	08001a69 	.word	0x08001a69
  8001bac:	0800b488 	.word	0x0800b488
  8001bb0:	0800b4a8 	.word	0x0800b4a8
  8001bb4:	2000064c 	.word	0x2000064c
@@ -3198,7 +3202,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
- 8001bcc:	f7ff fe38 	bl	8001840 <MX_GPIO_Init>
+ 8001bcc:	f7ff fe90 	bl	80018f0 <MX_GPIO_Init>
   MX_TIM2_Init();
  8001bd0:	f000 fa92 	bl	80020f8 <MX_TIM2_Init>
   MX_USART1_UART_Init();
@@ -3233,7 +3237,7 @@ int main(void)
 
 	colorStartSensor(&color_sensor1);
  8001bfa:	4809      	ldr	r0, [pc, #36]	; (8001c20 <main+0x60>)
- 8001bfc:	f7ff ff40 	bl	8001a80 <colorStartSensor>
+ 8001bfc:	f7ff fd72 	bl	80016e4 <colorStartSensor>
 	creationTaskProcessing();
  8001c00:	f7ff ff82 	bl	8001b08 <creationTaskProcessing>
 	//colorStartSensor(&color_sensor1);
@@ -3250,7 +3254,7 @@ int main(void)
 
   /* Call init function for freertos objects (in freertos.c) */
   MX_FREERTOS_Init();
- 8001c0e:	f7ff fdf3 	bl	80017f8 <MX_FREERTOS_Init>
+ 8001c0e:	f7ff fe4b 	bl	80018a8 <MX_FREERTOS_Init>
 
   /* Start scheduler */
   osKernelStart();
@@ -5810,7 +5814,7 @@ void HAL_GPIO_EXTI_IRQHandler(uint16_t GPIO_Pin)
     HAL_GPIO_EXTI_Callback(GPIO_Pin);
  80029ec:	88fb      	ldrh	r3, [r7, #6]
  80029ee:	4618      	mov	r0, r3
- 80029f0:	f7fe ffd6 	bl	80019a0 <HAL_GPIO_EXTI_Callback>
+ 80029f0:	f7ff f82e 	bl	8001a50 <HAL_GPIO_EXTI_Callback>
   }
 }
  80029f4:	bf00      	nop
@@ -17262,7 +17266,7 @@ BaseType_t xReturn;
  8006b9c:	1d39      	adds	r1, r7, #4
  8006b9e:	f107 0308 	add.w	r3, r7, #8
  8006ba2:	4618      	mov	r0, r3
- 8006ba4:	f7fa fe0e 	bl	80017c4 <vApplicationGetIdleTaskMemory>
+ 8006ba4:	f7fa fe66 	bl	8001874 <vApplicationGetIdleTaskMemory>
 		xIdleTaskHandle = xTaskCreateStatic(	prvIdleTask,
  8006ba8:	6839      	ldr	r1, [r7, #0]
  8006baa:	687b      	ldr	r3, [r7, #4]

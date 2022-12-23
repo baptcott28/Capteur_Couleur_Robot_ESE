@@ -535,24 +535,8 @@ void colorMeasureTask(void * pvParameters){
 	}
 }
 
-int colorStartSensor(h_color_sensor_t * h_color_sensor){
 
-	//creation colorMeasureTask et colorMeasureSempahore
-	if(pdTRUE==xTaskCreate(colorMeasureTask,"colorMeasureTask",COLOR_STACK_DEPTH,(void *)h_color_sensor,COLOR_MEASURE_TASK_PRIORiTY,&h_colorMeasureTask)){
-		printf("colorMeasureTask created successfully\r\n");
-	}
-	else{
-		printf("colorMeasureTask creation failed !\r\n");
-		return 1;
-	}
-	colorMeasureSemaphore=xSemaphoreCreateBinary();
-	if(colorMeasureSemaphore==NULL){
-		printf("colorCalibSemaphore creation failed ! \r\n");
-		return 1;
-	}
-	printf("colorMeasureSemaphore created successfully\r\n");
-	return 0;
-}
+
 
 
 
