@@ -7,7 +7,9 @@
 - taches colormeasureTask écrite
 - ecriture de fonction de process pour debloquer les semaphore et les donner aux autres taches
 - Fonctionne avec une tache temoin et la tache colorMeasure (affichage uniquement) dans color_sensor.c et la fonction de calib au debut
-- test avec un declenchement de mesure dans colormeasureTask (en cours)
+- test avec un declenchement de mesure dans colormeasureTask 
+- fonctionne avec une distance inferieure au cm VS la surface a mesurer
+- test avec les vTaskSuspend(process) (en cours)
 
 ## ne pas oublier 
 - set photodiode verte dans l'interruption du bouton
