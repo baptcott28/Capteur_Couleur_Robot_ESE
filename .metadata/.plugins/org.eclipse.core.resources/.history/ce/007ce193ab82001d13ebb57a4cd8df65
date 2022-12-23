@@ -213,9 +213,9 @@ int main(void)
 	// ----- test 4 : FreeRTOS -----
 
 	colorSensorInit(&color_sensor1, GREEN,CENT_POUR_CENT,SENSOR_DISABLE);
-	colorHandleCalibrationSensor(&color_sensor1);
+	//colorHandleCalibrationSensor(&color_sensor1);
 
-	colorTaskCreation(&color_sensor1);
+	colorStartSensor(&color_sensor1);
 	creationTaskProcessing();
 
 

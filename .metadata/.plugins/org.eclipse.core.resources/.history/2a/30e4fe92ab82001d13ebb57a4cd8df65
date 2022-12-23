@@ -208,8 +208,9 @@ void colorSetPhotodiodeType(h_color_sensor_t * h_color_sensor,color_sensor_color
  * @param (void *) color_sensor
  * @return 1 if failed else 0
  */
-int colorTaskCreation(h_color_sensor_t * h_color_sensor);
+int colorStartSensor(h_color_sensor_t * h_color_sensor);
 
+void colorMeasureTask(void * pvParameters);
 
 /*  liste des Pins
  *		color_S0	GPIO_output

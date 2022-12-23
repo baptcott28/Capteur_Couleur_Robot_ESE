@@ -215,7 +215,7 @@ int main(void)
 	colorSensorInit(&color_sensor1, GREEN,CENT_POUR_CENT,SENSOR_DISABLE);
 	colorHandleCalibrationSensor(&color_sensor1);
 
-	colorTaskCreation(&color_sensor1);
+	colorStartSensor(&color_sensor1);
 	creationTaskProcessing();
 
 

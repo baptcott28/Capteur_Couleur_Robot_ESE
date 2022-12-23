@@ -1,10 +1,10 @@
-11:09:50 **** Incremental Build of configuration Debug for project couleur_fonctionel ****
+11:22:49 **** Incremental Build of configuration Debug for project couleur_fonctionel ****
 make -j8 all 
 arm-none-eabi-size   couleur_fonctionel.elf 
    text	   data	    bss	    dec	    hex	filename
-  47408	    488	  18680	  66576	  10410	couleur_fonctionel.elf
+  51244	    488	  18680	  70412	  1130c	couleur_fonctionel.elf
 Finished building: default.size.stdout
  
 
-11:09:50 Build Finished. 0 errors, 0 warnings. (took 578ms)
+11:22:50 Build Finished. 0 errors, 0 warnings. (took 594ms)
 

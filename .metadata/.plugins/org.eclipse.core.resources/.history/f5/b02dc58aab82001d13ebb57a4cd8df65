@@ -116,7 +116,7 @@ static int colorHandleRawValues(h_color_sensor_t * h_color_sensor, uint32_t freq
  * @param (void *)color_sensor
  * @return : 1 if calibration is processing, 0 if finished
  */
-static void colorMeasureTask(void * pvParameters);
+//static void colorMeasureTask(void * pvParameters);
 
 // ----- Global Fonctions -----
 
@@ -525,7 +525,7 @@ static void colorDoMeasureAgain(h_color_sensor_t * h_color_sensor){
 extern TaskHandle_t h_colorMeasureTask;
 extern SemaphoreHandle_t colorMeasureSemaphore;
 
-static void colorMeasureTask(void * pvParameters){
+void colorMeasureTask(void * pvParameters){
 	for(;;){
 		xSemaphoreTake(colorMeasureSemaphore,portMAX_DELAY);
 		printf("-----contenu de colorMeasureTask------\r\n");
@@ -535,7 +535,7 @@ static void colorMeasureTask(void * pvParameters){
 	}
 }
 
-int colorTaskCreation(h_color_sensor_t * h_color_sensor){
+int colorStartSensor(h_color_sensor_t * h_color_sensor){
 
 	//creation colorMeasureTask et colorMeasureSempahore
 	if(pdTRUE==xTaskCreate(colorMeasureTask,"colorMeasureTask",COLOR_STACK_DEPTH,(void *)h_color_sensor,COLOR_MEASURE_TASK_PRIORiTY,&h_colorMeasureTask)){
