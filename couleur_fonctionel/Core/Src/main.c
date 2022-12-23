@@ -91,9 +91,9 @@ SemaphoreHandle_t sem_bidon;
 
 void bidonTask(void * pvParameters){
 	for(;;){
+		//printf("waiting for semaphore\r\n");
 		xSemaphoreTake(sem_bidon,portMAX_DELAY);
 		printf("je suis la fonction bidon\r\n");
-		xSemaphoreGive(sem_bidon);
 	}
 }
 
@@ -102,7 +102,8 @@ void task_process_Wake_Up(void * pvParameters){
 	uint32_t counter=0;
 
 	for(;;){
-		if(counter==500){
+		if(counter==1000){
+			printf("semaphore donné\r\n");
 			xSemaphoreGive(sem_bidon);
 			counter=0;
 		}
@@ -114,6 +115,31 @@ void task_process_Wake_Up(void * pvParameters){
 	}
 }
 
+void creationTaskProcessing(void){
+	// creation tache process
+
+	if(pdTRUE==xTaskCreate(task_process_Wake_Up,"Taskprocess",COLOR_STACK_DEPTH,NULL,10,&h_processWU)){
+		printf("process wake up created successfully\r\n");
+	}
+	else{
+		printf("process wake up creation failed !\r\n");
+	}
+
+	// creation tache bidon
+	if(pdTRUE==xTaskCreate(bidonTask,"bidonTask",COLOR_STACK_DEPTH,NULL,1,&h_bidonTask)){
+		printf("bidonTask created successfully\r\n");
+	}
+	else{
+		printf("bidonTask creation failed !\r\n");
+	}
+
+	// creation semaphore bidon
+	sem_bidon=xSemaphoreCreateBinary();
+	if(sem_bidon==NULL){
+		printf("sem bidon creation failed ! \r\n");
+	}
+	printf("sem bidon created\r\n");
+}
 /* USER CODE END 0 */
 
 /**
@@ -189,31 +215,10 @@ int main(void)
 	// ----- test 4 : FreeRTOS -----
 
 	colorSensorInit(&color_sensor1, GREEN,CENT_POUR_CENT,SENSOR_DISABLE);
-	colorHandleCalibrationSensor(&color_sensor1);
+	//colorHandleCalibrationSensor(&color_sensor1);
 
 
-	// creation tache process
-	if(pdTRUE==xTaskCreate(task_process_Wake_Up,"Taskprocess",COLOR_STACK_DEPTH,NULL,10,&h_processWU)){
-		printf("process wake up created successfully\r\n");
-	}
-	else{
-		printf("process wake up creation failed !\r\n");
-	}
-
-	// creation tache bidon
-	if(pdTRUE==xTaskCreate(bidonTask,"bidonTask",COLOR_STACK_DEPTH,NULL,1,&h_bidonTask)){
-		printf("bidonTask created successfully\r\n");
-	}
-	else{
-		printf("bidonTask creation failed !\r\n");
-	}
-
-	// creation semaphore bidon
-	sem_bidon=xSemaphoreCreateBinary();
-	if(sem_bidon==NULL){
-		printf("sem bidon creation failed ! \r\n");
-	}
-	printf("sem bidon created\r\n");
+	creationTaskProcessing();
 
 
 	//colorStartSensor(&color_sensor1);
