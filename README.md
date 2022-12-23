@@ -9,8 +9,7 @@
 - Fonctionne avec une tache temoin et la tache colorMeasure (affichage uniquement) dans color_sensor.c et la fonction de calib au debut
 - test avec un declenchement de mesure dans colormeasureTask 
 - fonctionne avec une distance inferieure au cm VS la surface a mesurer
-- colorMeasureTask s'execute parfaitement sans tâche autour
-- test avec les vTaskSuspend(process) (a faire mais modif avec flag de retour de fin de mesure a faire) pour pouvoir mettre des taches autour
+- colorMeasureTask s'execute parfaitement declenchée par l'obtention de son sémaphore tandis que tache bidon attend son sémaphore qui n'arrivera jamais parce que le robot est dans l'état mesure   
 
 ## ne pas oublier 
 - set photodiode verte dans l'interruption du bouton
