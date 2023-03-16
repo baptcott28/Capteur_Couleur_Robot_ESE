@@ -71,15 +71,15 @@ Ce projet est compatible freeRTOS. Il y a donc toutes les fonctions pour crer le
 ## Test avancement librairie
 - calibration fonctionne
 - mesure fonctionne
-- introduction d'une valeur min de frequence dans h_color_sensor_t et prise en compte dans la mesure
-- fonctionne avec freeRTOS actif et demarrage du schedduler
-- integration d'une structure de calib au sein d'un sensor
+- introduction d'une valeur min de fréquence dans h_color_sensor_t et prise en compte dans la mesure
+- fonctionne avec freeRTOS actif et démarrage du schedduler
+- intégration d'une structure de calibration au sein d'un sensor
 - taches colormeasureTask écrite
-- ecriture de fonction de process pour debloquer les semaphore et les donner aux autres taches
-- Fonctionne avec une tache temoin et la tache colorMeasure (affichage uniquement) dans color_sensor.c et la fonction de calib au debut
-- test avec un declenchement de mesure dans colormeasureTask 
-- fonctionne avec une distance inferieure au cm VS la surface a mesurer
-- colorMeasureTask s'execute parfaitement declenchée par l'obtention de son sémaphore tandis que tache bidon attend son sémaphore qui n'arrivera jamais parce que le robot est dans l'état mesure   
+- écriture de fonctions de process pour debloquer les sémaphores et les donner aux autres tâches
+- Fonctionne avec une tâche temoin et la tâche colorMeasure (affichage uniquement) dans color_sensor.c et la fonction de calibration au début
+- test avec un déclenchement de mesure dans colormeasureTask 
+- fonctionne avec une distance inférieure au cm VS la surface à mesurer
+- colorMeasureTask s'execute parfaitement éeclenchée par l'obtention de son sémaphore tandis que tâche bidon attend son sémaphore qui n'arrivera jamais parce que le robot est dans l'état mesure   
 
 ## ne pas oublier 
 - set photodiode verte dans l'interruption du bouton
